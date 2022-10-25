@@ -48,9 +48,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9E3E7A32908239700914FE5 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				EC892AAE2908201700D02F99 /* MainView.swift */,
+				EC892AB8290820A100D02F99 /* ListView.swift */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		C9E3E7A4290823A200914FE5 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EC892ABE2908214900D02F99 /* ProductView.swift */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		C9E3E7A5290823DB00914FE5 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				EC892ABA290820B800D02F99 /* FavoriteView.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		C9E3E7A6290823E100914FE5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EC892ABC290820C600D02F99 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C9E3E7A7290823FA00914FE5 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				EC892AB22908205D00D02F99 /* CartView.swift */,
+				EC892AB42908206F00D02F99 /* SearchView.swift */,
+				EC892AB62908207D00D02F99 /* NotiView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		EC892A922908189600D02F99 = {
 			isa = PBXGroup;
 			children = (
+				EC892A9E2908189600D02F99 /* MarketAppApp.swift */,
+				EC892AA02908189600D02F99 /* ContentView.swift */,
 				EC892A9D2908189600D02F99 /* MarketApp */,
 				EC892A9C2908189600D02F99 /* Products */,
 			);
@@ -67,18 +112,13 @@
 		EC892A9D2908189600D02F99 /* MarketApp */ = {
 			isa = PBXGroup;
 			children = (
-				EC892A9E2908189600D02F99 /* MarketAppApp.swift */,
-				EC892AA02908189600D02F99 /* ContentView.swift */,
+				C9E3E7A7290823FA00914FE5 /* Component */,
+				C9E3E7A6290823E100914FE5 /* Profile */,
+				C9E3E7A5290823DB00914FE5 /* Favorite */,
+				C9E3E7A4290823A200914FE5 /* ProductDetail */,
+				C9E3E7A32908239700914FE5 /* ProductList */,
 				EC892AA22908189700D02F99 /* Assets.xcassets */,
 				EC892AA42908189700D02F99 /* Preview Content */,
-				EC892AAE2908201700D02F99 /* MainView.swift */,
-				EC892AB22908205D00D02F99 /* CartView.swift */,
-				EC892AB42908206F00D02F99 /* SearchView.swift */,
-				EC892AB62908207D00D02F99 /* NotiView.swift */,
-				EC892AB8290820A100D02F99 /* ListView.swift */,
-				EC892ABA290820B800D02F99 /* FavoriteView.swift */,
-				EC892ABC290820C600D02F99 /* ProfileView.swift */,
-				EC892ABE2908214900D02F99 /* ProductView.swift */,
 			);
 			path = MarketApp;
 			sourceTree = "<group>";
