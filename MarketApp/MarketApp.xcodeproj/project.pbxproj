@@ -48,9 +48,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9E3E7A82908256900914FE5 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				EC892AB22908205D00D02F99 /* CartView.swift */,
+				EC892AB42908206F00D02F99 /* SearchView.swift */,
+				EC892AB62908207D00D02F99 /* NotiView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		C9E3E7A92908258500914FE5 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				EC892AAE2908201700D02F99 /* MainView.swift */,
+				EC892AB8290820A100D02F99 /* ListView.swift */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		C9E3E7AA2908258C00914FE5 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EC892ABE2908214900D02F99 /* ProductView.swift */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		C9E3E7AB290825A400914FE5 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				EC892ABA290820B800D02F99 /* FavoriteView.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		C9E3E7AC290825BA00914FE5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EC892ABC290820C600D02F99 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		EC892A922908189600D02F99 = {
 			isa = PBXGroup;
 			children = (
+				C9E3E7AC290825BA00914FE5 /* Profile */,
+				C9E3E7AB290825A400914FE5 /* Favorite */,
+				C9E3E7AA2908258C00914FE5 /* ProductDetail */,
+				C9E3E7A92908258500914FE5 /* ProductList */,
+				C9E3E7A82908256900914FE5 /* Component */,
 				EC892A9D2908189600D02F99 /* MarketApp */,
 				EC892A9C2908189600D02F99 /* Products */,
 			);
@@ -71,14 +119,6 @@
 				EC892AA02908189600D02F99 /* ContentView.swift */,
 				EC892AA22908189700D02F99 /* Assets.xcassets */,
 				EC892AA42908189700D02F99 /* Preview Content */,
-				EC892AAE2908201700D02F99 /* MainView.swift */,
-				EC892AB22908205D00D02F99 /* CartView.swift */,
-				EC892AB42908206F00D02F99 /* SearchView.swift */,
-				EC892AB62908207D00D02F99 /* NotiView.swift */,
-				EC892AB8290820A100D02F99 /* ListView.swift */,
-				EC892ABA290820B800D02F99 /* FavoriteView.swift */,
-				EC892ABC290820C600D02F99 /* ProfileView.swift */,
-				EC892ABE2908214900D02F99 /* ProductView.swift */,
 			);
 			path = MarketApp;
 			sourceTree = "<group>";
