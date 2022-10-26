@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct MainView: View {
     
     @State private var showDetail = false
@@ -17,10 +16,6 @@ struct MainView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 CategoryViews()
                     .padding()
-                
-//                NavigationLink(destination: ProductView()) {
-//                    ProductViews()
-//                }
                 
                 ProductViews()
             }
@@ -61,25 +56,27 @@ struct MainView: View {
     
     @ViewBuilder
     private func ProductViews() -> some View {
-        ForEach(0..<10) { _ in
-            ScrollView(.horizontal, showsIndicators: false) {
+        ScrollView(.horizontal, showsIndicators: false) {
+            ForEach(0..<10) { _ in
                 LazyHStack {
                     ForEach(0..<2) { _ in
-                        LazyVStack {
-                            Image("shoes")
-                                .resizable()
-                                .frame(width: 160, height: 200, alignment: .center)
-                            Text("Maison Kitsune")
-                                .font(.system(size: 12, weight: .bold, design: .monospaced))
-                                .frame(width: 160, height: 20, alignment: .leading)
-                            Text("더블 폭스 패치 스니커즈")
-                                .font(.system(size: 13, weight: .medium, design: .default))
-                                .frame(width: 160, height: 20, alignment: .leading)
-                            Text("281,000원")
-                                .font(.system(size: 12, weight: .bold, design: .monospaced))
-                                .frame(width: 160, height: 20, alignment: .leading)
+                        NavigationLink(destination: ProductView()){
+                            LazyVStack {
+                                Image("shoes")
+                                    .resizable()
+                                    .frame(width: 160, height: 200, alignment: .center)
+                                Text("Maison Kitsune")
+                                    .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                    .frame(width: 160, height: 20, alignment: .leading)
+                                Text("더블 폭스 패치 스니커즈")
+                                    .font(.system(size: 13, weight: .medium, design: .default))
+                                    .frame(width: 160, height: 20, alignment: .leading)
+                                Text("281,000원")
+                                    .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                    .frame(width: 160, height: 20, alignment: .leading)
+                            }
+                            .padding(15)
                         }
-                        .padding(15)
                     }
                 }
             }
