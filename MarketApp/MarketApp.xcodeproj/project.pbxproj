@@ -19,6 +19,7 @@
 		EC892ABB290820B800D02F99 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABA290820B800D02F99 /* FavoriteView.swift */; };
 		EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABC290820C600D02F99 /* ProfileView.swift */; };
 		EC892ABF2908214900D02F99 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABE2908214900D02F99 /* ProductView.swift */; };
+		ECB2F1362909258B00E9F7D3 /* PopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB2F1352909258B00E9F7D3 /* PopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		EC892ABA290820B800D02F99 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		EC892ABC290820C600D02F99 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EC892ABE2908214900D02F99 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		ECB2F1352909258B00E9F7D3 /* PopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				EC892ABE2908214900D02F99 /* ProductView.swift */,
+				ECB2F1352909258B00E9F7D3 /* PopView.swift */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			files = (
 				EC892ABF2908214900D02F99 /* ProductView.swift in Sources */,
 				EC892ABB290820B800D02F99 /* FavoriteView.swift in Sources */,
+				ECB2F1362909258B00E9F7D3 /* PopView.swift in Sources */,
 				EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */,
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* ContentView.swift in Sources */,

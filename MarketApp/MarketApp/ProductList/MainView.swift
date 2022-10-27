@@ -61,7 +61,7 @@ struct MainView: View {
                 LazyHStack {
                     ForEach(0..<2) { _ in
                         NavigationLink(destination: ProductView()){
-                            LazyVStack {
+                            LazyVStack(spacing: 5) {
                                 Image("shoes")
                                     .resizable()
                                     .frame(width: 160, height: 200, alignment: .center)

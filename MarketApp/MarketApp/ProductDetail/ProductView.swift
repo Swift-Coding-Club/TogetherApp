@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ProductView: View {
+    
+    @State private var likeThis = false
+    @State private var buyThis = false
+    
+    let datas = ["정보", "사이즈", "리뷰", "문의"]
+    
     var body: some View {
-
         VStack {
-            //물건 이미지
-
-            //물건정보
-            Group {
+            ScrollView(.vertical, showsIndicators: true) {
+                Image("shoes")
+                    .resizable()
+                    .frame(width: 390, height: 350)
+                    .padding(.top, 50)
+                
                 HStack {
                     VStack {
                         Text("Maison Kitsune")
@@ -30,26 +37,58 @@ struct ProductView: View {
                     
                     VStack {
                         Image(systemName: "star.fill").resizable()
-                            .frame(width: 40, height: 40, alignment: .center)
+                            .frame(width: 30, height: 30, alignment: .center)
                             .foregroundColor(.yellow)
                         Text("4.5")
                             .font(.system(size: 18, weight: .medium, design: .default))
                     }
                 }
-            }.padding(.top, 380)
-            
-            //정보/사이즈/후기/문의 (상단탭바)
-            
-            //구매 버튼 & 구매 팝업
-            Button("구매"){
+                .padding(.top, 20)
+                .padding(.bottom, 10)
                 
+                infoView()
             }
-            .font(.system(size: 22, weight: .medium, design: .default))
-            .frame(width: 280, height: 50, alignment: .center)
-            .cornerRadius(12)
-            .background(.black)
-            .foregroundColor(.white)
-            .padding(.bottom, 10)
+            
+            HStack {
+                Button(action: {
+                    //좋아요 액션 ( 클릭시 heart.fill )
+                }) {
+                    Image(systemName: "heart")
+                        .resizable()
+                        .renderingMode(.original)
+                        .frame(width: 30, height: 30)
+                        .padding(.trailing, 10)
+                }
+                
+                Button(action: {
+                    self.buyThis = true
+                }) {
+                    Text("구매")
+                        .font(.system(size: 22, weight: .medium, design: .default))
+                        .frame(width: 280, height: 50)
+                        .padding(.leading, 10)
+                        .background(.black)
+                        .foregroundColor(.white)
+                        .sheet(isPresented: self.$buyThis) {
+                            PopView()
+                        }
+                }
+            }.padding(.bottom, 20)
+        }.ignoresSafeArea(edges: .top)
+    }
+
+    
+    @ViewBuilder
+    private func infoView() -> some View {
+        LazyHStack {
+            ForEach(0..<4) { _ in
+                Button("asdasd"){
+                    //view change
+                }
+                .frame(width: 90, height: 30)
+                .font(.system(size: 18))
+                .foregroundColor(.black) //touch = black, notouch = gray
+            }
         }
     }
 }
