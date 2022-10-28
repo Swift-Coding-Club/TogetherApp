@@ -61,7 +61,7 @@ struct ProductView: View {
                 }
                 
                 Button(action: {
-                    self.buyThis = true
+                    buyThis.toggle()
                 }) {
                     Text("구매")
                         .font(.system(size: 22, weight: .medium, design: .default))
@@ -73,6 +73,7 @@ struct ProductView: View {
                             PopView()
                         }
                 }
+                
             }.padding(.bottom, 20)
         }.ignoresSafeArea(edges: .top)
     }
