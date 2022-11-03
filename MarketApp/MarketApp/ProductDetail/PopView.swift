@@ -9,31 +9,28 @@ import SwiftUI
 
 struct PopView: View {
     
-    @Environment(\.dismiss) var dismiss //Modal
+    //@Environment(\.dismiss) var dismiss //Modal
     
-    @State private var numberCount = 0 //총 갯수
-    @State private var moneyCount = 0 //총 금액
+    @State private var clickEvent = 1
+    let size = ["230", "240", "250", "260", "270", "280"]
     
     var body: some View {
         VStack {
             Text("더블 폭스 패치 스니커즈")
                 .foregroundColor(.black)
                 .font(.system(size: 15, weight: .medium))
-                .frame(width: 350, height: 20, alignment: .leading)
+                .frame(maxWidth: .infinity, minHeight: 10, alignment: .leading)
                 .padding()
             
-            Button(action: {
-                
-            }, label: {
-                Text("사이즈 선택하기")
-                    .foregroundColor(.black)
-                    .font(.system(size: 15, weight: .medium))
-                    .frame(width: 300, height: 50, alignment: .center)
-                Image(systemName: "arrow.down")
-                    .foregroundColor(.gray)
-                    .frame(width: 50, height: 50, alignment: .center)
-
-            })
+            //사용자가 사이즈를 맞게 선택했는지 알 수 있는 방법? => 얼럿 or 텍스트(선택바 or 별도)
+            Menu("사이즈 선택하기"){
+                ForEach(size.indices) { index in
+                    Button(size[index], action: {})
+                }
+            }
+            .foregroundColor(.black)
+            .font(.system(size: 15, weight: .medium))
+            .frame(maxWidth: 350, minHeight: 50, alignment: .center)
             .overlay(
                 RoundedRectangle(cornerRadius: 0)
                     .stroke(.gray, lineWidth: 1)

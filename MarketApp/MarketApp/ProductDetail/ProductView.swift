@@ -12,15 +12,12 @@ struct ProductView: View {
     @State private var likeThis = false
     @State private var buyThis = false
     
-    let datas = ["정보", "사이즈", "리뷰", "문의"]
-    
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true) {
                 Image("shoes")
                     .resizable()
-                    .frame(width: 390, height: 350)
-                    .padding(.top, 50)
+                    .frame(maxWidth: .infinity, minHeight: 350)
                 
                 HStack {
                     VStack {
@@ -43,10 +40,11 @@ struct ProductView: View {
                             .font(.system(size: 18, weight: .medium, design: .default))
                     }
                 }
-                .padding(.top, 20)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 10)
                 .padding(.bottom, 10)
                 
-                infoView()
+                InfoView()
             }
             
             HStack {
@@ -73,23 +71,7 @@ struct ProductView: View {
                             PopView()
                         }
                 }
-                
             }.padding(.bottom, 20)
-        }.ignoresSafeArea(edges: .top)
-    }
-
-    
-    @ViewBuilder
-    private func infoView() -> some View {
-        LazyHStack {
-            ForEach(0..<4) { _ in
-                Button("asdasd"){
-                    //view change
-                }
-                .frame(width: 90, height: 30)
-                .font(.system(size: 18))
-                .foregroundColor(.black) //touch = black, notouch = gray
-            }
         }
     }
 }
