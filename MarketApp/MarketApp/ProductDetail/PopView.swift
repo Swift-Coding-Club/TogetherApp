@@ -12,6 +12,7 @@ struct PopView: View {
     //@Environment(\.dismiss) var dismiss //Modal
     
     @State private var clickEvent = 1
+    @State private var shoeSize = "사이즈 선택하기"
     let size = ["230", "240", "250", "260", "270", "280"]
     
     var body: some View {
@@ -23,13 +24,13 @@ struct PopView: View {
                 .padding()
             
             //사용자가 사이즈를 맞게 선택했는지 알 수 있는 방법? => 얼럿 or 텍스트(선택바 or 별도)
-            Menu("사이즈 선택하기"){
-                ForEach(size.indices) { index in
-                    Button(size[index], action: {})
+            Picker("사이즈 선택", selection: $shoeSize) {
+                ForEach(size, id: \.self) { item in
+                    Text(item)
                 }
             }
+            .pickerStyle(.menu)
             .foregroundColor(.black)
-            .font(.system(size: 15, weight: .medium))
             .frame(maxWidth: 350, minHeight: 50, alignment: .center)
             .overlay(
                 RoundedRectangle(cornerRadius: 0)

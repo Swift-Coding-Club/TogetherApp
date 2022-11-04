@@ -7,46 +7,89 @@
 
 import SwiftUI
 
+enum tapInfo : String, CaseIterable {
+    case info = "정보"
+    case size = "사이즈"
+    case review = "리뷰"
+    case call = "문의"
+}
+
 struct InfoView: View {
-    
-    @State private var btnIndex = 0
-    let category = ["정보", "사이즈", "후기", "문의"]
+
+    @State private var selectedPicker: tapInfo = .info
     
     var body: some View {
         VStack {
-            HStack {
-                ForEach(category.indices){ index in
-                    Button(action: {
-                        //ACTION : (각 인덱스 별) 버튼 클릭시 (그 인덱스에) 맞는 뷰 띄워주기
-                    }, label: {
-                        Text(category[index])
-                            .foregroundColor(.black)
-                            .frame(height: 50, alignment: .center)
-                            .frame(maxWidth: .infinity)
-                    })
+            Picker("Flavor", selection: $selectedPicker) {
+                ForEach(tapInfo.allCases, id: \.self) {
+                    Text($0.rawValue)
                 }
             }
+            .pickerStyle(.segmented)
+            .padding()
+            
+            testView(tests: selectedPicker)
         }
     }
+}
+
+struct testView : View {
     
-    //MARK : 정보
-    @ViewBuilder
-    private func shoeView() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
-            ForEach(0..<50) { _ in
-                Text("INFO : 신발의 정보가 나오는 뷰입니다.")
-                    .padding()
-            }
-        }
-    }
+    var tests : tapInfo
     
-    //MARK : 리뷰
-    @ViewBuilder
-    private func reView() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
-            ForEach(0..<50) { _ in
-                Text("INFO : 해당 제품의 리뷰가 나오는 뷰입니다.")
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            switch tests {
+            case .info:
+                ForEach(0..<5) { _ in
+                    Text("블랙컬러")
+                        .padding()
+                    Image("shoes")
+                        .resizable()
+                        .frame(maxWidth: 350, minHeight: 500)
+                }
+            case .size:
+                Text("사이즈 참고해주세요")
+                    .font(.system(size: 15, weight: .bold, design: .monospaced))
+                    .frame(width: 300, height: 20, alignment: .center)
+                Text("발폭 넓으신분 -> 한사이즈 up!")
                     .padding()
+            case .review:
+                ScrollView(.horizontal, showsIndicators: false) {
+                    ForEach(0..<10) { _ in
+                        LazyHStack {
+                            ForEach(0..<2) { _ in
+                                NavigationLink(destination: ReviewView()){
+                                    VStack(spacing: 5) {
+                                        Image("shoes")
+                                            .resizable()
+                                            .frame(width: 160, height: 200, alignment: .center)
+                                        Text("실착용 솔직 한달 후기 입니다")
+                                            .font(.system(size: 15, weight: .bold, design: .monospaced))
+                                            .frame(width: 160, height: 20, alignment: .leading)
+                                            .foregroundColor(.black)
+                                        Text("Sky Blue")
+                                            .font(.system(size: 13, weight: .medium, design: .monospaced))
+                                            .frame(width: 160, height: 20, alignment: .leading)
+                                            .foregroundColor(.black)
+                                        Text("평발인데 너무편해요 공간도 넉넉해서 걸을때 불편하지 않아요 최고입니다 ㅋㅋ 재구매의사 100%")
+                                            .font(.system(size: 13, weight: .medium, design: .default))
+                                            .frame(width: 160, height: 50, alignment: .leading)
+                                            .foregroundColor(.black)
+                                    }
+                                    .padding(15)
+                                }
+                            }
+                        }
+                    }
+                }
+            case .call:
+                VStack {
+                    Text("별도의 커뮤니티를 운영하지 않습니다.")
+                    Text("자세한 문의는 여기로 부탁드립니다")
+                    Text("02-xxx-xxxx")
+                        .padding()
+                }.padding()
             }
         }
     }

@@ -69,6 +69,7 @@ struct ProductView: View {
                         .foregroundColor(.white)
                         .sheet(isPresented: self.$buyThis) {
                             PopView()
+                                .frame(maxWidth: .infinity, minHeight: 300)
                         }
                 }
             }.padding(.bottom, 20)

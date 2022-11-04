@@ -21,6 +21,7 @@
 		EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABC290820C600D02F99 /* ProfileView.swift */; };
 		EC892ABF2908214900D02F99 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABE2908214900D02F99 /* ProductView.swift */; };
 		ECB2F1362909258B00E9F7D3 /* PopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB2F1352909258B00E9F7D3 /* PopView.swift */; };
+		ECF5BE462914D01E0052655B /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF5BE452914D01E0052655B /* ReviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		EC892ABC290820C600D02F99 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EC892ABE2908214900D02F99 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		ECB2F1352909258B00E9F7D3 /* PopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopView.swift; sourceTree = "<group>"; };
+		ECF5BE452914D01E0052655B /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				EC892ABE2908214900D02F99 /* ProductView.swift */,
 				ECB2F1352909258B00E9F7D3 /* PopView.swift */,
 				EC451F6D290BBCD7008C88A7 /* InfoView.swift */,
+				ECF5BE452914D01E0052655B /* ReviewView.swift */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				ECB2F1362909258B00E9F7D3 /* PopView.swift in Sources */,
 				EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */,
 				EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */,
+				ECF5BE462914D01E0052655B /* ReviewView.swift in Sources */,
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* ContentView.swift in Sources */,
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
