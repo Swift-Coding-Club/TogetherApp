@@ -1,20 +1,20 @@
 //
-//  ListView.swift
+//  ProductDetailView.swift
 //  MarketApp
 //
-//  Created by 홍태희 on 2022/10/25.
+//  Created by Keum MinSeok on 2022/11/04.
 //
 
 import SwiftUI
 
-struct ListView: View {
+struct ProductDetailView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ListView_Previews: PreviewProvider {
+struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        ProductDetailView()
     }
 }
