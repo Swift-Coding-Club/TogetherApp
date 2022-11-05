@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53B1F6002914F63300AD82EB /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B1F5FF2914F63300AD82EB /* Product.swift */; };
+		53B1F6032915836900AD82EB /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 53B1F6022915836900AD82EB /* mockData.json */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
 		EC892AA12908189600D02F99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AA02908189600D02F99 /* ContentView.swift */; };
 		EC892AA32908189700D02F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC892AA22908189700D02F99 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53B1F5FF2914F63300AD82EB /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		53B1F6022915836900AD82EB /* mockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockData.json; sourceTree = "<group>"; };
 		EC892A9B2908189600D02F99 /* MarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC892A9E2908189600D02F99 /* MarketAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppApp.swift; sourceTree = "<group>"; };
 		EC892AA02908189600D02F99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53B1F601291579F900AD82EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53B1F6022915836900AD82EB /* mockData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C9E3E7A82908256900914FE5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +75,7 @@
 			children = (
 				EC892AAE2908201700D02F99 /* MainView.swift */,
 				EC892AB8290820A100D02F99 /* ListView.swift */,
+				53B1F5FF2914F63300AD82EB /* Product.swift */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -94,6 +107,7 @@
 		EC892A922908189600D02F99 = {
 			isa = PBXGroup;
 			children = (
+				53B1F601291579F900AD82EB /* Resources */,
 				C9E3E7AC290825BA00914FE5 /* Profile */,
 				C9E3E7AB290825A400914FE5 /* Favorite */,
 				C9E3E7AA2908258C00914FE5 /* ProductDetail */,
@@ -190,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC892AA62908189700D02F99 /* Preview Assets.xcassets in Resources */,
+				53B1F6032915836900AD82EB /* mockData.json in Resources */,
 				EC892AA32908189700D02F99 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +222,7 @@
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* ContentView.swift in Sources */,
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
+				53B1F6002914F63300AD82EB /* Product.swift in Sources */,
 				EC892AB9290820A100D02F99 /* ListView.swift in Sources */,
 				EC892AAF2908201700D02F99 /* MainView.swift in Sources */,
 				EC892AB32908205D00D02F99 /* CartView.swift in Sources */,
