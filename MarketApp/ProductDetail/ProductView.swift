@@ -1,20 +1,122 @@
 //
-//  ProductView.swift
-//  MarketApp
+//  InfoView.swift
+//  dsfas
 //
-//  Created by 홍태희 on 2022/10/25.
+//  Created by 현돌이 on 2022/11/05.
 //
 
 import SwiftUI
 
-struct ProductView: View {
+struct InfoView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            HStack{
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .frame(width: 20, height: 30, alignment: .trailing)
+                    .padding(.leading)
+                
+                Spacer()
+                
+                Text("App Name")
+                    .font(.system(size: 33, weight: .bold))
+                    .padding(.trailing, 28)
+                
+                Image(systemName: "arrow.up.to.line")
+                    .resizable()
+                    .frame(width: 30, height: 30, alignment: .trailing)
+                Image(systemName: "cart")
+                    .resizable()
+                    .frame(width: 30, height: 30, alignment: .trailing)
+                    .padding(.trailing)
+            }
+            .padding(.bottom, 30)
+            
+            Image(systemName: "tshirt")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: .infinity, minHeight:400)
+                .background(.gray)
+            
+            HStack{
+                VStack{
+                    Text("Maison Kitsune")
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .frame(width: 300, height: 20, alignment: .leading)
+                    Text("더블 폭스 패치 스니커즈")
+                        .font(.system(size: 20, weight: .medium, design: .default))
+                        .frame(width: 300, height: 20, alignment: .leading)
+                    Text("281,000원")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .frame(width: 300, height: 20, alignment: .leading)
+                }
+                VStack{
+                    Image(systemName: "star.fill").resizable()
+                        .frame(width: 35, height: 35, alignment: .center)
+                        .foregroundColor(.yellow)
+                    Text("4.5")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                }
+            }
+            ScrollView(.horizontal){
+                HStack{
+                    Text("정보")
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .foregroundColor(.gray)
+                        .padding(.leading, 40)
+                    Text("사이즈")
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .foregroundColor(.gray)
+                        .padding(.leading, 40)
+                    Text("후기55")
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .foregroundColor(.gray)
+                        .padding(.leading, 40)
+                    Text("문의25")
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .foregroundColor(.gray)
+                        .padding(.leading, 40)
+                }
+            }
+            HStack {
+                Button{
+                    
+                } label: {
+                    ZStack{
+                        Text("")
+                            .frame(width: 50, height: 50)
+                            .background(.gray)
+                            .cornerRadius(15)
+                        
+                        
+                        Image(systemName: "heart.fill")
+                            .resizable()
+                            .foregroundColor(.red)
+                            .frame(width: 30, height: 30)
+                    }
+                }
+                .padding(.trailing, 10)
+                
+                Button{
+                    
+                } label: {
+                    Text("구매")
+                        .font(.system(size: 22, weight: .medium, design: .default))
+                        .frame(width: 280, height: 50)
+                        .padding(.leading, 10)
+                        .background(.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                    }
+                }
+            .padding(.top, 100)
+            }
+        }
     }
-}
 
-struct ProductView_Previews: PreviewProvider {
+
+struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductView()
+        InfoView()
     }
 }
