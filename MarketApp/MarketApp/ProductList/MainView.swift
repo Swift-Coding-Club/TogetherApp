@@ -53,27 +53,42 @@ struct MainView: View {
             }
         }
     }
-    
-    @ViewBuilder
-    private func ProductViews() -> some View {
-        //zstack을 써서 이미지랑 버튼(좋아요)를 동일선상에 두기
+}
+
+struct ProductViews : View {
+    var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ForEach(0..<10) { _ in
                 LazyHStack {
                     ForEach(0..<2) { _ in
                         NavigationLink(destination: ProductView()){
                             LazyVStack(spacing: 5) {
-                                Image("shoes")
-                                    .resizable()
-                                    .frame(width: 160, height: 200, alignment: .center)
+                                //TODO : heartBtn이 NavigationLink에 묻히는 현상 해결 필요
+                                ZStack(alignment: .bottomTrailing) {
+                                    Image("shoes")
+                                        .resizable()
+                                        .frame(width: 160, height: 200, alignment: .center)
+                                    Button(action: {
+                                        print("like tapped.")
+                                    }, label: {
+                                        Image(systemName: "heart")
+                                            .resizable()
+                                            .renderingMode(.original)
+                                            .frame(width: 30, height: 30)
+                                            .padding()
+                                    })
+                                }
                                 Text("Maison Kitsune")
                                     .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                    .foregroundColor(.black)
                                     .frame(width: 160, height: 20, alignment: .leading)
                                 Text("더블 폭스 패치 스니커즈")
                                     .font(.system(size: 13, weight: .medium, design: .default))
+                                    .foregroundColor(.black)
                                     .frame(width: 160, height: 20, alignment: .leading)
                                 Text("281,000원")
                                     .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                    .foregroundColor(.black)
                                     .frame(width: 160, height: 20, alignment: .leading)
                             }
                             .padding(15)
