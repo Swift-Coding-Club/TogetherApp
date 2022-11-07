@@ -7,15 +7,24 @@
 
 import SwiftUI
 
+enum shoes : String, CaseIterable {
+    case one = "230"
+    case two = "240"
+    case three = "250"
+    case four = "260"
+    case five = "270"
+    case six = "280"
+}
+
 struct PopView: View {
     
-    //@Environment(\.dismiss) var dismiss //Modal
+    //@Environment(\.dismiss) var dismiss
     
     @State private var clickEvent = 1
     @State private var shoeSize = "사이즈 선택하기"
-    let size = ["230", "240", "250", "260", "270", "280"]
-    
+        
     var body: some View {
+        //TODO : Modal Size 조정 필요
         VStack {
             Text("더블 폭스 패치 스니커즈")
                 .foregroundColor(.black)
@@ -23,10 +32,9 @@ struct PopView: View {
                 .frame(maxWidth: .infinity, minHeight: 10, alignment: .leading)
                 .padding()
             
-            //사용자가 사이즈를 맞게 선택했는지 알 수 있는 방법? => 얼럿 or 텍스트(선택바 or 별도)
             Picker("사이즈 선택", selection: $shoeSize) {
-                ForEach(size, id: \.self) { item in
-                    Text(item)
+                ForEach(shoes.allCases, id: \.self) { item in
+                    Text(item.rawValue)
                 }
             }
             .pickerStyle(.menu)
@@ -40,7 +48,7 @@ struct PopView: View {
             HStack {
                 HStack {
                     Button(action: {
-                        
+                        clickEvent -= 1
                     }, label: {
                         Text("-")
                     })
@@ -50,7 +58,7 @@ struct PopView: View {
                         RoundedRectangle(cornerRadius: 0)
                             .stroke(.gray, lineWidth: 1)
                     )
-                    Text("1") //개수
+                    Text(clickEvent.description)
                         .foregroundColor(.black)
                         .frame(width: 50, height: 30, alignment: .center)
                         .overlay(
@@ -59,7 +67,7 @@ struct PopView: View {
                         )
                         .padding()
                     Button(action: {
-                        
+                        clickEvent += 1
                     }, label: {
                         Text("+")
                     })
@@ -75,7 +83,7 @@ struct PopView: View {
                     Text("총 금액")
                         .font(.system(size: 15, weight: .medium))
                         .foregroundColor(.gray)
-                    Text("20000원")
+                    Text("20000원") //MARK : 기본값 * clickEvent
                         .font(.system(size: 17, weight: .medium))
                         .frame(width: 100, height: 25, alignment: .trailing)
                         .foregroundColor(.black)
@@ -111,6 +119,27 @@ struct PopView: View {
         .edgesIgnoringSafeArea(.bottom)
     }
 }
+
+//struct testViews : UIViewControllerRepresentable {
+//
+//    var viewController = UIViewController()
+//
+//    func makeUIViewController(context: Context) -> UIViewController {
+//
+//        viewController.modalPresentationStyle = .pageSheet
+//
+//        if let sheets = viewController.sheetPresentationController {
+//            sheets.detents = [.medium()]
+//        }
+//        //present(viewController, animated: true, completion: nil)
+//
+//        return viewController
+//    }
+//
+//    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+//
+//    }
+//}
 
 struct PopView_Previews: PreviewProvider {
     static var previews: some View {
