@@ -56,6 +56,7 @@ struct MainView: View {
     
     @ViewBuilder
     private func ProductViews() -> some View {
+        //zstack을 써서 이미지랑 버튼(좋아요)를 동일선상에 두기
         ScrollView(.horizontal, showsIndicators: false) {
             ForEach(0..<10) { _ in
                 LazyHStack {
