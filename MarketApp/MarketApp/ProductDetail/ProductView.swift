@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductView: View {
-    
+
     @State private var likeThis = false
     @State private var buyThis = false
     
@@ -69,7 +69,6 @@ struct ProductView: View {
                         .foregroundColor(.white)
                         .sheet(isPresented: self.$buyThis) {
                             PopView()
-                                .frame(maxWidth: .infinity, minHeight: 300)
                         }
                 }
             }.padding(.bottom, 20)

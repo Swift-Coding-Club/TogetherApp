@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    
-    @State private var showDetail = false
-    
+        
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -56,43 +54,64 @@ struct MainView: View {
 }
 
 struct ProductViews : View {
+    
+    @State private var showDetail = false
+    
+    @State private var btnTaped = false
+    @State private var btnCount = 1
+
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ForEach(0..<10) { _ in
                 LazyHStack {
                     ForEach(0..<2) { _ in
-                        NavigationLink(destination: ProductView()){
-                            LazyVStack(spacing: 5) {
-                                //TODO : heartBtn이 NavigationLink에 묻히는 현상 해결 필요
-                                ZStack(alignment: .bottomTrailing) {
-                                    Image("shoes")
-                                        .resizable()
-                                        .frame(width: 160, height: 200, alignment: .center)
-                                    Button(action: {
-                                        print("like tapped.")
-                                    }, label: {
+                        //MARK : heartBtn이 NavigationLink에 묻혀서 임시로 텍스트에만 링크를 달았다.
+                        LazyVStack(spacing: 5) {
+                            ZStack(alignment: .bottomTrailing) {
+                                Image("shoes")
+                                    .resizable()
+                                    .frame(width: 160, height: 200, alignment: .center)
+                                Button(action: {
+                                    btnCount += 1
+                                    if btnCount%2 == 0 {
+                                        btnTaped = true
+                                    } else {
+                                        btnTaped = false
+                                    }
+                                }, label: {
+                                    if btnTaped {
+                                        Image(systemName: "heart.fill")
+                                            .resizable()
+                                            .renderingMode(.original)
+                                            .frame(width: 30, height: 30)
+                                            .padding()
+                                    } else {
                                         Image(systemName: "heart")
                                             .resizable()
                                             .renderingMode(.original)
                                             .frame(width: 30, height: 30)
                                             .padding()
-                                    })
-                                }
-                                Text("Maison Kitsune")
-                                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-                                    .foregroundColor(.black)
-                                    .frame(width: 160, height: 20, alignment: .leading)
-                                Text("더블 폭스 패치 스니커즈")
-                                    .font(.system(size: 13, weight: .medium, design: .default))
-                                    .foregroundColor(.black)
-                                    .frame(width: 160, height: 20, alignment: .leading)
-                                Text("281,000원")
-                                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-                                    .foregroundColor(.black)
-                                    .frame(width: 160, height: 20, alignment: .leading)
+                                    }
+                                })
                             }
-                            .padding(15)
+                            NavigationLink(destination: ProductView()){
+                                LazyVStack {
+                                    Text("Maison Kitsune")
+                                        .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                        .foregroundColor(.black)
+                                        .frame(width: 160, height: 20, alignment: .leading)
+                                    Text("더블 폭스 패치 스니커즈")
+                                        .font(.system(size: 13, weight: .medium, design: .default))
+                                        .foregroundColor(.black)
+                                        .frame(width: 160, height: 20, alignment: .leading)
+                                    Text("281,000원")
+                                        .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                        .foregroundColor(.black)
+                                        .frame(width: 160, height: 20, alignment: .leading)
+                                }
+                            }
                         }
+                        .padding(15)
                     }
                 }
             }

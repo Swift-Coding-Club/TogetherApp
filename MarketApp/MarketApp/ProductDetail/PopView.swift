@@ -22,9 +22,16 @@ struct PopView: View {
     
     @State private var clickEvent = 1
     @State private var shoeSize = "사이즈 선택하기"
+    
+    @State private var buyNow = false //구매하기
+    @State private var basketShoe = false //장바구니
         
     var body: some View {
-        //TODO : Modal Size 조정 필요
+        popUp()
+    }
+    
+    @ViewBuilder
+    private func popUp() -> some View {
         VStack {
             Text("더블 폭스 패치 스니커즈")
                 .foregroundColor(.black)
@@ -115,29 +122,33 @@ struct PopView: View {
                 })
             }
         }
-        .transition(.move(edge: .bottom))
-        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
-//struct testViews : UIViewControllerRepresentable {
+//struct testViews<Content>: UIViewControllerRepresentable where Content : View {
 //
-//    var viewController = UIViewController()
+//    @Binding private var presented : Bool
+//
+//    let viewController = UIViewController()
 //
 //    func makeUIViewController(context: Context) -> UIViewController {
 //
 //        viewController.modalPresentationStyle = .pageSheet
 //
 //        if let sheets = viewController.sheetPresentationController {
-//            sheets.detents = [.medium()]
+//            //sheets.detents = [.medium()]
+//            sheets.selectedDetentIdentifier = .medium
 //        }
-//        //present(viewController, animated: true, completion: nil)
 //
 //        return viewController
 //    }
 //
 //    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-//
+//        if self.presented {
+//            viewController.present(viewController, animated: true)
+//        } else {
+//            viewController.dismiss(animated: true)
+//        }
 //    }
 //}
 
