@@ -7,11 +7,18 @@
 
 import SwiftUI
 
+enum demoImage : String, CaseIterable {
+    case one = "blue"
+    case two = "pink"
+    case three = "yellow"
+}
+
 struct MainView: View {
-        
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
+                BannerViews()
+                
                 CategoryViews()
                     .padding()
                 
@@ -32,6 +39,19 @@ struct MainView: View {
                     .frame(width: 25, height: 25, alignment: .trailing)
             }).foregroundColor(.black)
         }
+    }
+    
+    @ViewBuilder
+    private func BannerViews() -> some View {
+        TabView {
+            ForEach(demoImage.allCases, id: \.self) { image in
+                Image(image.rawValue)
+                    .frame(maxWidth: .infinity, minHeight: 250)
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
+        .tabViewStyle(.page(indexDisplayMode: .always))
+        .frame(maxWidth: .infinity, minHeight: 250)
     }
     
     @ViewBuilder
