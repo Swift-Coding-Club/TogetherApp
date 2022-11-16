@@ -45,9 +45,16 @@ struct MainView: View {
     private func BannerViews() -> some View {
         TabView {
             ForEach(demoImage.allCases, id: \.self) { image in
-                Image(image.rawValue)
-                    .frame(maxWidth: .infinity, minHeight: 250)
-                    .aspectRatio(contentMode: .fit)
+                ZStack {
+                    Image(image.rawValue)
+                        .frame(maxWidth: .infinity, minHeight: 250)
+                        .aspectRatio(contentMode: .fit)
+                        .tag(image)
+                    Text("Test : \(image.rawValue)")
+                        .frame(width: 200, height: 30, alignment: .center)
+                        .font(.system(size: 30, weight: .bold))
+                        .foregroundColor(.white)
+                }
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
@@ -85,36 +92,37 @@ struct ProductViews : View {
             ForEach(0..<10) { _ in
                 LazyHStack {
                     ForEach(0..<2) { _ in
-                        //MARK : heartBtn이 NavigationLink에 묻혀서 임시로 텍스트에만 링크를 달았다.
-                        LazyVStack(spacing: 5) {
-                            ZStack(alignment: .bottomTrailing) {
-                                Image("shoes")
-                                    .resizable()
-                                    .frame(width: 160, height: 200, alignment: .center)
-                                Button(action: {
-                                    btnCount += 1
-                                    if btnCount%2 == 0 {
-                                        btnTaped = true
-                                    } else {
-                                        btnTaped = false
-                                    }
-                                }, label: {
-                                    if btnTaped {
-                                        Image(systemName: "heart.fill")
-                                            .resizable()
-                                            .renderingMode(.original)
-                                            .frame(width: 30, height: 30)
-                                            .padding()
-                                    } else {
-                                        Image(systemName: "heart")
-                                            .resizable()
-                                            .renderingMode(.original)
-                                            .frame(width: 30, height: 30)
-                                            .padding()
-                                    }
-                                })
-                            }
-                            NavigationLink(destination: ProductView()){
+                        NavigationLink(destination: ProductView()){
+                            LazyVStack(spacing: 5) {
+                                ZStack(alignment: .bottomTrailing) {
+                                    Image("shoes")
+                                        .resizable()
+                                        .frame(width: 160, height: 200, alignment: .center)
+                                    
+                                    Button(action: {
+                                        btnCount += 1
+                                        if btnCount%2 == 0 {
+                                            btnTaped = true
+                                        } else {
+                                            btnTaped = false
+                                        }
+                                    }, label: {
+                                        if btnTaped {
+                                            Image(systemName: "heart.fill")
+                                                .resizable()
+                                                .renderingMode(.original)
+                                                .frame(width: 30, height: 30)
+                                                .padding()
+                                        } else {
+                                            Image(systemName: "heart")
+                                                .resizable()
+                                                .renderingMode(.original)
+                                                .frame(width: 30, height: 30)
+                                                .padding()
+                                        }
+                                    })
+                                }
+                                
                                 LazyVStack {
                                     Text("Maison Kitsune")
                                         .font(.system(size: 12, weight: .bold, design: .monospaced))
@@ -131,8 +139,8 @@ struct ProductViews : View {
                                 }
                             }
                         }
-                        .padding(15)
                     }
+                    .padding(15)
                 }
             }
         }
