@@ -89,7 +89,7 @@ struct SearchedView: View {
     @ViewBuilder
     private func SearchResultView() -> some View{
         List {
-            ForEach(mockBrandList.filter{ $0.contains(searchText) }, id: \.self) { item in
+            ForEach(mockBrandList.filter{ $0.lowercased().contains(searchText.lowercased()) }, id: \.self) { item in
                     Text(item)
             }
         }
