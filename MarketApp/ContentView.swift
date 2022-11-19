@@ -15,11 +15,6 @@ struct ContentView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-            ListView()
-                .tabItem{
-                    Image(systemName: "note.text")
-                    Text("List")
-                }
             FavoriteView()
                 .tabItem{
                     Image(systemName: "heart.fill")

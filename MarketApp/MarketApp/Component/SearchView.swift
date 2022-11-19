@@ -19,7 +19,7 @@ struct SearchView: View {
         VStack {
             if searches.count > 0 {
                 List {
-                    ForEach(topData.filter{ $0.contains(searches) }, id: \.self) { item in
+                    ForEach(topData.filter{ $0.lowercased().contains(searches) }, id: \.self) { item in
                         Text(item) //TODO : ADD NavigationLink
                     }
                 }
