@@ -9,41 +9,66 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var showDetail = false
-        
-        var body: some View {
-            NavigationView {
-                ScrollView(.vertical, showsIndicators: false) {
-                    CategoryView()
-                    
-                    ProductView()
-                }
-                .navigationTitle("App Name")
-                .font(.system(size: 24, weight: .semibold))
-                .navigationBarTitleDisplayMode(.inline)
+    
+    var body: some View {
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                EventView()
                 
-                .navigationBarItems(leading: NavigationLink(destination: NotiView()){
-                    Image(systemName: "bell")
-                        .resizable()
-                        .frame(width: 25, height: 25, alignment: .trailing)
-                })
-                .foregroundColor(.black)
+                CategoryView()
                 
-                .navigationBarItems(trailing: NavigationLink(destination: CartView()){
-                    Image(systemName: "cart")
-                        .resizable()
-                        .frame(width: 25, height: 25, alignment: .trailing)
-                })
-                .foregroundColor(.black)
-                
-                .navigationBarItems(trailing: NavigationLink(destination: SearchView()){
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .frame(width: 25, height: 25, alignment: .trailing)
-                })
-                .foregroundColor(.black)
+                ProductView()
             }
+            .navigationTitle("App Name")
+            .font(.system(size: 24, weight: .semibold))
+            .navigationBarTitleDisplayMode(.inline)
+            
+            .navigationBarItems(leading: NavigationLink(destination: NotiView()){
+                Image(systemName: "bell")
+                    .resizable()
+                    .frame(width: 25, height: 25, alignment: .trailing)
+            })
+            .foregroundColor(.black)
+            
+            .navigationBarItems(trailing: NavigationLink(destination: CartView()){
+                Image(systemName: "cart")
+                    .resizable()
+                    .frame(width: 25, height: 25, alignment: .trailing)
+            })
+            .foregroundColor(.black)
+            
+            .navigationBarItems(trailing: NavigationLink(destination: SearchView()){
+                Image(systemName: "magnifyingglass")
+                    .resizable()
+                    .frame(width: 25, height: 25, alignment: .trailing)
+            })
+            .foregroundColor(.black)
         }
     }
+    
+    enum Event : String, CaseIterable {
+        case first = "Event1"
+        case second = "Event2"
+        case third = "Event3"
+    }
+}
+
+// MARK: - Event
+private extension HomeView {
+    private func EventView() -> some View {
+        TabView {
+            ForEach(Event.allCases, id: \.self) { event in
+                Image(event.rawValue)
+                    .resizable()
+                    .frame(width: .infinity, height: 230)
+                    .aspectRatio(contentMode: .fill)
+            }
+        }
+        .tabViewStyle(.page(indexDisplayMode: .always))
+        .frame(maxWidth: .infinity, minHeight: 230)
+        .padding(.top, 15)
+    }
+}
 
 // MARK: - Category
 
