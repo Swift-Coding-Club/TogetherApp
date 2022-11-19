@@ -46,11 +46,11 @@ struct HomeView: View {
         }
     }
     
-    enum Event : String, CaseIterable {
-        case first = "Event1"
-        case second = "Event2"
-        case third = "Event3"
-    }
+//    enum Event : String, CaseIterable {
+//        case first = "Event1"
+//        case second = "Event2"
+//        case third = "Event3"
+//    }
 }
 
 // MARK: - Event
@@ -67,6 +67,12 @@ private extension HomeView {
         .tabViewStyle(.page(indexDisplayMode: .always))
         .frame(maxWidth: .infinity, minHeight: 230)
         .padding(.top, 15)
+    }
+    
+    enum Event : String, CaseIterable {
+        case first = "Event1"
+        case second = "Event2"
+        case third = "Event3"
     }
 }
 
