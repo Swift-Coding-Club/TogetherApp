@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    @State var serchingItem: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            HStack{
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .frame(width: 15, height: 20, alignment: .trailing)
+                    .padding(.leading)
+                
+                Text("APP NAME")
+                    .font(.system(size: 20, design: .serif))
+                    .padding(.leading)
+                
+                Spacer()
+            }
+            TextField("Serch", text: $serchingItem)
+                .textFieldStyle(.roundedBorder)
+        }
+        .padding()
     }
 }
 

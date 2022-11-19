@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct InfoView: View {
+    var tabBarOptions: [String] = ["정보", "사이즈", "후기", "문의"]
     var body: some View {
+        
         VStack{
             HStack{
                 Image(systemName: "chevron.left")
@@ -60,22 +62,15 @@ struct InfoView: View {
             }
             ScrollView(.horizontal){
                 HStack{
-                    Text("정보")
-                        .font(.system(size: 15, weight: .bold, design: .rounded))
-                        .foregroundColor(.gray)
-                        .padding(.leading, 40)
-                    Text("사이즈")
-                        .font(.system(size: 15, weight: .bold, design: .rounded))
-                        .foregroundColor(.gray)
-                        .padding(.leading, 40)
-                    Text("후기55")
-                        .font(.system(size: 15, weight: .bold, design: .rounded))
-                        .foregroundColor(.gray)
-                        .padding(.leading, 40)
-                    Text("문의25")
-                        .font(.system(size: 15, weight: .bold, design: .rounded))
-                        .foregroundColor(.gray)
-                        .padding(.leading, 40)
+                    ForEach(tabBarOptions.indices, id: \.self) { index in
+                        let title = tabBarOptions[index]
+                        Text(title)
+                            .frame(alignment:.center)
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundColor(.gray)
+                            .padding(.leading, 40)
+                    }
+                    
                 }
             }
             HStack {
@@ -107,12 +102,12 @@ struct InfoView: View {
                         .background(.black)
                         .foregroundColor(.white)
                         .cornerRadius(15)
-                    }
                 }
-            .padding(.top, 100)
             }
+            .padding(.top, 100)
         }
     }
+}
 
 
 struct InfoView_Previews: PreviewProvider {

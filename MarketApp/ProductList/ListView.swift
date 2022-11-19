@@ -7,7 +7,33 @@
 
 import SwiftUI
 
+enum CateGoryType: String {
+    case top, bottom, outer, shoes, acc, etc
+    
+    var CateGoryName: String {
+        switch self {
+        case .top:
+            return "상의"
+        case .bottom:
+            return "하의"
+        case .outer:
+            return "아우터"
+        case .shoes:
+            return "슈즈"
+        case .acc:
+            return "악세서리"
+        case .etc:
+            return "기타"
+            
+        }
+    }
+}
+
 struct ListView: View {
+    @State private var showingAlert = false
+    
+    private let categoryData : [CateGoryType] = [.top, .bottom, .outer, .shoes, .acc, .etc]
+    
     var body: some View {
         VStack{
             HStack{
@@ -31,220 +57,95 @@ struct ListView: View {
                     .padding(.trailing)
                 
             }
-            Spacer()
             
-            ScrollView(.horizontal){
-                HStack{
-                    Text("상의")
-                        .font(.system(size: 13, weight: .bold))
-                        .frame(width: 70, height: 40)
-                        .background(.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.leading, 5)
-                    
-                    Text("하의")
-                        .font(.system(size: 13, weight: .bold))
-                        .frame(width: 70, height: 40)
-                        .background(.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                    
-                    Text("아우터")
-                        .font(.system(size: 13, weight: .bold))
-                        .frame(width: 70, height: 40)
-                        .background(.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                    
-                    Text("신발")
-                        .font(.system(size: 13, weight: .bold))
-                        .frame(width: 70, height: 40)
-                        .background(.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-
-                    Text("악세서리")
-                        .font(.system(size: 13, weight: .bold))
-                        .frame(width: 70, height: 40)
-                        .background(.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding(.bottom, 40)
-            }
-            
-            HStack{
-                VStack{
-                    ZStack{
-                        Image(systemName: "tshirt")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 150, height: 200, alignment: .trailing)
-                            .background(.gray)
-                        Button{
-                            
-                        }label: {
-                            Image(systemName: "heart.fill")
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 60)
-                                .foregroundColor(.white)
-                                .padding(.top, 170)
-                                .padding(.leading, 100)
+            NavigationView {
+                TabView {
+                    ScrollView(.vertical, showsIndicators: true) {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack {
+                                ForEach(categoryData, id: \.self) {
+                                    item in
+                                    Button {
+                                        
+                                    } label: {
+                                        Text(item.CateGoryName)
+                                            .font(.system(size: 13, weight: .bold))
+                                            .frame(width: 70, height: 40)
+                                            .background(.black)
+                                            .foregroundColor(.white)
+                                            .cornerRadius(10)
+                                            .padding(.leading, 5)
+                                    }
+                                }
+                            }
+                        }
+                        ForEach(0..<5) { _ in
+                            LazyHStack {
+                                ForEach(0..<2) { _ in
+                                    NavigationLink(destination: ListView()){
+                                        LazyVStack {
+                                            VStack{
+                                                ZStack{
+                                                    Image(systemName: "tshirt")
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fit)
+                                                        .frame(width: 150, height: 200, alignment: .trailing)
+                                                        .background(.gray)
+                                                        .foregroundColor(.black)
+                                                    Button{
+                                                        
+                                                    }label: {
+                                                        Image(systemName: "heart.fill")
+                                                            .aspectRatio(contentMode: .fit)
+                                                            .frame(width: 60)
+                                                            .foregroundColor(.white)
+                                                            .padding(.top, 170)
+                                                            .padding(.leading, 100)
+                                                    }
+                                                }
+                                                Text("Maison Kitsune")
+                                                    .font(.system(size: 12, weight: .bold, design: .rounded))
+                                                    .frame(width: 160, alignment: .leading)
+                                                    .foregroundColor(.black)
+                                                Text("더블 폭스 패치 스니커즈")
+                                                    .font(.system(size: 13, weight: .medium, design: .default))
+                                                    .frame(width: 160, alignment: .leading)
+                                                    .foregroundColor(.black)
+                                                Text("281,000원")
+                                                    .font(.system(size: 12, weight: .bold, design: .rounded))
+                                                    .frame(width: 160,  alignment: .leading)
+                                                    .foregroundColor(.black)
+                                            }
+                                            
+                                            .padding(20)
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
-                    Text("Maison Kitsune")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
-                        .frame(width: 160, alignment: .leading)
-                    Text("더블 폭스 패치 스니커즈")
-                        .font(.system(size: 13, weight: .medium, design: .default))
-                        .frame(width: 160, alignment: .leading)
-                    Text("281,000원")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
-                        .frame(width: 160,  alignment: .leading)
-                }
-                VStack{
-                    ZStack{
-                        Image(systemName: "tshirt")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 150, height: 200, alignment: .trailing)
-                            .background(.gray)
-                        Button{
-                            
-                        }label: {
-                            Image(systemName: "heart.fill")
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 60)
-                                .foregroundColor(.white)
-                                .padding(.top, 170)
-                                .padding(.leading, 100)
+                    .tabItem {
+                        Image(systemName: "1.square.fill")
+                        Text("Home")
+                    }
+                    // 리스트 관련 탭 설정
+                    Text("List Tab")
+                        .tabItem {
+                            Image(systemName: "2.square.fill")
+                            Text("List")
                         }
-                    }
-                    Text("Maison Kitsune")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
-                        .frame(width: 160, alignment: .leading)
-                    Text("더블 폭스 패치 스니커즈")
-                        .font(.system(size: 13, weight: .medium, design: .default))
-                        .frame(width: 160, alignment: .leading)
-                    Text("281,000원")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
-                        .frame(width: 160,  alignment: .leading)
-                }
-            }
-            
-            HStack{
-                VStack{
-                    ZStack{
-                        Image(systemName: "tshirt")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 150, height: 200, alignment: .trailing)
-                            .background(.gray)
-                        Button{
-                            
-                        }label: {
-                            Image(systemName: "heart.fill")
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 60)
-                                .foregroundColor(.white)
-                                .padding(.top, 170)
-                                .padding(.leading, 100)
+                    // 즐겨찾기 관련 탭 설정
+                    Text("Favorite Tab")
+                        .tabItem {
+                            Image(systemName: "3.square.fill")
+                            Text("Favorite")
                         }
-                    }
-                    Text("Maison Kitsune")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
-                        .frame(width: 160, alignment: .leading)
-                    Text("더블 폭스 패치 스니커즈")
-                        .font(.system(size: 13, weight: .medium, design: .default))
-                        .frame(width: 160, alignment: .leading)
-                    Text("281,000원")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
-                        .frame(width: 160,  alignment: .leading)
-                }
-                
-                VStack{
-                    ZStack{
-                        Image(systemName: "tshirt")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 150, height: 200, alignment: .trailing)
-                            .background(.gray)
-                        Button{
-                            
-                        }label: {
-                            Image(systemName: "heart.fill")
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 60)
-                                .foregroundColor(.white)
-                                .padding(.top, 170)
-                                .padding(.leading, 100)
+                    // 프로필 관련 탭 설정
+                    Text("Profile Tab")
+                        .tabItem {
+                            Image(systemName: "4.square.fill")
+                            Text("Profile")
                         }
-                    }
-                    Text("Maison Kitsune")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
-                        .frame(width: 160, alignment: .leading)
-                    Text("더블 폭스 패치 스니커즈")
-                        .font(.system(size: 13, weight: .medium, design: .default))
-                        .frame(width: 160, alignment: .leading)
-                    Text("281,000원")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
-                        .frame(width: 160,  alignment: .leading)
-                }
-            }
-            .padding(20)
-           
-            HStack{
-                VStack{
-                    Button{
-                        
-                    }label: {
-                        Image(systemName: "square")
-                            .resizable()
-                            .frame(width: 23, height: 23)
-                            .foregroundColor(.gray)
-                    }
-                    Text("Home")
-                        .font(.system(size: 10))
-                }
-                .padding(.trailing, 50)
-                VStack{
-                    Button{
-                        
-                    }label: {
-                        Image(systemName: "square")
-                            .resizable()
-                            .frame(width: 23, height: 23)
-                            .foregroundColor(.gray)
-                    }
-                    Text("Home")
-                        .font(.system(size: 10))
-                }
-                .padding(.trailing, 50)
-                VStack{
-                    Button{
-                        
-                    }label: {
-                        Image(systemName: "square")
-                            .resizable()
-                            .frame(width: 23, height: 23)
-                            .foregroundColor(.gray)
-                    }
-                    Text("Home")
-                        .font(.system(size: 10))
-                }
-                .padding(.trailing, 50)
-                VStack{
-                    Button{
-                        
-                    }label: {
-                        Image(systemName: "square")
-                            .resizable()
-                            .frame(width: 23, height: 23)
-                            .foregroundColor(.gray)
-                    }
-                    Text("Home")
-                        .font(.system(size: 10))
                 }
             }
         }
