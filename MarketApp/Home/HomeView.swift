@@ -45,12 +45,7 @@ struct HomeView: View {
             .foregroundColor(.black)
         }
     }
-    
-//    enum Event : String, CaseIterable {
-//        case first = "Event1"
-//        case second = "Event2"
-//        case third = "Event3"
-//    }
+
 }
 
 // MARK: - Event
