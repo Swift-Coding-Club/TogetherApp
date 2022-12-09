@@ -9,7 +9,46 @@ import SwiftUI
 
 struct CouponView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.vertical, showsIndicators: false) {
+            ForEach(0..<5) { _ in
+                CouponList()
+                    .padding()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func CouponList() -> some View {
+        ZStack {
+            Rectangle()
+                .fill(.white)
+                .frame(width: 350, height: 200)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1)
+                )
+            
+            VStack {
+                Text("30%")
+                    .font(.system(size: 40, weight: .bold))
+                    .foregroundColor(.black)
+                    .padding(.bottom, 10)
+                
+                Text("블프 특가 신발 30% 할인쿠폰")
+                    .font(.system(size: 20, weight: .medium))
+                    .foregroundColor(.black)
+                    .padding(.bottom, 5)
+                
+                Text("100000원 이상 구매시 사용 가능 / 중복 불가능")
+                    .font(.system(size: 15, weight: .light))
+                    .foregroundColor(.gray)
+                    .padding(.bottom, 5)
+                
+                Text("~ 2022.11.30 까지")
+                    .font(.system(size: 15, weight: .light))
+                    .foregroundColor(.gray)
+            }
+        }
     }
 }
 
