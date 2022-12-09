@@ -80,7 +80,7 @@ struct testView : View {
                     ForEach(0..<10) { _ in
                         LazyHStack {
                             ForEach(0..<2) { _ in
-                                NavigationLink(destination: ReviewView()){
+                                NavigationLink(destination: ProductReviewView()){
                                     VStack(spacing: 5) {
                                         Image("shoes")
                                             .resizable()
