@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
 		EC892AA12908189600D02F99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AA02908189600D02F99 /* ContentView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9A7B73C294353290051E644 /* mockData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockData.json; sourceTree = "<group>"; };
 		EC451F6D290BBCD7008C88A7 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		EC892A9B2908189600D02F99 /* MarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC892A9E2908189600D02F99 /* MarketAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppApp.swift; sourceTree = "<group>"; };
@@ -52,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9A7B73B294353110051E644 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9A7B73C294353290051E644 /* mockData.json */,
+				EC892AA22908189700D02F99 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C9E3E7A32908239700914FE5 /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +134,7 @@
 				C9E3E7A5290823DB00914FE5 /* Favorite */,
 				C9E3E7A4290823A200914FE5 /* ProductDetail */,
 				C9E3E7A32908239700914FE5 /* ProductList */,
-				EC892AA22908189700D02F99 /* Assets.xcassets */,
+				C9A7B73B294353110051E644 /* Resources */,
 				EC892AA42908189700D02F99 /* Preview Content */,
 			);
 			path = MarketApp;
@@ -195,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A7B73D294353290051E644 /* mockData.json in Resources */,
 				EC892AA62908189700D02F99 /* Preview Assets.xcassets in Resources */,
 				EC892AA32908189700D02F99 /* Assets.xcassets in Resources */,
 			);
