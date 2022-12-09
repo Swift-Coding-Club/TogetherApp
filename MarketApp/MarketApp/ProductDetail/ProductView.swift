@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProductView: View {
-
     @State private var likeThis = false
     @State private var buyThis = false
     
