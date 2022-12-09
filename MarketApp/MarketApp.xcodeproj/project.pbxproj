@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC342707293DD9CD003C1987 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC342706293DD9CD003C1987 /* Coupon.swift */; };
-		EC342709293DDCEA003C1987 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC342708293DDCEA003C1987 /* Review.swift */; };
-		EC34270B293DDD23003C1987 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC34270A293DDD23003C1987 /* Order.swift */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
 		EC892AA12908189600D02F99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AA02908189600D02F99 /* ContentView.swift */; };
@@ -27,9 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC342706293DD9CD003C1987 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
-		EC342708293DDCEA003C1987 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		EC34270A293DDD23003C1987 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		EC451F6D290BBCD7008C88A7 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		EC892A9B2908189600D02F99 /* MarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC892A9E2908189600D02F99 /* MarketAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppApp.swift; sourceTree = "<group>"; };
@@ -89,9 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				EC892ABC290820C600D02F99 /* ProfileView.swift */,
-				EC342706293DD9CD003C1987 /* Coupon.swift */,
-				EC342708293DDCEA003C1987 /* Review.swift */,
-				EC34270A293DDD23003C1987 /* Order.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -218,17 +209,14 @@
 			files = (
 				EC892ABF2908214900D02F99 /* ProductView.swift in Sources */,
 				EC892ABB290820B800D02F99 /* FavoriteView.swift in Sources */,
-				EC342707293DD9CD003C1987 /* Coupon.swift in Sources */,
 				ECB2F1362909258B00E9F7D3 /* PopView.swift in Sources */,
 				EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */,
 				EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */,
 				ECF5BE462914D01E0052655B /* ReviewView.swift in Sources */,
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* ContentView.swift in Sources */,
-				EC342709293DDCEA003C1987 /* Review.swift in Sources */,
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
 				EC892AAF2908201700D02F99 /* MainView.swift in Sources */,
-				EC34270B293DDD23003C1987 /* Order.swift in Sources */,
 				EC892AB32908205D00D02F99 /* CartView.swift in Sources */,
 				EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */,
 			);
