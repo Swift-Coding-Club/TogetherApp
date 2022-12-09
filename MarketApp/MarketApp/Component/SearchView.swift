@@ -8,34 +8,48 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State public var text = ""
     
-    @State private var searches = ""
+    var body: some View {
+        SearchedView(searchText: text)
+            .searchable(text: $text)
+    }
+}
+
+struct SearchedView: View {
     @State private var removeSearch = false
+    @State var recentSearchList : [String] = ["Head","Addidas","Kappa","JDX","ELLE","Armani"]
+    @Environment(\.isSearching) private var isSearching
     
-    @State var nowData = ["Nerdy", "Proworld", "Pum", "Aki", "Reebo", "Masione", "Gu"]
-    var topData = ["Nik", "Adias", "Nerdy", "Proworld", "Pum", "North", "Aki", "Reebo", "Masione", "Gu"]
+    let searchText: String
+    let mockBrandList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani", "Columbia","H&M","ZARA","LouisVitton","UNIQLO","Hermes","Gucci","UnderArmour"]
+    let popularSearchList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani"]
     
     var body: some View {
         VStack {
-            if searches.count > 0 {
-                List {
-                    ForEach(topData.filter{ $0.lowercased().contains(searches) }, id: \.self) { item in
-                        Text(item) //TODO : ADD NavigationLink
-                    }
-                }
-                .listStyle(PlainListStyle())
+            if isSearching {
+                SearchResultView()
             } else {
-                VStack {
-                    SearchTimeLine()
-                        .padding()
-                    SearchList()
-                }
+                PopularSearchView()
             }
-        }.searchable(text: $searches)
+        }
     }
     
     @ViewBuilder
-    private func SearchTimeLine() -> some View {
+    private func PopularSearchView() -> some View{
+        CurrentSearchView()
+        List {
+            Section(header: Text("인기 검색어 Top10")){
+                ForEach(popularSearchList.indices, id: \.self) { index in
+                        Text(popularSearchList[index])
+                }
+            }
+        }
+        .listStyle(.plain)
+    }
+    
+    @ViewBuilder
+    private func CurrentSearchView() -> some View{
         VStack {
             HStack {
                 Text("최근 검색어")
@@ -50,21 +64,20 @@ struct SearchView: View {
                         .foregroundColor(.gray)
                 })
                 .alert(Text("기록 전체 삭제"), isPresented: $removeSearch, actions: {
-                    Button("🙆", role: .destructive) { nowData.removeAll() }
-                    Button("🙅", role: .cancel) {}
+                    Button("확인", role: .destructive) { recentSearchList.removeAll() }
+                    Button("취소", role: .cancel) {}
                 }, message: {
                     Text("정말 삭제하시겠어요?")
                 })
             }
-            .padding()
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(nowData.indices, id: \.self) { data in
+                    ForEach(recentSearchList.indices, id: \.self) { data in
                         Button(action: {
                             
                         }, label: {
-                                Text(nowData[data])
+                                Text(recentSearchList[data])
                                     .frame(width: 100, height: 30, alignment: .center)
                                     .font(.system(size: 15))
                                     .foregroundColor(.white)
@@ -74,21 +87,20 @@ struct SearchView: View {
                     }
                 }
             }
+            .padding(.horizontal)
         }
     }
     
     @ViewBuilder
-    private func SearchList() -> some View {
+    private func SearchResultView() -> some View{
         List {
-            Section(header: Text("인기검색어 Top10")) {
-                ForEach(topData.indices, id: \.self) { index in
-                    Text(topData[index]) //TODO : ADD NavigationLink
-                }
+            ForEach(mockBrandList.filter{ $0.lowercased().contains(searchText.lowercased()) }, id: \.self) { item in
+                    Text(item)
             }
         }
-        .listStyle(PlainListStyle())
     }
 }
+
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
