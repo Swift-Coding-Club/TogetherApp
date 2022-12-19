@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.6.4)
+  - ExytePopupView (1.2.1)
+  - SwiftLint (0.50.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - ExytePopupView
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ExytePopupView
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  ExytePopupView: e0554c9713665a386a54b356c596858811e84621
+  SwiftLint: 6b0cf1f4d619808dbc16e4fab064ce6fc79f090b
+
+PODFILE CHECKSUM: 6f892408ec271c8cc09d9983a61c45c290e3bc63
+
+COCOAPODS: 1.11.3
