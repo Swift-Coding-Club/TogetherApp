@@ -90,7 +90,7 @@ struct ProductViews : View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ForEach(0..<10) { _ in
-                LazyHStack {
+                LazyHStack(spacing:  UIScreen.screenWidth / 12) {
                     ForEach(0..<2) { _ in
                         NavigationLink(destination: ProductView()){
                             LazyVStack(spacing: 5) {
@@ -140,7 +140,7 @@ struct ProductViews : View {
                             }
                         }
                     }
-                    .padding(15)
+                    .padding(.horizontal , LayoutMargin)
                 }
             }
         }

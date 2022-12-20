@@ -19,7 +19,7 @@ enum MarketAPI {
     //MARK: - API header 필수 값
     static func headers() -> HTTPHeaders {
         return [
-            
+                
             ]
     }
 }
