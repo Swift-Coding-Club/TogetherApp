@@ -9,26 +9,10 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        NavigationView {
-            VStack {
-                ProfileInfo()
-                    .padding(.bottom, 30)
-                ListMyshop()
-            }
-            .navigationTitle("APP NAME")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: NavigationLink(destination: CartView()){
-                Image(systemName: "cart").resizable()
-                    .frame(width: 25, height: 25, alignment: .trailing)
-            }).foregroundColor(.black)
-            .navigationBarItems(trailing: NavigationLink(destination: SearchView()){
-                Image(systemName: "magnifyingglass").resizable()
-                    .frame(width: 25, height: 25, alignment: .trailing)
-            }).foregroundColor(.black)
-            .navigationBarItems(leading: NavigationLink(destination: NotiView()){
-                Image(systemName: "bell").resizable()
-                    .frame(width: 25, height: 25, alignment: .trailing)
-            }).foregroundColor(.black)
+        VStack {
+            ProfileInfo()
+                .padding(.bottom, 30)
+            ListMyshop()
         }
     }
     
