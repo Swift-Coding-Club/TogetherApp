@@ -13,26 +13,31 @@ enum demoImage : String, CaseIterable {
     case three = "yellow"
 }
 
-enum demoSort : String, CaseIterable {
-    case one = "인기순"
-    case two = "이름순"
-    case three = "가격순"
-}
-
 struct MainView: View {
-    
-    @State private var sortList = demoSort.one
-    
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            BannerViews()
-            
-            CategoryViews()
-                .padding()
-            
-            SortedViews()
-            
-            ProductViews()
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                BannerViews()
+                
+                CategoryViews()
+                    .padding()
+                
+                ProductViews()
+            }
+            .navigationTitle("APP NAME")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing: NavigationLink(destination: CartView()){
+                Image(systemName: "cart").resizable()
+                    .frame(width: 25, height: 25, alignment: .trailing)
+            }).foregroundColor(.black)
+            .navigationBarItems(trailing: NavigationLink(destination: SearchView()){
+                Image(systemName: "magnifyingglass").resizable()
+                    .frame(width: 25, height: 25, alignment: .trailing)
+            }).foregroundColor(.black)
+            .navigationBarItems(leading: NavigationLink(destination: NotiView()){
+                Image(systemName: "bell").resizable()
+                    .frame(width: 25, height: 25, alignment: .trailing)
+            }).foregroundColor(.black)
         }
     }
     
@@ -45,6 +50,10 @@ struct MainView: View {
                         .frame(maxWidth: .infinity, minHeight: 250)
                         .aspectRatio(contentMode: .fit)
                         .tag(image)
+                    Text("Test : \(image.rawValue)")
+                        .frame(width: 200, height: 30, alignment: .center)
+                        .font(.system(size: 30, weight: .bold))
+                        .foregroundColor(.white)
                 }
             }
         }
@@ -69,17 +78,6 @@ struct MainView: View {
             }
         }
     }
-    
-    @ViewBuilder
-    private func SortedViews() -> some View {
-        Picker("Sort List", selection: $sortList) {
-            ForEach(demoSort.allCases, id: \.self) { menu in
-                Text(menu.rawValue).tag(menu.rawValue)
-                
-                //TODO : tag가 변경될때마다 해당 tag에 맞게끔 리스트 정렬 변경 ( default : 인기순 )
-            }
-        }.pickerStyle(.menu)
-    }
 }
 
 struct ProductViews : View {
@@ -88,66 +86,62 @@ struct ProductViews : View {
     
     @State private var btnTaped = false
     @State private var btnCount = 1
-    
-    let columns = [
-        GridItem(.adaptive(minimum: 150))
-    ]
 
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 30) {
-                ForEach(0..<12) { _ in
-                    gridList()
-                }
-            }
-        }.padding(.horizontal)
-    }
-    
-    @ViewBuilder
-    private func gridList() -> some View {
-        NavigationLink(destination: ProductView()){
-            LazyVStack(spacing: 5) {
-                ZStack(alignment: .bottomTrailing) {
-                    Image("shoes")
-                        .resizable()
-                        .frame(width: 160, height: 200, alignment: .center)
-                    
-                    Button(action: {
-                        btnCount += 1
-                        if btnCount%2 == 0 {
-                            btnTaped = true
-                        } else {
-                            btnTaped = false
+        ScrollView(.horizontal, showsIndicators: false) {
+            ForEach(0..<10) { _ in
+                LazyHStack(spacing:  UIScreen.screenWidth / 12) {
+                    ForEach(0..<2) { _ in
+                        NavigationLink(destination: ProductView()){
+                            LazyVStack(spacing: 5) {
+                                ZStack(alignment: .bottomTrailing) {
+                                    Image("shoes")
+                                        .resizable()
+                                        .frame(width: 160, height: 200, alignment: .center)
+                                    
+                                    Button(action: {
+                                        btnCount += 1
+                                        if btnCount%2 == 0 {
+                                            btnTaped = true
+                                        } else {
+                                            btnTaped = false
+                                        }
+                                    }, label: {
+                                        if btnTaped {
+                                            Image(systemName: "heart.fill")
+                                                .resizable()
+                                                .renderingMode(.original)
+                                                .frame(width: 30, height: 30)
+                                                .padding()
+                                        } else {
+                                            Image(systemName: "heart")
+                                                .resizable()
+                                                .renderingMode(.original)
+                                                .frame(width: 30, height: 30)
+                                                .padding()
+                                        }
+                                    })
+                                }
+                                
+                                LazyVStack {
+                                    Text("Maison Kitsune")
+                                        .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                        .foregroundColor(.black)
+                                        .frame(width: 160, height: 20, alignment: .leading)
+                                    Text("더블 폭스 패치 스니커즈")
+                                        .font(.system(size: 13, weight: .medium, design: .default))
+                                        .foregroundColor(.black)
+                                        .frame(width: 160, height: 20, alignment: .leading)
+                                    Text("281,000원")
+                                        .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                        .foregroundColor(.black)
+                                        .frame(width: 160, height: 20, alignment: .leading)
+                                }
+                            }
                         }
-                    }, label: {
-                        if btnTaped {
-                            Image(systemName: "heart.fill")
-                                .resizable()
-                                .renderingMode(.original)
-                                .frame(width: 30, height: 30)
-                                .padding()
-                        } else {
-                            Image(systemName: "heart")
-                                .resizable()
-                                .renderingMode(.original)
-                                .frame(width: 30, height: 30)
-                                .padding()
-                        }
-                    })
+                    }
+                    .padding(.horizontal , LayoutMargin)
                 }
-                
-                Text("Maison Kitsune")
-                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-                    .foregroundColor(.black)
-                    .frame(width: 160, height: 20, alignment: .leading)
-                Text("더블 폭스 패치 스니커즈")
-                    .font(.system(size: 13, weight: .medium, design: .default))
-                    .foregroundColor(.black)
-                    .frame(width: 160, height: 20, alignment: .leading)
-                Text("281,000원")
-                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-                    .foregroundColor(.black)
-                    .frame(width: 160, height: 20, alignment: .leading)
             }
         }
     }
