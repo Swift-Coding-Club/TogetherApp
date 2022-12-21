@@ -17,6 +17,14 @@
 		7F39FA8D2950922D0041BF8B /* ConfirmAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA8C2950922D0041BF8B /* ConfirmAlertView.swift */; };
 		7F39FA8F2950939D0041BF8B /* ReadyPopUPview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA8E2950939D0041BF8B /* ReadyPopUPview.swift */; };
 		7F39FA91295093FF0041BF8B /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA90295093FF0041BF8B /* Size.swift */; };
+		7F39FA94295331B00041BF8B /* LanuchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA93295331B00041BF8B /* LanuchView.swift */; };
+		7F39FA972953340D0041BF8B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FA962953340D0041BF8B /* .swiftlint.yml */; };
+		7F39FAA8295338430041BF8B /* NanumSquareNeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FAA7295338430041BF8B /* NanumSquareNeo.swift */; };
+		7F39FABD295342BD0041BF8B /* NanumSquareNeo-aLt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAAF295341A50041BF8B /* NanumSquareNeo-aLt.ttf */; };
+		7F39FABE295342BD0041BF8B /* NanumSquareNeo-bRg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAAE295341A50041BF8B /* NanumSquareNeo-bRg.ttf */; };
+		7F39FABF295342BD0041BF8B /* NanumSquareNeo-cBd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAB2295341A50041BF8B /* NanumSquareNeo-cBd.ttf */; };
+		7F39FAC0295342BD0041BF8B /* NanumSquareNeo-dEb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAB0295341A50041BF8B /* NanumSquareNeo-dEb.ttf */; };
+		7F39FAC1295342BD0041BF8B /* NanumSquareNeo-eHv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAB1295341A50041BF8B /* NanumSquareNeo-eHv.ttf */; };
 		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
@@ -44,6 +52,15 @@
 		7F39FA8C2950922D0041BF8B /* ConfirmAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAlertView.swift; sourceTree = "<group>"; };
 		7F39FA8E2950939D0041BF8B /* ReadyPopUPview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyPopUPview.swift; sourceTree = "<group>"; };
 		7F39FA90295093FF0041BF8B /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		7F39FA93295331B00041BF8B /* LanuchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanuchView.swift; sourceTree = "<group>"; };
+		7F39FA962953340D0041BF8B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		7F39FAA62953370E0041BF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7F39FAA7295338430041BF8B /* NanumSquareNeo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanumSquareNeo.swift; sourceTree = "<group>"; };
+		7F39FAAE295341A50041BF8B /* NanumSquareNeo-bRg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-bRg.ttf"; sourceTree = "<group>"; };
+		7F39FAAF295341A50041BF8B /* NanumSquareNeo-aLt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-aLt.ttf"; sourceTree = "<group>"; };
+		7F39FAB0295341A50041BF8B /* NanumSquareNeo-dEb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-dEb.ttf"; sourceTree = "<group>"; };
+		7F39FAB1295341A50041BF8B /* NanumSquareNeo-eHv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-eHv.ttf"; sourceTree = "<group>"; };
+		7F39FAB2295341A50041BF8B /* NanumSquareNeo-cBd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-cBd.ttf"; sourceTree = "<group>"; };
 		A025DDF51E9A1BBEC7469CCC /* Pods-MarketApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.debug.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B1F400B0E00C4FA897EBD2 /* Pods-MarketApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.release.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +140,7 @@
 		7F39FA79294F4E070041BF8B /* Utill */ = {
 			isa = PBXGroup;
 			children = (
+				7F39FA992953362E0041BF8B /* Font */,
 				7F39FA86295091190041BF8B /* View */,
 				7F39FA83295090E10041BF8B /* SignUPCheck */,
 			);
@@ -180,6 +198,43 @@
 				7F39FA8E2950939D0041BF8B /* ReadyPopUPview.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		7F39FA92295331910041BF8B /* Lanch */ = {
+			isa = PBXGroup;
+			children = (
+				7F39FA93295331B00041BF8B /* LanuchView.swift */,
+			);
+			path = Lanch;
+			sourceTree = "<group>";
+		};
+		7F39FA992953362E0041BF8B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				7F39FAA02953367B0041BF8B /* FontAsset */,
+				7F39FA9F295336440041BF8B /* CustomFont */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		7F39FA9F295336440041BF8B /* CustomFont */ = {
+			isa = PBXGroup;
+			children = (
+				7F39FAA7295338430041BF8B /* NanumSquareNeo.swift */,
+			);
+			path = CustomFont;
+			sourceTree = "<group>";
+		};
+		7F39FAA02953367B0041BF8B /* FontAsset */ = {
+			isa = PBXGroup;
+			children = (
+				7F39FAAF295341A50041BF8B /* NanumSquareNeo-aLt.ttf */,
+				7F39FAAE295341A50041BF8B /* NanumSquareNeo-bRg.ttf */,
+				7F39FAB2295341A50041BF8B /* NanumSquareNeo-cBd.ttf */,
+				7F39FAB0295341A50041BF8B /* NanumSquareNeo-dEb.ttf */,
+				7F39FAB1295341A50041BF8B /* NanumSquareNeo-eHv.ttf */,
+			);
+			path = FontAsset;
 			sourceTree = "<group>";
 		};
 		A1BC0135F64B06BED0692AC2 /* Pods */ = {
@@ -246,6 +301,7 @@
 		C9E3E7A7290823FA00914FE5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				7F39FA92295331910041BF8B /* Lanch */,
 				7F39FA8B295091C70041BF8B /* Alert */,
 				EC892AB22908205D00D02F99 /* CartView.swift */,
 				EC892AB42908206F00D02F99 /* SearchView.swift */,
@@ -257,6 +313,7 @@
 		EC892A922908189600D02F99 = {
 			isa = PBXGroup;
 			children = (
+				7F39FA962953340D0041BF8B /* .swiftlint.yml */,
 				7F39FA74294F4D630041BF8B /* Application */,
 				EC892A9D2908189600D02F99 /* MarketApp */,
 				EC892A9C2908189600D02F99 /* Products */,
@@ -276,6 +333,7 @@
 		EC892A9D2908189600D02F99 /* MarketApp */ = {
 			isa = PBXGroup;
 			children = (
+				7F39FAA62953370E0041BF8B /* Info.plist */,
 				7F39FA79294F4E070041BF8B /* Utill */,
 				7F39FA78294F4DFF0041BF8B /* Model */,
 				7F39FA77294F4DED0041BF8B /* ViewModel */,
@@ -307,6 +365,8 @@
 				EC892A982908189600D02F99 /* Frameworks */,
 				EC892A992908189600D02F99 /* Resources */,
 				DAA3929E740A81AEF9E43791 /* [CP] Embed Pods Frameworks */,
+				7F39FA95295333780041BF8B /* swiftLint Script */,
+				7F39FA982953348A0041BF8B /* Firebase Script */,
 			);
 			buildRules = (
 			);
@@ -355,6 +415,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F39FABD295342BD0041BF8B /* NanumSquareNeo-aLt.ttf in Resources */,
+				7F39FABE295342BD0041BF8B /* NanumSquareNeo-bRg.ttf in Resources */,
+				7F39FABF295342BD0041BF8B /* NanumSquareNeo-cBd.ttf in Resources */,
+				7F39FAC0295342BD0041BF8B /* NanumSquareNeo-dEb.ttf in Resources */,
+				7F39FAC1295342BD0041BF8B /* NanumSquareNeo-eHv.ttf in Resources */,
+				7F39FA972953340D0041BF8B /* .swiftlint.yml in Resources */,
 				C9A7B73D294353290051E644 /* mockData.json in Resources */,
 				EC892AA62908189700D02F99 /* Preview Assets.xcassets in Resources */,
 				EC892AA32908189700D02F99 /* Assets.xcassets in Resources */,
@@ -364,6 +430,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7F39FA95295333780041BF8B /* swiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "swiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		7F39FA982953348A0041BF8B /* Firebase Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Firebase Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 		DAA3929E740A81AEF9E43791 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC892ABF2908214900D02F99 /* ProductView.swift in Sources */,
+				7F39FAA8295338430041BF8B /* NanumSquareNeo.swift in Sources */,
 				7F39FA91295093FF0041BF8B /* Size.swift in Sources */,
 				7F39FA85295090F50041BF8B /* CheckRegister.swift in Sources */,
 				EC892ABB290820B800D02F99 /* FavoriteView.swift in Sources */,
@@ -427,6 +531,7 @@
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
 				EC892AAF2908201700D02F99 /* MainView.swift in Sources */,
 				7F39FA8F2950939D0041BF8B /* ReadyPopUPview.swift in Sources */,
+				7F39FA94295331B00041BF8B /* LanuchView.swift in Sources */,
 				EC892AB32908205D00D02F99 /* CartView.swift in Sources */,
 				EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */,
 				7F39FA82295090230041BF8B /* MarketAPI.swift in Sources */,
@@ -563,6 +668,7 @@
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarketApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -597,6 +703,7 @@
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarketApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
