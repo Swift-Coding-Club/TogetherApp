@@ -14,7 +14,7 @@ struct LanuchView: View {
                 .frame(height: 100)
             
            Text("Market APP 로고 미정 ")
-                .font(.custom("NanumSquareNeo-eHv", size: 50))
+                .nanumSquareNeo(family: .eHv, size: 30, color: .gray)
             Spacer(minLength: .zero)
         }
     }

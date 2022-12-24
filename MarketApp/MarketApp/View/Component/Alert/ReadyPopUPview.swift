@@ -39,7 +39,7 @@ struct ReadyPopUPview: View {
     private func customAlertTitle() -> some View {
         Text(title)
             .kerning(-0.36)
-            .font(.system(size: 22))
+            .nanumSquareNeo(family: .cBd, size: 22, color: .white)
             .foregroundColor(.white)
             .frame(width: ContentsWidth - 60)
         
@@ -48,8 +48,7 @@ struct ReadyPopUPview: View {
         
         Text(message)
             .kerning(-0.3)
-            .font(.system(size: 18))
-            .foregroundColor(.white)
+            .nanumSquareNeo(family: .bRG, size: 18, color: .white)
             .fixedSize(horizontal: false, vertical: true)
             .multilineTextAlignment(.center)
             .frame(width: ContentsWidth-60)
@@ -64,7 +63,7 @@ struct ReadyPopUPview: View {
             } label: {
                 Text(cancelTitle)
                     .kerning(-0.34)
-                    .font(.system(size: 18))
+                    .nanumSquareNeo(family: .bRG, size: 18, color: .white)
                     .foregroundColor(.white)
                     .frame(width: 140, height: 40)
                     .overlay(
@@ -86,7 +85,7 @@ struct ReadyPopUPview: View {
             } label: {
                 Text(confiremTitle)
                     .kerning(-0.34)
-                    .font(.system(size: 18))
+                    .nanumSquareNeo(family: .bRG, size: 18, color: .black.opacity(0.4))
                     .foregroundColor(.blue.opacity(0.4))
                     .frame(width: 140, height: 40)
             }
