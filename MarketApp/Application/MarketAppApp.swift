@@ -7,8 +7,15 @@
 
 import SwiftUI
 
+
 @main
 struct MarketAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    init() {
+        
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
