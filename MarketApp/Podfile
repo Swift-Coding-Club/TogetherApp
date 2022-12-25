@@ -9,5 +9,5 @@ target 'MarketApp' do
     pod 'Alamofire'
     pod 'SwiftLint'
     pod 'ExytePopupView'
-
+    
 end

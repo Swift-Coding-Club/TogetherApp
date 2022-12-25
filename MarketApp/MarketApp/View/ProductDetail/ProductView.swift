@@ -46,6 +46,7 @@ struct ProductView: View {
                 
                 InfoView()
             }
+            .bounce(false)
             
             HStack {
                 Button(action: {
@@ -69,6 +70,7 @@ struct ProductView: View {
                         .foregroundColor(.white)
                         .sheet(isPresented: self.$buyThis) {
                             PopView()
+                               
                         }
                 }
             }.padding(.bottom, 20)
