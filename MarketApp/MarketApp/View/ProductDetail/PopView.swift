@@ -122,6 +122,7 @@ struct PopView: View {
                 })
             }
         }
+        .frame(height: 300)
     }
 }
 
