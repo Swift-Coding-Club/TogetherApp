@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0D0B745604915877639C073E /* Pods_MarketApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */; };
+		7F0F163E2960033F00FB4C30 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F163D2960033F00FB4C30 /* LoginView.swift */; };
+		7F0F16402960061F00FB4C30 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F163F2960061F00FB4C30 /* OverlayView.swift */; };
+		7F0F16432960081500FB4C30 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F16422960081500FB4C30 /* ColorAsset.swift */; };
+		7F0F1646296008D900FB4C30 /* FontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F1645296008D900FB4C30 /* FontColor.swift */; };
+		7F0F164929600AEF00FB4C30 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F164829600AEF00FB4C30 /* CustomInputField.swift */; };
 		7F2432812956CF5F00C1077E /* MainNavigaionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */; };
 		7F2432842958557400C1077E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2432832958557400C1077E /* GoogleSignIn */; };
 		7F2432862958557400C1077E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2432852958557400C1077E /* GoogleSignInSwift */; };
@@ -50,7 +55,7 @@
 		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
-		EC892AA12908189600D02F99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AA02908189600D02F99 /* ContentView.swift */; };
+		EC892AA12908189600D02F99 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AA02908189600D02F99 /* MainContentView.swift */; };
 		EC892AA32908189700D02F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC892AA22908189700D02F99 /* Assets.xcassets */; };
 		EC892AA62908189700D02F99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC892AA52908189700D02F99 /* Preview Assets.xcassets */; };
 		EC892AAF2908201700D02F99 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AAE2908201700D02F99 /* MainView.swift */; };
@@ -65,6 +70,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F0F163D2960033F00FB4C30 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		7F0F163F2960061F00FB4C30 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		7F0F16422960081500FB4C30 /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
+		7F0F1645296008D900FB4C30 /* FontColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontColor.swift; sourceTree = "<group>"; };
+		7F0F164829600AEF00FB4C30 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigaionItem.swift; sourceTree = "<group>"; };
 		7F2432AC2958630300C1077E /* GoogleService-Info-dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-dev.plist"; sourceTree = "<group>"; };
 		7F2432AE2958635200C1077E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -94,7 +104,7 @@
 		EC451F6D290BBCD7008C88A7 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		EC892A9B2908189600D02F99 /* MarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC892A9E2908189600D02F99 /* MarketAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppApp.swift; sourceTree = "<group>"; };
-		EC892AA02908189600D02F99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EC892AA02908189600D02F99 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		EC892AA22908189700D02F99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC892AA52908189700D02F99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC892AAE2908201700D02F99 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -138,9 +148,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F0F1641296007F800FB4C30 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				7F0F16422960081500FB4C30 /* ColorAsset.swift */,
+				7F0F1645296008D900FB4C30 /* FontColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		7F0F164729600ACF00FB4C30 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				7F0F164829600AEF00FB4C30 /* CustomInputField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		7F2432A829585DDA00C1077E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				7F0F163D2960033F00FB4C30 /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -207,7 +235,7 @@
 		7F39FA76294F4DAB0041BF8B /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				EC892AA02908189600D02F99 /* ContentView.swift */,
+				EC892AA02908189600D02F99 /* MainContentView.swift */,
 				7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */,
 			);
 			path = Main;
@@ -230,6 +258,7 @@
 		7F39FA79294F4E070041BF8B /* Utill */ = {
 			isa = PBXGroup;
 			children = (
+				7F0F1641296007F800FB4C30 /* Color */,
 				7F39FA992953362E0041BF8B /* Font */,
 				7F39FA86295091190041BF8B /* View */,
 				7F39FA83295090E10041BF8B /* SignUPCheck */,
@@ -277,6 +306,7 @@
 				7F39FA872950912F0041BF8B /* ScreenSize.swift */,
 				7F39FA892950915B0041BF8B /* ScrollViewModifier.swift */,
 				7F39FA90295093FF0041BF8B /* Size.swift */,
+				7F0F163F2960061F00FB4C30 /* OverlayView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,6 +421,7 @@
 		C9E3E7A7290823FA00914FE5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				7F0F164729600ACF00FB4C30 /* TextField */,
 				7F39FA92295331910041BF8B /* Lanch */,
 				7F39FA8B295091C70041BF8B /* Alert */,
 			);
@@ -648,6 +679,7 @@
 			files = (
 				EC892ABF2908214900D02F99 /* ProductView.swift in Sources */,
 				7F39FAA8295338430041BF8B /* NanumSquareNeo.swift in Sources */,
+				7F0F16432960081500FB4C30 /* ColorAsset.swift in Sources */,
 				7F39FA91295093FF0041BF8B /* Size.swift in Sources */,
 				7F39FA85295090F50041BF8B /* CheckRegister.swift in Sources */,
 				EC892ABB290820B800D02F99 /* FavoriteView.swift in Sources */,
@@ -655,14 +687,18 @@
 				7F39FA7C29508EE80041BF8B /* NetworkAgent.swift in Sources */,
 				EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */,
 				7F39FA8A2950915B0041BF8B /* ScrollViewModifier.swift in Sources */,
+				7F0F164929600AEF00FB4C30 /* CustomInputField.swift in Sources */,
 				EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */,
+				7F0F163E2960033F00FB4C30 /* LoginView.swift in Sources */,
 				7F2432812956CF5F00C1077E /* MainNavigaionItem.swift in Sources */,
 				ECF5BE462914D01E0052655B /* ReviewView.swift in Sources */,
 				7F39FA882950912F0041BF8B /* ScreenSize.swift in Sources */,
 				7F2432B12958638400C1077E /* AppDelegate.swift in Sources */,
+				7F0F1646296008D900FB4C30 /* FontColor.swift in Sources */,
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
-				EC892AA12908189600D02F99 /* ContentView.swift in Sources */,
+				EC892AA12908189600D02F99 /* MainContentView.swift in Sources */,
 				7F39FA8D2950922D0041BF8B /* ConfirmAlertView.swift in Sources */,
+				7F0F16402960061F00FB4C30 /* OverlayView.swift in Sources */,
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
 				EC892AAF2908201700D02F99 /* MainView.swift in Sources */,
 				7F39FA8F2950939D0041BF8B /* ReadyPopUPview.swift in Sources */,
@@ -798,7 +834,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -817,7 +853,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -836,7 +872,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				ENABLE_PREVIEWS = YES;
@@ -854,7 +890,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

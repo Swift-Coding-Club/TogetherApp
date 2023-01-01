@@ -12,13 +12,11 @@ import SwiftUI
 struct MarketAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    init() {
-        
-    }
+    init() { }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainContentView()
         }
     }
 }

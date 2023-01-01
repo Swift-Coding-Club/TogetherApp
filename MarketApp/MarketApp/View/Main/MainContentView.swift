@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainContentView.swift
 //  MarketApp
 //
 //  Created by 홍태희 on 2022/10/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainContentView: View {
     var body: some View {
         NavigationView {
             TabView {
@@ -67,9 +67,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
             .previewDevice("iPhone 12")
     }
 }
