@@ -9,30 +9,33 @@ import SwiftUI
 
 struct MainContentView: View {
     var body: some View {
-        NavigationView {
-            TabView {
-                MainView()
-                    .tabItem{
-                        Image(systemName: "house.fill")
-                        Text("Home")
-                    }
-                FavoriteView()
-                    .tabItem{
-                        Image(systemName: "heart.fill")
-                        Text("Favorite")
-                    }
-                ProfileView()
-                    .tabItem{
-                        Image(systemName: "person.crop.circle")
-                        Text("Profile")
-                    }
-            }
-            .accentColor(.black)
-            .navigationTitle("APP NAME")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: leadingNavigationTrallingView())
-            .navigationBarItems(leading: notiNavigationView())
+        TabView {
+            MainView()
+                .tabItem{
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+            FavoriteView()
+                .tabItem{
+                    Image(systemName: "heart.fill")
+                    Text("Favorite")
+                }
+            ProfileView()
+                .tabItem{
+                    Image(systemName: "person.crop.circle")
+                    Text("Profile")
+                }
+            LoginView()
+                .tabItem {
+                    Image(systemName: "flame")
+                    Text("로그인")
+                }
         }
+        .accentColor(.black)
+        .navigationTitle("APP NAME")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(trailing: leadingNavigationTrallingView())
+        .navigationBarItems(leading: notiNavigationView())
        
     }
     //MARK: - 검색 뷰 &  장바구니 뷰
@@ -69,7 +72,7 @@ struct MainContentView: View {
 
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainContentView()
             .previewDevice("iPhone 12")
     }
 }

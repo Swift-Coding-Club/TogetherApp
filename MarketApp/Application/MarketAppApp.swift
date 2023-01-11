@@ -16,7 +16,9 @@ struct MarketAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainContentView()
+            NavigationView {
+                MainContentView()
+            }
         }
     }
 }

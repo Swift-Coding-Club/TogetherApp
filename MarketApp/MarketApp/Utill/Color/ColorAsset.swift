@@ -13,6 +13,7 @@ struct ColorAsset {
     let mauve = Color("mauve")
     let mainColor = Color("MainColor")
     let mauve2 = Color("mauve2")
+    let gray = Color("Gray")
 }
 
 extension Color {

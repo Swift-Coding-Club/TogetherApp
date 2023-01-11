@@ -8,32 +8,15 @@
 import SwiftUI
 
 struct CustomInputField: View {
-    let imageName: String
     let placeHolderText: String
+    let color: Color
     @Binding var text: String
     let password: Bool
     @Binding var showPassword: Bool
     
     var body: some View {
         VStack{
-            HStack{
-                if password == true {
-                    EmptyView()
-                } else {
-                    Image(systemName: imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(Color(.darkGray))
-                }
-                
-                if password == true {
-                 Spacer()
-                } else {
-                    Spacer()
-                        .frame(width: 10)
-                }
-                
+            HStack{ 
                 if showPassword == true {
                     SecureField(placeHolderText, text: $text)
                         .nanumSquareNeo(family: .bRG, size: 20, color: Color.fontColor.secondaryTextColor)
@@ -56,16 +39,16 @@ struct CustomInputField: View {
                 } else {
                     EmptyView()
                 }
-
-                
             }
             .padding()
-            .background(
+            .overlay(
             RoundedRectangle(cornerRadius: 15)
                 .stroke(Color(.darkGray), lineWidth: 1)
                 .shadow(color: .gray.opacity(0.5), radius: 10, x: .zero, y: .zero)
             )
         }
+        .background(color.opacity(0.2))
+        .cornerRadius(15)
         .padding(20)
         .frame(width: UIScreen.screenWidth , height: 50)
     }
@@ -73,6 +56,6 @@ struct CustomInputField: View {
 
 struct CustomInputField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomInputField(imageName: "flame", placeHolderText: "Email", text: .constant("") , password: true, showPassword: .constant(true))
+        CustomInputField(placeHolderText: "Email", color: Color.fontColor.secondaryTextColor, text: .constant("") , password: true, showPassword: .constant(true))
     }
 }
