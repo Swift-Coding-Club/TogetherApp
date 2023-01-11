@@ -11,6 +11,7 @@ import SwiftUI
 @main
 struct MarketAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var loginViewModel: SignUPViewModel = .init()
     
     init() { }
     

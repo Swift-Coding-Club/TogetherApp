@@ -10,6 +10,7 @@ import AuthenticationServices
 import Firebase
 
 struct LoginView: View {
+    
     @State private var emailTextField: String = ""
     @State private var passwordTextField: String = ""
     @State private var showPassword: Bool = false
@@ -18,6 +19,12 @@ struct LoginView: View {
     @State private var showFindPasswordView: Bool = false
     @State private var showSignUPView: Bool = false
     
+    @StateObject var viewModel : SignUPViewModel 
+    
+    @Environment(\.dismiss) var dismiss
+    
+  
+    
     var body: some View {
         ZStack{
             Color.colorAsset.backGroudColor
@@ -25,6 +32,11 @@ struct LoginView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: .zero) {
+                    
+                    Spacer()
+                        .frame(height: modalTopTransparentSize - 40)
+                    
+                    titleButton()
                     
                     loginTitle()
                     
@@ -37,7 +49,7 @@ struct LoginView: View {
                     loginButton()
                     
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 50)
                     
                     loginWithApple()
                     
@@ -49,19 +61,36 @@ struct LoginView: View {
         .background(
             NavigationLink(destination: FindPasswordView(), isActive: $showPassword, label: {EmptyView()})
         )
-                .background(
-                    NavigationLink(destination: FindEmailView(), isActive: $showFindEmailView, label: {EmptyView()})
-                )
+        .background(
+            NavigationLink(destination: FindEmailView(), isActive: $showFindEmailView, label: {EmptyView()})
+        )
         .background(
             NavigationLink(destination: SignUPView(), isActive: $showSignUPView, label: {EmptyView()})
         )
     }
     //MARK: - 앱 로고
     @ViewBuilder
+    private func titleButton() -> some View{
+        HStack{
+            Spacer()
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "xmark")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .aspectRatio(contentMode: .fill)
+                    .foregroundColor(Color.fontColor.secondaryTextColor)
+            }
+        }
+        .padding(.horizontal, 30)
+    }
+    
+    @ViewBuilder
     private func loginTitle() -> some View {
         VStack{
             Spacer()
-                .frame(height: UIScreen.screenWidth / 5)
+                .frame(height: UIScreen.screenWidth / 10)
             Text("FANCY")
                 .nanumSquareNeo(family: .eHv, size: 50, color: .black)
         }
@@ -124,6 +153,9 @@ struct LoginView: View {
             Spacer()
                 .frame(height: 40)
             
+            //TODO: - 수정 해야 할부분
+
+            
             HStack(spacing: 20){
                 ForEach(LoginItem.allCases, id: \.description) { item in
                     if selectedLoginSignType == .findPassword {
@@ -178,10 +210,26 @@ struct LoginView: View {
     //MARK:  - 애플 로그인
     @ViewBuilder
     private func loginWithApple() -> some View {
-        SignInWithAppleButton(.signIn) { _  in
-            
-        } onCompletion: { _ in
-            
+        SignInWithAppleButton(.signIn) { request in
+            viewModel.nonce =   AppleLoginManger.shared.randomNonceString()
+            request.requestedScopes = [.fullName, .email]
+            request.nonce =  AppleLoginManger.shared.sha256(viewModel.nonce)
+        } onCompletion: { result in
+            switch result {
+            case .success(let authResults):
+                
+                print("로그인 성공 \(authResults)")
+                
+                guard let credential =  authResults.credential as?
+                        ASAuthorizationAppleIDCredential  else  {
+                    debugPrint("파이어 베이스 로그인 에러 ")
+                    return
+                }
+                
+                viewModel.appleLogin(credential: credential)
+            case .failure(let error):
+                print("Authorisation failed: \(error.localizedDescription)")
+            }
         }
         .signInWithAppleButtonStyle(.black)
         .frame(height: 50)
@@ -192,6 +240,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: dev.signUPViewModel)
     }
 }

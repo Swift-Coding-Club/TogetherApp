@@ -20,6 +20,10 @@
 		7F0F165B296C4CBF00FB4C30 /* SignUPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F165A296C4CBF00FB4C30 /* SignUPView.swift */; };
 		7F0F165D296C4CFE00FB4C30 /* FindPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F165C296C4CFE00FB4C30 /* FindPasswordView.swift */; };
 		7F0F165F296C4D1500FB4C30 /* FindEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F165E296C4D1500FB4C30 /* FindEmailView.swift */; };
+		7F0F1661296EF0B400FB4C30 /* SignManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F1660296EF0B400FB4C30 /* SignManger.swift */; };
+		7F0F1664296EF2A000FB4C30 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F1663296EF2A000FB4C30 /* PreviewProvider.swift */; };
+		7F0F1669296F04DB00FB4C30 /* ModalView in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0F1668296F04DB00FB4C30 /* ModalView */; };
+		7F0F166D296F136F00FB4C30 /* NoLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F166C296F136F00FB4C30 /* NoLoginView.swift */; };
 		7F2432812956CF5F00C1077E /* MainNavigaionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */; };
 		7F2432842958557400C1077E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2432832958557400C1077E /* GoogleSignIn */; };
 		7F2432862958557400C1077E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2432852958557400C1077E /* GoogleSignInSwift */; };
@@ -90,6 +94,9 @@
 		7F0F165A296C4CBF00FB4C30 /* SignUPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPView.swift; sourceTree = "<group>"; };
 		7F0F165C296C4CFE00FB4C30 /* FindPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordView.swift; sourceTree = "<group>"; };
 		7F0F165E296C4D1500FB4C30 /* FindEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailView.swift; sourceTree = "<group>"; };
+		7F0F1660296EF0B400FB4C30 /* SignManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignManger.swift; sourceTree = "<group>"; };
+		7F0F1663296EF2A000FB4C30 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		7F0F166C296F136F00FB4C30 /* NoLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLoginView.swift; sourceTree = "<group>"; };
 		7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigaionItem.swift; sourceTree = "<group>"; };
 		7F2432AC2958630300C1077E /* GoogleService-Info-dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-dev.plist"; sourceTree = "<group>"; };
 		7F2432AE2958635200C1077E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -147,6 +154,7 @@
 				7F2432892958561300C1077E /* FirebaseAnalytics in Frameworks */,
 				7F2432992958561300C1077E /* FirebaseFirestore in Frameworks */,
 				7F24329F2958561300C1077E /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				7F0F1669296F04DB00FB4C30 /* ModalView in Frameworks */,
 				7F2432A72958561300C1077E /* FirebaseStorage in Frameworks */,
 				7F2432A52958561300C1077E /* FirebaseRemoteConfig in Frameworks */,
 				7F2432A32958561300C1077E /* FirebasePerformance in Frameworks */,
@@ -184,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				7F0F164C296C39F500FB4C30 /* UIApplication.swift */,
+				7F0F1663296EF2A000FB4C30 /* PreviewProvider.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				7F0F164F296C3A6A00FB4C30 /* AppleLoginManger.swift */,
+				7F0F1660296EF0B400FB4C30 /* SignManger.swift */,
 			);
 			path = Authoriation;
 			sourceTree = "<group>";
@@ -209,6 +219,7 @@
 			children = (
 				7F0F1654296C456E00FB4C30 /* LoginItem.swift */,
 				7F0F163D2960033F00FB4C30 /* LoginView.swift */,
+				7F0F166C296F136F00FB4C30 /* NoLoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -591,6 +602,7 @@
 				7F2432A22958561300C1077E /* FirebasePerformance */,
 				7F2432A42958561300C1077E /* FirebaseRemoteConfig */,
 				7F2432A62958561300C1077E /* FirebaseStorage */,
+				7F0F1668296F04DB00FB4C30 /* ModalView */,
 			);
 			productName = MarketApp;
 			productReference = EC892A9B2908189600D02F99 /* MarketApp.app */;
@@ -623,6 +635,7 @@
 			packageReferences = (
 				7F2432822958557400C1077E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				7F2432872958561300C1077E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7F0F1667296F04DA00FB4C30 /* XCRemoteSwiftPackageReference "modal-view" */,
 			);
 			productRefGroup = EC892A9C2908189600D02F99 /* Products */;
 			projectDirPath = "";
@@ -708,7 +721,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"$CONFIGURATION\" = \"release\" ]; then\nprintf \"creating release configuration\";\ncp -r \"$PROJECT_DIR/Firebase/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse \nprintf \"creating dev configuration\";\ncp -r \"$PROJECT_DIR/Firebase/GoogleService-Info-dev.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info-dev.plist\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"$CONFIGURATION\" = \"Release\" ]; then\nprintf \"creating release configuration\";\ncp -r \"$PROJECT_DIR/Firebase/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse if [ \"$CONFIGURATION\" = \"Debug\" ]; then\nprintf \"creating dev configuration\";\ncp -r \"$PROJECT_DIR/Firebase/GoogleService-Info-dev.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info-dev.plist\"\nfi\n";
 		};
 		DAA3929E740A81AEF9E43791 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -772,6 +785,7 @@
 				7F0F165D296C4CFE00FB4C30 /* FindPasswordView.swift in Sources */,
 				7F0F164D296C39F500FB4C30 /* UIApplication.swift in Sources */,
 				7F39FA8A2950915B0041BF8B /* ScrollViewModifier.swift in Sources */,
+				7F0F1661296EF0B400FB4C30 /* SignManger.swift in Sources */,
 				7F0F164929600AEF00FB4C30 /* CustomInputField.swift in Sources */,
 				EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */,
 				7F0F163E2960033F00FB4C30 /* LoginView.swift in Sources */,
@@ -780,9 +794,11 @@
 				7F39FA882950912F0041BF8B /* ScreenSize.swift in Sources */,
 				7F2432B12958638400C1077E /* AppDelegate.swift in Sources */,
 				7F0F1646296008D900FB4C30 /* FontColor.swift in Sources */,
+				7F0F1664296EF2A000FB4C30 /* PreviewProvider.swift in Sources */,
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* MainContentView.swift in Sources */,
 				7F39FA8D2950922D0041BF8B /* ConfirmAlertView.swift in Sources */,
+				7F0F166D296F136F00FB4C30 /* NoLoginView.swift in Sources */,
 				7F0F1650296C3A6A00FB4C30 /* AppleLoginManger.swift in Sources */,
 				7F0F16402960061F00FB4C30 /* OverlayView.swift in Sources */,
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
@@ -802,6 +818,7 @@
 		EC892AA72908189700D02F99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -833,6 +850,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DRIVERKIT_DEPLOYMENT_TARGET = 22.2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -862,6 +880,7 @@
 		EC892AA82908189700D02F99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -893,6 +912,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DRIVERKIT_DEPLOYMENT_TARGET = 22.2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1014,6 +1034,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7F0F1667296F04DA00FB4C30 /* XCRemoteSwiftPackageReference "modal-view" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/diniska/modal-view";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		7F2432822958557400C1077E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -1033,6 +1061,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7F0F1668296F04DB00FB4C30 /* ModalView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F0F1667296F04DA00FB4C30 /* XCRemoteSwiftPackageReference "modal-view" */;
+			productName = ModalView;
+		};
 		7F2432832958557400C1077E /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7F2432822958557400C1077E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
