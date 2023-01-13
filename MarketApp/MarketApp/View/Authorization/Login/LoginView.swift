@@ -253,6 +253,7 @@ struct LoginView: View {
                 }
                 
                 viewModel.appleLogin(credential: credential)
+                dismiss()
             case .failure(let error):
                 print("Authorisation failed: \(error.localizedDescription)")
             }
@@ -275,6 +276,7 @@ struct LoginView: View {
         
         Button{
             viewModel.googleLogin()
+            dismiss()
         } label: {
             HStack(spacing: 10) {
                 
