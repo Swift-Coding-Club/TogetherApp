@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import GoogleSignIn
 
 @main
 struct MarketAppApp: App {

@@ -9,9 +9,8 @@ import SwiftUI
 import ModalView
 
 struct MainContentView: View {
-    @StateObject var loginViewModel : SignUPViewModel = .init()
+    @StateObject var loginViewModel  = SignUPViewModel()
     @State  var showLoginVIew: Bool = false
-    
 //    init() {
 //        UITabBar.appearance().isHidden = false
 //    }
@@ -20,33 +19,50 @@ struct MainContentView: View {
         TabView {
             MainView()
                 .tabItem{
-                    Image(systemName: "house.fill")
-                    Text("Home")
+                    VStack{
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                            .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                    }
                 }
+            
             FavoriteView()
                 .tabItem{
-                    Image(systemName: "heart.fill")
-                    Text("Favorite")
+                    VStack{
+                        Image(systemName: "heart.fill")
+                        Text("Favorite")
+                            .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                    }
                 }
             
             loginView()
                 .tabItem{
-                    Image(systemName: "person.crop.circle")
-                    Text("Profile")
+                    VStack{
+                        Image(systemName: "person.crop.circle")
+                        Text("Profile")
+                            .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                    }
                 }
             
+                .onAppear{
+                    UITabBar.appearance().tintColor = UIColor(Color.colorAsset.mauve2)
+                    UITabBar.appearance().unselectedItemTintColor = UIColor(Color.fontColor.secondaryTextColor)
+                }
             
         }
-        .accentColor(.black)
+        .accentColor(Color.colorAsset.mainColor)
         .navigationTitle("APP NAME")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing: leadingNavigationTrallingView())
         .navigationBarItems(leading: notiNavigationView())
     }
+    
+
     @ViewBuilder
     private func loginView() -> some View {
         if loginViewModel.loginStatus == false {
             NoLoginView(viewModel: loginViewModel)
+                .transition(.move(edge: .bottom))
         } else {
             ProfileView()
         }

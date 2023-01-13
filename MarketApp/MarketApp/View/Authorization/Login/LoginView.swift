@@ -8,8 +8,13 @@
 import SwiftUI
 import AuthenticationServices
 import Firebase
+import ExytePopupView
 
 struct LoginView: View {
+    
+    @StateObject var viewModel : SignUPViewModel
+    
+    @Environment(\.dismiss) var dismiss
     
     @State private var emailTextField: String = ""
     @State private var passwordTextField: String = ""
@@ -18,48 +23,53 @@ struct LoginView: View {
     @State private var showFindEmailView: Bool = false
     @State private var showFindPasswordView: Bool = false
     @State private var showSignUPView: Bool = false
+    @State private var loginErrorPopUp: Bool = false
+    @State private var loginPopUP: Bool = false
+    @State private var confirmAction: Bool = false
     
-    @StateObject var viewModel : SignUPViewModel 
-    
-    @Environment(\.dismiss) var dismiss
+   
     
   
     
     var body: some View {
         ZStack{
-            Color.colorAsset.backGroudColor
+            Color.fontColor.secondaryTextColor.opacity(0.5)
                 .ignoresSafeArea()
             
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: .zero) {
-                    
-                    Spacer()
-                        .frame(height: modalTopTransparentSize - 40)
-                    
-                    titleButton()
-                    
-                    loginTitle()
-                    
-                    loginTextField()
-                    
-                    Spacer()
-                        .frame(height: 60)
-                    
-                    
-                    loginButton()
-                    
-                    Spacer()
-                        .frame(height: 50)
-                    
-                    loginWithApple()
-                    
-                    Spacer(minLength: .zero)
+                Group{
+                    VStack(spacing: .zero) {
+                        
+                        Spacer()
+                            .frame(height: modalTopTransparentSize - 40)
+                        
+                        titleButton()
+                        
+                        loginTitle()
+                        
+                        loginTextField()
+                        
+                        Spacer()
+                            .frame(height: 60)
+                        
+                        
+                        loginButton()
+                        
+                        Spacer()
+                            .frame(height: 50)
+                        
+                        loginWithApple()
+                         
+                        loginWithGoogle()
+                        
+                        Spacer(minLength: .zero)
+                    }
                 }
             }
             .bounce(false)
         }
         .background(
-            NavigationLink(destination: FindPasswordView(), isActive: $showPassword, label: {EmptyView()})
+            NavigationLink(destination: FindPasswordView(), isActive: $showFindPasswordView, label: {EmptyView()})
         )
         .background(
             NavigationLink(destination: FindEmailView(), isActive: $showFindEmailView, label: {EmptyView()})
@@ -67,6 +77,12 @@ struct LoginView: View {
         .background(
             NavigationLink(destination: SignUPView(), isActive: $showSignUPView, label: {EmptyView()})
         )
+        .popup(isPresented: $loginErrorPopUp, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+            PopUPview(title: "로그인 에러", message: "아이디와 비밀 번호를 한번 확인 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
+        }
+        .popup(isPresented: $loginPopUP, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+            PopUPview(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
+        }
     }
     //MARK: - 앱 로고
     @ViewBuilder
@@ -92,7 +108,7 @@ struct LoginView: View {
             Spacer()
                 .frame(height: UIScreen.screenWidth / 10)
             Text("FANCY")
-                .nanumSquareNeo(family: .eHv, size: 50, color: .black)
+                .nanumSquareNeo(family: .eHv, size: 50, color: Color.fontColor.fontColor)
         }
         .padding(.horizontal, LayoutMargin)
     }
@@ -120,7 +136,7 @@ struct LoginView: View {
             
             HStack{
                 Text("비밀 번호 ")
-                    .nanumSquareNeo(family: .cBd, size: 14, color: Color.fontColor.secondaryTextColor)
+                    .nanumSquareNeo(family: .cBd, size: 14, color: Color.fontColor.fontColor)
                 Spacer()
             }
             .padding(.horizontal, LayoutMargin)
@@ -135,26 +151,23 @@ struct LoginView: View {
     @ViewBuilder
     private func  loginButton() -> some View {
         VStack {
-            
             Button {
-                
+                loginCheck()
+                UIApplication.shared.endEditing()
             } label: {
                 Text("로그인")
                     .nanumSquareNeo(family: .bRG, size: 22, color: .white)
                 
                     .background {
                         RoundedRectangle(cornerRadius: 12)
-                            .fill(Color.colorAsset.gray)
+                            .fill(Color.colorAsset.gray.opacity(0.5))
                             .frame(width: UIScreen.screenWidth - 80, height: 50)
                     }
-                    .disabled(emailTextField.isEmpty  || passwordTextField.isEmpty)
             }
+//            .disabled(emailTextField.isEmpty  || passwordTextField.isEmpty)
             
             Spacer()
                 .frame(height: 40)
-            
-            //TODO: - 수정 해야 할부분
-
             
             HStack(spacing: 20){
                 ForEach(LoginItem.allCases, id: \.description) { item in
@@ -171,7 +184,7 @@ struct LoginView: View {
                                         showFindPasswordView.toggle()
                                     }
                                 }
-                            }
+                        }
                     } else if selectedLoginSignType == .findEmail {
                         Text(item.description)
                             .nanumSquareNeo(family: selectedLoginSignType == item ? .cBd : .bRG, size: 12, color:  selectedLoginSignType == item ?  .white :  .white.opacity(0.9))
@@ -201,12 +214,25 @@ struct LoginView: View {
                                 }
                             }
                     }
-                    
                 }
-                
             }
         }
     }
+    //MARK: - 로그인 검사
+    private func loginCheck() {
+       if emailTextField.isEmpty {
+            loginPopUP.toggle()
+       } else  if !CheckRegister.isValidateEmail(emailTextField) {
+           loginErrorPopUp.toggle()
+       }else if passwordTextField.isEmpty {
+           loginPopUP.toggle()
+       }else if !CheckRegister.isValidatePassword(passwordTextField) {
+           loginErrorPopUp.toggle()
+       } else if emailTextField != emailTextField {
+            loginErrorPopUp.toggle()
+        }
+    }
+
     //MARK:  - 애플 로그인
     @ViewBuilder
     private func loginWithApple() -> some View {
@@ -234,12 +260,54 @@ struct LoginView: View {
         .signInWithAppleButtonStyle(.black)
         .frame(height: 50)
         .cornerRadius(10)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.colorAsset.backGroudColor, lineWidth: 1)
+        )
+        .padding(.horizontal, 40)
+    }
+    
+    //MARK: - 구글 로그인
+    @ViewBuilder
+    private func loginWithGoogle() -> some View {
+        Spacer()
+            .frame(height: 20)
+        
+        Button{
+            viewModel.googleLogin()
+        } label: {
+            HStack(spacing: 10) {
+                
+                Spacer()
+                     
+                Image("google_logo")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(Color.black)
+                
+                Text("구글 계정으로 로그인")
+                    .nanumSquareNeo(family: .cBd, size: 20, color: Color.black)
+                
+            Spacer()
+            }
+        }
+       
+        .frame(height: 50)
+        .background(Color.white)
+        .cornerRadius(10)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.white, lineWidth: 1)
+        
+        )
         .padding(.horizontal, 40)
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: dev.signUPViewModel)
+        NavigationView {
+            LoginView(viewModel: dev.signUPViewModel)
+        }
     }
 }

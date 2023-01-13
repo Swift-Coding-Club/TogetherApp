@@ -24,7 +24,7 @@ class SignUPViewModel: ObservableObject {
     init() {
         self.userSession = Auth.auth().currentUser
     }
- 
+    
     
     //MARK: -  애플 로그인
     func appleLogin(credential : ASAuthorizationAppleIDCredential ) {
@@ -60,42 +60,43 @@ class SignUPViewModel: ObservableObject {
             }
         }
     }
-
+    
     //MARK: - 구글 로그인
-//    func googleLogin() {
-//        guard let clientID = FirebaseApp.app()?.options.clientID  else { return }
-//
-//        let config = GIDConfiguration(clientID: clientID)
-//
-//        GIDSignIn.sharedInstance.signIn(with: config, presenting:  UIApplication.shared.getRootViewController()) {[self] user, error in
-//            if let error = error {
-//                debugPrint("[🔥] 로그인 에 실패 하였습니다 \(error.localizedDescription)")
-//                return
-//            }
-//            guard
-//              let authentication = user?.authentication,
-//              let idToken = authentication.idToken
-//            else {
-//
-//                debugPrint("[🔥]  로그인에  성공 하였습니다  \(String(describing: user?.profile?.email))")
-////                self.userSession = user
-//                return
-//            }
-//
-//            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-//                                                           accessToken: authentication.accessToken)
-//
-//            Auth.auth().signIn(with: credential) { (authResult, error) in
-//                if let error = error {
-//                    debugPrint("[🔥] 로그인 에 실패 하였습니다 \(error.localizedDescription)")
-//                    return
-//                } else {
-//                    debugPrint("[🔥]  로그인에  성공 하였습니다  \(String(describing: user))")
-//                    guard let user = authResult?.user else {return}
-//                    self.userSession = user
-//                }
-//            }
-//        }
-//    }
+    func googleLogin() {
+        guard let clientID = FirebaseApp.app()?.options.clientID  else { return }
+
+        let config = GIDConfiguration(clientID: clientID)
+
+        GIDSignIn.sharedInstance.signIn(with: config, presenting:  LoginManger.shared.getRootViewController()) {[self] user, error in
+            if let error = error {
+                debugPrint("[🔥] 로그인 에 실패 하였습니다 \(error.localizedDescription)")
+                return
+            }
+            guard
+              let authentication = user?.authentication,
+              let idToken = authentication.idToken
+            else {
+
+                debugPrint("[🔥]  로그인에  성공 하였습니다  \(String(describing: user?.profile?.email))")
+//                self.userSession = user
+                return
+            }
+
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: authentication.accessToken)
+
+            Auth.auth().signIn(with: credential) { (authResult, error) in
+                if let error = error {
+                    debugPrint("[🔥] 로그인 에 실패 하였습니다 \(error.localizedDescription)")
+                    return
+                } else {
+                    debugPrint("[🔥]  로그인에  성공 하였습니다  \(String(describing: user))")
+                    guard let user = authResult?.user else {return}
+                    self.userSession = user
+                }
+            }
+        }
+    }
     
 }
+

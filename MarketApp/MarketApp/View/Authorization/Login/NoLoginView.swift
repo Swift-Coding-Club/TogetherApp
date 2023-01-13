@@ -14,8 +14,11 @@ struct NoLoginView: View {
     
     var body: some View {
         VStack{
-            Text("프로필 및  더 자세한 정보를 보고싶으면")
-            Text("로그인 버튼를 눌러 로그인 을 하세요")
+            VStack{
+                Text("프로필 및  더 자세한 정보를 보고싶으면")
+                Text("로그인 버튼를 눌러 로그인 을 하세요")
+            }
+            .nanumSquareNeo(family: .cBd, size: 20, color: Color.fontColor.fontColor)
             
             Spacer()
                 .frame(height: 40)
@@ -34,7 +37,10 @@ struct NoLoginView: View {
             
         }
         .sheet(isPresented: $loginView) {
-            LoginView(viewModel: viewModel)
+            NavigationView {
+                LoginView(viewModel: viewModel)
+                    .transition(.move(edge: .bottom))
+            }
         }
     }
     
