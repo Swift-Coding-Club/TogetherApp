@@ -27,10 +27,6 @@ struct LoginView: View {
     @State private var loginPopUP: Bool = false
     @State private var confirmAction: Bool = false
     
-   
-    
-  
-    
     var body: some View {
         ZStack{
             Color.fontColor.secondaryTextColor.opacity(0.5)
@@ -51,7 +47,6 @@ struct LoginView: View {
                         
                         Spacer()
                             .frame(height: 60)
-                        
                         
                         loginButton()
                         
@@ -129,7 +124,7 @@ struct LoginView: View {
             Spacer()
                 .frame(height: 30)
             
-            CustomInputField(placeHolderText: "OOOOOOO@mail.com", color: Color.fontColor.secondaryTextColor, text: $emailTextField, password: false, showPassword: .constant(false))
+            CustomInputField(placeHolderText: "OOOOOOO@mail.com", color: Color.fontColor.secondaryTextColor, password: false, text: $emailTextField, showPassword: .constant(false))
             
             Spacer()
                 .frame(height: 30)
@@ -144,7 +139,7 @@ struct LoginView: View {
             Spacer()
                 .frame(height: 30)
             
-            CustomInputField(placeHolderText: "비밀번호 ", color: Color.fontColor.secondaryTextColor, text: $passwordTextField, password: true, showPassword: $showPassword)
+            CustomInputField(placeHolderText: "비밀번호 ", color: Color.fontColor.secondaryTextColor, password: true, text: $passwordTextField, showPassword: $showPassword)
         }
     }
     //MARK:  - 로그인 버튼

@@ -7,21 +7,22 @@
 
 import SwiftUI
 
-struct SearchView: View {
-    @State public var text = ""
-    
-    var body: some View {
-        SearchedView(searchText: text)
-            .searchable(text: $text)
-    }
-}
+//struct SearchView: View {
+//    @State public var text = ""
+//
+//    var body: some View {
+//        SearchedView(searchText: text)
+//            .searchable(text: $text)
+//    }
+//}
 
 struct SearchedView: View {
+    @State var searchText = ""
     @State private var removeSearch = false
     @State var recentSearchList : [String] = ["Head","Addidas","Kappa","JDX","ELLE","Armani"]
     @Environment(\.isSearching) private var isSearching
     
-    let searchText: String
+//    let searchText: String
     let mockBrandList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani", "Columbia","H&M","ZARA","LouisVitton","UNIQLO","Hermes","Gucci","UnderArmour"]
     let popularSearchList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani"]
     
@@ -33,6 +34,9 @@ struct SearchedView: View {
                 PopularSearchView()
             }
         }
+        
+        //TODO : - 검색 바 수정  커스텀 진행
+        .searchable(text: $searchText)
     }
     
     @ViewBuilder
@@ -102,8 +106,10 @@ struct SearchedView: View {
 }
 
 
-struct SearchView_Previews: PreviewProvider {
+struct SearchedView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        NavigationView {
+            SearchedView()
+        }
     }
 }

@@ -10,51 +10,49 @@ import ModalView
 
 struct MainContentView: View {
     @StateObject var loginViewModel  = SignUPViewModel()
-    @State  var showLoginVIew: Bool = false
-//    init() {
-//        UITabBar.appearance().isHidden = false
-//    }
     
     var body: some View {
-        TabView {
-            MainView()
-                .tabItem{
-                    VStack{
-                        Image(systemName: "house.fill")
-                        Text("Home")
-                            .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+        NavigationView(content: {
+            TabView {
+                MainView()
+                    .tabItem{
+                        VStack{
+                            Image(systemName: "house.fill")
+                            Text("Home")
+                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        }
                     }
-                }
-            
-            FavoriteView()
-                .tabItem{
-                    VStack{
-                        Image(systemName: "heart.fill")
-                        Text("Favorite")
-                            .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                
+                SearchedView()
+                    .tabItem{
+                        VStack{
+                            Image(systemName: "heart.fill")
+                            Text("Favorite")
+                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        }
                     }
-                }
-            
-            loginView()
-                .tabItem{
-                    VStack{
-                        Image(systemName: "person.crop.circle")
-                        Text("Profile")
-                            .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                
+                loginView()
+                    .tabItem{
+                        VStack{
+                            Image(systemName: "person.crop.circle")
+                            Text("Profile")
+                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        }
                     }
-                }
-            
-                .onAppear{
-                    UITabBar.appearance().tintColor = UIColor(Color.colorAsset.mauve2)
-                    UITabBar.appearance().unselectedItemTintColor = UIColor(Color.fontColor.secondaryTextColor)
-                }
-            
-        }
+                
+                    .onAppear{
+                        UITabBar.appearance().tintColor = UIColor(Color.colorAsset.mauve2)
+                        UITabBar.appearance().unselectedItemTintColor = UIColor(Color.fontColor.secondaryTextColor)
+                    }
+                
+            }
+        })
         .accentColor(Color.colorAsset.mainColor)
         .navigationTitle("APP NAME")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing: leadingNavigationTrallingView())
-        .navigationBarItems(leading: notiNavigationView())
+//        .navigationBarItems(leading: notiNavigationView())
     }
     
 
@@ -74,18 +72,19 @@ struct MainContentView: View {
         HStack{
             ForEach(MainNavigaionItem.allCases, id: \.description) { item in
                 if item == .search {
-                    NavigationLink(destination: SearchView()){
+                    NavigationLink(destination: SearchedView()){
                         Image(systemName: item.image).resizable()
                             .frame(width: 25, height: 25, alignment: .trailing)
                             .foregroundColor(.black)
                     }
-                } else if item == .cart {
-                    NavigationLink(destination: CartView()){
-                        Image(systemName: item.image ).resizable()
-                            .frame(width: 25, height: 25, alignment: .trailing)
-                            .foregroundColor(.black)
-                    }
                 }
+//                else if item == .cart {
+//                    NavigationLink(destination: CartView()){
+//                        Image(systemName: item.image ).resizable()
+//                            .frame(width: 25, height: 25, alignment: .trailing)
+//                            .foregroundColor(.black)
+//                    }
+//                }
             }
         }
     }

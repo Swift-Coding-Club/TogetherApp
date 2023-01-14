@@ -10,8 +10,9 @@ import SwiftUI
 struct CustomInputField: View {
     let placeHolderText: String
     let color: Color
-    @Binding var text: String
     let password: Bool
+    
+    @Binding var text: String
     @Binding var showPassword: Bool
     
     var body: some View {
@@ -56,6 +57,6 @@ struct CustomInputField: View {
 
 struct CustomInputField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomInputField(placeHolderText: "Email", color: Color.fontColor.secondaryTextColor, text: .constant("") , password: true, showPassword: .constant(true))
+        CustomInputField(placeHolderText: "Email", color: Color.fontColor.secondaryTextColor, password: true, text: .constant(""), showPassword: .constant(true))
     }
 }

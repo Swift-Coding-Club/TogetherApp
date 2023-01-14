@@ -17,8 +17,14 @@ struct MarketAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                MainContentView()
+            if #available(iOS 16.0, *) {
+                NavigationStack {
+                    MainContentView()
+                }
+            } else {
+                NavigationView {
+                    MainContentView()
+                }
             }
         }
     }
