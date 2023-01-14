@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleSignIn-iOS",
       "state" : {
-        "revision" : "9c9b36af86a4dd3da16048a36cf37351e63ccfe1",
-        "version" : "6.2.4"
+        "branch" : "main",
+        "revision" : "7932d33686c1dc4d7df7a919aae47361d1cdfda4"
       }
     },
     {
@@ -106,15 +106,6 @@
       "state" : {
         "revision" : "0706abcc6b0bd9cedfbb015ba840e4a780b5159b",
         "version" : "1.22.2"
-      }
-    },
-    {
-      "identity" : "modal-view",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/diniska/modal-view",
-      "state" : {
-        "revision" : "3f1a97297112770677b507556f581f7ed561593a",
-        "version" : "1.0.1"
       }
     },
     {
