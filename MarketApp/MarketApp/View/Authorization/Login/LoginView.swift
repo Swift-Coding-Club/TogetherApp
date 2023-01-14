@@ -29,7 +29,7 @@ struct LoginView: View {
     
     var body: some View {
         ZStack{
-            Color.fontColor.secondaryTextColor.opacity(0.5)
+            Color.white
                 .ignoresSafeArea()
             
             ScrollView(.vertical, showsIndicators: false) {

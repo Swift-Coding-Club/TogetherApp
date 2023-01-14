@@ -23,7 +23,6 @@
 		7F0F1661296EF0B400FB4C30 /* SignManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F1660296EF0B400FB4C30 /* SignManger.swift */; };
 		7F0F1664296EF2A000FB4C30 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F1663296EF2A000FB4C30 /* PreviewProvider.swift */; };
 		7F0F1669296F04DB00FB4C30 /* ModalView in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0F1668296F04DB00FB4C30 /* ModalView */; };
-		7F0F166D296F136F00FB4C30 /* NoLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F166C296F136F00FB4C30 /* NoLoginView.swift */; };
 		7F2432812956CF5F00C1077E /* MainNavigaionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */; };
 		7F2432892958561300C1077E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2432882958561300C1077E /* FirebaseAnalytics */; };
 		7F24328B2958561300C1077E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F24328A2958561300C1077E /* FirebaseAnalyticsSwift */; };
@@ -98,7 +97,6 @@
 		7F0F165E296C4D1500FB4C30 /* FindEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmailView.swift; sourceTree = "<group>"; };
 		7F0F1660296EF0B400FB4C30 /* SignManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignManger.swift; sourceTree = "<group>"; };
 		7F0F1663296EF2A000FB4C30 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
-		7F0F166C296F136F00FB4C30 /* NoLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLoginView.swift; sourceTree = "<group>"; };
 		7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigaionItem.swift; sourceTree = "<group>"; };
 		7F2432AC2958630300C1077E /* GoogleService-Info-dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-dev.plist"; sourceTree = "<group>"; };
 		7F2432AE2958635200C1077E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 			children = (
 				7F0F1654296C456E00FB4C30 /* LoginItem.swift */,
 				7F0F163D2960033F00FB4C30 /* LoginView.swift */,
-				7F0F166C296F136F00FB4C30 /* NoLoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -808,7 +805,6 @@
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* MainContentView.swift in Sources */,
 				7F39FA8D2950922D0041BF8B /* ConfirmAlertView.swift in Sources */,
-				7F0F166D296F136F00FB4C30 /* NoLoginView.swift in Sources */,
 				7F0F1650296C3A6A00FB4C30 /* AppleLoginManger.swift in Sources */,
 				7F0F16402960061F00FB4C30 /* OverlayView.swift in Sources */,
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
