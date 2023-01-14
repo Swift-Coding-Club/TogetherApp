@@ -54,7 +54,7 @@ struct LoginView: View {
                             .frame(height: 50)
                         
                         loginWithApple()
-                         
+                        
                         loginWithGoogle()
                         
                         Spacer(minLength: .zero)
@@ -159,7 +159,7 @@ struct LoginView: View {
                             .frame(width: UIScreen.screenWidth - 80, height: 50)
                     }
             }
-//            .disabled(emailTextField.isEmpty  || passwordTextField.isEmpty)
+            //            .disabled(emailTextField.isEmpty  || passwordTextField.isEmpty)
             
             Spacer()
                 .frame(height: 40)
@@ -179,7 +179,7 @@ struct LoginView: View {
                                         showFindPasswordView.toggle()
                                     }
                                 }
-                        }
+                            }
                     } else if selectedLoginSignType == .findEmail {
                         Text(item.description)
                             .nanumSquareNeo(family: selectedLoginSignType == item ? .cBd : .bRG, size: 12, color:  selectedLoginSignType == item ?  .white :  .white.opacity(0.9))
@@ -215,19 +215,19 @@ struct LoginView: View {
     }
     //MARK: - 로그인 검사
     private func loginCheck() {
-       if emailTextField.isEmpty {
+        if emailTextField.isEmpty {
             loginPopUP.toggle()
-       } else  if !CheckRegister.isValidateEmail(emailTextField) {
-           loginErrorPopUp.toggle()
-       }else if passwordTextField.isEmpty {
-           loginPopUP.toggle()
-       }else if !CheckRegister.isValidatePassword(passwordTextField) {
-           loginErrorPopUp.toggle()
-       } else if emailTextField != emailTextField {
+        } else  if !CheckRegister.isValidateEmail(emailTextField) {
+            loginErrorPopUp.toggle()
+        }else if passwordTextField.isEmpty {
+            loginPopUP.toggle()
+        }else if !CheckRegister.isValidatePassword(passwordTextField) {
+            loginErrorPopUp.toggle()
+        } else if emailTextField != emailTextField {
             loginErrorPopUp.toggle()
         }
     }
-
+    
     //MARK:  - 애플 로그인
     @ViewBuilder
     private func loginWithApple() -> some View {
@@ -276,7 +276,7 @@ struct LoginView: View {
             HStack(spacing: 10) {
                 
                 Spacer()
-                     
+                
                 Image("google_logo")
                     .resizable()
                     .frame(width: 20, height: 20)
@@ -285,17 +285,17 @@ struct LoginView: View {
                 Text("구글 계정으로 로그인")
                     .nanumSquareNeo(family: .cBd, size: 20, color: Color.black)
                 
-            Spacer()
+                Spacer()
             }
         }
-       
+        
         .frame(height: 50)
         .background(Color.white)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.white, lineWidth: 1)
-        
+            
         )
         .padding(.horizontal, 40)
     }
