@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 @main
 struct MarketAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var loginViewModel: SignUPViewModel = .init()
+    
+    init() { }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                MainContentView()
+            }
         }
     }
 }

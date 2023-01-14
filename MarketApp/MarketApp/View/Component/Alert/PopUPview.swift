@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-struct ReadyPopUPview: View {
-    private var title: String = "서비스 준비중 "
-    private var message: String = "서비스 준비중입니다"
-    private var cancelTitle: String = "취소"
-    private var confiremTitle: String = "확인"
+struct PopUPview: View {
+     var title: String
+     var message: String
+     var cancelTitle: String
+     var confiremTitle: String
+//    var confirmAction: () -> Void = {}
+    var color: Color
     
     @State var closedAlert: Bool = false
     @Environment(\.dismiss) private var dismiss
@@ -27,7 +29,7 @@ struct ReadyPopUPview: View {
         }
         .padding(EdgeInsets(top: 40, leading: 30, bottom: 31, trailing: 30))
         .frame(width: ContentsWidth, height: 200)
-        .background(.gray)
+        .background(color)
         .cornerRadius(30.0)
         .shadow(color: .black.opacity(0.4), radius: 6, x: 0, y: .zero)
         .animation(.easeOut)
@@ -97,8 +99,8 @@ struct ReadyPopUPview: View {
     }
 }
 
-struct ReadyPopUPview_Previews: PreviewProvider {
+struct PopUPview_Previews: PreviewProvider {
     static var previews: some View {
-        ReadyPopUPview()
+        PopUPview(title: "서비스 준비중", message: "서비스 준비중입니다", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.gray)
     }
 }

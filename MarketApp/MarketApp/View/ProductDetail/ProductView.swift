@@ -69,8 +69,12 @@ struct ProductView: View {
                         .background(.black)
                         .foregroundColor(.white)
                         .sheet(isPresented: self.$buyThis) {
-                            PopView()
-                               
+                            if #available(iOS 16.0, *) {
+                                PopView()
+                                    .presentationDetents([.height(300)])
+                            } else {
+                                PopView()
+                            }
                         }
                 }
             }.padding(.bottom, 20)

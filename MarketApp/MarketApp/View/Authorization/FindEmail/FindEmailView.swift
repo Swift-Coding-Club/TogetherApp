@@ -1,20 +1,21 @@
 //
-//  NotiView.swift
+//  FindEmailView.swift
 //  MarketApp
 //
-//  Created by 홍태희 on 2022/10/25.
+//  Created by 서원지 on 2023/01/09.
 //
 
 import SwiftUI
 
-struct NotiView: View {
+struct FindEmailView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
     }
 }
 
-struct NotiView_Previews: PreviewProvider {
+struct FindEmailView_Previews: PreviewProvider {
     static var previews: some View {
-        NotiView()
+        FindEmailView()
     }
 }
