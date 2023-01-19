@@ -1,0 +1,101 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itsel
+#update_fastlane
+ 
+ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "600"
+default_platform(:ios)
+platform :ios do
+
+desc "Run swift code validation using SwiftLint"
+  puts "Run swift code validation using SwiftLint"
+  lane :lint do
+    swiftlint(
+      mode: :lint,
+      ignore_exit_status: true,
+      raise_if_swiftlint_error: true,
+      executable: "./Pods/SwiftLint/swiftlint"
+    )
+  end
+
+  desc "Incrementing Build Number"
+  
+  lane :increment_build do    
+    version = get_version_number(xcodeproj: "MarketApp.xcodeproj")
+    current_build_number = latest_testflight_build_number(version: version)
+    increment_build_number(build_number: current_build_number + 1)
+  end
+
+  desc "Install Profiles and Build My App"
+  lane :build_ipa do
+    gym(
+      workspace: "MarketApp.xcworkspace",
+      scheme: "MarketApp",
+      output_directory: "DIRECTORY_WHERE_YOUR_IPA_WILL_BE_SAVED",
+      output_name: "MarketApp",
+      export_method: "app-store",
+      include_bitcode: false,
+      clean: true)
+    end
+desc "build app and upload to testflight"
+lane :beta do
+	get_certificates
+	get_provisioning_profile
+	increment_build_number(
+		build_number: latest_testflight_build_number + 1
+	)
+
+	build_ipa
+
+	upload_to_testflight
+	version = get_version_number
+	
+
+  end
+
+  desc "Description of what the lane does"
+   desc "Push a new release build to the App Store"
+  lane :release do |options|
+  # ✅ 매개변수를 넣어서
+  # fastlane release version:"2.1.0"
+  # 과 같이 사용할 수 있다.
+    if options[:version]
+      enable_automatic_code_signing
+      increment_version_number(version_number: options[:version])
+      get_certificates
+      get_provisioning_profile
+      build_ipa
+      upload_to_app_store(
+	username: "shuwj81@daum.net",
+      team_id: "N94CS4N6VR",
+        # ✅ screenshots 는 기존의 것 사용. metadata 는 업데이트 내역을 위해서 스킵하지 않음.
+        skip_metadata: true,
+        skip_screenshots: true,
+        submit_for_review: true,
+        automatic_release: true,
+        # ✅ force: HTML report를 스킵합니다.
+        force: true,
+        # ✅ precheck 에서 In-app 결제 제외합니다.
+        precheck_include_in_app_purchases: false,
+        # ✅ IDFA 세팅합니다.
+        submission_information: { 
+add_id_info_uses_idfa: false,
+    export_compliance_encryption_updated: false,
+    export_compliance_uses_encryption: false,
+    content_rights_contains_third_party_content: false, 
+}
+      )
+    # ✅ if 문을 종료하기 위한 end
+    end
+  end
+end
