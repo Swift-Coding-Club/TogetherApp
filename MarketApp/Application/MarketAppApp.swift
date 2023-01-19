@@ -13,7 +13,10 @@ struct MarketAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var loginViewModel: SignUPViewModel = .init()
     
-    init() { }
+    init() {
+        
+        UINavigationBar.appearance().tintColor = UIColor(Color.colorAsset.mainColor)
+    }
     
     var body: some Scene {
         WindowGroup {

@@ -164,51 +164,35 @@ struct LoginView: View {
             Spacer()
                 .frame(height: 40)
             
-            HStack(spacing: 20){
-                ForEach(LoginItem.allCases, id: \.description) { item in
-                    if selectedLoginSignType == .findPassword {
-                        Text(item.description)
-                            .nanumSquareNeo(family: selectedLoginSignType == item ? .cBd : .bRG, size: 12, color:  selectedLoginSignType == item ?  .white :  .white.opacity(0.9))
-                            .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
-                            .background(Color.colorAsset.gray)
-                            .clipShape(Capsule())
-                            .onTapGesture {
-                                withAnimation(.easeInOut) {
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        self.selectedLoginSignType = item
-                                        showFindPasswordView.toggle()
-                                    }
-                                }
-                        }
-                    } else if selectedLoginSignType == .findEmail {
-                        Text(item.description)
-                            .nanumSquareNeo(family: selectedLoginSignType == item ? .cBd : .bRG, size: 12, color:  selectedLoginSignType == item ?  .white :  .white.opacity(0.9))
-                            .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
-                            .background(Color.colorAsset.gray)
-                            .clipShape(Capsule())
-                            .onTapGesture {
-                                withAnimation(.easeInOut) {
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        self.selectedLoginSignType = item
-                                        showFindEmailView.toggle()
-                                    }
-                                }
-                            }
-                    } else if selectedLoginSignType == .signUP {
-                        Text(item.description)
-                            .nanumSquareNeo(family: selectedLoginSignType == item ? .cBd : .bRG, size: 12, color:  selectedLoginSignType == item ?  .white :  .white.opacity(0.9))
-                            .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
-                            .background(Color.colorAsset.gray)
-                            .clipShape(Capsule())
-                            .onTapGesture {
-                                withAnimation(.easeInOut) {
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        self.selectedLoginSignType = item
-                                        showSignUPView.toggle()
-                                    }
-                                }
-                            }
-                    }
+            HStack(spacing: 20) {
+                Button {
+                    showFindEmailView.toggle()
+                } label: {
+                    Text("아이디 찾기")
+                        .nanumSquareNeo(family: .bRG, size: 12, color:  .white)
+                        .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
+                        .background(Color.colorAsset.gray)
+                        .clipShape(Capsule())
+                }
+                
+                Button {
+                    showFindPasswordView.toggle()
+                } label: {
+                    Text("비밀번호 찾기")
+                        .nanumSquareNeo(family: .bRG, size: 12, color:  .white)
+                        .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
+                        .background(Color.colorAsset.gray)
+                        .clipShape(Capsule())
+                }
+                
+                Button {
+                    showSignUPView.toggle()
+                } label: {
+                    Text("이메일 가입")
+                        .nanumSquareNeo(family: .bRG, size: 12, color:  .white)
+                        .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
+                        .background(Color.colorAsset.gray)
+                        .clipShape(Capsule())
                 }
             }
         }
@@ -294,7 +278,7 @@ struct LoginView: View {
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.white, lineWidth: 1)
+                .stroke(Color.black, lineWidth: 1)
         
         )
         .padding(.horizontal, 40)

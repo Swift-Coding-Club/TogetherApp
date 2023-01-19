@@ -10,8 +10,17 @@ import SwiftUI
 struct SignUPView: View {
     var body: some View {
         VStack {
-            Text("회원가입")
-                .nanumSquareNeo(family: .eHv, size: 30, color: Color.fontColor.secondaryTextColor)
+            Spacer()
+                .frame(height: modalTopTransparentSize)
+            HStack{
+                Text("회원가입")
+                    .nanumSquareNeo(family: .eHv, size: 30, color: Color.fontColor.secondaryTextColor)
+                
+                Spacer()
+            }
+            .padding(.horizontal, LayoutMargin)
+            
+            Spacer(minLength: .zero)
         }
     }
 }
