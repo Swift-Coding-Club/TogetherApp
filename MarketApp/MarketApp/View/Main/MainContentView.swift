@@ -48,13 +48,13 @@ struct MainContentView: View {
                 .tag(3)
         }
         .onAppear{
-            self.showView = false
+//            self.showView = false
             UITabBar.appearance().tintColor = UIColor(Color.colorAsset.mauve2)
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color.fontColor.secondaryTextColor)
         }
         .onChange(of: selectView, perform: {
             if 3 == selectView {
-                if loginViewModel.loginStatus == false{
+                if loginViewModel.userSession == nil  {
                     self.selectView = self.selectOldView
                     self.showView = true
                 } else {
@@ -90,26 +90,29 @@ struct MainContentView: View {
                             .foregroundColor(.black)
                     }
                 }
-//                else if item == .cart {
-//                    NavigationLink(destination: CartView()){
-//                        Image(systemName: item.image ).resizable()
-//                            .frame(width: 25, height: 25, alignment: .trailing)
-//                            .foregroundColor(.black)
-//                    }
-//                }
             }
-        }
-    }
-    //MARK:  - 알림 뷰
-    @ViewBuilder
-    private func notiNavigationView() -> some View {
-        NavigationLink(destination: NotiView()){
-            Image(systemName: "bell").resizable()
-                .frame(width: 25, height: 25, alignment: .trailing)
-                .foregroundColor(.black)
+            //                else if item == .cart {
+            //                    NavigationLink(destination: CartView()){
+            //                        Image(systemName: item.image ).resizable()
+            //                            .frame(width: 25, height: 25, alignment: .trailing)
+            //                            .foregroundColor(.black)
+            //                    }
+            //                }
         }
     }
 }
+
+
+//MARK:  - 알림 뷰
+@ViewBuilder
+private func notiNavigationView() -> some View {
+    NavigationLink(destination: NotiView()){
+        Image(systemName: "bell").resizable()
+            .frame(width: 25, height: 25, alignment: .trailing)
+            .foregroundColor(.black)
+    }
+}
+
 
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {

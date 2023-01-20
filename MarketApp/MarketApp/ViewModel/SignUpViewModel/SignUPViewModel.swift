@@ -25,7 +25,101 @@ class SignUPViewModel: ObservableObject {
         self.userSession = Auth.auth().currentUser
     }
     
+    //MARK: - 로그인
+    func login(withEmail email: String, password: String) {
+            
+        Auth.auth().signIn(withEmail: email, password: password) { result ,error in
+            if let error = error {
+                debugPrint("[🔥] 로그인 에 실패 하였습니다 \(error.localizedDescription)")
+                return
+            } else {
+                guard let user = result?.user else { return }
+                self.userSession = user
+                self.log_Status = true
+                debugPrint("로그인에 성공 하였습니다")
+            }
+        }
+    }
+
+    //MARK: - 회원가입
+    func register(withEmail email: String, password: String, nickName: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { result , error in
+            if let error = error {
+                debugPrint("[🔥] 회원가입에 실패 하였습니다 \(error.localizedDescription)")
+                return
+            }
+            
+            guard let user = result?.user else { return }
+            self.userSession = user
+            debugPrint("회원가입에 성공 하였습니다 ")
+            debugPrint("debug user is \(String(describing: self.userSession))")
+            
+            let data = ["email" : email ,
+                        "uid" : user.uid]
+            Firestore.firestore().collection("users")
+                .document(user.uid)
+                .setData(data) { data in
+                    debugPrint("DEBUG : Upload user data : \(String(describing: data))")
+                }
+            
+            let changeRequest = user.createProfileChangeRequest()
+            changeRequest.displayName = nickName
+            
+            changeRequest.commitChanges(){ error in
+                if let error = error {
+                    print("[ERROR] : displayName 변경 중 에러 발생 \(error.localizedDescription)")
+                }
+                else {
+                    print("[DEBUG] : dispalyName 변경 성공")
+                    self.userSession = user
+                    self.log_Status = true
+                }
+            }
+        }
+    }
     
+    
+    //MARK: - 로그아웃
+    func signOut() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.userSession = nil
+        }
+        let firebaseAuth = Auth.auth()
+      do {
+        try firebaseAuth.signOut()
+      } catch let signOutError as NSError {
+        print("Error signing out: %@", signOutError)
+      }
+    }
+
+    //MARK: - 회원정보 update
+    
+    func saveUserInformation(nickName: String) {
+        let collectionPath = Firestore.firestore().collection("users")
+        let userID = Auth.auth().currentUser?.uid
+        
+        collectionPath.document("\(userID ?? "")").updateData(["nickname": nickName]) { error in
+            if let error = error {
+                print((error.localizedDescription))
+                return
+            }
+        }
+        
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        
+        changeRequest?.displayName = nickName
+        changeRequest?.commitChanges() { error in
+            if let error = error {
+                print("[ERROR] : photoURL 변경 중 에러 발생 \(error.localizedDescription)")
+            }
+            else {
+                print("[DEBUG] : dispalyName 변경 성공")
+                
+            }
+        }
+        Auth.auth().currentUser?.reload()
+    }
+
     //MARK: -  애플 로그인
     func appleLogin(credential : ASAuthorizationAppleIDCredential ) {
         //MARK:  - 토큰 가져오기
@@ -93,6 +187,7 @@ class SignUPViewModel: ObservableObject {
                     debugPrint("[🔥]  로그인에  성공 하였습니다  \(String(describing: user))")
                     guard let user = authResult?.user else {return}
                     self.userSession = user
+                    self.log_Status = true
                 }
             }
         }

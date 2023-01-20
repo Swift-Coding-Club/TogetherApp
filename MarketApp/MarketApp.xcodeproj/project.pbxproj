@@ -59,6 +59,8 @@
 		7F39FABF295342BD0041BF8B /* NanumSquareNeo-cBd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAB2295341A50041BF8B /* NanumSquareNeo-cBd.ttf */; };
 		7F39FAC0295342BD0041BF8B /* NanumSquareNeo-dEb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAB0295341A50041BF8B /* NanumSquareNeo-dEb.ttf */; };
 		7F39FAC1295342BD0041BF8B /* NanumSquareNeo-eHv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAB1295341A50041BF8B /* NanumSquareNeo-eHv.ttf */; };
+		7F6037AB297AB5FA0034CFF7 /* SignUPNickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6037AA297AB5FA0034CFF7 /* SignUPNickNameView.swift */; };
+		7F6037AD297AC5890034CFF7 /* SignupPopupVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6037AC297AC5890034CFF7 /* SignupPopupVIew.swift */; };
 		7F6250B7297030B4004CCC10 /* TabIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6250B6297030B4004CCC10 /* TabIndex.swift */; };
 		7F6250BA29718BC7004CCC10 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7F6250B929718BC7004CCC10 /* GoogleSignIn */; };
 		7F6250BC29718BC7004CCC10 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F6250BB29718BC7004CCC10 /* GoogleSignInSwift */; };
@@ -118,6 +120,8 @@
 		7F39FAB0295341A50041BF8B /* NanumSquareNeo-dEb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-dEb.ttf"; sourceTree = "<group>"; };
 		7F39FAB1295341A50041BF8B /* NanumSquareNeo-eHv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-eHv.ttf"; sourceTree = "<group>"; };
 		7F39FAB2295341A50041BF8B /* NanumSquareNeo-cBd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-cBd.ttf"; sourceTree = "<group>"; };
+		7F6037AA297AB5FA0034CFF7 /* SignUPNickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPNickNameView.swift; sourceTree = "<group>"; };
+		7F6037AC297AC5890034CFF7 /* SignupPopupVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPopupVIew.swift; sourceTree = "<group>"; };
 		7F6250B6297030B4004CCC10 /* TabIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabIndex.swift; sourceTree = "<group>"; };
 		7F6250BE29719657004CCC10 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		7F66ECBF2979778A0039CC42 /* SignUPTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPTextFieldView.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				7F0F165A296C4CBF00FB4C30 /* SignUPView.swift */,
+				7F6037AA297AB5FA0034CFF7 /* SignUPNickNameView.swift */,
 			);
 			path = SignUP;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 			children = (
 				7F39FA8C2950922D0041BF8B /* ConfirmAlertView.swift */,
 				7F39FA8E2950939D0041BF8B /* PopUPview.swift */,
+				7F6037AC297AC5890034CFF7 /* SignupPopupVIew.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -776,10 +782,12 @@
 				7F0F165D296C4CFE00FB4C30 /* FindPasswordView.swift in Sources */,
 				7F0F164D296C39F500FB4C30 /* UIApplication.swift in Sources */,
 				7F39FA8A2950915B0041BF8B /* ScrollViewModifier.swift in Sources */,
+				7F6037AD297AC5890034CFF7 /* SignupPopupVIew.swift in Sources */,
 				7F0F1661296EF0B400FB4C30 /* SignManger.swift in Sources */,
 				7F0F164929600AEF00FB4C30 /* CustomInputField.swift in Sources */,
 				EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */,
 				7F0F163E2960033F00FB4C30 /* LoginView.swift in Sources */,
+				7F6037AB297AB5FA0034CFF7 /* SignUPNickNameView.swift in Sources */,
 				7F2432812956CF5F00C1077E /* MainNavigaionItem.swift in Sources */,
 				7F6250BF29719657004CCC10 /* KeyboardHandler.swift in Sources */,
 				ECF5BE462914D01E0052655B /* ReviewView.swift in Sources */,

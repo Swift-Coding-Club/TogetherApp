@@ -20,6 +20,8 @@ struct SignUPTextFieldView: View {
         VStack {
             HStack{
                 Text(signUpText)
+                    .kerning(-0.08)
+                    .nanumSquareNeo(family: .bRG, size: 15, color: .black)
                 
                 Spacer()
             }
@@ -27,38 +29,40 @@ struct SignUPTextFieldView: View {
             HStack{
                 if showPassword == false {
                     TextField(placeholder, text: $text)
-                        .nanumSquareNeo(family: .bRG, size: 20, color: Color.fontColor.secondaryTextColor)
+                        .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.secondaryTextColor)
                         .disableAutocorrection(true)
-                        .overlay(
-                            Image(systemName: "xmark.circle.fill")
-                                .padding()
-                                .offset(x: 10)
-                                .foregroundColor(Color.fontColor.secondaryTextColor)
-                                .opacity(text.isEmpty ? .zero : 1.0)
-                                .onTapGesture {
-                                    UIApplication.shared.endEditing()
-                                    text = ""
-                                }
-                            ,alignment: .trailing
-                        )
-                } else  {
+                        .textCase(.lowercase)
+
+                } else if password == true {
                     SecureField(placeholder, text: $text)
-                        .nanumSquareNeo(family: .bRG, size: 20, color: Color.fontColor.secondaryTextColor)
+                        .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.secondaryTextColor)
+                        .disableAutocorrection(true)
+                    
                 }
                 
-                if showPassword == true {
+                if password == true {
                     Button {
                         showPassword.toggle()
                     } label: {
                         Image(systemName: "eye.slash")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 20, height: 20)
+                            .frame(width: 20, height:  13)
                             .nanumSquareNeo(family: .eHv, size: 15, color: Color.fontColor.secondaryTextColor)
-                        
                     }
                 } else {
-                    EmptyView()
+                    Button {
+                        UIApplication.shared.endEditing()
+                        text = ""
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 20, height: 20)
+                            .nanumSquareNeo(family: .eHv, size: 15, color: Color.black)
+                            .opacity(text.isEmpty ? .zero : 1.0)
+                    }
+
                 }
             }
             

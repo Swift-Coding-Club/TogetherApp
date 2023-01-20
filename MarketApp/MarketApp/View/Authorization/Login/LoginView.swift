@@ -26,6 +26,7 @@ struct LoginView: View {
     @State private var loginErrorPopUp: Bool = false
     @State private var loginPopUP: Bool = false
     @State private var confirmAction: Bool = false
+    @State private var showMainview : Bool = false
     
     var body: some View {
         ZStack{
@@ -77,6 +78,9 @@ struct LoginView: View {
         }
         .popup(isPresented: $loginPopUP, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
             PopUPview(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
+        }
+        .fullScreenCover(isPresented: $showMainview) {
+            MainContentView()
         }
     }
     //MARK: - 앱 로고
@@ -147,7 +151,9 @@ struct LoginView: View {
     private func  loginButton() -> some View {
         VStack {
             Button {
-                loginCheck()
+                viewModel.login(withEmail: emailTextField, password: passwordTextField)
+                viewModel.log_Status = true
+                dismiss()
                 UIApplication.shared.endEditing()
             } label: {
                 Text("로그인")
@@ -209,7 +215,9 @@ struct LoginView: View {
            loginErrorPopUp.toggle()
        } else if emailTextField != emailTextField {
             loginErrorPopUp.toggle()
-        }
+       } else {
+           showMainview.toggle()
+       }
     }
 
     //MARK:  - 애플 로그인

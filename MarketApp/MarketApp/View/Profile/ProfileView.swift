@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @StateObject var viewmodel: SignUPViewModel = SignUPViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            viewmodel.signOut()
+        } label: {
+            Text("로그아웃")
+                .nanumSquareNeo(family: .cBd, size: 20, color: .black)
+        }
+//        .fullScreenCover(isPresented: $viewmodel.log_Status) {
+//            LoginView(viewModel: viewmodel)
+//        }
     }
 }
 
