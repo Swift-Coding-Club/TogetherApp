@@ -9,7 +9,7 @@ import SwiftUI
 import ModalView
 
 struct MainContentView: View {
-    @StateObject var loginViewModel  = SignUPViewModel()
+    @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
     
     @State var showView: Bool = false
     @State private var selectView: Int = 1
@@ -38,6 +38,7 @@ struct MainContentView: View {
                 .tag(2)
             
             ProfileView()
+                .environmentObject(loginViewModel)
                 .tabItem{
                     VStack{
                         Image(systemName: "person.crop.circle")
@@ -57,8 +58,6 @@ struct MainContentView: View {
                 if loginViewModel.userSession == nil  {
                     self.selectView = self.selectOldView
                     self.showView = true
-                } else {
-                    ProfileView()
                 }
             } else if showView == false {
                 self.selectOldView = $0
@@ -117,6 +116,7 @@ private func notiNavigationView() -> some View {
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainContentView()
+            .environmentObject(dev.signUPViewModel)
             .previewDevice("iPhone 12")
     }
 }

@@ -83,6 +83,7 @@ class SignUPViewModel: ObservableObject {
     func signOut() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.userSession = nil
+            self.loginStatus.toggle()
         }
         let firebaseAuth = Auth.auth()
       do {
@@ -146,7 +147,6 @@ class SignUPViewModel: ObservableObject {
             }   else {
                 guard let user = result?.user else  {return}
                 self.userSession = user
-                self.loginStatus = true
                 debugPrint("[🔥]  로그인에  성공 하였습니다  \(user)")
                 withAnimation(.easeInOut) {
                     self.log_Status = true

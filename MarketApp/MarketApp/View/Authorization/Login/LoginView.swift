@@ -12,7 +12,7 @@ import ExytePopupView
 
 struct LoginView: View {
     
-    @StateObject var viewModel : SignUPViewModel
+    @StateObject var viewModel : SignUPViewModel = SignUPViewModel()
     
     @Environment(\.dismiss) var dismiss
     
@@ -275,14 +275,14 @@ struct LoginView: View {
                     .foregroundColor(Color.black)
                 
                 Text("구글 계정으로 로그인")
-                    .nanumSquareNeo(family: .cBd, size: 20, color: Color.black)
+                    .nanumSquareNeo(family: .cBd, size: 20, color: Color.white)
                 
             Spacer()
             }
         }
        
         .frame(height: 50)
-        .background(Color.white)
+        .background(Color.black)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
