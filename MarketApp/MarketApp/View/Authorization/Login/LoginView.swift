@@ -12,7 +12,7 @@ import ExytePopupView
 
 struct LoginView: View {
     
-    @StateObject var viewModel : SignUPViewModel
+    @StateObject var viewModel : SignUPViewModel = SignUPViewModel()
     
     @Environment(\.dismiss) var dismiss
     
@@ -26,6 +26,7 @@ struct LoginView: View {
     @State private var loginErrorPopUp: Bool = false
     @State private var loginPopUP: Bool = false
     @State private var confirmAction: Bool = false
+    @State private var showMainview : Bool = false
     
     var body: some View {
         ZStack{
@@ -54,7 +55,7 @@ struct LoginView: View {
                             .frame(height: 50)
                         
                         loginWithApple()
-                        
+                         
                         loginWithGoogle()
                         
                         Spacer(minLength: .zero)
@@ -77,6 +78,9 @@ struct LoginView: View {
         }
         .popup(isPresented: $loginPopUP, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
             PopUPview(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
+        }
+        .fullScreenCover(isPresented: $showMainview) {
+            MainContentView()
         }
     }
     //MARK: - 앱 로고
@@ -147,7 +151,9 @@ struct LoginView: View {
     private func  loginButton() -> some View {
         VStack {
             Button {
-                loginCheck()
+                viewModel.login(withEmail: emailTextField, password: passwordTextField)
+                viewModel.log_Status = true
+                dismiss()
                 UIApplication.shared.endEditing()
             } label: {
                 Text("로그인")
@@ -159,75 +165,61 @@ struct LoginView: View {
                             .frame(width: UIScreen.screenWidth - 80, height: 50)
                     }
             }
-            //            .disabled(emailTextField.isEmpty  || passwordTextField.isEmpty)
+//            .disabled(emailTextField.isEmpty  || passwordTextField.isEmpty)
             
             Spacer()
                 .frame(height: 40)
             
-            HStack(spacing: 20){
-                ForEach(LoginItem.allCases, id: \.description) { item in
-                    if selectedLoginSignType == .findPassword {
-                        Text(item.description)
-                            .nanumSquareNeo(family: selectedLoginSignType == item ? .cBd : .bRG, size: 12, color:  selectedLoginSignType == item ?  .white :  .white.opacity(0.9))
-                            .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
-                            .background(Color.colorAsset.gray)
-                            .clipShape(Capsule())
-                            .onTapGesture {
-                                withAnimation(.easeInOut) {
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        self.selectedLoginSignType = item
-                                        showFindPasswordView.toggle()
-                                    }
-                                }
-                            }
-                    } else if selectedLoginSignType == .findEmail {
-                        Text(item.description)
-                            .nanumSquareNeo(family: selectedLoginSignType == item ? .cBd : .bRG, size: 12, color:  selectedLoginSignType == item ?  .white :  .white.opacity(0.9))
-                            .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
-                            .background(Color.colorAsset.gray)
-                            .clipShape(Capsule())
-                            .onTapGesture {
-                                withAnimation(.easeInOut) {
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        self.selectedLoginSignType = item
-                                        showFindEmailView.toggle()
-                                    }
-                                }
-                            }
-                    } else if selectedLoginSignType == .signUP {
-                        Text(item.description)
-                            .nanumSquareNeo(family: selectedLoginSignType == item ? .cBd : .bRG, size: 12, color:  selectedLoginSignType == item ?  .white :  .white.opacity(0.9))
-                            .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
-                            .background(Color.colorAsset.gray)
-                            .clipShape(Capsule())
-                            .onTapGesture {
-                                withAnimation(.easeInOut) {
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        self.selectedLoginSignType = item
-                                        showSignUPView.toggle()
-                                    }
-                                }
-                            }
-                    }
+            HStack(spacing: 20) {
+                Button {
+                    showFindEmailView.toggle()
+                } label: {
+                    Text("아이디 찾기")
+                        .nanumSquareNeo(family: .bRG, size: 12, color:  .white)
+                        .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
+                        .background(Color.colorAsset.gray)
+                        .clipShape(Capsule())
+                }
+                
+                Button {
+                    showFindPasswordView.toggle()
+                } label: {
+                    Text("비밀번호 찾기")
+                        .nanumSquareNeo(family: .bRG, size: 12, color:  .white)
+                        .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
+                        .background(Color.colorAsset.gray)
+                        .clipShape(Capsule())
+                }
+                
+                Button {
+                    showSignUPView.toggle()
+                } label: {
+                    Text("이메일 가입")
+                        .nanumSquareNeo(family: .bRG, size: 12, color:  .white)
+                        .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
+                        .background(Color.colorAsset.gray)
+                        .clipShape(Capsule())
                 }
             }
         }
     }
     //MARK: - 로그인 검사
     private func loginCheck() {
-        if emailTextField.isEmpty {
+       if emailTextField.isEmpty {
             loginPopUP.toggle()
-        } else  if !CheckRegister.isValidateEmail(emailTextField) {
+       } else  if !CheckRegister.isValidateEmail(emailTextField) {
+           loginErrorPopUp.toggle()
+       }else if passwordTextField.isEmpty {
+           loginPopUP.toggle()
+       }else if !CheckRegister.isValidatePassword(passwordTextField) {
+           loginErrorPopUp.toggle()
+       } else if emailTextField != emailTextField {
             loginErrorPopUp.toggle()
-        }else if passwordTextField.isEmpty {
-            loginPopUP.toggle()
-        }else if !CheckRegister.isValidatePassword(passwordTextField) {
-            loginErrorPopUp.toggle()
-        } else if emailTextField != emailTextField {
-            loginErrorPopUp.toggle()
-        }
+       } else {
+           showMainview.toggle()
+       }
     }
-    
+
     //MARK:  - 애플 로그인
     @ViewBuilder
     private func loginWithApple() -> some View {
@@ -276,26 +268,26 @@ struct LoginView: View {
             HStack(spacing: 10) {
                 
                 Spacer()
-                
+                     
                 Image("google_logo")
                     .resizable()
                     .frame(width: 20, height: 20)
                     .foregroundColor(Color.black)
                 
                 Text("구글 계정으로 로그인")
-                    .nanumSquareNeo(family: .cBd, size: 20, color: Color.black)
+                    .nanumSquareNeo(family: .cBd, size: 20, color: Color.white)
                 
-                Spacer()
+            Spacer()
             }
         }
-        
+       
         .frame(height: 50)
-        .background(Color.white)
+        .background(Color.black)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.white, lineWidth: 1)
-            
+                .stroke(Color.black, lineWidth: 1)
+        
         )
         .padding(.horizontal, 40)
     }

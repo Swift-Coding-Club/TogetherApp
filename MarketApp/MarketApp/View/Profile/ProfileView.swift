@@ -6,15 +6,33 @@
 //
 
 import SwiftUI
+import ExytePopupView
 
 struct ProfileView: View {
+    
+    @EnvironmentObject var viewModel: SignUPViewModel
+    @State private var show: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationView {
+            VStack {
+                Text("로그아웃")
+                    .nanumSquareNeo(family: .cBd, size: 20, color: .black)
+                    .onTapGesture {
+                        viewModel.signOut()
+                    }
+            }
+        }
+        .fullScreenCover(isPresented: $viewModel.loginStatus) {
+            LoginView()
+        }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(dev.signUPViewModel)
     }
 }

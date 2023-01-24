@@ -5,8 +5,12 @@
 ## User settings
 xcuserdata/
 .DS_Store
-/fastlane/.env
+AppStore_com.shoping.MarketApps.mobileprovision
+Gemfile
+QM6N37556J.cer
+9P78JL89R8.cer
 
+Gemfile.lock
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
