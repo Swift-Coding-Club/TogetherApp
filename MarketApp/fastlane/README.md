@@ -47,6 +47,30 @@ Install Profiles and Build My App
 
 build app and upload to testflight
 
+### ios get_dev_certs
+
+```sh
+[bundle exec] fastlane ios get_dev_certs
+```
+
+
+
+### ios sync_all_development
+
+```sh
+[bundle exec] fastlane ios sync_all_development
+```
+
+
+
+### ios sync_device_info
+
+```sh
+[bundle exec] fastlane ios sync_device_info
+```
+
+
+
 ### ios release
 
 ```sh

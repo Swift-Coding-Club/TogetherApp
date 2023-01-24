@@ -67,7 +67,7 @@ struct MainContentView: View {
         .navigationTitle("APP NAME")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing: leadingNavigationTrallingView())
-        .navigationBarItems(leading: notiNavigationView())
+//        .navigationBarItems(leading: notiNavigationView())
         .fullScreenCover(isPresented: $showView){
             NavigationView {
                 LoginView(viewModel: loginViewModel)

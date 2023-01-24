@@ -38,14 +38,22 @@ desc "Run swift code validation using SwiftLint"
 
   desc "Install Profiles and Build My App"
   lane :build_ipa do
+   clear_derived_data
     gym(
       workspace: "MarketApp.xcworkspace",
       scheme: "MarketApp",
-      output_directory: "DIRECTORY_WHERE_YOUR_IPA_WILL_BE_SAVED",
       output_name: "MarketApp",
       export_method: "app-store",
       include_bitcode: false,
-      clean: true)
+      clean: true,
+      silent: true,
+      include_symbols: false,
+      xcargs: 'DEBUG_INFORMATION_FORMAT="dwarf-with-dsym"',
+      disable_package_automatic_updates: true,
+      skip_package_dependencies_resolution: true,
+      skip_package_pkg: true
+
+)
     end
 desc "build app and upload to testflight"
 lane :beta do
@@ -63,6 +71,24 @@ lane :beta do
 
   end
 
+lane :get_dev_certs  do
+    cert(development: true)
+    sign(development: true)
+end
+
+
+lane :sync_all_development do
+ sync_device_info
+ match(type: "development")
+end
+
+lane:sync_device_info do 
+register_devices(
+ devices: {
+  "서원지의 iPhone" => "00008120-0019044C21D8C01E"
+  }
+)
+end
   desc "Description of what the lane does"
    desc "Push a new release build to the App Store"
   lane :release do |options|
@@ -70,12 +96,14 @@ lane :beta do
   # fastlane release version:"2.1.0"
   # 과 같이 사용할 수 있다.
     if options[:version]
-      enable_automatic_code_signing
+      #enable_automatic_code_signing
       increment_version_number(version_number: options[:version])
       get_certificates
       get_provisioning_profile
       build_ipa
+      sync_all_development
       upload_to_app_store(
+	devices([ "iPhone 14 Pro"]),
 	username: "shuwj81@daum.net",
       team_id: "N94CS4N6VR",
         # ✅ screenshots 는 기존의 것 사용. metadata 는 업데이트 내역을 위해서 스킵하지 않음.
@@ -93,7 +121,7 @@ add_id_info_uses_idfa: false,
     export_compliance_encryption_updated: false,
     export_compliance_uses_encryption: false,
     content_rights_contains_third_party_content: false, 
-}
+	}
       )
     # ✅ if 문을 종료하기 위한 end
     end
