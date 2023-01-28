@@ -63,7 +63,7 @@ struct MainContentView: View {
             }
         })
         .accentColor(Color.colorAsset.mainColor)
-        .navigationTitle("APP NAME")
+        .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing: leadingNavigationTrallingView())
 //        .navigationBarItems(leading: notiNavigationView())

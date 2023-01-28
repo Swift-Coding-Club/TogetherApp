@@ -68,6 +68,7 @@
 		7F66ECC02979778A0039CC42 /* SignUPTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F66ECBF2979778A0039CC42 /* SignUPTextFieldView.swift */; };
 		7F66ECC62979A6FE0039CC42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */; };
 		7F93C34C29854D2100345AEC /* AppManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34B29854D2100345AEC /* AppManger.swift */; };
+		7F93C34F29856C3A00345AEC /* AffinityAppCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */; };
 		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
@@ -129,6 +130,7 @@
 		7F66ECBF2979778A0039CC42 /* SignUPTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPTextFieldView.swift; sourceTree = "<group>"; };
 		7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F93C34B29854D2100345AEC /* AppManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManger.swift; sourceTree = "<group>"; };
+		7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffinityAppCheck.swift; sourceTree = "<group>"; };
 		A025DDF51E9A1BBEC7469CCC /* Pods-MarketApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.debug.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B1F400B0E00C4FA897EBD2 /* Pods-MarketApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.release.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 		7F39FA79294F4E070041BF8B /* Utill */ = {
 			isa = PBXGroup;
 			children = (
+				7F93C34D29856BD500345AEC /* AppCheck */,
 				7F0F164E296C3A5600FB4C30 /* Authoriation */,
 				7F0F164B296C39CC00FB4C30 /* Extensions */,
 				7F0F1641296007F800FB4C30 /* Color */,
@@ -459,6 +462,14 @@
 				7F39FAB1295341A50041BF8B /* NanumSquareNeo-eHv.ttf */,
 			);
 			path = FontAsset;
+			sourceTree = "<group>";
+		};
+		7F93C34D29856BD500345AEC /* AppCheck */ = {
+			isa = PBXGroup;
+			children = (
+				7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */,
+			);
+			path = AppCheck;
 			sourceTree = "<group>";
 		};
 		A1BC0135F64B06BED0692AC2 /* Pods */ = {
@@ -803,6 +814,7 @@
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* MainContentView.swift in Sources */,
 				7F39FA8D2950922D0041BF8B /* ConfirmAlertView.swift in Sources */,
+				7F93C34F29856C3A00345AEC /* AffinityAppCheck.swift in Sources */,
 				7F0F1650296C3A6A00FB4C30 /* AppleLoginManger.swift in Sources */,
 				7F0F16402960061F00FB4C30 /* OverlayView.swift in Sources */,
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
