@@ -37,7 +37,6 @@ struct SignUPTextFieldView: View {
                     SecureField(placeholder, text: $text)
                         .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.secondaryTextColor)
                         .disableAutocorrection(true)
-                    
                 }
                 
                 if password == true {
@@ -65,12 +64,10 @@ struct SignUPTextFieldView: View {
 
                 }
             }
-            
             //MARK: - line
           Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.black)
-            
         }
         .padding(.horizontal, LayoutMargin)
     }

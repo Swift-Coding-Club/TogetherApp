@@ -67,6 +67,7 @@
 		7F6250BF29719657004CCC10 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6250BE29719657004CCC10 /* KeyboardHandler.swift */; };
 		7F66ECC02979778A0039CC42 /* SignUPTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F66ECBF2979778A0039CC42 /* SignUPTextFieldView.swift */; };
 		7F66ECC62979A6FE0039CC42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */; };
+		7F93C34C29854D2100345AEC /* AppManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34B29854D2100345AEC /* AppManger.swift */; };
 		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
@@ -127,6 +128,7 @@
 		7F6250BE29719657004CCC10 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		7F66ECBF2979778A0039CC42 /* SignUPTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPTextFieldView.swift; sourceTree = "<group>"; };
 		7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F93C34B29854D2100345AEC /* AppManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManger.swift; sourceTree = "<group>"; };
 		A025DDF51E9A1BBEC7469CCC /* Pods-MarketApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.debug.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B1F400B0E00C4FA897EBD2 /* Pods-MarketApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.release.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			children = (
 				7F0F164F296C3A6A00FB4C30 /* AppleLoginManger.swift */,
 				7F0F1660296EF0B400FB4C30 /* SignManger.swift */,
+				7F93C34B29854D2100345AEC /* AppManger.swift */,
 			);
 			path = Authoriation;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */,
 				7F39FA82295090230041BF8B /* MarketAPI.swift in Sources */,
 				7F39FA7F29508FAF0041BF8B /* APIError.swift in Sources */,
+				7F93C34C29854D2100345AEC /* AppManger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,7 +953,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarketApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Fancy;
+				INFOPLIST_KEY_CFBundleDisplayName = Affinity;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -957,7 +961,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -989,7 +993,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarketApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Fancy;
+				INFOPLIST_KEY_CFBundleDisplayName = Affinity;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -997,7 +1001,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
