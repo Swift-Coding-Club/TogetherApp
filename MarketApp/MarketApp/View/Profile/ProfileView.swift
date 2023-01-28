@@ -15,14 +15,13 @@ struct ProfileView: View {
     
     var body: some View {
         
-        NavigationView {
-            VStack {
-                Text("로그아웃")
-                    .nanumSquareNeo(family: .cBd, size: 20, color: .black)
-                    .onTapGesture {
-                        viewModel.signOut()
-                    }
-            }
+        VStack {
+            Text("로그아웃")
+                .nanumSquareNeo(family: .cBd, size: 20, color: .black)
+                .onTapGesture {
+                    viewModel.signOut()
+                    viewModel.loginStatus = false
+                }
         }
         .fullScreenCover(isPresented: $viewModel.loginStatus) {
             LoginView()

@@ -20,6 +20,7 @@ struct SignUPView: View {
     @State private var recheckPassword: Bool = false
     @State private var showNickNameView: Bool = false
     @State private var checkOnePassword: Bool = false
+    @State private var path : [SingUPStack] = []
     
     @StateObject var viewModel: SignUPViewModel = SignUPViewModel()
     
@@ -42,6 +43,10 @@ struct SignUPView: View {
             
             Spacer(minLength: .zero)
         }
+        .navigationDestination(isPresented: $showNickNameView) {
+            SignUPNickNameView()
+        }
+        
         .popup(isPresented: $checkEmail, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
             SignupPopupVIew(image: "envelope", title: "회원가입 양식을 확인 해주세요", alertMessage: "이메일을 확인 해주세요")
         }
@@ -56,7 +61,6 @@ struct SignUPView: View {
             SignupPopupVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 한번더 확인해주세요")
         }
         
-        NavigationLink(destination: SignUPNickNameView(), isActive: $showNickNameView, label: {EmptyView() })
     }
     
     @ViewBuilder
@@ -114,6 +118,7 @@ struct SignUPView: View {
             checkOnePassword = true
         } else {
             showNickNameView.toggle()
+            path.append(.signUPNickName)
         }
     }
 }

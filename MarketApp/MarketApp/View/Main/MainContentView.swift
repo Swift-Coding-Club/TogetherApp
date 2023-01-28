@@ -68,10 +68,8 @@ struct MainContentView: View {
         .navigationBarItems(trailing: leadingNavigationTrallingView())
 //        .navigationBarItems(leading: notiNavigationView())
         .fullScreenCover(isPresented: $showView){
-            NavigationView {
-                LoginView(viewModel: loginViewModel)
-                    .transition(.move(edge: .bottom))
-            }
+            LoginView(viewModel: loginViewModel)
+                .transition(.move(edge: .bottom))
         }
     }
     //MARK: - 검색 뷰 &  장바구니 뷰

@@ -38,7 +38,9 @@ struct SignUPNickNameView: View {
             Spacer(minLength: .zero)
         }
         .fullScreenCover(isPresented: $showProfileView) {
-            MainContentView()
+            NavigationStack {
+                MainContentView()
+            }
         }
         
         .popup(isPresented: $checkNickName, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {

@@ -35,7 +35,7 @@ class SignUPViewModel: ObservableObject {
             } else {
                 guard let user = result?.user else { return }
                 self.userSession = user
-                self.log_Status = true
+                self.loginStatus = true
                 debugPrint("로그인에 성공 하였습니다")
             }
         }
@@ -72,7 +72,7 @@ class SignUPViewModel: ObservableObject {
                 else {
                     print("[DEBUG] : dispalyName 변경 성공")
                     self.userSession = user
-                    self.log_Status = true
+                    self.loginStatus = true
                 }
             }
         }
@@ -81,7 +81,7 @@ class SignUPViewModel: ObservableObject {
     
     //MARK: - 로그아웃
     func signOut() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
             self.userSession = nil
             self.loginStatus.toggle()
         }
@@ -149,7 +149,7 @@ class SignUPViewModel: ObservableObject {
                 self.userSession = user
                 debugPrint("[🔥]  로그인에  성공 하였습니다  \(user)")
                 withAnimation(.easeInOut) {
-                    self.log_Status = true
+                    self.loginStatus = true
                 }
             }
         }
@@ -187,7 +187,7 @@ class SignUPViewModel: ObservableObject {
                     debugPrint("[🔥]  로그인에  성공 하였습니다  \(String(describing: user))")
                     guard let user = authResult?.user else {return}
                     self.userSession = user
-                    self.log_Status = true
+                    self.loginStatus = true
                 }
             }
         }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D0B745604915877639C073E /* Pods_MarketApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */; };
+		7F0565D2298583880066BE4A /* SingUPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565D1298583880066BE4A /* SingUPItem.swift */; };
 		7F0F163E2960033F00FB4C30 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F163D2960033F00FB4C30 /* LoginView.swift */; };
 		7F0F16402960061F00FB4C30 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F163F2960061F00FB4C30 /* OverlayView.swift */; };
 		7F0F16432960081500FB4C30 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F16422960081500FB4C30 /* ColorAsset.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F0565D1298583880066BE4A /* SingUPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUPItem.swift; sourceTree = "<group>"; };
 		7F0F163D2960033F00FB4C30 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7F0F163F2960061F00FB4C30 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		7F0F16422960081500FB4C30 /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
@@ -182,6 +184,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F0565D32985851C0066BE4A /* ViewStack */ = {
+			isa = PBXGroup;
+			children = (
+				7F0F1654296C456E00FB4C30 /* LoginItem.swift */,
+				7F0565D1298583880066BE4A /* SingUPItem.swift */,
+			);
+			path = ViewStack;
+			sourceTree = "<group>";
+		};
 		7F0F1641296007F800FB4C30 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +242,6 @@
 		7F0F1656296C4C7900FB4C30 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				7F0F1654296C456E00FB4C30 /* LoginItem.swift */,
 				7F0F163D2960033F00FB4C30 /* LoginView.swift */,
 			);
 			path = Login;
@@ -360,6 +370,7 @@
 		7F39FA79294F4E070041BF8B /* Utill */ = {
 			isa = PBXGroup;
 			children = (
+				7F0565D32985851C0066BE4A /* ViewStack */,
 				7F93C34D29856BD500345AEC /* AppCheck */,
 				7F0F164E296C3A5600FB4C30 /* Authoriation */,
 				7F0F164B296C39CC00FB4C30 /* Extensions */,
@@ -795,6 +806,7 @@
 				EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */,
 				7F0F165D296C4CFE00FB4C30 /* FindPasswordView.swift in Sources */,
 				7F0F164D296C39F500FB4C30 /* UIApplication.swift in Sources */,
+				7F0565D2298583880066BE4A /* SingUPItem.swift in Sources */,
 				7F39FA8A2950915B0041BF8B /* ScrollViewModifier.swift in Sources */,
 				7F6037CE297C16F30034CFF7 /* SignOutPopView.swift in Sources */,
 				7F6037AD297AC5890034CFF7 /* SignupPopupVIew.swift in Sources */,

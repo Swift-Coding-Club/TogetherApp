@@ -27,52 +27,56 @@ struct LoginView: View {
     @State private var loginPopUP: Bool = false
     @State private var confirmAction: Bool = false
     @State private var showMainview : Bool = false
+    @State private var path : [LoginStack] = []
     
     var body: some View {
-        ZStack{
-            Color.white
-                .ignoresSafeArea()
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                Group{
-                    VStack(spacing: .zero) {
-                        
-                        Spacer()
-                            .frame(height: modalTopTransparentSize - 40)
-                        
-                        titleButton()
-                        
-                        loginTitle()
-                        
-                        loginTextField()
-                        
-                        Spacer()
-                            .frame(height: 60)
-                        
-                        loginButton()
-                        
-                        Spacer()
-                            .frame(height: 50)
-                        
-                        loginWithApple()
-                         
-                        loginWithGoogle()
-                        
-                        Spacer(minLength: .zero)
+        NavigationStack{
+            ZStack{
+                Color.white
+                    .ignoresSafeArea()
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    Group{
+                        VStack(spacing: .zero) {
+                            
+                            Spacer()
+                                .frame(height: modalTopTransparentSize - 40)
+                            
+                            titleButton()
+                            
+                            loginTitle()
+                            
+                            loginTextField()
+                            
+                            Spacer()
+                                .frame(height: 60)
+                            
+                            loginButton()
+                            
+                            Spacer()
+                                .frame(height: 50)
+                            
+                            loginWithApple()
+                            
+                            loginWithGoogle()
+                            
+                            Spacer(minLength: .zero)
+                        }
                     }
                 }
+                .bounce(false)
             }
-            .bounce(false)
+            .navigationDestination(isPresented: $showFindEmailView) {
+                FindEmailView()
+            }
+            .navigationDestination(isPresented: $showFindPasswordView) {
+                FindPasswordView()
+            }
+            .navigationDestination(isPresented: $showSignUPView) {
+                SignUPView()
+            }
         }
-        .background(
-            NavigationLink(destination: FindPasswordView(), isActive: $showFindPasswordView, label: {EmptyView()})
-        )
-        .background(
-            NavigationLink(destination: FindEmailView(), isActive: $showFindEmailView, label: {EmptyView()})
-        )
-        .background(
-            NavigationLink(destination: SignUPView(), isActive: $showSignUPView, label: {EmptyView()})
-        )
+        
         .popup(isPresented: $loginErrorPopUp, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
             PopUPview(title: "로그인 에러", message: "아이디와 비밀 번호를 한번 확인 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
         }
@@ -154,20 +158,18 @@ struct LoginView: View {
         VStack {
             Button {
                 viewModel.login(withEmail: emailTextField, password: passwordTextField)
-                viewModel.log_Status = true
-                dismiss()
+                viewModel.loginStatus = true
                 UIApplication.shared.endEditing()
             } label: {
                 Text("로그인")
                     .nanumSquareNeo(family: .bRG, size: 22, color: .white)
-                
                     .background {
                         RoundedRectangle(cornerRadius: 12)
                             .fill(Color.colorAsset.gray.opacity(0.5))
                             .frame(width: UIScreen.screenWidth - 80, height: 50)
                     }
             }
-//            .disabled(emailTextField.isEmpty  || passwordTextField.isEmpty)
+            //            .disabled(emailTextField.isEmpty  || passwordTextField.isEmpty)
             
             Spacer()
                 .frame(height: 40)
@@ -207,21 +209,21 @@ struct LoginView: View {
     }
     //MARK: - 로그인 검사
     private func loginCheck() {
-       if emailTextField.isEmpty {
+        if emailTextField.isEmpty {
             loginPopUP.toggle()
-       } else if !CheckRegister.isValidateEmail(emailTextField) {
-           loginErrorPopUp.toggle()
-       }else if passwordTextField.isEmpty {
-           loginPopUP.toggle()
-       }else if !CheckRegister.isValidatePassword(passwordTextField) {
-           loginErrorPopUp.toggle()
-       } else if emailTextField != emailTextField {
+        } else if !CheckRegister.isValidateEmail(emailTextField) {
             loginErrorPopUp.toggle()
-       } else {
-           showMainview.toggle()
-       }
+        }else if passwordTextField.isEmpty {
+            loginPopUP.toggle()
+        }else if !CheckRegister.isValidatePassword(passwordTextField) {
+            loginErrorPopUp.toggle()
+        } else if emailTextField != emailTextField {
+            loginErrorPopUp.toggle()
+        } else {
+            showMainview.toggle()
+        }
     }
-
+    
     //MARK:  - 애플 로그인
     @ViewBuilder
     private func loginWithApple() -> some View {
@@ -270,7 +272,7 @@ struct LoginView: View {
             HStack(spacing: 10) {
                 
                 Spacer()
-                     
+                
                 Image("google_logo")
                     .resizable()
                     .frame(width: 20, height: 20)
@@ -279,17 +281,17 @@ struct LoginView: View {
                 Text("구글 계정으로 로그인")
                     .nanumSquareNeo(family: .cBd, size: 20, color: Color.white)
                 
-            Spacer()
+                Spacer()
             }
         }
-       
+        
         .frame(height: 50)
         .background(Color.black)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.black, lineWidth: 1)
-        
+            
         )
         .padding(.horizontal, 40)
     }

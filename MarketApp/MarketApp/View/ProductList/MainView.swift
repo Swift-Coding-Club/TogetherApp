@@ -24,17 +24,15 @@ struct MainView: View {
     @State private var sortList = demoSort.one
     
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                BannerViews()
-                
-                CategoryViews()
-                    .padding()
-                
-                SortedViews()
-                
-                ProductViews()
-            }
+        ScrollView(.vertical, showsIndicators: false) {
+            BannerViews()
+            
+            CategoryViews()
+                .padding()
+            
+            SortedViews()
+            
+            ProductViews()
         }
     }
     

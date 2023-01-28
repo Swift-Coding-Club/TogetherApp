@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LoginItem: CaseIterable , CustomStringConvertible  {
+enum LoginItem: CaseIterable , CustomStringConvertible   {
     case findEmail
     case findPassword
     case signUP
@@ -22,4 +22,10 @@ enum LoginItem: CaseIterable , CustomStringConvertible  {
             return "이메일 가입"
         }
     }
+}
+
+enum LoginStack: Hashable {
+case findEmail
+case findPassword
+case signUP
 }
