@@ -7,27 +7,25 @@
 
 import SwiftUI
 import GoogleSignIn
+import FirebaseAppCheck
 
 @main
 struct MarketAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
+    let providerFactory = AffinityAppCheck()
     
     init() {
-        
-        UINavigationBar.appearance().tintColor = UIColor(Color.colorAsset.mainColor)
+        AppCheck.setAppCheckProviderFactory(providerFactory)
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.black)]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor(Color.black)]
+        UINavigationBar.appearance().tintColor = UIColor(Color.black)
     }
     
     var body: some Scene {
         WindowGroup {
-            if #available(iOS 16.0, *) {
-                NavigationStack {
-                    MainContentView()
-                }
-            } else {
-                NavigationView {
-                    MainContentView()
-                }
+            NavigationStack {
+                MainContentView()
             }
         }
     }

@@ -49,7 +49,6 @@ struct MainContentView: View {
                 .tag(3)
         }
         .onAppear{
-//            self.showView = false
             UITabBar.appearance().tintColor = UIColor(Color.colorAsset.mauve2)
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color.fontColor.secondaryTextColor)
         }
@@ -64,7 +63,7 @@ struct MainContentView: View {
             }
         })
         .accentColor(Color.colorAsset.mainColor)
-        .navigationTitle("APP NAME")
+        .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing: leadingNavigationTrallingView())
 //        .navigationBarItems(leading: notiNavigationView())
@@ -75,8 +74,6 @@ struct MainContentView: View {
             }
         }
     }
-
-    
     //MARK: - 검색 뷰 &  장바구니 뷰
     @ViewBuilder
     private func leadingNavigationTrallingView() -> some View {

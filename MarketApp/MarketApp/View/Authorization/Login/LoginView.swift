@@ -80,7 +80,9 @@ struct LoginView: View {
             PopUPview(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
         }
         .fullScreenCover(isPresented: $showMainview) {
-            MainContentView()
+            NavigationView {
+                MainContentView()
+            }
         }
     }
     //MARK: - 앱 로고
@@ -207,7 +209,7 @@ struct LoginView: View {
     private func loginCheck() {
        if emailTextField.isEmpty {
             loginPopUP.toggle()
-       } else  if !CheckRegister.isValidateEmail(emailTextField) {
+       } else if !CheckRegister.isValidateEmail(emailTextField) {
            loginErrorPopUp.toggle()
        }else if passwordTextField.isEmpty {
            loginPopUP.toggle()

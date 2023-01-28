@@ -10,5 +10,6 @@ target 'MarketApp' do
     pod 'SwiftLint'
     pod 'ExytePopupView'
     pod 'Kingfisher'
+    pod 'FirebaseAppCheck'
 #    pod 'Firebase/Crashlytics'
 end
