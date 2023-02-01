@@ -14,12 +14,13 @@ enum MarketAPI {
     //MARK: - base URL
 
     static var baseURL: URL {
-        return URL(string: "")!
+        return URL(string: "https://4acc2d07-0e1a-413b-aace-a5c702e1dc91.mock.pstmn.io")!
     }
     //MARK: - API header 필수 값
     static func headers() -> HTTPHeaders {
         return [
-                
+            "Accept": "application/json",
+            "Content-Type": "application/json"
             ]
     }
 }

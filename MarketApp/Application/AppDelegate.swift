@@ -103,8 +103,6 @@ class AppDelegate: UIViewController, UIApplicationDelegate, MessagingDelegate, U
         let userInfo = response.notification.request.content.userInfo
         Messaging.messaging().appDidReceiveMessage(userInfo)
         
-       
-        
         completionHandler()
     }
     

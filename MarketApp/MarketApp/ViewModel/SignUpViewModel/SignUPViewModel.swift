@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAuth
 import AuthenticationServices
 import GoogleSignIn
+import FirebaseDatabase
 
 class SignUPViewModel: ObservableObject {
     
@@ -21,8 +22,17 @@ class SignUPViewModel: ObservableObject {
     //MARK: - 로그인 애니메이션 판별
     @AppStorage("log_status") var log_Status = false
     
+    let ref = Database.database().reference()
+    
     init() {
         self.userSession = Auth.auth().currentUser
+        databaseload()
+    }
+    
+    func databaseload() {
+        _ = ref.child("Shoes").observe(.value, with: { snapshot in
+            print("firebase data \(snapshot.value)")
+        })
     }
     
     //MARK: - 로그인

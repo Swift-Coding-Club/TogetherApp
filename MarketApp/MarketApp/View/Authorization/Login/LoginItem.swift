@@ -24,8 +24,3 @@ enum LoginItem: CaseIterable , CustomStringConvertible   {
     }
 }
 
-enum LoginStack: Hashable {
-case findEmail
-case findPassword
-case signUP
-}

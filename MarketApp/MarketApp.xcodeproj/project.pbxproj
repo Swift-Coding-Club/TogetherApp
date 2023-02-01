@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D0B745604915877639C073E /* Pods_MarketApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */; };
-		7F0565D2298583880066BE4A /* SingUPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565D1298583880066BE4A /* SingUPItem.swift */; };
+		7F0565D5298686AE0066BE4A /* ShoeMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565D4298686AE0066BE4A /* ShoeMockData.swift */; };
+		7F0565D7298696110066BE4A /* MarketAPI-Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565D6298696110066BE4A /* MarketAPI-Main.swift */; };
+		7F0565DA298698A20066BE4A /* MainShoesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565D9298698A20066BE4A /* MainShoesViewModel.swift */; };
 		7F0F163E2960033F00FB4C30 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F163D2960033F00FB4C30 /* LoginView.swift */; };
 		7F0F16402960061F00FB4C30 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F163F2960061F00FB4C30 /* OverlayView.swift */; };
 		7F0F16432960081500FB4C30 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F16422960081500FB4C30 /* ColorAsset.swift */; };
@@ -88,7 +90,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7F0565D1298583880066BE4A /* SingUPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUPItem.swift; sourceTree = "<group>"; };
+		7F0565D4298686AE0066BE4A /* ShoeMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeMockData.swift; sourceTree = "<group>"; };
+		7F0565D6298696110066BE4A /* MarketAPI-Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarketAPI-Main.swift"; sourceTree = "<group>"; };
+		7F0565D9298698A20066BE4A /* MainShoesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShoesViewModel.swift; sourceTree = "<group>"; };
 		7F0F163D2960033F00FB4C30 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7F0F163F2960061F00FB4C30 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		7F0F16422960081500FB4C30 /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
@@ -187,10 +191,16 @@
 		7F0565D32985851C0066BE4A /* ViewStack */ = {
 			isa = PBXGroup;
 			children = (
-				7F0F1654296C456E00FB4C30 /* LoginItem.swift */,
-				7F0565D1298583880066BE4A /* SingUPItem.swift */,
 			);
 			path = ViewStack;
+			sourceTree = "<group>";
+		};
+		7F0565D8298698790066BE4A /* MainShoesViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F0565D9298698A20066BE4A /* MainShoesViewModel.swift */,
+			);
+			path = MainShoesViewModel;
 			sourceTree = "<group>";
 		};
 		7F0F1641296007F800FB4C30 /* Color */ = {
@@ -243,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				7F0F163D2960033F00FB4C30 /* LoginView.swift */,
+				7F0F1654296C456E00FB4C30 /* LoginItem.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -330,9 +341,9 @@
 			children = (
 				7F2432B32958691F00C1077E /* Notice */,
 				C9E3E7A7290823FA00914FE5 /* Component */,
+				7F2432A829585DDA00C1077E /* Authorization */,
 				7F2432AA29585E1900C1077E /* Search */,
 				7F2432A929585E0C00C1077E /* Cart */,
-				7F2432A829585DDA00C1077E /* Authorization */,
 				7F39FA76294F4DAB0041BF8B /* Main */,
 				C9E3E7A5290823DB00914FE5 /* Favorite */,
 				C9E3E7A6290823E100914FE5 /* Profile */,
@@ -345,6 +356,7 @@
 		7F39FA76294F4DAB0041BF8B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				EC892AAE2908201700D02F99 /* MainView.swift */,
 				EC892AA02908189600D02F99 /* MainContentView.swift */,
 				7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */,
 				7F6250B6297030B4004CCC10 /* TabIndex.swift */,
@@ -355,6 +367,7 @@
 		7F39FA77294F4DED0041BF8B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7F0565D8298698790066BE4A /* MainShoesViewModel */,
 				7F0F1651296C3ACE00FB4C30 /* SignUpViewModel */,
 			);
 			path = ViewModel;
@@ -363,6 +376,7 @@
 		7F39FA78294F4DFF0041BF8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7F0565D4298686AE0066BE4A /* ShoeMockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,6 +418,7 @@
 			children = (
 				7F39FA7B29508EE80041BF8B /* NetworkAgent.swift */,
 				7F39FA81295090230041BF8B /* MarketAPI.swift */,
+				7F0565D6298696110066BE4A /* MarketAPI-Main.swift */,
 			);
 			path = MarketAPI;
 			sourceTree = "<group>";
@@ -512,7 +527,6 @@
 		C9E3E7A32908239700914FE5 /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
-				EC892AAE2908201700D02F99 /* MainView.swift */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -705,7 +719,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		7F2432B22958677000C1077E /* FirebaseCrashlytics Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -721,7 +735,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n  \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
@@ -806,11 +820,11 @@
 				EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */,
 				7F0F165D296C4CFE00FB4C30 /* FindPasswordView.swift in Sources */,
 				7F0F164D296C39F500FB4C30 /* UIApplication.swift in Sources */,
-				7F0565D2298583880066BE4A /* SingUPItem.swift in Sources */,
 				7F39FA8A2950915B0041BF8B /* ScrollViewModifier.swift in Sources */,
 				7F6037CE297C16F30034CFF7 /* SignOutPopView.swift in Sources */,
 				7F6037AD297AC5890034CFF7 /* SignupPopupVIew.swift in Sources */,
 				7F0F1661296EF0B400FB4C30 /* SignManger.swift in Sources */,
+				7F0565D7298696110066BE4A /* MarketAPI-Main.swift in Sources */,
 				7F0F164929600AEF00FB4C30 /* CustomInputField.swift in Sources */,
 				EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */,
 				7F0F163E2960033F00FB4C30 /* LoginView.swift in Sources */,
@@ -823,12 +837,14 @@
 				7F0F1646296008D900FB4C30 /* FontColor.swift in Sources */,
 				7F6250B7297030B4004CCC10 /* TabIndex.swift in Sources */,
 				7F0F1664296EF2A000FB4C30 /* PreviewProvider.swift in Sources */,
+				7F0565D5298686AE0066BE4A /* ShoeMockData.swift in Sources */,
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* MainContentView.swift in Sources */,
 				7F39FA8D2950922D0041BF8B /* ConfirmAlertView.swift in Sources */,
 				7F93C34F29856C3A00345AEC /* AffinityAppCheck.swift in Sources */,
 				7F0F1650296C3A6A00FB4C30 /* AppleLoginManger.swift in Sources */,
 				7F0F16402960061F00FB4C30 /* OverlayView.swift in Sources */,
+				7F0565DA298698A20066BE4A /* MainShoesViewModel.swift in Sources */,
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
 				EC892AAF2908201700D02F99 /* MainView.swift in Sources */,
 				7F39FA8F2950939D0041BF8B /* PopUPview.swift in Sources */,

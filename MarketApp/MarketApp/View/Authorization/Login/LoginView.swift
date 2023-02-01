@@ -27,7 +27,6 @@ struct LoginView: View {
     @State private var loginPopUP: Bool = false
     @State private var confirmAction: Bool = false
     @State private var showMainview : Bool = false
-    @State private var path : [LoginStack] = []
     
     var body: some View {
         NavigationStack{

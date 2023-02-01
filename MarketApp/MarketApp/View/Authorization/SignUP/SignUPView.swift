@@ -20,7 +20,7 @@ struct SignUPView: View {
     @State private var recheckPassword: Bool = false
     @State private var showNickNameView: Bool = false
     @State private var checkOnePassword: Bool = false
-    @State private var path : [SingUPStack] = []
+
     
     @StateObject var viewModel: SignUPViewModel = SignUPViewModel()
     
@@ -118,7 +118,6 @@ struct SignUPView: View {
             checkOnePassword = true
         } else {
             showNickNameView.toggle()
-            path.append(.signUPNickName)
         }
     }
 }
