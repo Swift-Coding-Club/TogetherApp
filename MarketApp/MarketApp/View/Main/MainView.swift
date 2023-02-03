@@ -12,6 +12,7 @@ struct MainView: View {
     
     @State private var sortList = demoSort.one
     @State private var pageIndex = 0
+    @State var bannerSize: CGSize = .zero
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -41,6 +42,9 @@ struct MainView: View {
                 BannerImage(image: item)
             }
             .frame(height: 200)
+            .readSize {
+                bannerSize = $0
+            }
             
             VStack(spacing: 10) {
                 PagerIndicator(selectedPage: $pageIndex
