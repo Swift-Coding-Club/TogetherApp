@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
-    
-    @State private var sortList = demoSort.one
     @StateObject var viewModel: MainShoesViewModel = MainShoesViewModel()
     
+    @State private var sortList = demoSort.one
+    @State private var pageIndex = 0
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            BannerViews()
+            BannerView()
             
             CategoryViews()
                 .padding()
@@ -28,20 +28,41 @@ struct MainView: View {
     }
     
     @ViewBuilder
-    private func BannerViews() -> some View {
-        TabView {
-            ForEach(demoImage.allCases, id: \.self) { image in
-                ZStack {
-                    Image(image.rawValue)
-                        .frame(maxWidth: .infinity, minHeight: 250)
-                        .aspectRatio(contentMode: .fit)
-                        .tag(image)
-                }
+    private func BannerView() -> some View {
+        ZStack(alignment: .bottom) {
+            ACarousel(bannerImages
+                      , id: \.self
+                      , index: $pageIndex
+                      , spacing: 10
+                      , headspace: 0
+                      , sidesScaling: 0.7
+                      , isWrap: true
+                      , autoScroll: .active(5) ) { item in
+                BannerImage(image: item)
+            }
+            .frame(height: 200)
+            
+            VStack(spacing: 10) {
+                PagerIndicator(selectedPage: $pageIndex
+                               , size: 8
+                               , activeColor: .gray
+                               , inactiveColor: .black.opacity(0.3)
+                               , pageCount: bannerImages.count)
+                .padding(.bottom, 20)
+                
             }
         }
-        .tabViewStyle(.page(indexDisplayMode: .always))
-        .frame(maxWidth: .infinity, minHeight: 250)
     }
+    
+    //MARK: 배너 이미지 view
+    @ViewBuilder
+    private func BannerImage(image: String)  -> some View {
+        Image(image)
+            .resizable()
+            .scaledToFill()
+            .frame(height: 200)
+    }
+    
     
     @ViewBuilder
     private func CategoryViews() -> some View {

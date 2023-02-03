@@ -266,7 +266,7 @@ struct LoginView: View {
         
         Button{
             viewModel.googleLogin()
-            dismiss()
+//            dismiss()
         } label: {
             HStack(spacing: 10) {
                 
