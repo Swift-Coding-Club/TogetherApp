@@ -12,8 +12,11 @@ struct MainContentView: View {
     @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
     
     @State var showView: Bool = false
-    @State private var selectView: Int = 1
+    @State private var selectView: Int = 0
     @State private var selectOldView: Int = 1
+    
+    let numTabs = 3
+    let minDragTranslationForSwipe: CGFloat = 50
     
     var body: some View {
         TabView(selection: $selectView) {
@@ -25,7 +28,10 @@ struct MainContentView: View {
                             .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
                     }
                 }
-                .tag(1)
+                .tag(0)
+                .highPriorityGesture(DragGesture().onEnded({
+                    self.handleSwipe(translation:  $0.translation.width)
+                }))
             
             SearchedView()
                 .tabItem{
@@ -35,7 +41,10 @@ struct MainContentView: View {
                             .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
                     }
                 }
-                .tag(2)
+                .tag(1)
+                .highPriorityGesture(DragGesture().onEnded({
+                    self.handleSwipe(translation:  $0.translation.width)
+                }))
             
             ProfileView()
                 .environmentObject(loginViewModel)
@@ -46,14 +55,17 @@ struct MainContentView: View {
                             .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
                     }
                 }
-                .tag(3)
+                .tag(2)
+                .highPriorityGesture(DragGesture().onEnded({
+                    self.handleSwipe(translation:  $0.translation.width)
+                }))
         }
         .onAppear{
             UITabBar.appearance().tintColor = UIColor(Color.colorAsset.mauve2)
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color.fontColor.secondaryTextColor)
         }
         .onChange(of: selectView, perform: {
-            if 3 == selectView {
+            if 2 == selectView {
                 if loginViewModel.userSession == nil  {
                     self.selectView = self.selectOldView
                     self.showView = true
@@ -94,6 +106,16 @@ struct MainContentView: View {
             //                }
         }
     }
+    
+    //MARK: - 드래그 했을때 뷰 변경
+    private func handleSwipe(translation: CGFloat) {
+        if translation > minDragTranslationForSwipe && selectView > 0 {
+            selectView -= 1
+              } else  if translation < -minDragTranslationForSwipe && selectView < numTabs-1 {
+                  selectView += 1
+              }
+    }
+
 }
 
 

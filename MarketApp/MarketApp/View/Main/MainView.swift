@@ -49,7 +49,6 @@ struct MainView: View {
                                , inactiveColor: .black.opacity(0.3)
                                , pageCount: bannerImages.count)
                 .padding(.bottom, 20)
-                
             }
         }
     }
