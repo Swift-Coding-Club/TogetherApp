@@ -7,36 +7,30 @@
 
 import SwiftUI
 
-//struct SearchView: View {
-//    @State public var text = ""
-//
-//    var body: some View {
-//        SearchedView(searchText: text)
-//            .searchable(text: $text)
-//    }
-//}
-
 struct SearchedView: View {
     @State var searchText = ""
     @State private var removeSearch = false
     @State var recentSearchList : [String] = ["Head","Addidas","Kappa","JDX","ELLE","Armani"]
     @Environment(\.isSearching) private var isSearching
     
+    private let searchBarPlaceholder: String = "신발을 검색해주세요"
+    
 //    let searchText: String
     let mockBrandList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani", "Columbia","H&M","ZARA","LouisVitton","UNIQLO","Hermes","Gucci","UnderArmour"]
     let popularSearchList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani"]
     
     var body: some View {
-        VStack {
-            if isSearching {
-                SearchResultView()
-            } else {
-                PopularSearchView()
+        NavigationStack {
+            VStack {
+//                SearchBar(searchBarText: $searchText, placeholder: searchBarPlaceholder)
+                if isSearching {
+                    SearchResultView()
+                } else {
+                    PopularSearchView()
+                }
             }
+            .searchable(text: $searchText)
         }
-        
-        //TODO : - 검색 바 수정  커스텀 진행
-        .searchable(text: $searchText)
     }
     
     @ViewBuilder

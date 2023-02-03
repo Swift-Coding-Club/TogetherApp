@@ -88,7 +88,6 @@ class SignUPViewModel: ObservableObject {
         }
     }
     
-    
     //MARK: - 로그아웃
     func signOut() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
