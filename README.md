@@ -33,10 +33,11 @@
 
 ## 팀원 소개
 
-IOS 메인 : [로이](https://github.com/Roy-wonji), <br>
-IOS 개발 및 PM : [민](https://github.com/italsehf),<br>
+PM 및 디자인 : [민](https://github.com/italsehf)<br>
+IOS 메인 개발: [로이](https://github.com/Roy-wonji)<br>
 IOS 개발 및 서버 : [소낙](https://github.com/choo121600)<br>
-IOS 개발 및 디자인 : [영](https://github.com/Dtzer0) ,  [넴](https://github.com/Duckduck1596), <br>
+IOS 개발 및 디자인 : [영](https://github.com/Dtzer0)<br>
+IOS 개발 : [리넴](https://github.com/Duckduck1596)<br>
 디자이너 : 루비
 
 
