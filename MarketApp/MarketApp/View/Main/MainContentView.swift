@@ -29,10 +29,10 @@ struct MainContentView: View {
                     }
                 }
                 .tag(0)
-                .highPriorityGesture(DragGesture().onEnded({
-                    self.handleSwipe(translation:  $0.translation.width)
-                }))
-            
+//                .highPriorityGesture(DragGesture().onEnded({
+//                    self.handleSwipe(translation:  $0.translation.width)
+//                }))
+              
             SearchedView()
                 .tabItem{
                     VStack{
@@ -56,9 +56,9 @@ struct MainContentView: View {
                     }
                 }
                 .tag(2)
-                .highPriorityGesture(DragGesture().onEnded({
-                    self.handleSwipe(translation:  $0.translation.width)
-                }))
+//                .highPriorityGesture(DragGesture().onEnded({
+//                    self.handleSwipe(translation:  $0.translation.width)
+//                }))
         }
         .onAppear{
             UITabBar.appearance().tintColor = UIColor(Color.colorAsset.mauve2)

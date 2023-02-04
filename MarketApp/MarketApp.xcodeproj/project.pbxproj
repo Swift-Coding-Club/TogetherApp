@@ -689,7 +689,7 @@
 				EC892A982908189600D02F99 /* Frameworks */,
 				EC892A992908189600D02F99 /* Resources */,
 				DAA3929E740A81AEF9E43791 /* [CP] Embed Pods Frameworks */,
-				7F39FA95295333780041BF8B /* swiftLint Script */,
+				7F39FA95295333780041BF8B /* SwiftLint Script */,
 				7F2432B22958677000C1077E /* FirebaseCrashlytics Script */,
 			);
 			buildRules = (
@@ -794,6 +794,8 @@
 				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
 				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 				"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Firebase/GoogleService-Info.plist -p ios ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/Firebase/GoogleService-Info-dev.plist",
+				"{BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Firebase/GoogleService-Info-dev.plist -p ios ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
 			);
 			name = "FirebaseCrashlytics Script";
 			outputFileListPaths = (
@@ -804,7 +806,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n  \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
-		7F39FA95295333780041BF8B /* swiftLint Script */ = {
+		7F39FA95295333780041BF8B /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -814,14 +816,14 @@
 			);
 			inputPaths = (
 			);
-			name = "swiftLint Script";
+			name = "SwiftLint Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 		DAA3929E740A81AEF9E43791 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1083,6 +1085,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D DEVELOPE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1123,6 +1126,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

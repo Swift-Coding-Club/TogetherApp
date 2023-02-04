@@ -13,6 +13,7 @@ struct MainView: View {
     @State private var sortList = demoSort.one
     @State private var pageIndex = 0
     @State var bannerSize: CGSize = .zero
+    @State private var selectPage : Int = .zero
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -37,8 +38,7 @@ struct MainView: View {
                       , spacing: 10
                       , headspace: 0
                       , sidesScaling: 0.7
-                      , isWrap: true
-                      , autoScroll: .active(5) ) { item in
+                      , autoScroll: .active(5)) { item in
                 BannerImage(image: item)
             }
             .frame(height: 200)
