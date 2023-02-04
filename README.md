@@ -6,7 +6,7 @@
 ## 신발 커뮤니티 앱(Affinity) 
 🗓 프로젝트 소개 : 신발 커뮤니티 앱 !</br>
 🗓 기간 : 2022.08.03 ~   </br>
-🗓 팀원: [로이](https://github.com/Roy-wonji) ,[민](https://github.com/italsehf), [영](https://github.com/Dtzer0), [소낙](https://github.com/choo121600), [미넴](https://github.com/Duckduck1596) </br>
+🗓 팀원: [로이](https://github.com/Roy-wonji), [민](https://github.com/italsehf), [영](https://github.com/Dtzer0), [소낙](https://github.com/choo121600), [리넴](https://github.com/Duckduck1596) </br>
 
 
 
@@ -36,7 +36,7 @@
 IOS 메인 : [로이](https://github.com/Roy-wonji), <br>
 IOS 개발 및 PM : [민](https://github.com/italsehf),<br>
 IOS 개발 및 서버 : [소낙](https://github.com/choo121600)<br>
-IOS 개발 및 디자인 : [영](https://github.com/Dtzer0) ,  [미넴](https://github.com/Duckduck1596), <br>
+IOS 개발 및 디자인 : [영](https://github.com/Dtzer0) ,  [넴](https://github.com/Duckduck1596), <br>
 디자이너 : 루비
 
 
