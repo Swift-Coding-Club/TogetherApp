@@ -15,7 +15,7 @@
 
 
 ## 앱아이콘  
-<img src= "https://i.imgur.com/tSuixnm.png"  width="30%">
+<img src= "https://user-images.githubusercontent.com/103008077/216749312-b324e591-a1b8-4983-99f8-95c4ea62f0cb.png"  width="30%">
 
 ##  앱 UI
 
