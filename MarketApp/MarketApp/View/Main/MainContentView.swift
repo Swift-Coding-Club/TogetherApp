@@ -72,6 +72,9 @@ struct MainContentView: View {
                 }
             } else if showView == false {
                 self.selectOldView = $0
+            } else if loginViewModel.loginStatus == false {
+                self.selectOldView = $0
+                self.showView = true
             }
         })
         .accentColor(Color.colorAsset.mainColor)

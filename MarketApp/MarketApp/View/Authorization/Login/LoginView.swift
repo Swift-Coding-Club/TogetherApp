@@ -157,8 +157,12 @@ struct LoginView: View {
         VStack {
             Button {
                 viewModel.login(withEmail: emailTextField, password: passwordTextField)
-                viewModel.loginStatus = true
                 UIApplication.shared.endEditing()
+                if viewModel.loginStatus == true {
+                    showMainview.toggle()
+                } else {
+                    loginPopUP.toggle()
+                }
             } label: {
                 Text("로그인")
                     .nanumSquareNeo(family: .bRG, size: 22, color: .white)

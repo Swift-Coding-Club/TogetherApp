@@ -18,7 +18,7 @@ class SignUPViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var nonce: String  = ""
     @Published var loginStatus: Bool = false
-    
+    @Published var deleteUser: Bool = false
     //MARK: - 로그인 애니메이션 판별
     @AppStorage("log_status") var log_Status = false
     
@@ -102,8 +102,29 @@ class SignUPViewModel: ObservableObject {
       }
     }
 
-    //MARK: - 회원정보 update
+    func withdrawUser() {
+        let firebaseAuth = Auth.auth()
+        
+        firebaseAuth.currentUser?.delete(completion: { error  in
+            self.deleteUser = true
+            print("유저가 삭제 되었습니다 \(String(describing: error?.localizedDescription))")
+        })
+        
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.commitChanges() { error in
+            if let error = error {
+                print("[ERROR] : photoURL 변경 중 에러 발생 \(error.localizedDescription)")
+            }
+            else {
+                print("[DEBUG] : dispalyName 변경 성공")
+                self.loginStatus = false
+            }
+        }
+        Auth.auth().currentUser?.reload()
+    }
     
+    
+    //MARK: - 회원정보 update
     func saveUserInformation(nickName: String) {
         let collectionPath = Firestore.firestore().collection("users")
         let userID = Auth.auth().currentUser?.uid

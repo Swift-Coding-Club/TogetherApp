@@ -48,17 +48,17 @@ struct SignUPView: View {
         }
         
         .popup(isPresented: $checkEmail, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-            SignupPopupVIew(image: "envelope", title: "회원가입 양식을 확인 해주세요", alertMessage: "이메일을 확인 해주세요")
+            SignupPOPUPVIew(image: "envelope", title: "회원가입 양식을 확인 해주세요", alertMessage: "이메일을 확인 해주세요")
         }
         .popup(isPresented: $checkPassword, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-            SignupPopupVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 입력해주세요")
+            SignupPOPUPVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 입력해주세요")
         }
         .popup(isPresented: $recheckPassword, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-            SignupPopupVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 입력해주세요")
+            SignupPOPUPVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 입력해주세요")
         }
         
         .popup(isPresented: $checkOnePassword, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-            SignupPopupVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 한번더 확인해주세요")
+            SignupPOPUPVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 한번더 확인해주세요")
         }
         
     }

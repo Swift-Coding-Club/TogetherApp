@@ -7,10 +7,12 @@
 
 import SwiftUI
 import ExytePopupView
+import Kingfisher
 
 struct ProfileView: View {
     
     @EnvironmentObject var viewModel: SignUPViewModel
+    @StateObject var profileViewModel = ProfileViewModel()
     
     @State private var show: Bool = false
     @State private var showTermsView: Bool = false
@@ -18,6 +20,9 @@ struct ProfileView: View {
     @State private var showDeveloperView: Bool = false
     @State private var showLogoutPOPUPView: Bool = false
     @State private var showWithDrawPOPUPView: Bool = false
+    @State private var showImagePicker = false
+    @State private var selectedImage: UIImage?
+    @State private var profileImage: Image?
     
     var body: some View {
         VStack {
@@ -29,17 +34,34 @@ struct ProfileView: View {
             
             Spacer()
         }
+        .navigationBarHidden(true)
+        .onAppear {
+            profileViewModel.getUserInformation()
+        }
         
+        //MARK: - 로그아웃 후
         .fullScreenCover(isPresented: $viewModel.loginStatus) {
             LoginView()
+        }
+        //MARK: - 팝업 관련
+        .popup(isPresented: $showLogoutPOPUPView, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+            SignOutPOPUPView()
+        }
+        
+        .popup(isPresented: $showWithDrawPOPUPView, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+            withDrawPOPUPView(title: "회원탈퇴", message: "진짜 회원 탈퇴를 하시겠어요 ??") {
+                viewModel.withdrawUser()
+                viewModel.loginStatus = true
+            }
         }
     }
     
     @ViewBuilder
     private func profileHeader() -> some View {
         HStack{
-         Rectangle()
+            Rectangle()
                 .frame(width: UIScreen.screenWidth, height: 200)
+//                .edgesIgnoringSafeArea(.top)
                 .overlay {
                     VStack(alignment: .leading, spacing: .zero){
                         Spacer()
@@ -47,29 +69,35 @@ struct ProfileView: View {
                         
                         HStack{
                             
-                            Circle()
-                                .fill(.gray)
-                                .frame(width: 75, height: 75)
+                            VStack(spacing: .zero){
+                                
+                                Spacer()
+                                    .frame(height: 10)
+                                
+                                imageEditView()
+                            }
                             
                             Spacer()
                                 .frame(width: 20)
                             
-                            Text("닉네임")
+                            Text(profileViewModel.userNickName ?? "닉네임")
                                 .nanumSquareNeo(family: .eHv, size: 30, color: .white)
                             
                             Spacer()
                         }
                         
                         Spacer()
-                            .frame(height: 10)
+                            .frame(height: 20)
                         
                         HStack(alignment: .center){
-                         Spacer()
+                            
+                            Spacer()
+                            
                             Text("작성댓글")
                                 .nanumSquareNeo(family: .eHv, size: 24, color: .white)
                             
                             Spacer()
-                                .frame(width: 106)
+                                .frame(width: 120)
                             
                             Text("좋아요")
                                 .nanumSquareNeo(family: .eHv, size: 24, color: .white)
@@ -82,10 +110,69 @@ struct ProfileView: View {
                         Spacer()
                         
                     }
+                    .padding(.horizontal, 10)
                 }
             
         }
     }
+    
+    @ViewBuilder
+    private func imageEditView() -> some View {
+        VStack{
+            ZStack {
+                Button {
+                    showImagePicker.toggle()
+                    if let selectedImage = selectedImage {
+                        profileViewModel.userImage = selectedImage
+                        profileViewModel.saveProfileImage(selectedImage)
+                    }
+                } label: {
+                    if let profileImage = profileImage {
+                        ZStack {
+                            profileImage
+                                .resizable()
+                                .renderingMode(.original)
+                                .scaledToFill()
+                                .frame(width: 70, height: 70)
+                                .clipShape(Circle())
+                        }
+                        
+                    } else if profileViewModel.userImage == nil {
+                        ZStack{
+                            Image(systemName: "person.crop.circle.fill")
+                                .resizable()
+                                .renderingMode(.original)
+                                .scaledToFill()
+                                .frame(width: 70, height: 70)
+                                .clipShape(Circle())
+                                .foregroundColor(.gray)
+                        }
+                    } else {
+                        ZStack{
+                            if let profileImages = profileViewModel.userImage {
+                                Image(uiImage: profileImages)
+                                    .resizable()
+                                    .renderingMode(.original)
+                                    .scaledToFill()
+                                    .frame(width: 70, height: 70)
+                                    .clipShape(Circle())
+                            }
+                        }
+                    }
+                }
+                .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+                    ImagePicker(selectedImage: $selectedImage)
+                }
+            }
+            
+        }
+    }
+    
+    func loadImage() {
+        guard let selectedImage = selectedImage else { return }
+        profileImage = Image(uiImage: selectedImage)
+    }
+    
     
     @ViewBuilder
     private func profileSettingView() -> some View {
@@ -109,11 +196,11 @@ struct ProfileView: View {
     private func profileLogOutTypeView() -> some View {
         Section {
             ForEach(ProfileLogoutType.allCases, id: \.description) { item in
-
+                
                 switch item {
                 case .logout:
                     ListtLoginView(listTitle: item.description, showPOPUPView: $showLogoutPOPUPView, color: Color.colorAsset.mainColor)
-
+                    
                 case  .withdrawal:
                     ListtLoginView(listTitle: item.description, showPOPUPView: $showWithDrawPOPUPView, color: Color.red.opacity(0.5))
                 }
@@ -121,7 +208,6 @@ struct ProfileView: View {
             }
         }
     }
-    
 }
 
 struct ProfileView_Previews: PreviewProvider {
