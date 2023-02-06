@@ -42,9 +42,9 @@ struct MainContentView: View {
                     }
                 }
                 .tag(1)
-                .highPriorityGesture(DragGesture().onEnded({
-                    self.handleSwipe(translation:  $0.translation.width)
-                }))
+//                .highPriorityGesture(DragGesture().onEnded({
+//                    self.handleSwipe(translation:  $0.translation.width)
+//                }))
             
             ProfileView()
                 .environmentObject(loginViewModel)
