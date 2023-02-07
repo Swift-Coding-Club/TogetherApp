@@ -15,18 +15,62 @@ struct MainView: View {
     @State var bannerSize: CGSize = .zero
     @State private var selectPage : Int = .zero
     
+    @State var path = NavigationPath()
+    
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            BannerView()
-            
-            CategoryViews()
-                .padding()
-            
-            SortedViews()
-            
-            ProdductListView()
+        NavigationStack(path: $path.self) {
+            VStack {
+                
+                leadingNavigationTrallingView()
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    BannerView()
+                    
+                    CategoryViews()
+                        .padding()
+                    
+                    SortedViews()
+                    
+                    ProdductListView()
+                }
+                .bounce(false)
+            }
         }
-        .bounce(false)
+    }
+    //MARK: - 검색 뷰 &  장바구니 뷰
+    @ViewBuilder
+    private func leadingNavigationTrallingView() -> some View {
+        HStack{
+            Spacer()
+            
+            ForEach(MainNavigaionItem.allCases, id: \.description) { item in
+                if item == .search {
+                    NavigationLink(destination: SearchedView()){
+                        Image(systemName: item.image).resizable()
+                            .frame(width: 25, height: 25, alignment: .trailing)
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+            //                else if item == .cart {
+            //                    NavigationLink(destination: CartView()){
+            //                        Image(systemName: item.image ).resizable()
+            //                            .frame(width: 25, height: 25, alignment: .trailing)
+            //                            .foregroundColor(.black)
+            //                    }
+            //                }
+        }
+        .padding(.horizontal, LayoutMargin)
+    }
+    
+    //MARK:  - 알림 뷰
+    @ViewBuilder
+    private func notiNavigationView() -> some View {
+        NavigationLink(destination: NotiView()){
+            Image(systemName: "bell").resizable()
+                .frame(width: 25, height: 25, alignment: .trailing)
+                .foregroundColor(.black)
+        }
     }
     
     @ViewBuilder
@@ -41,10 +85,10 @@ struct MainView: View {
                       , autoScroll: .active(5)) { item in
                 BannerImage(image: item)
             }
-            .frame(height: 200)
-            .readSize {
-                bannerSize = $0
-            }
+                      .frame(height: 200)
+                      .readSize {
+                          bannerSize = $0
+                      }
             
             VStack(spacing: 10) {
                 PagerIndicator(selectedPage: $pageIndex

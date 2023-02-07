@@ -23,6 +23,8 @@ struct ProdductListView: View {
                     gridList()
                 }
             }
+            
+            Spacer()
         }
         .bounce(false)
         .padding(.horizontal)

@@ -19,47 +19,51 @@ struct MainContentView: View {
     let minDragTranslationForSwipe: CGFloat = 50
     
     var body: some View {
-        TabView(selection: $selectView) {
-            MainView()
-                .tabItem{
-                    VStack{
-                        Image(systemName: "house.fill")
-                        Text("Home")
-                            .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+        NavigationStack(root: {
+            TabView(selection: $selectView) {
+                MainView()
+                    .tabItem{
+                        VStack{
+                            Image(systemName: "house.fill")
+                            Text("Home")
+                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        }
                     }
-                }
-                .tag(0)
-//                .highPriorityGesture(DragGesture().onEnded({
-//                    self.handleSwipe(translation:  $0.translation.width)
-//                }))
-              
-            SearchedView()
-                .tabItem{
-                    VStack{
-                        Image(systemName: "heart.fill")
-                        Text("Favorite")
-                            .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                    .tag(0)
+    //                .highPriorityGesture(DragGesture().onEnded({
+    //                    self.handleSwipe(translation:  $0.translation.width)
+    //                }))
+                  
+                SearchedView()
+                    .tabItem{
+                        VStack{
+                            Image(systemName: "heart.fill")
+                            Text("Favorite")
+                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        }
                     }
-                }
-                .tag(1)
-//                .highPriorityGesture(DragGesture().onEnded({
-//                    self.handleSwipe(translation:  $0.translation.width)
-//                }))
-            
-            ProfileView()
-                .environmentObject(loginViewModel)
-                .tabItem{
-                    VStack{
-                        Image(systemName: "person.crop.circle")
-                        Text("Profile")
-                            .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                    .tag(1)
+    //                .highPriorityGesture(DragGesture().onEnded({
+    //                    self.handleSwipe(translation:  $0.translation.width)
+    //                }))
+                
+                ProfileView()
+                    .environmentObject(loginViewModel)
+                    .tabItem{
+                        VStack{
+                            Image(systemName: "person.crop.circle")
+                            Text("Profile")
+                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        }
                     }
-                }
-                .tag(2)
-//                .highPriorityGesture(DragGesture().onEnded({
-//                    self.handleSwipe(translation:  $0.translation.width)
-//                }))
-        }
+                    .tag(2)
+    //                .highPriorityGesture(DragGesture().onEnded({
+    //                    self.handleSwipe(translation:  $0.translation.width)
+    //                }))
+            }
+        })
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear{
             UITabBar.appearance().tintColor = UIColor(Color.colorAsset.mauve2)
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color.fontColor.secondaryTextColor)
@@ -72,16 +76,12 @@ struct MainContentView: View {
                 }
             } else if showView == false {
                 self.selectOldView = $0
-            } else if loginViewModel.loginStatus == false {
+            } else if loginViewModel.loginStatus == false || loginViewModel.deleteUser == true {
                 self.selectOldView = $0
                 self.showView = true
             }
         })
         .accentColor(Color.colorAsset.mainColor)
-        .navigationTitle("")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarItems(trailing: leadingNavigationTrallingView())
-//        .navigationBarItems(leading: notiNavigationView())
         .fullScreenCover(isPresented: $showView){
             LoginView(viewModel: loginViewModel)
                 .transition(.move(edge: .bottom))
@@ -109,29 +109,15 @@ struct MainContentView: View {
             //                }
         }
     }
-    
     //MARK: - 드래그 했을때 뷰 변경
     private func handleSwipe(translation: CGFloat) {
         if translation > minDragTranslationForSwipe && selectView > 0 {
             selectView -= 1
-              } else  if translation < -minDragTranslationForSwipe && selectView < numTabs-1 {
-                  selectView += 1
-              }
-    }
-
-}
-
-
-//MARK:  - 알림 뷰
-@ViewBuilder
-private func notiNavigationView() -> some View {
-    NavigationLink(destination: NotiView()){
-        Image(systemName: "bell").resizable()
-            .frame(width: 25, height: 25, alignment: .trailing)
-            .foregroundColor(.black)
+        } else  if translation < -minDragTranslationForSwipe && selectView < numTabs-1 {
+            selectView += 1
+        }
     }
 }
-
 
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
