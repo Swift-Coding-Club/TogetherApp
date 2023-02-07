@@ -6,8 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
-enum demoImage : String, CaseIterable {
+
+let bannerImages  = ["blue", "pink" , "yellow"]
+
+enum demoImage : String, CaseIterable, Hashable {
     case one = "blue"
     case two = "pink"
     case three = "yellow"

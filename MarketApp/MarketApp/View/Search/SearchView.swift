@@ -20,17 +20,15 @@ struct SearchedView: View {
     let popularSearchList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani"]
     
     var body: some View {
-        NavigationStack {
-            VStack {
+        VStack {
 //                SearchBar(searchBarText: $searchText, placeholder: searchBarPlaceholder)
-                if isSearching {
-                    SearchResultView()
-                } else {
-                    PopularSearchView()
-                }
+            if isSearching {
+                SearchResultView()
+            } else {
+                PopularSearchView()
             }
-            .searchable(text: $searchText)
         }
+        .searchable(text: $searchText)
     }
     
     @ViewBuilder

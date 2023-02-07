@@ -20,9 +20,22 @@ class AppDelegate: UIViewController, UIApplicationDelegate, MessagingDelegate, U
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        
+//        var filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")
+//#if DEVELOPE
+//            filePath = Bundle.main.path(forResource: "GoogleService-Info-dev", ofType: "plist")
+//#endif
+//        if let fileopts = FirebaseOptions(contentsOfFile: filePath!) {
+//            FirebaseApp.configure(options: fileopts)
+//            // init fcm
+//            Messaging.messaging().delegate = self
+//        } else {
+//            assert(false, "Couldn't load config file")
+//        }
+//
         FirebaseApp.configure()
         FirebaseConfiguration.shared.setLoggerLevel(FirebaseLoggerLevel.min)
-        
         remoteConfig = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
@@ -93,7 +106,7 @@ class AppDelegate: UIViewController, UIApplicationDelegate, MessagingDelegate, U
 //            }
 //        }
                                                         
-        completionHandler([.alert, .badge, .sound])
+        completionHandler([.banner, .sound, .badge])
     }
     
     // 앱이 백그라운드나 종료되어 있는 상태에서 푸시 데이터 처리

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignupPopupVIew: View {
+struct SignupPOPUPVIew: View {
     let image: String
     let title: String
     let alertMessage: String
@@ -39,7 +39,7 @@ struct SignupPopupVIew: View {
 
 struct SignupPopupVIew_Previews: PreviewProvider {
     static var previews: some View {
-        SignupPopupVIew(image: "flame", title: "알링", alertMessage: "로그아웃")
+        SignupPOPUPVIew(image: "flame", title: "알링", alertMessage: "로그아웃")
     }
 }
 

@@ -79,6 +79,7 @@ struct ProductView: View {
                 }
             }.padding(.bottom, 20)
         }
+        .navigationTitle("")
     }
 }
 

@@ -44,7 +44,7 @@ struct SignUPNickNameView: View {
         }
         
         .popup(isPresented: $checkNickName, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-                SignupPopupVIew(image: "person", title: "회원가입 양식을 확인 해주세요", alertMessage: "닉네임을 한번 더 확인해주세요")
+                SignupPOPUPVIew(image: "person", title: "회원가입 양식을 확인 해주세요", alertMessage: "닉네임을 한번 더 확인해주세요")
             }
     }
     //MARK: - 타이틀 헤더

@@ -1,20 +1,20 @@
 //
-//  SignOutPopView.swift
+//  withDrawPOPUPView.swift
 //  MarketApp
 //
-//  Created by 서원지 on 2023/01/21.
+//  Created by 서원지 on 2023/02/06.
 //
 
 import SwiftUI
 
-struct SignOutPopView: View {
-    private var title: String = "로그아웃 하시겠어요"
-    private var message: String = "로그아웃 하셔도 코인모야는 유저님을 기다립니다"
-    private var cancelTitle: String = "취소"
-    private var confiremTitle: String = "확인"
+struct withDrawPOPUPView: View {
+    var title: String
+    var message: String
+    var cancelTitle: String = "취소"
+    var confiremTitle: String = "확인"
     
-    @EnvironmentObject var viewModel: SignUPViewModel
     @State var closedAlert: Bool = false
+    var confirmAction: () -> Void = {}
     
     var body: some View {
         VStack(alignment: .center) {
@@ -51,7 +51,7 @@ struct SignOutPopView: View {
             .multilineTextAlignment(.center)
             .frame(width: ContentsWidth-60)
     }
-
+    
     //MARK: -  알림 버튼 취소 확인 버튼
     @ViewBuilder
     private func alertConfirmButton() -> some View {
@@ -70,7 +70,7 @@ struct SignOutPopView: View {
                     )
             }
             .frame(width: 140, height: 40)
-//            .background(Color.colorAssets.white)
+            //            .background(Color.colorAssets.white)
             .cornerRadius(30.0)
             .shadow(color: .white.opacity(0.4), radius: 6, x: 0, y: 3)
             
@@ -78,7 +78,7 @@ struct SignOutPopView: View {
                 .frame(width: 30)
             
             Button {
-                viewModel.signOut()
+                confirmAction()
             } label: {
                 Text(confiremTitle)
                     .kerning(-0.34)
@@ -93,10 +93,8 @@ struct SignOutPopView: View {
     }
 }
 
-
-struct SignOutPopView_Previews: PreviewProvider {
+struct withDrawPOPUPView_Previews: PreviewProvider {
     static var previews: some View {
-        SignOutPopView()
-            .environmentObject(dev.signUPViewModel)
+        withDrawPOPUPView(title: "회원탈퇴", message: "회원탈퇴") {}
     }
 }
