@@ -37,8 +37,8 @@ struct MainContentView: View {
                 SearchedView()
                     .tabItem{
                         VStack{
-                            Image(systemName: "heart.fill")
-                            Text("Favorite")
+                            Image(systemName: "magnifyingglass")
+                            Text("Search")
                                 .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
                         }
                     }
