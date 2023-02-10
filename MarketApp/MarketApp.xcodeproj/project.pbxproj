@@ -93,6 +93,7 @@
 		7F66ECC62979A6FE0039CC42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */; };
 		7F93C34C29854D2100345AEC /* AppManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34B29854D2100345AEC /* AppManger.swift */; };
 		7F93C34F29856C3A00345AEC /* AffinityAppCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */; };
+		7FF4DA192995192200AC04D7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4DA182995192200AC04D7 /* SearchView.swift */; };
 		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
@@ -101,7 +102,7 @@
 		EC892AA62908189700D02F99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC892AA52908189700D02F99 /* Preview Assets.xcassets */; };
 		EC892AAF2908201700D02F99 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AAE2908201700D02F99 /* MainView.swift */; };
 		EC892AB32908205D00D02F99 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AB22908205D00D02F99 /* CartView.swift */; };
-		EC892AB52908206F00D02F99 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AB42908206F00D02F99 /* SearchView.swift */; };
+		EC892AB52908206F00D02F99 /* NaviagationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AB42908206F00D02F99 /* NaviagationSearchView.swift */; };
 		EC892AB72908207D00D02F99 /* NotiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AB62908207D00D02F99 /* NotiView.swift */; };
 		EC892ABB290820B800D02F99 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABA290820B800D02F99 /* FavoriteView.swift */; };
 		EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABC290820C600D02F99 /* ProfileView.swift */; };
@@ -179,6 +180,7 @@
 		7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F93C34B29854D2100345AEC /* AppManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManger.swift; sourceTree = "<group>"; };
 		7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffinityAppCheck.swift; sourceTree = "<group>"; };
+		7FF4DA182995192200AC04D7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A025DDF51E9A1BBEC7469CCC /* Pods-MarketApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.debug.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B1F400B0E00C4FA897EBD2 /* Pods-MarketApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.release.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,7 +193,7 @@
 		EC892AA52908189700D02F99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC892AAE2908201700D02F99 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EC892AB22908205D00D02F99 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
-		EC892AB42908206F00D02F99 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		EC892AB42908206F00D02F99 /* NaviagationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviagationSearchView.swift; sourceTree = "<group>"; };
 		EC892AB62908207D00D02F99 /* NotiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiView.swift; sourceTree = "<group>"; };
 		EC892ABA290820B800D02F99 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		EC892ABC290820C600D02F99 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -363,7 +365,8 @@
 		7F2432AA29585E1900C1077E /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				EC892AB42908206F00D02F99 /* SearchView.swift */,
+				EC892AB42908206F00D02F99 /* NaviagationSearchView.swift */,
+				7FF4DA182995192200AC04D7 /* SearchView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -953,6 +956,7 @@
 				7F39FA8A2950915B0041BF8B /* ScrollViewModifier.swift in Sources */,
 				7F6037CE297C16F30034CFF7 /* SignOutPOPUPView.swift in Sources */,
 				7F6037AD297AC5890034CFF7 /* SignupPOPUPVIew.swift in Sources */,
+				7FF4DA192995192200AC04D7 /* SearchView.swift in Sources */,
 				7F0F1661296EF0B400FB4C30 /* SignManger.swift in Sources */,
 				7F0565D7298696110066BE4A /* MarketAPI-Main.swift in Sources */,
 				7F0F164929600AEF00FB4C30 /* CustomInputField.swift in Sources */,
@@ -973,7 +977,7 @@
 				7F0565DD298A92A70066BE4A /* SearchBar.swift in Sources */,
 				7F0F1664296EF2A000FB4C30 /* PreviewProvider.swift in Sources */,
 				7F0565D5298686AE0066BE4A /* ShoeMockData.swift in Sources */,
-				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
+				EC892AB52908206F00D02F99 /* NaviagationSearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* MainContentView.swift in Sources */,
 				7F39FA8D2950922D0041BF8B /* ConfirmAlertView.swift in Sources */,
 				7F93C34F29856C3A00345AEC /* AffinityAppCheck.swift in Sources */,

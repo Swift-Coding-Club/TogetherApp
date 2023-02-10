@@ -34,7 +34,7 @@ struct MainContentView: View {
     //                    self.handleSwipe(translation:  $0.translation.width)
     //                }))
                   
-                SearchedView()
+                SearchView()
                     .tabItem{
                         VStack{
                             Image(systemName: "magnifyingglass")
@@ -87,28 +87,6 @@ struct MainContentView: View {
                 .transition(.move(edge: .bottom))
         }
     }
-    //MARK: - 검색 뷰 &  장바구니 뷰
-    @ViewBuilder
-    private func leadingNavigationTrallingView() -> some View {
-        HStack{
-            ForEach(MainNavigaionItem.allCases, id: \.description) { item in
-                if item == .search {
-                    NavigationLink(destination: SearchedView()){
-                        Image(systemName: item.image).resizable()
-                            .frame(width: 25, height: 25, alignment: .trailing)
-                            .foregroundColor(.black)
-                    }
-                }
-            }
-            //                else if item == .cart {
-            //                    NavigationLink(destination: CartView()){
-            //                        Image(systemName: item.image ).resizable()
-            //                            .frame(width: 25, height: 25, alignment: .trailing)
-            //                            .foregroundColor(.black)
-            //                    }
-            //                }
-        }
-    }
     //MARK: - 드래그 했을때 뷰 변경
     private func handleSwipe(translation: CGFloat) {
         if translation > minDragTranslationForSwipe && selectView > 0 {
@@ -121,8 +99,9 @@ struct MainContentView: View {
 
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainContentView()
-            .environmentObject(dev.signUPViewModel)
-            .previewDevice("iPhone 12")
+        NavigationStack {
+            MainContentView()
+                .environmentObject(dev.signUPViewModel)
+        }
     }
 }

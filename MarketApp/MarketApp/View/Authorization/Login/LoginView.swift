@@ -83,7 +83,7 @@ struct LoginView: View {
             PopUPview(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
         }
         .fullScreenCover(isPresented: $showMainview) {
-            NavigationView {
+            NavigationStack {
                 MainContentView()
             }
         }
@@ -160,8 +160,6 @@ struct LoginView: View {
                 UIApplication.shared.endEditing()
                 if viewModel.loginStatus == true {
                     showMainview.toggle()
-                } else {
-                    loginPopUP.toggle()
                 }
             } label: {
                 Text("로그인")

@@ -62,7 +62,7 @@ struct SignUPNickNameView: View {
     @ViewBuilder
     private func nickNameInputView() -> some View {
         VStack{
-            SignUPTextFieldView(placeholder: "닉네임을 입력해주세요", signUpText: "닉네임", password: false, text: $nickNameTextField, showPassword: .constant(false))
+            SignUPTextFieldView(placeholder: "닉네임을 입력해주세요", signUpText: "닉네임", password: false, text: $nickNameTextField, showPassword: .constant(true))
         }
     }
     //MARK: - 회원가입 완료 버튼

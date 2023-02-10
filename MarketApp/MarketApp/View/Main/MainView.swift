@@ -45,7 +45,7 @@ struct MainView: View {
             
             ForEach(MainNavigaionItem.allCases, id: \.description) { item in
                 if item == .search {
-                    NavigationLink(destination: SearchedView()){
+                    NavigationLink(destination: NaviagationSearchView()){
                         Image(systemName: item.image).resizable()
                             .frame(width: 25, height: 25, alignment: .trailing)
                             .foregroundColor(.black)
