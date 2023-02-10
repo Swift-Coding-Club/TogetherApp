@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CartView: View {
+    
+    @State private var deleted = false
+    
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true) {
@@ -17,6 +20,8 @@ struct CartView: View {
                 }
             }
             PriceStack()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/4, alignment: .center)
+                .padding()
         }
     }
     
@@ -25,7 +30,7 @@ struct CartView: View {
         ZStack {
             Rectangle()
                 .fill(.white)
-                .frame(width: 350, height: 320)
+                .frame(width: UIScreen.main.bounds.width - 30, height: UIScreen.main.bounds.height/2.5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.black, lineWidth: 1)
@@ -77,13 +82,19 @@ struct CartView: View {
                     })
                     
                     Button(action: {
-                        
+                        self.deleted.toggle()
                     }, label: {
                         Text("삭제")
                             .font(.system(size: 17, weight: .medium))
                             .frame(width: 150, height: 50)
                             .foregroundColor(.white)
                             .background(.black)
+                    })
+                    .alert(Text("삭제"), isPresented: $deleted, actions: {
+                        Button("확인", role: .destructive) {}
+                        Button("취소", role: .cancel) {}
+                    }, message: {
+                        Text("정말 삭제하시겠어요?")
                     })
                 }
             }
@@ -93,18 +104,18 @@ struct CartView: View {
     @ViewBuilder
     private func PriceStack() -> some View {
         let testValue = 230000
-        let saleValue = 30000
+        let saleValue = 100000
         
         VStack {
             Text("기존 금액 :                                 \(testValue)원")
                 .foregroundColor(.gray)
-                .frame(width: 300, height: 30, alignment: .leading)
+                .frame(width: UIScreen.main.bounds.width, height: 30, alignment: .center)
             Text("할인 금액 :                                 \(saleValue)원")
                 .foregroundColor(.gray)
-                .frame(width: 300, height: 30, alignment: .leading)
+                .frame(width: UIScreen.main.bounds.width, height: 30, alignment: .center)
             Text("최종 결제 금액 :                          \(testValue - saleValue)원")
-                .foregroundColor(.black)
-                .frame(width: 300, height: 30, alignment: .leading)
+                .font(.system(size: 18, weight: .bold))
+                .frame(width: UIScreen.main.bounds.width, height: 30, alignment: .center)
             
             Button(action: {
                 

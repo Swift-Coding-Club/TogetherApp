@@ -8,10 +8,40 @@
 import SwiftUI
 
 enum tapInfo : String, CaseIterable {
-    case info = "정보"
-    case size = "사이즈"
-    case review = "리뷰"
-    case call = "문의"
+    case info = "상세정보"
+    case community = "커뮤니티"
+}
+
+let dateformat: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "YYYY년 M월 d일"
+    return formatter
+}()
+
+struct CommunityBlock : View {
+    var nickName : String
+    var time = Date()
+    var comment : String
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(.black)
+                .frame(maxWidth: 360, minHeight: 60)
+                .cornerRadius(20)
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("\(nickName)님")
+                        .foregroundColor(.white) //커스텀컴포넌트로 변경예정
+                    Text("\(time, formatter: dateformat)")
+                        .foregroundColor(.gray)
+                }
+                Text("\(comment)")
+                    .foregroundColor(.white) //커스텀컴포넌트로 변경예정
+            }
+        }
+    }
 }
 
 struct InfoView: View {
@@ -69,48 +99,13 @@ struct testView : View {
                         .resizable()
                         .frame(maxWidth: 350, minHeight: 500)
                 }
-            case .size:
-                Text("사이즈 참고해주세요")
-                    .font(.system(size: 15, weight: .bold, design: .monospaced))
-                    .frame(width: 300, height: 20, alignment: .center)
-                Text("발폭 넓으신분 -> 한사이즈 up!")
-                    .padding()
-            case .review:
-                ScrollView(.horizontal, showsIndicators: false) {
-                    ForEach(0..<10) { _ in
-                        LazyHStack {
-                            ForEach(0..<2) { _ in
-                                NavigationLink(destination: ReviewView()){
-                                    VStack(spacing: 5) {
-                                        Image("shoes")
-                                            .resizable()
-                                            .frame(width: 160, height: 200, alignment: .center)
-                                        Text("실착용 솔직 한달 후기 입니다")
-                                            .font(.system(size: 15, weight: .bold, design: .monospaced))
-                                            .frame(width: 160, height: 20, alignment: .leading)
-                                            .foregroundColor(.black)
-                                        Text("Sky Blue")
-                                            .font(.system(size: 13, weight: .medium, design: .monospaced))
-                                            .frame(width: 160, height: 20, alignment: .leading)
-                                            .foregroundColor(.black)
-                                        Text("평발인데 너무편해요 공간도 넉넉해서 걸을때 불편하지 않아요 최고입니다 ㅋㅋ 재구매의사 100%")
-                                            .font(.system(size: 13, weight: .medium, design: .default))
-                                            .frame(width: 160, height: 50, alignment: .leading)
-                                            .foregroundColor(.black)
-                                    }
-                                    .padding(15)
-                                }
-                            }
-                        }
+            case .community:
+                ScrollView(showsIndicators: false) {
+                    ForEach(0..<7) { _ in
+                        CommunityBlock(nickName: "Zero",
+                                       comment: "요즘 매종 키츠네 신발 유행인가요? 알려주세요 :)")
                     }
                 }
-            case .call:
-                VStack {
-                    Text("별도의 커뮤니티를 운영하지 않습니다.")
-                    Text("자세한 문의는 여기로 부탁드립니다")
-                    Text("02-xxx-xxxx")
-                        .padding()
-                }.padding()
             }
         }
     }

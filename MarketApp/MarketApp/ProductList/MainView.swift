@@ -90,7 +90,8 @@ struct ProductViews : View {
     @State private var btnCount = 1
     
     let columns = [
-        GridItem(.adaptive(minimum: 150))
+        GridItem(.flexible()),
+        GridItem(.flexible())
     ]
 
     var body: some View {
@@ -156,6 +157,7 @@ struct ProductViews : View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .previewDevice("iPhone 12")
     }
 }
 
