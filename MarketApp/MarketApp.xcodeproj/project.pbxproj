@@ -837,7 +837,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		7F2432B22958677000C1077E /* FirebaseCrashlytics Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -853,7 +853,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n  \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};

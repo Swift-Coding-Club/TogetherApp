@@ -40,15 +40,19 @@ struct MainView: View {
     //MARK: - 검색 뷰 &  장바구니 뷰
     @ViewBuilder
     private func leadingNavigationTrallingView() -> some View {
-        HStack(alignment: .center){
+        HStack {
             Spacer()
+                .frame(width:  UIScreen.screenWidth / 3 - 10)
+            
+            
             
             Text("Affinity")
                 .nanumSquareNeo(family: .bRG, size: 20, color: .black)
-            
-            Spacer()
                 .frame(width: 130)
             
+            Spacer()
+            
+
             ForEach(MainNavigaionItem.allCases, id: \.description) { item in
                 if item == .search {
                     NavigationLink(destination: NaviagationSearchView()){
@@ -66,7 +70,9 @@ struct MainView: View {
             //                    }
             //                }
         }
-        .padding(.horizontal, LayoutMargin)
+        .padding(.horizontal)
+        .frame(width: UIScreen.screenWidth)
+       
     }
     
     //MARK:  - 알림 뷰
