@@ -23,8 +23,6 @@ struct ProdductListView: View {
                     gridList()
                 }
             }
-            
-            Spacer()
         }
         .bounce(false)
         .padding(.horizontal)
@@ -39,28 +37,28 @@ struct ProdductListView: View {
                         .resizable()
                         .frame(width: 160, height: 200, alignment: .center)
                     
-                    Button(action: {
-                        btnCount += 1
-                        if btnCount%2 == 0 {
-                            btnTaped = true
-                        } else {
-                            btnTaped = false
-                        }
-                    }, label: {
-                        if btnTaped {
-                            Image(systemName: "heart.fill")
-                                .resizable()
-                                .renderingMode(.original)
-                                .frame(width: 30, height: 30)
-                                .padding()
-                        } else {
-                            Image(systemName: "heart")
-                                .resizable()
-                                .renderingMode(.original)
-                                .frame(width: 30, height: 30)
-                                .padding()
-                        }
-                    })
+//                    Button(action: {
+//                        btnCount += 1
+//                        if btnCount%2 == 0 {
+//                            btnTaped = true
+//                        } else {
+//                            btnTaped = false
+//                        }
+//                    }, label: {
+//                        if btnTaped {
+//                            Image(systemName: "heart.fill")
+//                                .resizable()
+//                                .renderingMode(.original)
+//                                .frame(width: 30, height: 30)
+//                                .padding()
+//                        } else {
+//                            Image(systemName: "heart")
+//                                .resizable()
+//                                .renderingMode(.original)
+//                                .frame(width: 30, height: 30)
+//                                .padding()
+//                        }
+//                    })
                 }
                 
                 Text("Maison Kitsune")

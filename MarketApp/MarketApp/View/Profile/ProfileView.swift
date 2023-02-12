@@ -8,6 +8,7 @@
 import SwiftUI
 import ExytePopupView
 import Kingfisher
+import Photos
 
 struct ProfileView: View {
     
@@ -21,6 +22,8 @@ struct ProfileView: View {
     @State private var showLogoutPOPUPView: Bool = false
     @State private var showWithDrawPOPUPView: Bool = false
     @State private var showImagePicker = false
+    @State private var deniedAlbum = false
+    @State private var notDeterminedAlbum = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
     
@@ -52,6 +55,10 @@ struct ProfileView: View {
             withDrawPOPUPView(title: "회원탈퇴", message: "진짜 회원 탈퇴를 하시겠어요 ??") {
                 viewModel.withdrawUser()
                 viewModel.loginStatus = true
+            }
+            
+            .popup(isPresented: $deniedAlbum, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+                POPUPViews(title: "사진 접근 허용 불가", message: "사진 접근 허용 불가", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
             }
         }
     }
@@ -121,10 +128,23 @@ struct ProfileView: View {
         VStack{
             ZStack {
                 Button {
-                    showImagePicker.toggle()
-                    if let selectedImage = selectedImage {
-                        profileViewModel.userImage = selectedImage
-                        profileViewModel.saveProfileImage(selectedImage)
+                    PHPhotoLibrary.requestAuthorization { status in
+                        switch status {
+                        case .authorized:
+                            showImagePicker.toggle()
+                            if let selectedImage = selectedImage {
+                                profileViewModel.userImage = selectedImage
+                                profileViewModel.saveProfileImage(selectedImage)
+                            }
+                        case .denied:
+                            deniedAlbum.toggle()
+                            
+                        case .restricted, .notDetermined:
+                           break
+                            
+                        default:
+                            break
+                        }
                     }
                 } label: {
                     if let profileImage = profileImage {

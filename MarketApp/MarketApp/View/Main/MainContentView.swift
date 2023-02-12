@@ -20,46 +20,48 @@ struct MainContentView: View {
     
     var body: some View {
         NavigationStack(root: {
-            TabView(selection: $selectView) {
-                MainView()
-                    .tabItem{
-                        VStack{
-                            Image(systemName: "house.fill")
-                            Text("Home")
-                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+            ZStack{
+                TabView(selection: $selectView) {
+                    MainView()
+                        .tabItem{
+                            VStack{
+                                Image(systemName: "house.fill")
+                                Text("Home")
+                                    .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                            }
                         }
-                    }
-                    .tag(0)
-    //                .highPriorityGesture(DragGesture().onEnded({
-    //                    self.handleSwipe(translation:  $0.translation.width)
-    //                }))
-                  
-                SearchView()
-                    .tabItem{
-                        VStack{
-                            Image(systemName: "magnifyingglass")
-                            Text("Search")
-                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        .tag(0)
+        //                .highPriorityGesture(DragGesture().onEnded({
+        //                    self.handleSwipe(translation:  $0.translation.width)
+        //                }))
+                      
+                    SearchView()
+                        .tabItem{
+                            VStack{
+                                Image(systemName: "magnifyingglass")
+                                Text("Search")
+                                    .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                            }
                         }
-                    }
-                    .tag(1)
-    //                .highPriorityGesture(DragGesture().onEnded({
-    //                    self.handleSwipe(translation:  $0.translation.width)
-    //                }))
-                
-                ProfileView()
-                    .environmentObject(loginViewModel)
-                    .tabItem{
-                        VStack{
-                            Image(systemName: "person.crop.circle")
-                            Text("Profile")
-                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        .tag(1)
+        //                .highPriorityGesture(DragGesture().onEnded({
+        //                    self.handleSwipe(translation:  $0.translation.width)
+        //                }))
+                    
+                    ProfileView()
+                        .environmentObject(loginViewModel)
+                        .tabItem{
+                            VStack{
+                                Image(systemName: "person.crop.circle")
+                                Text("Profile")
+                                    .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                            }
                         }
-                    }
-                    .tag(2)
-    //                .highPriorityGesture(DragGesture().onEnded({
-    //                    self.handleSwipe(translation:  $0.translation.width)
-    //                }))
+                        .tag(2)
+        //                .highPriorityGesture(DragGesture().onEnded({
+        //                    self.handleSwipe(translation:  $0.translation.width)
+        //                }))
+                }
             }
         })
         .navigationTitle("")

@@ -40,8 +40,14 @@ struct MainView: View {
     //MARK: - 검색 뷰 &  장바구니 뷰
     @ViewBuilder
     private func leadingNavigationTrallingView() -> some View {
-        HStack{
+        HStack(alignment: .center){
             Spacer()
+            
+            Text("Affinity")
+                .nanumSquareNeo(family: .bRG, size: 20, color: .black)
+            
+            Spacer()
+                .frame(width: 130)
             
             ForEach(MainNavigaionItem.allCases, id: \.description) { item in
                 if item == .search {
@@ -84,11 +90,10 @@ struct MainView: View {
                       , sidesScaling: 0.7
                       , autoScroll: .active(5)) { item in
                 BannerImage(image: item)
-            }
-                      .frame(height: 200)
-                      .readSize {
-                          bannerSize = $0
-                      }
+            }.frame(height: 200)
+                .readSize {
+                    bannerSize = $0
+                }
             
             VStack(spacing: 10) {
                 PagerIndicator(selectedPage: $pageIndex
@@ -143,7 +148,9 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(viewModel: MainShoesViewModel())
+        NavigationStack {
+            MainView(viewModel: MainShoesViewModel())
+        }
     }
 }
 

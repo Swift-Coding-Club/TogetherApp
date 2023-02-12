@@ -48,7 +48,7 @@
 		7F39FA882950912F0041BF8B /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA872950912F0041BF8B /* ScreenSize.swift */; };
 		7F39FA8A2950915B0041BF8B /* ScrollViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA892950915B0041BF8B /* ScrollViewModifier.swift */; };
 		7F39FA8D2950922D0041BF8B /* ConfirmAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA8C2950922D0041BF8B /* ConfirmAlertView.swift */; };
-		7F39FA8F2950939D0041BF8B /* PopUPview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA8E2950939D0041BF8B /* PopUPview.swift */; };
+		7F39FA8F2950939D0041BF8B /* POPUPViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA8E2950939D0041BF8B /* POPUPViews.swift */; };
 		7F39FA91295093FF0041BF8B /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA90295093FF0041BF8B /* Size.swift */; };
 		7F39FA94295331B00041BF8B /* LanuchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39FA93295331B00041BF8B /* LanuchView.swift */; };
 		7F39FA972953340D0041BF8B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FA962953340D0041BF8B /* .swiftlint.yml */; };
@@ -151,7 +151,7 @@
 		7F39FA872950912F0041BF8B /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		7F39FA892950915B0041BF8B /* ScrollViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewModifier.swift; sourceTree = "<group>"; };
 		7F39FA8C2950922D0041BF8B /* ConfirmAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAlertView.swift; sourceTree = "<group>"; };
-		7F39FA8E2950939D0041BF8B /* PopUPview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUPview.swift; sourceTree = "<group>"; };
+		7F39FA8E2950939D0041BF8B /* POPUPViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPUPViews.swift; sourceTree = "<group>"; };
 		7F39FA90295093FF0041BF8B /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		7F39FA93295331B00041BF8B /* LanuchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanuchView.swift; sourceTree = "<group>"; };
 		7F39FA962953340D0041BF8B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -538,7 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				7F39FA8C2950922D0041BF8B /* ConfirmAlertView.swift */,
-				7F39FA8E2950939D0041BF8B /* PopUPview.swift */,
+				7F39FA8E2950939D0041BF8B /* POPUPViews.swift */,
 				7F6037AC297AC5890034CFF7 /* SignupPOPUPVIew.swift */,
 				7F6037CD297C16F30034CFF7 /* SignOutPOPUPView.swift */,
 				7F2AD62E299137C5004DB28B /* withDrawPOPUPView.swift */,
@@ -847,8 +847,6 @@
 				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
 				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 				"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Firebase/GoogleService-Info.plist -p ios ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/Firebase/GoogleService-Info-dev.plist",
-				"{BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Firebase/GoogleService-Info-dev.plist -p ios ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
 			);
 			name = "FirebaseCrashlytics Script";
 			outputFileListPaths = (
@@ -985,7 +983,7 @@
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
 				EC892AAF2908201700D02F99 /* MainView.swift in Sources */,
 				7F4B962E298D27F1006AAF48 /* SizeReader.swift in Sources */,
-				7F39FA8F2950939D0041BF8B /* PopUPview.swift in Sources */,
+				7F39FA8F2950939D0041BF8B /* POPUPViews.swift in Sources */,
 				7F39FA94295331B00041BF8B /* LanuchView.swift in Sources */,
 				7F2815FB2990E00D00B2C481 /* ListtLoginView.swift in Sources */,
 				EC892AB32908205D00D02F99 /* CartView.swift in Sources */,
@@ -1137,6 +1135,7 @@
 				INFOPLIST_FILE = MarketApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Affinity;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨법 접근 권한  허용";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1178,6 +1177,7 @@
 				INFOPLIST_FILE = MarketApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Affinity;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨법 접근 권한  허용";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
