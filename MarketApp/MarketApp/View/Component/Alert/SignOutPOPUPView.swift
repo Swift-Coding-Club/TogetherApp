@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignOutPOPUPView: View {
     private var title: String = "로그아웃 하시겠어요"
-    private var message: String = "로그아웃 하셔도 코인모야는 유저님을 기다립니다"
+    private var message: String = "로그아웃 하셔도 Affinity는 유저님을 기다립니다"
     private var cancelTitle: String = "취소"
     private var confiremTitle: String = "확인"
     

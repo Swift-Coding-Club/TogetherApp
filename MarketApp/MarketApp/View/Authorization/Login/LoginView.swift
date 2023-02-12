@@ -133,7 +133,7 @@ struct LoginView: View {
             Spacer()
                 .frame(height: 30)
             
-            CustomInputField(placeHolderText: "OOOOOOO@mail.com", color: Color.fontColor.secondaryTextColor, password: false, text: $emailTextField, showPassword: .constant(false))
+            CustomInputField(placeHolderText: "OOOOOOO@mail.com", color: Color.fontColor.secondaryTextColor, password: false, text: $emailTextField, showPassword: .constant(true))
             
             Spacer()
                 .frame(height: 30)

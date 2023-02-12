@@ -26,7 +26,9 @@ struct CustomInputField: View {
                         .nanumSquareNeo(family: .bRG, size: 20, color: Color.fontColor.secondaryTextColor)
                 }
                 
-                if password == true {
+                if password == false {
+                    EmptyView()
+                } else {
                     Button {
                         showPassword.toggle()
                     } label: {
@@ -37,8 +39,6 @@ struct CustomInputField: View {
                             .nanumSquareNeo(family: .eHv, size: 15, color: Color.fontColor.secondaryTextColor)
 
                     }
-                } else {
-                    EmptyView()
                 }
             }
             .padding()

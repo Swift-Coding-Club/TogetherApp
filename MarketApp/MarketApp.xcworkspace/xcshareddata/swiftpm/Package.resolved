@@ -109,15 +109,6 @@
       }
     },
     {
-      "identity" : "modal-view",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/diniska/modal-view",
-      "state" : {
-        "revision" : "3f1a97297112770677b507556f581f7ed561593a",
-        "version" : "1.0.1"
-      }
-    },
-    {
       "identity" : "nanopb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/nanopb.git",

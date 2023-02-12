@@ -28,7 +28,6 @@
 		7F0F165F296C4D1500FB4C30 /* FindEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F165E296C4D1500FB4C30 /* FindEmailView.swift */; };
 		7F0F1661296EF0B400FB4C30 /* SignManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F1660296EF0B400FB4C30 /* SignManger.swift */; };
 		7F0F1664296EF2A000FB4C30 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F1663296EF2A000FB4C30 /* PreviewProvider.swift */; };
-		7F0F1669296F04DB00FB4C30 /* ModalView in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0F1668296F04DB00FB4C30 /* ModalView */; };
 		7F2432812956CF5F00C1077E /* MainNavigaionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */; };
 		7F2432AD2958630300C1077E /* GoogleService-Info-dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F2432AC2958630300C1077E /* GoogleService-Info-dev.plist */; };
 		7F2432B12958638400C1077E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2432B02958638400C1077E /* AppDelegate.swift */; };
@@ -219,7 +218,6 @@
 				7F6037CC297B6B2F0034CFF7 /* FirebaseStorage in Frameworks */,
 				7F6037CA297B6B2F0034CFF7 /* FirebaseRemoteConfig in Frameworks */,
 				7F6037C8297B6B2F0034CFF7 /* FirebasePerformance in Frameworks */,
-				7F0F1669296F04DB00FB4C30 /* ModalView in Frameworks */,
 				7F6037C0297B6B2F0034CFF7 /* FirebaseFirestoreSwift in Frameworks */,
 				7F6037B0297B6B2F0034CFF7 /* FirebaseAnalytics in Frameworks */,
 				7F6037B6297B6B2F0034CFF7 /* FirebaseCrashlytics in Frameworks */,
@@ -755,7 +753,6 @@
 			);
 			name = MarketApp;
 			packageProductDependencies = (
-				7F0F1668296F04DB00FB4C30 /* ModalView */,
 				7F6250B929718BC7004CCC10 /* GoogleSignIn */,
 				7F6250BB29718BC7004CCC10 /* GoogleSignInSwift */,
 				7F6037AF297B6B2F0034CFF7 /* FirebaseAnalytics */,
@@ -804,7 +801,6 @@
 			);
 			mainGroup = EC892A922908189600D02F99;
 			packageReferences = (
-				7F0F1667296F04DA00FB4C30 /* XCRemoteSwiftPackageReference "modal-view" */,
 				7F6250B829718BC7004CCC10 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				7F6037AE297B6B2F0034CFF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
@@ -1230,14 +1226,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7F0F1667296F04DA00FB4C30 /* XCRemoteSwiftPackageReference "modal-view" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/diniska/modal-view";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		7F6037AE297B6B2F0034CFF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1257,11 +1245,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7F0F1668296F04DB00FB4C30 /* ModalView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7F0F1667296F04DA00FB4C30 /* XCRemoteSwiftPackageReference "modal-view" */;
-			productName = ModalView;
-		};
 		7F6037AF297B6B2F0034CFF7 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7F6037AE297B6B2F0034CFF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
