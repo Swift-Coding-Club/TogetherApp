@@ -21,8 +21,7 @@ struct NaviagationSearchView: View {
     
     var body: some View {
         VStack {
-//                SearchBar(searchBarText: $searchText, placeholder: searchBarPlaceholder)
-            if isSearching {
+            if !searchText.isEmpty {
                 SearchResultView()
             } else {
                 PopularSearchView()

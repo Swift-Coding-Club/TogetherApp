@@ -48,7 +48,7 @@ struct SearchBar: View {
         RoundedRectangle(cornerRadius: 15)
             .fill(Color.white)
             .shadow(color: Color.colorAsset.gray.opacity(0.6), radius: 10)
-            .frame(width: UIScreen.screenWidth, height: 45)
+            .frame(height: 45)
         )
     }
 }

@@ -26,13 +26,6 @@ class SignUPViewModel: ObservableObject {
     
     init() {
         self.userSession = Auth.auth().currentUser
-        databaseload()
-    }
-    
-    func databaseload() {
-        _ = ref.child("Shoes").observe(.value, with: { snapshot in
-            print("firebase data \(snapshot.value)")
-        })
     }
     
     //MARK: - 로그인

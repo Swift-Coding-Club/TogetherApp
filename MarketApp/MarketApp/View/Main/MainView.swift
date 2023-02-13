@@ -31,10 +31,17 @@ struct MainView: View {
                     
                     SortedViews()
                     
-                    ProdductListView()
+                    
+                    ForEach(viewModel.shoesData ?? []) { item in
+                        ProdductListView(shoesData: item)
+                    }
                 }
                 .bounce(false)
             }
+        }
+        .navigationTitle("")
+        .onAppear {
+            viewModel.mainShoesRequest()
         }
     }
     //MARK: - 검색 뷰 &  장바구니 뷰
@@ -126,12 +133,12 @@ struct MainView: View {
     private func CategoryViews() -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
-                ForEach(0..<10) { _ in
-                    Button("종류") {
+                ForEach(BrandName.allCases, id: \.description) { item in
+                    Button(item.description) {
                         //Action Here.
                     }
                     .font(.system(size: 15, weight: .bold))
-                    .frame(width: 70, height: 40, alignment: .center)
+                    .frame(width: 110, height: 40, alignment: .center)
                     .background(Color.black)
                     .foregroundColor(.white)
                     .cornerRadius(12)
