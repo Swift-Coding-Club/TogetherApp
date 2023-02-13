@@ -42,7 +42,7 @@ desc "Run swift code validation using SwiftLint"
     gym(
       workspace: "MarketApp.xcworkspace",
       scheme: "MarketApp",
-      output_name: "MarketApp",
+      output_name: "Affinity",
       export_method: "app-store",
       include_bitcode: false,
       clean: true,
@@ -78,7 +78,6 @@ end
 
 
 lane :sync_all_development do
- sync_device_info
  match(type: "development")
 end
 

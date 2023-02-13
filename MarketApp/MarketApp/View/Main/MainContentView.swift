@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ModalView
 
 struct MainContentView: View {
     @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
