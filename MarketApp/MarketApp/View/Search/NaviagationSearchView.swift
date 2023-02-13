@@ -2,36 +2,32 @@
 //  SearchView.swift
 //  MarketApp
 //
-//  Created by 서원지 on 2023/02/09.
+//  Created by 홍태희 on 2022/10/25.
 //
 
 import SwiftUI
 
-struct SearchView: View {
+struct NaviagationSearchView: View {
     @State var searchText = ""
     @State private var removeSearch = false
     @State var recentSearchList : [String] = ["Head","Addidas","Kappa","JDX","ELLE","Armani"]
     @Environment(\.isSearching) private var isSearching
     
     private let searchBarPlaceholder: String = "신발을 검색해주세요"
-    let mockShoseData : [ShoeData] = []
     
-    @StateObject var viewModel: MainShoesViewModel = MainShoesViewModel()
-    
-    //    let searchText: String
+//    let searchText: String
     let mockBrandList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani", "Columbia","H&M","ZARA","LouisVitton","UNIQLO","Hermes","Gucci","UnderArmour"]
     let popularSearchList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani"]
     
     var body: some View {
         VStack {
-            SearchBar(searchBarText: $searchText, placeholder: searchBarPlaceholder)
-                .padding(.horizontal)
             if !searchText.isEmpty {
                 SearchResultView()
             } else {
                 PopularSearchView()
             }
         }
+        .searchable(text: $searchText)
     }
     
     @ViewBuilder
@@ -40,7 +36,7 @@ struct SearchView: View {
         List {
             Section(header: Text("인기 검색어 Top10")){
                 ForEach(popularSearchList.indices, id: \.self) { index in
-                    Text(popularSearchList[index])
+                        Text(popularSearchList[index])
                 }
             }
         }
@@ -76,12 +72,12 @@ struct SearchView: View {
                         Button(action: {
                             
                         }, label: {
-                            Text(recentSearchList[data])
-                                .frame(width: 100, height: 30, alignment: .center)
-                                .font(.system(size: 15))
-                                .foregroundColor(.white)
-                                .background(.black)
-                                .cornerRadius(20)
+                                Text(recentSearchList[data])
+                                    .frame(width: 100, height: 30, alignment: .center)
+                                    .font(.system(size: 15))
+                                    .foregroundColor(.white)
+                                    .background(.black)
+                                    .cornerRadius(20)
                         })
                     }
                 }
@@ -94,15 +90,17 @@ struct SearchView: View {
     private func SearchResultView() -> some View{
         List {
             ForEach(mockBrandList.filter{ $0.lowercased().contains(searchText.lowercased()) }, id: \.self) { item in
-                Text(item)
+                    Text(item)
             }
         }
-        .listStyle(.plain)
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
+
+struct NaviagationSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        NavigationView {
+            NaviagationSearchView()
+        }
     }
 }

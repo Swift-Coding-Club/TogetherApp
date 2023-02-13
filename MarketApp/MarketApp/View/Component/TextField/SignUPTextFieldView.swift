@@ -27,13 +27,13 @@ struct SignUPTextFieldView: View {
             }
             //MARK: - textField
             HStack{
-                if showPassword == false {
+                if showPassword == true {
                     TextField(placeholder, text: $text)
                         .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.secondaryTextColor)
                         .disableAutocorrection(true)
                         .textCase(.lowercase)
 
-                } else if password == true {
+                } else  {
                     SecureField(placeholder, text: $text)
                         .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.secondaryTextColor)
                         .disableAutocorrection(true)

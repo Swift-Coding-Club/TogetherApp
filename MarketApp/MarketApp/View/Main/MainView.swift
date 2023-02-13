@@ -31,21 +31,38 @@ struct MainView: View {
                     
                     SortedViews()
                     
-                    ProdductListView()
+                    
+                    ForEach(viewModel.shoesData ?? []) { item in
+                        ProdductListView(shoesData: item.data ?? [])
+                    }
                 }
                 .bounce(false)
             }
+        }
+        .navigationTitle("")
+        .onAppear {
+            viewModel.mainShoesRequest()
         }
     }
     //MARK: - 검색 뷰 &  장바구니 뷰
     @ViewBuilder
     private func leadingNavigationTrallingView() -> some View {
-        HStack{
+        HStack {
+            Spacer()
+                .frame(width:  UIScreen.screenWidth / 3 - 10)
+            
+            
+            
+            Text("Affinity")
+                .nanumSquareNeo(family: .bRG, size: 20, color: .black)
+                .frame(width: 130)
+            
             Spacer()
             
+
             ForEach(MainNavigaionItem.allCases, id: \.description) { item in
                 if item == .search {
-                    NavigationLink(destination: SearchedView()){
+                    NavigationLink(destination: NaviagationSearchView()){
                         Image(systemName: item.image).resizable()
                             .frame(width: 25, height: 25, alignment: .trailing)
                             .foregroundColor(.black)
@@ -60,7 +77,9 @@ struct MainView: View {
             //                    }
             //                }
         }
-        .padding(.horizontal, LayoutMargin)
+        .padding(.horizontal)
+        .frame(width: UIScreen.screenWidth)
+       
     }
     
     //MARK:  - 알림 뷰
@@ -84,11 +103,10 @@ struct MainView: View {
                       , sidesScaling: 0.7
                       , autoScroll: .active(5)) { item in
                 BannerImage(image: item)
-            }
-                      .frame(height: 200)
-                      .readSize {
-                          bannerSize = $0
-                      }
+            }.frame(height: 200)
+                .readSize {
+                    bannerSize = $0
+                }
             
             VStack(spacing: 10) {
                 PagerIndicator(selectedPage: $pageIndex
@@ -115,12 +133,12 @@ struct MainView: View {
     private func CategoryViews() -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
-                ForEach(0..<10) { _ in
-                    Button("종류") {
+                ForEach(BrandName.allCases, id: \.description) { item in
+                    Button(item.description) {
                         //Action Here.
                     }
                     .font(.system(size: 15, weight: .bold))
-                    .frame(width: 70, height: 40, alignment: .center)
+                    .frame(width: 110, height: 40, alignment: .center)
                     .background(Color.black)
                     .foregroundColor(.white)
                     .cornerRadius(12)
@@ -143,7 +161,9 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(viewModel: MainShoesViewModel())
+        NavigationStack {
+            MainView(viewModel: MainShoesViewModel())
+        }
     }
 }
 

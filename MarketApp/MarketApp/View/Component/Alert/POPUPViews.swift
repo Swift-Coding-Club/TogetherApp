@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PopUPview: View {
+struct POPUPViews: View {
      var title: String
      var message: String
      var cancelTitle: String
@@ -99,8 +99,8 @@ struct PopUPview: View {
     }
 }
 
-struct PopUPview_Previews: PreviewProvider {
+struct POPUPViews_Previews: PreviewProvider {
     static var previews: some View {
-        PopUPview(title: "서비스 준비중", message: "서비스 준비중입니다", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.gray)
+        POPUPViews(title: "서비스 준비중", message: "서비스 준비중입니다", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.gray)
     }
 }

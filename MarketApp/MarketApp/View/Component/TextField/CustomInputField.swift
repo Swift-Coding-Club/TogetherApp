@@ -18,7 +18,7 @@ struct CustomInputField: View {
     var body: some View {
         VStack{
             HStack{ 
-                if showPassword == true {
+                if showPassword == false {
                     SecureField(placeHolderText, text: $text)
                         .nanumSquareNeo(family: .bRG, size: 20, color: Color.fontColor.secondaryTextColor)
                 } else {
@@ -26,7 +26,9 @@ struct CustomInputField: View {
                         .nanumSquareNeo(family: .bRG, size: 20, color: Color.fontColor.secondaryTextColor)
                 }
                 
-                if password == true {
+                if password == false {
+                    EmptyView()
+                } else {
                     Button {
                         showPassword.toggle()
                     } label: {
@@ -37,8 +39,6 @@ struct CustomInputField: View {
                             .nanumSquareNeo(family: .eHv, size: 15, color: Color.fontColor.secondaryTextColor)
 
                     }
-                } else {
-                    EmptyView()
                 }
             }
             .padding()
@@ -57,6 +57,6 @@ struct CustomInputField: View {
 
 struct CustomInputField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomInputField(placeHolderText: "Email", color: Color.fontColor.secondaryTextColor, password: true, text: .constant(""), showPassword: .constant(true))
+        CustomInputField(placeHolderText: "Email", color: Color.fontColor.secondaryTextColor, password: true, text: .constant("ㄴ"), showPassword: .constant(true))
     }
 }

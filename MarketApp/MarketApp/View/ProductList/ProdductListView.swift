@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProdductListView: View {
     @State private var btnTaped = false
     @State private var btnCount = 1
+    var shoesData: [ShoeData]
     
     let columns = [
         GridItem(.flexible()),
@@ -19,8 +21,8 @@ struct ProdductListView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 30) {
-                ForEach(0..<12) { _ in
-                    gridList()
+                ForEach(shoesData) { item in
+                    gridList(image: item.image ?? "", name: item.transName ?? "", price: item.price ?? "", engName: item.productName ?? "")
                 }
             }
             
@@ -31,50 +33,26 @@ struct ProdductListView: View {
     }
     
     @ViewBuilder
-    private func gridList() -> some View {
+    private func gridList(image: String, name: String, price: String,  engName: String) -> some View {
         NavigationLink(destination: ProductView()){
-            LazyVStack(spacing: 5) {
-                ZStack(alignment: .bottomTrailing) {
-                    Image("shoes")
-                        .resizable()
-                        .frame(width: 160, height: 200, alignment: .center)
-                    
-                    Button(action: {
-                        btnCount += 1
-                        if btnCount%2 == 0 {
-                            btnTaped = true
-                        } else {
-                            btnTaped = false
-                        }
-                    }, label: {
-                        if btnTaped {
-                            Image(systemName: "heart.fill")
-                                .resizable()
-                                .renderingMode(.original)
-                                .frame(width: 30, height: 30)
-                                .padding()
-                        } else {
-                            Image(systemName: "heart")
-                                .resizable()
-                                .renderingMode(.original)
-                                .frame(width: 30, height: 30)
-                                .padding()
-                        }
-                    })
-                }
+            LazyVStack(alignment: .leading ,spacing: 10) {
+                KFImage(URL(string: image))
+                    .resizable()
+                    .frame(width: 160, height: 200, alignment: .center)
                 
-                Text("Maison Kitsune")
-                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-                    .foregroundColor(.black)
+                Text(name)
+                    .nanumSquareNeo(family: .cBd, size: 13, color: .black)
                     .frame(width: 160, height: 20, alignment: .leading)
-                Text("더블 폭스 패치 스니커즈")
-                    .font(.system(size: 13, weight: .medium, design: .default))
-                    .foregroundColor(.black)
+                    .lineLimit(1)
+                
+                Text(engName)
+                    .nanumSquareNeo(family: .cBd, size: 13, color: .black)
                     .frame(width: 160, height: 20, alignment: .leading)
-                Text("281,000원")
-                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-                    .foregroundColor(.black)
-                    .frame(width: 160, height: 20, alignment: .leading)
+                    .lineLimit(1)
+
+                Text(price + "원")
+                    .nanumSquareNeo(family: .bRG, size: 13, color: .black)
+                    .lineLimit(1)
             }
         }
     }
@@ -82,6 +60,6 @@ struct ProdductListView: View {
 
 struct ProdductListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProdductListView()
+        ProdductListView(shoesData: dev.shoesData.data ?? [])
     }
 }

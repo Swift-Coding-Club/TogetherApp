@@ -77,7 +77,7 @@ struct SignUPView: View {
     @ViewBuilder
     private func signUPInputView() -> some View {
         VStack(spacing: 20){
-            SignUPTextFieldView(placeholder: "이메일 주소를 적어주세요", signUpText: "이메일 주소", password: false, text: $emailTextField, showPassword: .constant(false))
+            SignUPTextFieldView(placeholder: "이메일 주소를 적어주세요", signUpText: "이메일 주소", password: false, text: $emailTextField, showPassword: .constant(true))
             
             SignUPTextFieldView(placeholder: "패스워드를 입력해주세요", signUpText: "비밀번호 ", password: true, text: $passwordTextField, showPassword: $showPassword)
             

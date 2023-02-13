@@ -16,8 +16,5 @@ extension MarketAPI {
     
     //MARK: - 통신
 
-    static func getMainShoes() -> AnyPublisher<shoesData, APIError> {
-        return get(MarketAPI.baseURL.appendingPathComponent(mainShoes))
-    }
     
 }

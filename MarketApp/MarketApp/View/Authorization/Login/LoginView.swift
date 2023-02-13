@@ -77,13 +77,13 @@ struct LoginView: View {
         }
         
         .popup(isPresented: $loginErrorPopUp, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-            PopUPview(title: "로그인 에러", message: "아이디와 비밀 번호를 한번 확인 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
+            POPUPViews(title: "로그인 에러", message: "아이디와 비밀 번호를 한번 확인 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
         }
         .popup(isPresented: $loginPopUP, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-            PopUPview(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
+            POPUPViews(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
         }
         .fullScreenCover(isPresented: $showMainview) {
-            NavigationView {
+            NavigationStack {
                 MainContentView()
             }
         }
@@ -111,7 +111,7 @@ struct LoginView: View {
         VStack{
             Spacer()
                 .frame(height: UIScreen.screenWidth / 10)
-            Text("FANCY")
+            Text("AFFIINITY")
                 .nanumSquareNeo(family: .eHv, size: 50, color: Color.fontColor.fontColor)
         }
         .padding(.horizontal, LayoutMargin)
@@ -133,7 +133,7 @@ struct LoginView: View {
             Spacer()
                 .frame(height: 30)
             
-            CustomInputField(placeHolderText: "OOOOOOO@mail.com", color: Color.fontColor.secondaryTextColor, password: false, text: $emailTextField, showPassword: .constant(false))
+            CustomInputField(placeHolderText: "OOOOOOO@mail.com", color: Color.fontColor.secondaryTextColor, password: false, text: $emailTextField, showPassword: .constant(true))
             
             Spacer()
                 .frame(height: 30)
@@ -160,8 +160,6 @@ struct LoginView: View {
                 UIApplication.shared.endEditing()
                 if viewModel.loginStatus == true {
                     showMainview.toggle()
-                } else {
-                    loginPopUP.toggle()
                 }
             } label: {
                 Text("로그인")

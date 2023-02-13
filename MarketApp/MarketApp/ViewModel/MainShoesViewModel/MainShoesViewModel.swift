@@ -7,28 +7,41 @@
 
 import Foundation
 import Combine
+import Moya
 
 class MainShoesViewModel: ObservableObject {
     
-    @Published var shoesData: shoesData?
+    @Published var shoesData: ShoesModel?
     var shoesCancelable: AnyCancellable?
     
     init() {
         mainShoesRequest()
     }
     
+    func toViewModel(_ list: ShoesModel) {
+        self.shoesData = list
+    }
     
     func mainShoesRequest() {
         if let cancelable = shoesCancelable {
             cancelable.cancel()
         }
-        shoesCancelable = MarketAPI.getMainShoes()
-            .compactMap{ $0 }
-            .sink(receiveCompletion: { error in
-                print(error)
-            }, receiveValue: { model  in
-                self.shoesData = model
-                print(model)
+        let provider = MoyaProvider<MainShoesService>()
+        shoesCancelable = provider.requestPublisher(.mainShoesData)
+            .compactMap { $0 }
+            .sink(receiveCompletion: { result in
+                switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                case .finished:
+                    break
+                }
+            }, receiveValue: { model in
+                let data = try? model.map(ShoesModel.self)
+                guard let shoesData = data else { return }
+                print("신발 데이터 \(shoesData)")
+                self.toViewModel(shoesData)
             })
+        
     }
 }

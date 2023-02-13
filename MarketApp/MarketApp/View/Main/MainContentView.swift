@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ModalView
 
 struct MainContentView: View {
     @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
@@ -20,46 +19,48 @@ struct MainContentView: View {
     
     var body: some View {
         NavigationStack(root: {
-            TabView(selection: $selectView) {
-                MainView()
-                    .tabItem{
-                        VStack{
-                            Image(systemName: "house.fill")
-                            Text("Home")
-                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+            ZStack{
+                TabView(selection: $selectView) {
+                    MainView()
+                        .tabItem{
+                            VStack{
+                                Image(systemName: "house.fill")
+                                Text("Home")
+                                    .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                            }
                         }
-                    }
-                    .tag(0)
-    //                .highPriorityGesture(DragGesture().onEnded({
-    //                    self.handleSwipe(translation:  $0.translation.width)
-    //                }))
-                  
-                SearchedView()
-                    .tabItem{
-                        VStack{
-                            Image(systemName: "heart.fill")
-                            Text("Favorite")
-                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        .tag(0)
+        //                .highPriorityGesture(DragGesture().onEnded({
+        //                    self.handleSwipe(translation:  $0.translation.width)
+        //                }))
+                      
+                    SearchView()
+                        .tabItem{
+                            VStack{
+                                Image(systemName: "magnifyingglass")
+                                Text("Search")
+                                    .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                            }
                         }
-                    }
-                    .tag(1)
-    //                .highPriorityGesture(DragGesture().onEnded({
-    //                    self.handleSwipe(translation:  $0.translation.width)
-    //                }))
-                
-                ProfileView()
-                    .environmentObject(loginViewModel)
-                    .tabItem{
-                        VStack{
-                            Image(systemName: "person.crop.circle")
-                            Text("Profile")
-                                .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                        .tag(1)
+        //                .highPriorityGesture(DragGesture().onEnded({
+        //                    self.handleSwipe(translation:  $0.translation.width)
+        //                }))
+                    
+                    ProfileView()
+                        .environmentObject(loginViewModel)
+                        .tabItem{
+                            VStack{
+                                Image(systemName: "person.crop.circle")
+                                Text("Profile")
+                                    .nanumSquareNeo(family: .cBd, size: 15, color: Color.fontColor.fontColor)
+                            }
                         }
-                    }
-                    .tag(2)
-    //                .highPriorityGesture(DragGesture().onEnded({
-    //                    self.handleSwipe(translation:  $0.translation.width)
-    //                }))
+                        .tag(2)
+        //                .highPriorityGesture(DragGesture().onEnded({
+        //                    self.handleSwipe(translation:  $0.translation.width)
+        //                }))
+                }
             }
         })
         .navigationTitle("")
@@ -87,28 +88,6 @@ struct MainContentView: View {
                 .transition(.move(edge: .bottom))
         }
     }
-    //MARK: - 검색 뷰 &  장바구니 뷰
-    @ViewBuilder
-    private func leadingNavigationTrallingView() -> some View {
-        HStack{
-            ForEach(MainNavigaionItem.allCases, id: \.description) { item in
-                if item == .search {
-                    NavigationLink(destination: SearchedView()){
-                        Image(systemName: item.image).resizable()
-                            .frame(width: 25, height: 25, alignment: .trailing)
-                            .foregroundColor(.black)
-                    }
-                }
-            }
-            //                else if item == .cart {
-            //                    NavigationLink(destination: CartView()){
-            //                        Image(systemName: item.image ).resizable()
-            //                            .frame(width: 25, height: 25, alignment: .trailing)
-            //                            .foregroundColor(.black)
-            //                    }
-            //                }
-        }
-    }
     //MARK: - 드래그 했을때 뷰 변경
     private func handleSwipe(translation: CGFloat) {
         if translation > minDragTranslationForSwipe && selectView > 0 {
@@ -121,8 +100,9 @@ struct MainContentView: View {
 
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainContentView()
-            .environmentObject(dev.signUPViewModel)
-            .previewDevice("iPhone 12")
+        NavigationStack {
+            MainContentView()
+                .environmentObject(dev.signUPViewModel)
+        }
     }
 }
