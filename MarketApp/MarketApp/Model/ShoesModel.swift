@@ -11,19 +11,21 @@ typealias ShoesModel = [ShoeResponse]
 
 
 struct ShoeResponse: Codable, Identifiable {
-    var id = UUID()
+    let id = UUID()
     let code, message: String?
     let data: [ShoeData]?
 }
 
 struct ShoeData: Codable, Identifiable {
     let id = UUID()
+    let shoesId: Int?
     let brandName: BrandName?
     let productName, transName: String?
     let image: String?
     let price: String?
 
     enum CodingKeys: String, CodingKey {
+        case shoesId = "id"
         case brandName = "brand_name"
         case productName = "product_name"
         case transName = "trans_name"

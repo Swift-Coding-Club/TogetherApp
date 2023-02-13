@@ -33,7 +33,7 @@ struct MainView: View {
                     
                     
                     ForEach(viewModel.shoesData ?? []) { item in
-                        ProdductListView(shoesData: item)
+                        ProdductListView(shoesData: item.data ?? [])
                     }
                 }
                 .bounce(false)
