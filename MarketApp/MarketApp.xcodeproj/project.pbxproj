@@ -13,6 +13,7 @@
 		C9A7B74B2943609F0051E644 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7B7492943609F0051E644 /* Coupon.swift */; };
 		C9A7B74C2943609F0051E644 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7B74A2943609F0051E644 /* Order.swift */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
+		EC862F6F299B73F300A831E0 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC862F6E299B73F300A831E0 /* InfoViewModel.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
 		EC892AA12908189600D02F99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AA02908189600D02F99 /* ContentView.swift */; };
 		EC892AA32908189700D02F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC892AA22908189700D02F99 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		C9A7B7492943609F0051E644 /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		C9A7B74A2943609F0051E644 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		EC451F6D290BBCD7008C88A7 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		EC862F6E299B73F300A831E0 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		EC892A9B2908189600D02F99 /* MarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC892A9E2908189600D02F99 /* MarketAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppApp.swift; sourceTree = "<group>"; };
 		EC892AA02908189600D02F99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				EC892ABE2908214900D02F99 /* ProductView.swift */,
 				ECB2F1352909258B00E9F7D3 /* PopView.swift */,
 				EC451F6D290BBCD7008C88A7 /* InfoView.swift */,
+				EC862F6E299B73F300A831E0 /* InfoViewModel.swift */,
 				ECF5BE452914D01E0052655B /* ReviewView.swift */,
 			);
 			path = ProductDetail;
@@ -234,6 +237,7 @@
 				EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */,
 				C9A7B746294360810051E644 /* ProfileView.swift in Sources */,
 				ECF5BE462914D01E0052655B /* ReviewView.swift in Sources */,
+				EC862F6F299B73F300A831E0 /* InfoViewModel.swift in Sources */,
 				EC892AB52908206F00D02F99 /* SearchView.swift in Sources */,
 				EC892AA12908189600D02F99 /* ContentView.swift in Sources */,
 				C9A7B748294360940051E644 /* Review.swift in Sources */,
