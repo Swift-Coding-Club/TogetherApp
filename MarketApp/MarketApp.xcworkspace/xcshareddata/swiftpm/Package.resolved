@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",
       "state" : {
-        "branch" : "master",
-        "revision" : "4a26ed8ac37936c6d1499d1cf7dfe3bcaf144fcb"
+        "revision" : "7e80c25b51c2ffa238879b07fbfc5baa54bb3050",
+        "version" : "9.6.0"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "71eb6700dd53a851473c48d392f00a3ab26699a6",
-        "version" : "10.1.0"
+        "revision" : "c1cfde8067668027b23a42c29d11c246152fe046",
+        "version" : "9.6.0"
       }
     },
     {
@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleSignIn-iOS",
       "state" : {
-        "branch" : "main",
-        "revision" : "7932d33686c1dc4d7df7a919aae47361d1cdfda4"
+        "revision" : "9c9b36af86a4dd3da16048a36cf37351e63ccfe1",
+        "version" : "6.2.4"
       }
     },
     {
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
-        "revision" : "efda500b6d9858d38a76dbfbfa396bd644692e4a",
-        "version" : "3.0.0"
+        "revision" : "5ccda3981422a84186387dbb763ba739178b529c",
+        "version" : "2.3.0"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GTMAppAuth.git",
       "state" : {
-        "revision" : "cee3c709307912d040bd1e06ca919875a92339c6",
-        "version" : "2.0.0"
+        "revision" : "6dee0cde8a1b223737a5159e55e6b4ec16bbbdd9",
+        "version" : "1.3.1"
       }
     },
     {
