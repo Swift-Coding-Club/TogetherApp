@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import Moya
 
 class MainShoesViewModel: ObservableObject {
     
@@ -26,22 +25,22 @@ class MainShoesViewModel: ObservableObject {
         if let cancelable = shoesCancelable {
             cancelable.cancel()
         }
-        let provider = MoyaProvider<MainShoesService>()
-        shoesCancelable = provider.requestPublisher(.mainShoesData)
-            .compactMap { $0 }
-            .sink(receiveCompletion: { result in
-                switch result {
-                case .failure(let error):
-                    print(error.localizedDescription)
-                case .finished:
-                    break
-                }
-            }, receiveValue: { model in
-                let data = try? model.map(ShoesModel.self)
-                guard let shoesData = data else { return }
-                print("신발 데이터 \(shoesData)")
-                self.toViewModel(shoesData)
-            })
+//        let provider = MoyaProvider<MainShoesService>()
+//        shoesCancelable = provider.requestPublisher(.mainShoesData)
+//            .compactMap { $0 }
+//            .sink(receiveCompletion: { result in
+//                switch result {
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                case .finished:
+//                    break
+//                }
+//            }, receiveValue: { model in
+//                let data = try? model.map(ShoesModel.self)
+//                guard let shoesData = data else { return }
+//                print("신발 데이터 \(shoesData)")
+//                self.toViewModel(shoesData)
+//            })
         
     }
 }

@@ -12,6 +12,5 @@ target 'MarketApp' do
   pod 'Kingfisher'
   pod 'FirebaseAppCheck'
   #    pod 'Firebase/Crashlytics'
-  pod 'Moya'
-  pod 'Moya/Combine', '~> 15.0'
+
 end
