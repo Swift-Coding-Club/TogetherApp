@@ -59,6 +59,38 @@ struct ProductView: View {
                 
                 InfoView()
             }
+            .bounce(false)
+            
+            HStack {
+                Button(action: {
+                    //좋아요 액션 ( 클릭시 heart.fill )
+                }) {
+                    Image(systemName: "heart")
+                        .resizable()
+                        .renderingMode(.original)
+                        .frame(width: 30, height: 30)
+                        .padding(.trailing, 10)
+                }
+                
+                Button(action: {
+                    buyThis.toggle()
+                }) {
+                    Text("구매")
+                        .font(.system(size: 22, weight: .medium, design: .default))
+                        .frame(width: 280, height: 50)
+                        .padding(.leading, 10)
+                        .background(.black)
+                        .foregroundColor(.white)
+                        .sheet(isPresented: self.$buyThis) {
+                            if #available(iOS 16.0, *) {
+                                PopView()
+                                    .presentationDetents([.height(300)])
+                            } else {
+                                PopView()
+                            }
+                        }
+                }
+            }.padding(.bottom, 20)
         }
     }
 }

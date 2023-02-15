@@ -95,14 +95,13 @@ end
   # fastlane release version:"2.1.0"
   # 과 같이 사용할 수 있다.
     if options[:version]
-      #enable_automatic_code_signing
+     enable_automatic_code_signing
       increment_version_number(version_number: options[:version])
       get_certificates
       get_provisioning_profile
       build_ipa
       sync_all_development
       upload_to_app_store(
-	devices([ "iPhone 14 Pro"]),
 	username: "shuwj81@daum.net",
       team_id: "N94CS4N6VR",
         # ✅ screenshots 는 기존의 것 사용. metadata 는 업데이트 내역을 위해서 스킵하지 않음.
