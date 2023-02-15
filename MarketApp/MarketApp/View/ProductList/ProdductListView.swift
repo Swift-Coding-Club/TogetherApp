@@ -22,7 +22,7 @@ struct ProdductListView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 30) {
                 ForEach(shoesData) { item in
-                    gridList(image: item.image ?? "", name: item.transName ?? "", price: item.price ?? "", engName: item.productName ?? "")
+                    gridList(image: item.image ?? "", transName: item.transName ?? "", price: item.price ?? "", productName: item.productName ?? "")
                 }
             }
             
@@ -33,26 +33,28 @@ struct ProdductListView: View {
     }
     
     @ViewBuilder
-    private func gridList(image: String, name: String, price: String,  engName: String) -> some View {
+    private func gridList(image: String, transName: String, price: String,  productName: String) -> some View {
         NavigationLink(destination: ProductView()){
-            LazyVStack(alignment: .leading ,spacing: 10) {
+            LazyVStack(spacing: 5) {
                 KFImage(URL(string: image))
                     .resizable()
-                    .frame(width: 160, height: 200, alignment: .center)
+                    .frame(width: 160, height: 200, alignment: .leading)
                 
-                Text(name)
+                Text(transName)
                     .nanumSquareNeo(family: .cBd, size: 13, color: .black)
                     .frame(width: 160, height: 20, alignment: .leading)
                     .lineLimit(1)
                 
-                Text(engName)
+                Text(productName)
                     .nanumSquareNeo(family: .cBd, size: 13, color: .black)
                     .frame(width: 160, height: 20, alignment: .leading)
                     .lineLimit(1)
 
                 Text(price + "원")
-                    .nanumSquareNeo(family: .bRG, size: 13, color: .black)
+                    .nanumSquareNeo(family: .cBd, size: 13, color: .black)
+                    .frame(width: 160, height: 20, alignment: .leading)
                     .lineLimit(1)
+                   
             }
         }
     }
