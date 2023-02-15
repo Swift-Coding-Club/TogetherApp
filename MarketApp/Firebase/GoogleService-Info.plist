@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>673131017055-j2od7hri3ive56n9frftkp3pe4vgpah9.apps.googleusercontent.com</string>
+	<string>673131017055-j9iahve9q788hkdf4mj1silt6s68bn76.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.673131017055-j2od7hri3ive56n9frftkp3pe4vgpah9</string>
+	<string>com.googleusercontent.apps.673131017055-j9iahve9q788hkdf4mj1silt6s68bn76</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDWST6Ss2g3Ufjq5cde52m0JcJuo13wXk0</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.shoping.MarketApp</string>
+	<string>com.shoping.MarketApps</string>
 	<key>PROJECT_ID</key>
 	<string>fancy-b1e27</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:673131017055:ios:0f6f8e821c279b8fa3bcea</string>
+	<string>1:673131017055:ios:bf1579b738ec8ec3a3bcea</string>
+	<key>DATABASE_URL</key>
+	<string>https://fancy-b1e27-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

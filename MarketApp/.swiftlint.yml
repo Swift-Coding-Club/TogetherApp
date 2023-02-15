@@ -29,7 +29,7 @@ disabled_rules :
 - shorthand_operator
 - vertical_whitespace
 - force_try
-
+- force_unwrapping
 
 included :
 

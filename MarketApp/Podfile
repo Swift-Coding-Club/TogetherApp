@@ -6,8 +6,12 @@ target 'MarketApp' do
   use_frameworks!
 
   # Pods for MarketApp
-    pod 'Alamofire'
-    pod 'SwiftLint'
-    pod 'ExytePopupView'
-    
+  pod 'Alamofire'
+  pod 'SwiftLint'
+  pod 'ExytePopupView'
+  pod 'Kingfisher'
+  pod 'FirebaseAppCheck'
+  #    pod 'Firebase/Crashlytics'
+  pod 'Moya'
+  pod 'Moya/Combine', '~> 15.0'
 end
