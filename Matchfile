@@ -7,8 +7,8 @@ type("development") # The default type, can be: appstore, adhoc, enterprise or d
 force_for_new_devices(true)
 git_branch("dev")
 
-# app_identifier("com.shoping.MarketApps")
-# username("shuwj81@daum.net") # Your Apple Developer Portal username
+app_identifier("com.shoping.MarketApps")
+username("shuwj81@daum.net") # Your Apple Developer Portal username
 
 # For all available options run `fastlane match --help`
 # Remove the # in the beginning of the line to enable the other options

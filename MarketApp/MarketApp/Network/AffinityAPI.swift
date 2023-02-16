@@ -9,7 +9,8 @@ import Foundation
 
 enum AffinityAPI {
     
-    static let MainShoes = String("/CreamMainShoes")
+    static let MainShoes = String("/2nkhmkm6")
+
     
 }
 

@@ -14,7 +14,7 @@ enum MainShoesService {
 
 extension MainShoesService: TargetType {
     var baseURL: URL {
-    return URL(string: "https://c11.kr")!
+    return URL(string: "https://tinyurl.com")!
     }
     
     var path: String {
