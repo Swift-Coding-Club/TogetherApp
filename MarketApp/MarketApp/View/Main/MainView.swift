@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var viewModel: MainShoesViewModel = MainShoesViewModel()
+    @StateObject var viewModel = ShoeNetwork()
     
     @State private var sortList = demoSort.one
     @State private var pageIndex = 0
@@ -31,18 +31,18 @@ struct MainView: View {
                     
                     SortedViews()
                     
-                    
-                    ForEach(viewModel.shoesData ?? []) { item in
-                        ProdductListView(shoesData: item.data ?? [])
+                    //W : Problem ( 여기다 bp찍으면 광고배너 움직일때마다 걸림.
+                    ForEach(viewModel.shoe) { item in
+                        ProdductListView(shoesData: [item])
                     }
                 }
                 .bounce(false)
             }
         }
         .navigationTitle("")
-        .onAppear {
-            viewModel.mainShoesRequest()
-        }
+//        .onAppear {
+//            viewModel.shoe
+//        }
     }
     //MARK: - 검색 뷰 &  장바구니 뷰
     @ViewBuilder
@@ -162,7 +162,7 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            MainView(viewModel: MainShoesViewModel())
+            MainView(viewModel: ShoeNetwork())
         }
     }
 }

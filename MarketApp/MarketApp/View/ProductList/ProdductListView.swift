@@ -22,7 +22,10 @@ struct ProdductListView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 30) {
                 ForEach(shoesData) { item in
-                    gridList(image: item.image ?? "", transName: item.transName ?? "", price: item.price ?? "", productName: item.productName ?? "")
+                    gridList(image: item.image ?? "",
+                             transName: item.transName ?? "",
+                             price: item.price ?? "",
+                             productName: item.productName ?? "")
                 }
             }
             

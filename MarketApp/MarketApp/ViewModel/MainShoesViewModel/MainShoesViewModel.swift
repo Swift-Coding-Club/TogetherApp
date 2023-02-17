@@ -8,39 +8,37 @@
 import Foundation
 import Combine
 
-class MainShoesViewModel: ObservableObject {
+class ShoeNetwork : ObservableObject {
+    @Published var shoe : [ShoeData] = []
+    var finished : AnyCancellable?
     
-    @Published var shoesData: ShoesModel?
-    var shoesCancelable: AnyCancellable?
-    
-    init() {
-        mainShoesRequest()
-    }
-    
-    func toViewModel(_ list: ShoesModel) {
-        self.shoesData = list
-    }
-    
-    func mainShoesRequest() {
-        if let cancelable = shoesCancelable {
-            cancelable.cancel()
-        }
-//        let provider = MoyaProvider<MainShoesService>()
-//        shoesCancelable = provider.requestPublisher(.mainShoesData)
-//            .compactMap { $0 }
-//            .sink(receiveCompletion: { result in
-//                switch result {
-//                case .failure(let error):
-//                    print(error.localizedDescription)
-//                case .finished:
-//                    break
-//                }
-//            }, receiveValue: { model in
-//                let data = try? model.map(ShoesModel.self)
-//                guard let shoesData = data else { return }
-//                print("신발 데이터 \(shoesData)")
-//                self.toViewModel(shoesData)
-//            })
+    func networking() {
+        guard let url = URL(string: "https://tinyurl.com/2nkhmkm6") else { return }
         
+        finished = URLSession.shared.dataTaskPublisher(for: url)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .tryMap { data, response -> Data in
+                guard let response = response as? HTTPURLResponse,
+                      response.statusCode >= 200 && response.statusCode <= 299 else {
+                        throw URLError(.badServerResponse)
+                      }
+                return data
+            }
+            .decode(type: [ShoeData].self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished :
+                        print("SUCCESS")
+                    case .failure(let error) :
+                        print("ERROR : \(error.localizedDescription)")
+                    }
+                },
+                receiveValue: { [weak self] shoeInfo in
+                    self?.shoe = shoeInfo
+                    self?.finished?.cancel()
+                }
+            )
     }
 }

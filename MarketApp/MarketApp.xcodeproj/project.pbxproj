@@ -93,7 +93,6 @@
 		7F93C34C29854D2100345AEC /* AppManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34B29854D2100345AEC /* AppManger.swift */; };
 		7F93C34F29856C3A00345AEC /* AffinityAppCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */; };
 		7FA4BF44299A3EE800D8F2F7 /* MainShoesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4BF43299A3EE800D8F2F7 /* MainShoesService.swift */; };
-		7FA4BF46299A3F2A00D8F2F7 /* AffinityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4BF45299A3F2A00D8F2F7 /* AffinityAPI.swift */; };
 		7FF4DA192995192200AC04D7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4DA182995192200AC04D7 /* SearchView.swift */; };
 		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
@@ -182,7 +181,6 @@
 		7F93C34B29854D2100345AEC /* AppManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManger.swift; sourceTree = "<group>"; };
 		7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffinityAppCheck.swift; sourceTree = "<group>"; };
 		7FA4BF43299A3EE800D8F2F7 /* MainShoesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShoesService.swift; sourceTree = "<group>"; };
-		7FA4BF45299A3F2A00D8F2F7 /* AffinityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffinityAPI.swift; sourceTree = "<group>"; };
 		7FF4DA182995192200AC04D7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A025DDF51E9A1BBEC7469CCC /* Pods-MarketApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.debug.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -494,7 +492,6 @@
 				7FA4BF42299A3E4500D8F2F7 /* Main */,
 				7F39FA80295090080041BF8B /* MarketAPI */,
 				7F39FA7D29508F840041BF8B /* APIError */,
-				7FA4BF45299A3F2A00D8F2F7 /* AffinityAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -945,7 +942,6 @@
 				7F39FA85295090F50041BF8B /* CheckRegister.swift in Sources */,
 				7F0565E0298AA0BC0066BE4A /* Demo.swift in Sources */,
 				7F2815F62990DA1E00B2C481 /* ProfileSettingType.swift in Sources */,
-				7FA4BF46299A3F2A00D8F2F7 /* AffinityAPI.swift in Sources */,
 				7F0F165B296C4CBF00FB4C30 /* SignUPView.swift in Sources */,
 				7F4B9629298D17C3006AAF48 /* View+ReceiveTimer.swift in Sources */,
 				EC892ABB290820B800D02F99 /* FavoriteView.swift in Sources */,

@@ -16,7 +16,7 @@ struct SearchView: View {
     private let searchBarPlaceholder: String = "신발을 검색해주세요"
     let mockShoseData : [ShoeData] = []
     
-    @StateObject var viewModel: MainShoesViewModel = MainShoesViewModel()
+    @StateObject var viewModel = ShoeNetwork()
     
     //    let searchText: String
     let mockBrandList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani", "Columbia","H&M","ZARA","LouisVitton","UNIQLO","Hermes","Gucci","UnderArmour"]
