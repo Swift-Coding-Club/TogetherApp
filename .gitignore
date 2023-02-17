@@ -22,11 +22,12 @@ xcuserdata/
 .DS_Store
 AppStore_com.shoping.MarketApps.mobileprovision
 Gemfile
-QM6N37556J.cer
 9P78JL89R8.cer
 /Firebase
 Gemfile.lock
 87UZSB5AC6.cer
+MGCR5MSV64.cer
+
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
 *.xccheckout

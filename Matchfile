@@ -1,4 +1,4 @@
-git_url("https://github.com/Swift-Coding-Club/TogetherApp.git")
+git_url("https://github.com/Swift-Coding-Club/TogetherApp")
 
 storage_mode("git")
 

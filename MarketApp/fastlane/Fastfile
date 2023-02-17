@@ -82,7 +82,7 @@ end
 
 
 lane :sync_all_development do
- match(type: "development")
+ match(type: "appstore")
 end
 
 lane:sync_device_info do 
@@ -99,7 +99,7 @@ end
   # fastlane release version:"2.1.0"
   # 과 같이 사용할 수 있다.
     if options[:version]
-     enable_automatic_code_signing
+     #enable_automatic_code_signing
       increment_version_number(version_number: options[:version])
       get_certificates
       get_provisioning_profile
