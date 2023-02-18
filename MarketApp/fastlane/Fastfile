@@ -14,6 +14,10 @@
 #update_fastlane
  
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "600"
+#ENV["FASTLANE_USER"] = "shuwj81@daum.net"
+#ENV["FASTLANE_PASSWORD"] = "@Home980305"
+
+
 default_platform(:ios)
 platform :ios do
 
@@ -40,6 +44,7 @@ desc "Run swift code validation using SwiftLint"
   lane :build_ipa do
    clear_derived_data
     gym(
+      #configuration: "Release",
       workspace: "MarketApp.xcworkspace",
       scheme: "MarketApp",
       output_name: "Affinity",
@@ -54,7 +59,13 @@ desc "Run swift code validation using SwiftLint"
       skip_package_pkg: true,
  export_options: {
     signingStyle: "automatic"
-  }
+  },
+export_options: {
+        compileBitcode: false,
+        provisioningProfiles: {
+          "com.shoping.MarketApps.app-store" => "match Appstore com.shoping.MarketApps.app-store"
+        }
+      }
 
 
 )
@@ -82,8 +93,10 @@ end
 
 
 lane :sync_all_development do
- match(type: "appstore")
+ match(type: "appstore", app_identifier:"com.shoping.MarketApps")
 end
+
+
 
 lane:sync_device_info do 
 register_devices(
@@ -99,33 +112,29 @@ end
   # fastlane release version:"2.1.0"
   # 과 같이 사용할 수 있다.
     if options[:version]
-     #enable_automatic_code_signing
+    #enable_automatic_code_signing
       increment_version_number(version_number: options[:version])
       get_certificates
       get_provisioning_profile
-      build_ipa
       sync_all_development
+   #build_ipa
       upload_to_app_store(
-	username: "shuwj81@daum.net",
-      team_id: "N94CS4N6VR",
-        # ✅ screenshots 는 기존의 것 사용. metadata 는 업데이트 내역을 위해서 스킵하지 않음.
-        skip_metadata: true,
-        skip_screenshots: true,
+        username: "shuwj81@daum.net",
+        team_id: "N94CS4N6VR",
+	skip_metadata: true,
+        skip_screenshots: true, 
+        force: true,
         submit_for_review: true,
         automatic_release: true,
-        # ✅ force: HTML report를 스킵합니다.
-        force: true,
-        # ✅ precheck 에서 In-app 결제 제외합니다.
-        precheck_include_in_app_purchases: false,
-        # ✅ IDFA 세팅합니다.
-        submission_information: { 
-add_id_info_uses_idfa: false,
-    export_compliance_encryption_updated: false,
-    export_compliance_uses_encryption: false,
-    content_rights_contains_third_party_content: false, 
+       precheck_include_in_app_purchases: false,
+      add_id_info_uses_idfa: false,
+      export_compliance_encryption_updated: false,
+      export_compliance_uses_encryption: false,
+      content_rights_contains_third_party_content: false, 
 	}
-      )
+)   
+      
     # ✅ if 문을 종료하기 위한 end
-    end
+   end 
   end
 end
