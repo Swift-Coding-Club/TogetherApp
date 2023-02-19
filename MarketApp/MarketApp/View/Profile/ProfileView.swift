@@ -64,7 +64,7 @@ struct ProfileView: View {
     }
     
     @ViewBuilder
-    private func profileHeader() -> some View {
+     func profileHeader() -> some View {
         HStack{
             Rectangle()
                 .frame(width: UIScreen.screenWidth, height: 200)
@@ -124,7 +124,7 @@ struct ProfileView: View {
     }
     
     @ViewBuilder
-    private func imageEditView() -> some View {
+     func imageEditView() -> some View {
         VStack{
             ZStack {
                 Button {

@@ -11,17 +11,18 @@ target 'MarketApp' do
   pod 'ExytePopupView'
   pod 'Kingfisher'
   pod 'FirebaseAppCheck'
-  #    pod 'Firebase/Crashlytics'
   pod 'Moya'
   pod 'Moya/Combine', '~> 15.0'
   
   target 'MarketAppTests' do
     inherit! :search_paths
     # Pods for testing
+    
   end
   
   target 'MarketAppUITests' do
     # Pods for testing
+    
   end
   
   

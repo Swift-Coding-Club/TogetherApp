@@ -5,57 +5,12 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.00047">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.00053">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: increment_version_number" time="8.222089">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="02: get_certificates" time="6.244177">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="03: get_provisioning_profile" time="6.683276">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="04: Switch to ios build_ipa lane" time="0.000461">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="05: clear_derived_data" time="18.491163">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="06: gym" time="671.143333">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="07: Switch to ios sync_all_development lane" time="0.000569">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="08: Switch to ios sync_device_info lane" time="0.000288">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="09: register_devices" time="4.541933">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="10: match" time="92.423243">
+      <testcase classname="fastlane.lanes" name="1: run_tests" time="12.409548">
         
       </testcase>
     
