@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		057B6A4BDE72F88E822F34D0 /* Pods_MarketApp_MarketAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5708D9E43ABA24D369603F44 /* Pods_MarketApp_MarketAppUITests.framework */; };
 		0D0B745604915877639C073E /* Pods_MarketApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */; };
 		7F0565D5298686AE0066BE4A /* ShoesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565D4298686AE0066BE4A /* ShoesModel.swift */; };
 		7F0565D7298696110066BE4A /* MarketAPI-Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565D6298696110066BE4A /* MarketAPI-Main.swift */; };
@@ -96,8 +97,12 @@
 		7F93C34F29856C3A00345AEC /* AffinityAppCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */; };
 		7FA4BF44299A3EE800D8F2F7 /* MainShoesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4BF43299A3EE800D8F2F7 /* MainShoesService.swift */; };
 		7FA4BF46299A3F2A00D8F2F7 /* AffinityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4BF45299A3F2A00D8F2F7 /* AffinityAPI.swift */; };
+		7FDB1E6229A2399C00019099 /* MarketAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB1E6129A2399C00019099 /* MarketAppTests.swift */; };
+		7FDB1E6F29A239A600019099 /* MarketAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB1E6E29A239A600019099 /* MarketAppUITests.swift */; };
+		7FDB1E7129A239A600019099 /* MarketAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB1E7029A239A600019099 /* MarketAppUITestsLaunchTests.swift */; };
 		7FF4DA192995192200AC04D7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4DA182995192200AC04D7 /* SearchView.swift */; };
 		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
+		D3BAB82DFC4CADBC9DF5A1CE /* Pods_MarketAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB0C99A0B06EDFEE1C4A1C /* Pods_MarketAppTests.framework */; };
 		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
 		EC892AA12908189600D02F99 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AA02908189600D02F99 /* MainContentView.swift */; };
@@ -114,7 +119,27 @@
 		ECF5BE462914D01E0052655B /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF5BE452914D01E0052655B /* ReviewView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7FDB1E6329A2399C00019099 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC892A932908189600D02F99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC892A9A2908189600D02F99;
+			remoteInfo = MarketApp;
+		};
+		7FDB1E7229A239A600019099 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC892A932908189600D02F99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC892A9A2908189600D02F99;
+			remoteInfo = MarketApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5708D9E43ABA24D369603F44 /* Pods_MarketApp_MarketAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp_MarketAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF6F916C6C3E2F058DC2667 /* Pods-MarketAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketAppTests.release.xcconfig"; path = "Target Support Files/Pods-MarketAppTests/Pods-MarketAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		78AB0C99A0B06EDFEE1C4A1C /* Pods_MarketAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0565D4298686AE0066BE4A /* ShoesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesModel.swift; sourceTree = "<group>"; };
 		7F0565D6298696110066BE4A /* MarketAPI-Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarketAPI-Main.swift"; sourceTree = "<group>"; };
 		7F0565D9298698A20066BE4A /* MainShoesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShoesViewModel.swift; sourceTree = "<group>"; };
@@ -187,11 +212,19 @@
 		7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffinityAppCheck.swift; sourceTree = "<group>"; };
 		7FA4BF43299A3EE800D8F2F7 /* MainShoesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShoesService.swift; sourceTree = "<group>"; };
 		7FA4BF45299A3F2A00D8F2F7 /* AffinityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffinityAPI.swift; sourceTree = "<group>"; };
+		7FDB1E5F29A2399C00019099 /* MarketAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FDB1E6129A2399C00019099 /* MarketAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppTests.swift; sourceTree = "<group>"; };
+		7FDB1E6C29A239A600019099 /* MarketAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FDB1E6E29A239A600019099 /* MarketAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppUITests.swift; sourceTree = "<group>"; };
+		7FDB1E7029A239A600019099 /* MarketAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7FF4DA182995192200AC04D7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		86C7AD83955B4F72E26A2248 /* Pods-MarketApp-MarketAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp-MarketAppUITests.release.xcconfig"; path = "Target Support Files/Pods-MarketApp-MarketAppUITests/Pods-MarketApp-MarketAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		97DE4A6002363EDE48C8C65A /* Pods-MarketAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MarketAppTests/Pods-MarketAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A025DDF51E9A1BBEC7469CCC /* Pods-MarketApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.debug.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B1F400B0E00C4FA897EBD2 /* Pods-MarketApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.release.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.release.xcconfig"; sourceTree = "<group>"; };
 		C9A7B73C294353290051E644 /* mockData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockData.json; sourceTree = "<group>"; };
+		DAE05443C070FD4D365EBE21 /* Pods-MarketApp-MarketAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp-MarketAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarketApp-MarketAppUITests/Pods-MarketApp-MarketAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC451F6D290BBCD7008C88A7 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		EC892A9B2908189600D02F99 /* MarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC892A9E2908189600D02F99 /* MarketAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppApp.swift; sourceTree = "<group>"; };
@@ -210,6 +243,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7FDB1E5C29A2399C00019099 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BAB82DFC4CADBC9DF5A1CE /* Pods_MarketAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FDB1E6929A239A600019099 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				057B6A4BDE72F88E822F34D0 /* Pods_MarketApp_MarketAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC892A982908189600D02F99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -638,11 +687,32 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		7FDB1E6029A2399C00019099 /* MarketAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FDB1E6129A2399C00019099 /* MarketAppTests.swift */,
+			);
+			path = MarketAppTests;
+			sourceTree = "<group>";
+		};
+		7FDB1E6D29A239A600019099 /* MarketAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7FDB1E6E29A239A600019099 /* MarketAppUITests.swift */,
+				7FDB1E7029A239A600019099 /* MarketAppUITestsLaunchTests.swift */,
+			);
+			path = MarketAppUITests;
+			sourceTree = "<group>";
+		};
 		A1BC0135F64B06BED0692AC2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				A025DDF51E9A1BBEC7469CCC /* Pods-MarketApp.debug.xcconfig */,
 				B8B1F400B0E00C4FA897EBD2 /* Pods-MarketApp.release.xcconfig */,
+				DAE05443C070FD4D365EBE21 /* Pods-MarketApp-MarketAppUITests.debug.xcconfig */,
+				86C7AD83955B4F72E26A2248 /* Pods-MarketApp-MarketAppUITests.release.xcconfig */,
+				97DE4A6002363EDE48C8C65A /* Pods-MarketAppTests.debug.xcconfig */,
+				5DF6F916C6C3E2F058DC2667 /* Pods-MarketAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -651,6 +721,8 @@
 			isa = PBXGroup;
 			children = (
 				A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */,
+				5708D9E43ABA24D369603F44 /* Pods_MarketApp_MarketAppUITests.framework */,
+				78AB0C99A0B06EDFEE1C4A1C /* Pods_MarketAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -723,6 +795,8 @@
 				7F2432AB295862F100C1077E /* Firebase */,
 				7F39FA74294F4D630041BF8B /* Application */,
 				EC892A9D2908189600D02F99 /* MarketApp */,
+				7FDB1E6029A2399C00019099 /* MarketAppTests */,
+				7FDB1E6D29A239A600019099 /* MarketAppUITests */,
 				EC892A9C2908189600D02F99 /* Products */,
 				A1BC0135F64B06BED0692AC2 /* Pods */,
 				C5901C91955435BA8E3A12A8 /* Frameworks */,
@@ -733,6 +807,8 @@
 			isa = PBXGroup;
 			children = (
 				EC892A9B2908189600D02F99 /* MarketApp.app */,
+				7FDB1E5F29A2399C00019099 /* MarketAppTests.xctest */,
+				7FDB1E6C29A239A600019099 /* MarketAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -763,6 +839,45 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7FDB1E5E29A2399C00019099 /* MarketAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FDB1E6729A2399C00019099 /* Build configuration list for PBXNativeTarget "MarketAppTests" */;
+			buildPhases = (
+				78253D54FB7067542B277864 /* [CP] Check Pods Manifest.lock */,
+				7FDB1E5B29A2399C00019099 /* Sources */,
+				7FDB1E5C29A2399C00019099 /* Frameworks */,
+				7FDB1E5D29A2399C00019099 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FDB1E6429A2399C00019099 /* PBXTargetDependency */,
+			);
+			name = MarketAppTests;
+			productName = MarketAppTests;
+			productReference = 7FDB1E5F29A2399C00019099 /* MarketAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7FDB1E6B29A239A600019099 /* MarketAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FDB1E7429A239A600019099 /* Build configuration list for PBXNativeTarget "MarketAppUITests" */;
+			buildPhases = (
+				8736ED9C66FCC265B52F1C27 /* [CP] Check Pods Manifest.lock */,
+				7FDB1E6829A239A600019099 /* Sources */,
+				7FDB1E6929A239A600019099 /* Frameworks */,
+				7FDB1E6A29A239A600019099 /* Resources */,
+				A7E9D1D36C9D6F43DB2B44EF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FDB1E7329A239A600019099 /* PBXTargetDependency */,
+			);
+			name = MarketAppUITests;
+			productName = MarketAppUITests;
+			productReference = 7FDB1E6C29A239A600019099 /* MarketAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		EC892A9A2908189600D02F99 /* MarketApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC892AA92908189700D02F99 /* Build configuration list for PBXNativeTarget "MarketApp" */;
@@ -810,9 +925,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					7FDB1E5E29A2399C00019099 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = EC892A9A2908189600D02F99;
+					};
+					7FDB1E6B29A239A600019099 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = EC892A9A2908189600D02F99;
+					};
 					EC892A9A2908189600D02F99 = {
 						CreatedOnToolsVersion = 13.4.1;
 						ProvisioningStyle = Automatic;
@@ -837,11 +960,27 @@
 			projectRoot = "";
 			targets = (
 				EC892A9A2908189600D02F99 /* MarketApp */,
+				7FDB1E5E29A2399C00019099 /* MarketAppTests */,
+				7FDB1E6B29A239A600019099 /* MarketAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7FDB1E5D29A2399C00019099 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FDB1E6A29A239A600019099 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC892A992908189600D02F99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -863,6 +1002,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		78253D54FB7067542B277864 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarketAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7F2432B22958677000C1077E /* FirebaseCrashlytics Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -903,6 +1064,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+		8736ED9C66FCC265B52F1C27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarketApp-MarketAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7E9D1D36C9D6F43DB2B44EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarketApp-MarketAppUITests/Pods-MarketApp-MarketAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarketApp-MarketAppUITests/Pods-MarketApp-MarketAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarketApp-MarketAppUITests/Pods-MarketApp-MarketAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		DAA3929E740A81AEF9E43791 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -946,6 +1146,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7FDB1E5B29A2399C00019099 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FDB1E6229A2399C00019099 /* MarketAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FDB1E6829A239A600019099 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FDB1E7129A239A600019099 /* MarketAppUITestsLaunchTests.swift in Sources */,
+				7FDB1E6F29A239A600019099 /* MarketAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC892A972908189600D02F99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1031,7 +1248,104 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7FDB1E6429A2399C00019099 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC892A9A2908189600D02F99 /* MarketApp */;
+			targetProxy = 7FDB1E6329A2399C00019099 /* PBXContainerItemProxy */;
+		};
+		7FDB1E7329A239A600019099 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC892A9A2908189600D02F99 /* MarketApp */;
+			targetProxy = 7FDB1E7229A239A600019099 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		7FDB1E6529A2399C00019099 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97DE4A6002363EDE48C8C65A /* Pods-MarketAppTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = N94CS4N6VR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Roy.MarketApp.MarketAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarketApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MarketApp";
+			};
+			name = Debug;
+		};
+		7FDB1E6629A2399C00019099 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DF6F916C6C3E2F058DC2667 /* Pods-MarketAppTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N94CS4N6VR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Roy.MarketApp.MarketAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarketApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MarketApp";
+			};
+			name = Release;
+		};
+		7FDB1E7529A239A600019099 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAE05443C070FD4D365EBE21 /* Pods-MarketApp-MarketAppUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = N94CS4N6VR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Roy.MarketApp.MarketAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MarketApp;
+			};
+			name = Debug;
+		};
+		7FDB1E7629A239A600019099 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86C7AD83955B4F72E26A2248 /* Pods-MarketApp-MarketAppUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N94CS4N6VR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Roy.MarketApp.MarketAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MarketApp;
+			};
+			name = Release;
+		};
 		EC892AA72908189700D02F99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1237,6 +1551,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7FDB1E6729A2399C00019099 /* Build configuration list for PBXNativeTarget "MarketAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FDB1E6529A2399C00019099 /* Debug */,
+				7FDB1E6629A2399C00019099 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7FDB1E7429A239A600019099 /* Build configuration list for PBXNativeTarget "MarketAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FDB1E7529A239A600019099 /* Debug */,
+				7FDB1E7629A239A600019099 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		EC892A962908189600D02F99 /* Build configuration list for PBXProject "MarketApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

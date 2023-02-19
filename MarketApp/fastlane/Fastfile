@@ -44,7 +44,7 @@ desc "Run swift code validation using SwiftLint"
   lane :build_ipa do
    clear_derived_data
     gym(
-      #configuration: "Release",
+      configuration: "Release",
       workspace: "MarketApp.xcworkspace",
       scheme: "MarketApp",
       output_name: "Affinity",
@@ -55,23 +55,25 @@ desc "Run swift code validation using SwiftLint"
       include_symbols: false,
       xcargs: 'DEBUG_INFORMATION_FORMAT="dwarf-with-dsym"',
       disable_package_automatic_updates: true,
+      #skip_package_ipa: true,
       skip_package_dependencies_resolution: true,
       skip_package_pkg: true,
- export_options: {
-    signingStyle: "automatic"
-  },
-export_options: {
+ 	export_options: { signingStyle: "automatic" },
+        export_options: {
         compileBitcode: false,
         provisioningProfiles: {
           "com.shoping.MarketApps.app-store" => "match Appstore com.shoping.MarketApps.app-store"
-        }
-      }
-
-
-)
+             }
+           }
+          )
+	output_directory = "./output"
+      Dir.mkdir(output_directory) unless File.exists?(output_directory)
+      ipa_path = Dir.glob("*.ipa").first
+      FileUtils.cp(ipa_path, "#{output_directory}/#{ipa_path}")
     end
-desc "build app and upload to testflight"
-lane :beta do
+
+    desc "build app and upload to testflight"
+    lane :beta do
 	get_certificates
 	get_provisioning_profile
 	increment_build_number(
@@ -131,9 +133,14 @@ end
       export_compliance_encryption_updated: false,
       export_compliance_uses_encryption: false,
       content_rights_contains_third_party_content: false, 
-	}
-)   
-      
+	submission_information: {
+        add_id_info_uses_idfa: false,
+        export_compliance_encryption_updated: false,
+        export_compliance_uses_encryption: false,
+        content_rights_contains_third_party_content: false
+			}
+		)   
+ 	         
     # ✅ if 문을 종료하기 위한 end
    end 
   end
