@@ -29,28 +29,9 @@ class SignUPViewModelTests: XCTestCase {
         credential = nil
     }
     
-    func test_로그인() {
-        let email = "test@example.com"
-        let password = "password"
-        let expectation = XCTestExpectation(description: "로그인 성공")
-        
-        signUpViewModel.login(withEmail: email, password: password)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let user = Auth.auth().currentUser
-            XCTAssertNil(user)
-            XCTAssertFalse(self.signUpViewModel.loginStatus)
-            XCTAssertTrue(self.signUpViewModel.userSession != nil, "로그인 실패")
-            expectation.fulfill()
-        }
-        
-        //        wait(for: [expectation], timeout: 5)
-    }
-    
-    
     func test_회원가입() {
         let email = "test@example.com"
-        let password = "password"
+        let password = "password1"
         let nickName = ""
         let expectation = XCTestExpectation(description: "register_failure")
         
@@ -61,6 +42,35 @@ class SignUPViewModelTests: XCTestCase {
             XCTAssertNil(user)
             XCTAssertFalse(self.signUpViewModel.loginStatus)
             XCTAssertTrue(self.signUpViewModel.userSession != nil, "회원가입 실패")
+            expectation.fulfill()
+        }
+    }
+    
+    func test_유저닉네임저장() {
+        let nickname = "testuser"
+        let expectation = XCTestExpectation(description: "닉네임 저장")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.signUpViewModel.saveUserInformation(nickName: nickname)
+            XCTAssertEqual(self.signUpViewModel.userSession?.displayName, nickname)
+            expectation.fulfill()
+        }
+    }
+    
+    
+    
+    func test_로그인() {
+        let email = "test@example.com"
+        let password = "password1"
+        let expectation = XCTestExpectation(description: "로그인 성공")
+        
+        signUpViewModel.login(withEmail: email, password: password)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let user = Auth.auth().currentUser
+            XCTAssertNil(user)
+            XCTAssertFalse(self.signUpViewModel.loginStatus)
+            XCTAssertTrue(self.signUpViewModel.userSession != nil, "로그인 실패")
             expectation.fulfill()
         }
     }
@@ -88,17 +98,6 @@ class SignUPViewModelTests: XCTestCase {
             XCTAssertTrue(self.signUpViewModel.deleteUser)
             XCTAssertNil(self.signUpViewModel.userSession)
             XCTAssertFalse(self.signUpViewModel.loginStatus)
-            expectation.fulfill()
-        }
-    }
-    
-    func test_유저닉네임저장() {
-        let nickname = "testuser"
-        let expectation = XCTestExpectation(description: "닉네임 저장")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.signUpViewModel.saveUserInformation(nickName: nickname)
-            XCTAssertEqual(self.signUpViewModel.userSession?.displayName, nickname)
             expectation.fulfill()
         }
     }

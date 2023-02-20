@@ -27,7 +27,6 @@ PODS:
   - SwiftLint (0.50.1)
 
 DEPENDENCIES:
-  - Alamofire
   - ExytePopupView
   - FirebaseAppCheck
   - Kingfisher
@@ -60,6 +59,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   SwiftLint: 6b0cf1f4d619808dbc16e4fab064ce6fc79f090b
 
-PODFILE CHECKSUM: 0d6ba45680f1fcec4200b3997d4783c904a170e4
+PODFILE CHECKSUM: 85b598393758882abd4814e132aa0bb6c1940247
 
 COCOAPODS: 1.11.3
