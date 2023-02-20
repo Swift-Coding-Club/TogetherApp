@@ -7,11 +7,7 @@
 
 import Foundation
 
-typealias ShoesModel = [ShoeResponse]
-
-struct ShoeResponse: Codable, Identifiable {
-    let id = UUID()
-    let code, message: String?
+struct ShoeResponse: Codable {
     let data: [ShoeData]?
 }
 

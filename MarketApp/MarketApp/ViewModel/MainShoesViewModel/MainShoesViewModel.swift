@@ -9,14 +9,16 @@ import Foundation
 import Combine
 
 class ShoeNetwork : ObservableObject {
-    @Published var shoe : [ShoeData] = []
+    @Published var shoeInfo : [ShoeData] = []
+    
     var finished : AnyCancellable?
     
     func networking() {
-        guard let url = URL(string: "https://tinyurl.com/2nkhmkm6") else { return }
+        guard let url = URL(string: "") else { return } //baseURL 나올때까지 공백
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
         
-        finished = URLSession.shared.dataTaskPublisher(for: url)
-            .subscribe(on: DispatchQueue.global(qos: .background))
+        finished = URLSession.shared.dataTaskPublisher(for: urlRequest)
             .tryMap { data, response -> Data in
                 guard let response = response as? HTTPURLResponse,
                       response.statusCode >= 200 && response.statusCode <= 299 else {
@@ -36,7 +38,7 @@ class ShoeNetwork : ObservableObject {
                     }
                 },
                 receiveValue: { [weak self] shoeInfo in
-                    self?.shoe = shoeInfo
+                    self?.shoeInfo = shoeInfo
                     self?.finished?.cancel()
                 }
             )
