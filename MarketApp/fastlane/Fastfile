@@ -133,6 +133,7 @@ end
       get_provisioning_profile
       sync_all_development
       build_ipa
+      unit_Test
       upload_to_app_store(
         username: "shuwj81@daum.net",
         team_id: "N94CS4N6VR",
