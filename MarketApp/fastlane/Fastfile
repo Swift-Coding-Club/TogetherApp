@@ -14,8 +14,7 @@
 #update_fastlane
  
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "600"
-#ENV["FASTLANE_USER"] = "shuwj81@daum.net"
-#ENV["FASTLANE_PASSWORD"] = "@Home980305"
+
 
 
 default_platform(:ios)
@@ -131,8 +130,9 @@ end
       increment_version_number(version_number: options[:version])
       get_certificates
       get_provisioning_profile
-      sync_all_development
+      #sync_all_development
       build_ipa
+      unit_Test
       upload_to_app_store(
         username: "shuwj81@daum.net",
         team_id: "N94CS4N6VR",
