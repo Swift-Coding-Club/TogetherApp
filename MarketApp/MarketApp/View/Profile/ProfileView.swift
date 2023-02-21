@@ -15,7 +15,6 @@ struct ProfileView: View {
     @EnvironmentObject var viewModel: SignUPViewModel
     @StateObject var profileViewModel = ProfileViewModel()
     
-    @State private var show: Bool = false
     @State private var showTermsView: Bool = false
     @State private var showConnatView: Bool = false
     @State private var showDeveloperView: Bool = false
@@ -64,7 +63,7 @@ struct ProfileView: View {
     }
     
     @ViewBuilder
-     func profileHeader() -> some View {
+     private func profileHeader() -> some View {
         HStack{
             Rectangle()
                 .frame(width: UIScreen.screenWidth, height: 200)
@@ -124,7 +123,7 @@ struct ProfileView: View {
     }
     
     @ViewBuilder
-     func imageEditView() -> some View {
+     private func imageEditView() -> some View {
         VStack{
             ZStack {
                 Button {
@@ -192,7 +191,6 @@ struct ProfileView: View {
         guard let selectedImage = selectedImage else { return }
         profileImage = Image(uiImage: selectedImage)
     }
-    
     
     @ViewBuilder
     private func profileSettingView() -> some View {

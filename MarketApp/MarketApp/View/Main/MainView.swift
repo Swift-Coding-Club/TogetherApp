@@ -31,9 +31,8 @@ struct MainView: View {
                     
                     SortedViews()
                     
-                    
-                    ForEach(viewModel.shoesData ?? []) { item in
-                        ProdductListView(shoesData: item.data ?? [])
+                    if let shoesData = viewModel.shoesData {
+                        ProdductListView(shoesData: shoesData)
                     }
                 }
                 .bounce(false)

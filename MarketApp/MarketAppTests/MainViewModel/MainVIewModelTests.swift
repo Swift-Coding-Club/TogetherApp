@@ -27,15 +27,19 @@ final class MainVIewModelTests: XCTestCase {
     
     
     func testToViewModel() {
-        let mockData = [ShoeResponse(code: "200", message: nil, data: [ShoeData(shoesId: 1, brandName: .adidas, productName: "product", transName: nil, image: nil, price: nil)])]
+        let mockData = [ShoeData(shoesId: 1, brandName: .adidas, productName: "Nike Air Force 1 '07 Low White", transName: "나이키 에어포스 1 '07 로우 화이트", image: "https://kream-phinf.pstatic.net/MjAyMjA2MTVfMjYw/MDAxNjU1MjgzNjk2Mzk3.gh8n5rs7p-pWVqzIhNh7yj_KdyjLFBeJr9QbsDumoFEg.KdvPfvgBYmjm7MKKhcbIEQIP6FGeuof_GnmcDUgrvyAg.PNG/a_baa1ccea3726495badba419dfede63f9.png?type=m", price: "128,000")]
         
         viewModel.toViewModel(mockData)
         
         XCTAssertEqual(viewModel.shoesData?.count, mockData.count)
-        XCTAssertEqual(viewModel.shoesData?.first?.data?.count, mockData.first?.data?.count)
-        XCTAssertEqual(viewModel.shoesData?.first?.data?.first?.shoesId, mockData.first?.data?.first?.shoesId)
-        XCTAssertEqual(viewModel.shoesData?.first?.data?.first?.brandName, mockData.first?.data?.first?.brandName)
-        XCTAssertEqual(viewModel.shoesData?.first?.data?.first?.productName, mockData.first?.data?.first?.productName)
+        XCTAssertEqual(viewModel.shoesData?.count, mockData.count)
+        XCTAssertEqual(viewModel.shoesData?.first?.shoesId, mockData.first?.shoesId)
+        XCTAssertEqual(viewModel.shoesData?.first?.brandName , mockData.first?.brandName)
+        XCTAssertEqual(viewModel.shoesData?.first?.productName, mockData.first?.productName)
+        XCTAssertEqual(viewModel.shoesData?.first?.transName, mockData.first?.transName)
+        XCTAssertEqual(viewModel.shoesData?.first?.image, mockData.first?.image)
+        XCTAssertEqual(viewModel.shoesData?.first?.price, mockData.first?.price)
+        
     }
     
     

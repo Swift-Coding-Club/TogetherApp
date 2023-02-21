@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias ShoesModel = [ShoeResponse]
+typealias ShoesModel = [ShoeData]
 
 
 struct ShoeResponse: Codable, Identifiable {
