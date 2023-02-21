@@ -55,6 +55,14 @@ build app and upload to testflight
 
 
 
+### ios unit_Test
+
+```sh
+[bundle exec] fastlane ios unit_Test
+```
+
+
+
 ### ios sync_all_development
 
 ```sh
