@@ -1145,7 +1145,7 @@
 		68038244B90E819EF9E3418C7B2FCC2D /* FIRAppCheckErrors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAppCheckErrors.m; path = FirebaseAppCheck/Sources/Core/Errors/FIRAppCheckErrors.m; sourceTree = "<group>"; };
 		68EED89D0FD4EE52BC1A16CE06AABE2A /* GIFAnimatedImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GIFAnimatedImage.swift; path = Sources/Image/GIFAnimatedImage.swift; sourceTree = "<group>"; };
 		68FE84A2593AAEB2B90A05B4C0DC64F9 /* GTMOAuth2KeychainCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMOAuth2KeychainCompatibility.h; path = GTMAppAuth/Sources/Public/GTMAppAuth/GTMOAuth2KeychainCompatibility.h; sourceTree = "<group>"; };
-		69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods-MarketApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MarketApp"; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods_MarketApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D6189E3E4389602BE424E3F7F9A751 /* FIRComponentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponentType.h; path = FirebaseCore/Extension/FIRComponentType.h; sourceTree = "<group>"; };
 		6A346CC4B602F273363FCF054985C2A4 /* OIDExternalUserAgent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDExternalUserAgent.h; path = Source/AppAuthCore/OIDExternalUserAgent.h; sourceTree = "<group>"; };
 		6A9C980F7F5C138F08D1DD7863D3F3A5 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = de.lproj; path = GoogleSignIn/Sources/Strings/de.lproj; sourceTree = "<group>"; };
@@ -2675,7 +2675,7 @@
 				C1998E0D8085221AD87F89B614C10E52 /* GTMSessionFetcher.framework */,
 				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */,
 				3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */,
-				69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods-MarketApp */,
+				69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods_MarketApp.framework */,
 				D460AB61359D45C246962443FFD812BA /* Pods-MarketApp-MarketAppUITests */,
 				27813A198CAFB4A610C59AA9DD27B4D0 /* Pods-MarketAppTests */,
 				3347A1AB6546F0A3977529B8F199DC41 /* FBLPromises.framework */,
@@ -3133,7 +3133,7 @@
 			);
 			name = "Pods-MarketApp";
 			productName = Pods_MarketApp;
-			productReference = 69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods-MarketApp */;
+			productReference = 69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods_MarketApp.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5C642AA10FB29936669CC269F42079C6 /* AppAuth */ = {

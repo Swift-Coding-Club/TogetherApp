@@ -4,7 +4,7 @@ storage_mode("git")
 
 type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
 
-force_for_new_devices(true)
+force_for_new_devices(false)
 git_branch("dev")
 
 # app_identifier(["tools.fastlane.app", "tools.fastlane.app2"])
