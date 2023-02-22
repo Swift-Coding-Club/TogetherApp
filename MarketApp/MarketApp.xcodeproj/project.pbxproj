@@ -182,7 +182,6 @@
 		7F0F1663296EF2A000FB4C30 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		7F0F61D029A5EC4A00EAC4FF /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		7F0F61D129A5EC5C00EAC4FF /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
-		7F0F61D229A5EC6C00EAC4FF /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
 		7F16694029A3CD5100B5CED7 /* MainVIewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVIewModelTests.swift; sourceTree = "<group>"; };
 		7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigaionItem.swift; sourceTree = "<group>"; };
 		7F2432AC2958630300C1077E /* GoogleService-Info-dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-dev.plist"; sourceTree = "<group>"; };
@@ -443,7 +442,6 @@
 			children = (
 				7F0F61D029A5EC4A00EAC4FF /* ci_post_clone.sh */,
 				7F0F61D129A5EC5C00EAC4FF /* ci_pre_xcodebuild.sh */,
-				7F0F61D229A5EC6C00EAC4FF /* ci_post_xcodebuild.sh */,
 				7F28811A29A5F32D00446628 /* test.sh */,
 			);
 			path = ci_scripts;
