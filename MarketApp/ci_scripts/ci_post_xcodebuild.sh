@@ -13,4 +13,4 @@ pod install
 
 
 # 빌드 결과 파일 복사
-cp -R ./build/Debug-iphonesimulator/MarketApp.app ~/Desktop/
+#cp -R ./build/Debug-iphonesimulator/MarketApp.app ~/Desktop/
