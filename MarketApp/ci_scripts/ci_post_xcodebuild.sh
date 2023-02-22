@@ -7,6 +7,8 @@
 #  
 #brew install cocoapods
 
+brew install cocoapods
+ 
 pod install
 
 
