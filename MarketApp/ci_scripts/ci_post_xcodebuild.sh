@@ -11,7 +11,7 @@ brew install cocoapods
  
 # pod init
  
-cd "${SRCROOT}"
+#cd "${SRCROOT}"
 
 pod install
  
