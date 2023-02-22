@@ -11,6 +11,8 @@ brew install cocoapods
  
  pod init
  
+ pod install
+ 
 if [ -f "Podfile" ]; then
     echo "Installing CocoaPods..."
     pod install --repo-update
