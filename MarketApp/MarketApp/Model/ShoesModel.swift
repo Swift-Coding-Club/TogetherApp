@@ -9,13 +9,6 @@ import Foundation
 
 typealias ShoesModel = [ShoeData]
 
-
-struct ShoeResponse: Codable, Identifiable {
-    let id = UUID()
-    let code, message: String?
-    let data: [ShoeData]?
-}
-
 struct ShoeData: Codable, Identifiable {
     let id = UUID()
     let shoesId: Int?

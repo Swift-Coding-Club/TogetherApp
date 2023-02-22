@@ -62,6 +62,6 @@ struct ProdductListView: View {
 
 struct ProdductListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProdductListView(shoesData: dev.shoesData.data ?? [])
+        ProdductListView(shoesData: dev.shoesData)
     }
 }

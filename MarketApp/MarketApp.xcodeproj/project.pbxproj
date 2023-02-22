@@ -123,6 +123,10 @@
 		7FDB1EC729A24A6500019099 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7FDB1EC629A24A6500019099 /* FirebaseStorage */; };
 		7FDB1ECF29A2523B00019099 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 7FDB1ECE29A2523B00019099 /* FirebaseDynamicLinks */; };
 		7FDB1ED729A275B300019099 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB1ED629A275B300019099 /* LoginViewModelTest.swift */; };
+		7FDE4E7129A60BE500DAF399 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7FDE4E7029A60BE500DAF399 /* GoogleSignIn */; };
+		7FDE4E7329A60BE500DAF399 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7FDE4E7229A60BE500DAF399 /* GoogleSignInSwift */; };
+		7FDE4E7529A60BEB00DAF399 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7FDE4E7429A60BEB00DAF399 /* GoogleSignIn */; };
+		7FDE4E7729A60BEB00DAF399 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7FDE4E7629A60BEB00DAF399 /* GoogleSignInSwift */; };
 		7FF4DA192995192200AC04D7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4DA182995192200AC04D7 /* SearchView.swift */; };
 		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
 		D3BAB82DFC4CADBC9DF5A1CE /* Pods_MarketAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB0C99A0B06EDFEE1C4A1C /* Pods_MarketAppTests.framework */; };
@@ -276,11 +280,13 @@
 				7FDB1EA529A24A3600019099 /* FirebaseRemoteConfig in Frameworks */,
 				7FDB1EAD29A24A5100019099 /* FirebaseAppCheck in Frameworks */,
 				7FDB1E9D29A24A3600019099 /* FirebaseDatabase in Frameworks */,
+				7FDE4E7129A60BE500DAF399 /* GoogleSignIn in Frameworks */,
 				7FDB1ECF29A2523B00019099 /* FirebaseDynamicLinks in Frameworks */,
 				7FDB1E9729A24A3600019099 /* FirebaseAnalytics in Frameworks */,
 				7FDB1EA729A24A3600019099 /* FirebaseStorage in Frameworks */,
 				7FDB1EA129A24A3600019099 /* FirebaseMessaging in Frameworks */,
 				7FDB1E9B29A24A3600019099 /* FirebaseCrashlytics in Frameworks */,
+				7FDE4E7329A60BE500DAF399 /* GoogleSignInSwift in Frameworks */,
 				7FDB1E9929A24A3600019099 /* FirebaseAuth in Frameworks */,
 				D3BAB82DFC4CADBC9DF5A1CE /* Pods_MarketAppTests.framework in Frameworks */,
 				7FDB1EA329A24A3600019099 /* FirebasePerformance in Frameworks */,
@@ -295,11 +301,13 @@
 				7FDB1EB529A24A6500019099 /* FirebaseAuth in Frameworks */,
 				7FDB1EC329A24A6500019099 /* FirebasePerformance in Frameworks */,
 				057B6A4BDE72F88E822F34D0 /* Pods_MarketApp_MarketAppUITests.framework in Frameworks */,
+				7FDE4E7529A60BEB00DAF399 /* GoogleSignIn in Frameworks */,
 				7FDB1EBB29A24A6500019099 /* FirebaseDynamicLinks in Frameworks */,
 				7FDB1EB729A24A6500019099 /* FirebaseCrashlytics in Frameworks */,
 				7FDB1EBF29A24A6500019099 /* FirebaseFirestoreSwift in Frameworks */,
 				7FDB1EBD29A24A6500019099 /* FirebaseFirestore in Frameworks */,
 				7FDB1EB329A24A6500019099 /* FirebaseAnalytics in Frameworks */,
+				7FDE4E7729A60BEB00DAF399 /* GoogleSignInSwift in Frameworks */,
 				7FDB1EB929A24A6500019099 /* FirebaseDatabase in Frameworks */,
 				7FDB1EC529A24A6500019099 /* FirebaseRemoteConfig in Frameworks */,
 				7FDB1EC729A24A6500019099 /* FirebaseStorage in Frameworks */,
@@ -945,6 +953,8 @@
 				7FDB1EA629A24A3600019099 /* FirebaseStorage */,
 				7FDB1EAC29A24A5100019099 /* FirebaseAppCheck */,
 				7FDB1ECE29A2523B00019099 /* FirebaseDynamicLinks */,
+				7FDE4E7029A60BE500DAF399 /* GoogleSignIn */,
+				7FDE4E7229A60BE500DAF399 /* GoogleSignInSwift */,
 			);
 			productName = MarketAppTests;
 			productReference = 7FDB1E5F29A2399C00019099 /* MarketAppTests.xctest */;
@@ -978,6 +988,8 @@
 				7FDB1EC229A24A6500019099 /* FirebasePerformance */,
 				7FDB1EC429A24A6500019099 /* FirebaseRemoteConfig */,
 				7FDB1EC629A24A6500019099 /* FirebaseStorage */,
+				7FDE4E7429A60BEB00DAF399 /* GoogleSignIn */,
+				7FDE4E7629A60BEB00DAF399 /* GoogleSignInSwift */,
 			);
 			productName = MarketAppUITests;
 			productReference = 7FDB1E6C29A239A600019099 /* MarketAppUITests.xctest */;
@@ -1905,6 +1917,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7FDB1E7F29A2467300019099 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDynamicLinks;
+		};
+		7FDE4E7029A60BE500DAF399 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F0F61CA29A5DEF300EAC4FF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		7FDE4E7229A60BE500DAF399 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F0F61CA29A5DEF300EAC4FF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		7FDE4E7429A60BEB00DAF399 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F0F61CA29A5DEF300EAC4FF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		7FDE4E7629A60BEB00DAF399 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F0F61CA29A5DEF300EAC4FF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
