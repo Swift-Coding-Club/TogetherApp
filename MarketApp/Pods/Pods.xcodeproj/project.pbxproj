@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SwiftLint;
+			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -764,7 +765,7 @@
 		68E35762C253BDFD4D74382713A3C683 /* GULHeartbeatDateStorageUserDefaults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULHeartbeatDateStorageUserDefaults.m; path = GoogleUtilities/Environment/GULHeartbeatDateStorageUserDefaults.m; sourceTree = "<group>"; };
 		694C6FFB4EC5B8553614EAA2C7E6060C /* FirebaseAppCheck-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FirebaseAppCheck-umbrella.h"; sourceTree = "<group>"; };
 		69A6A51F795D08AE6B456C386A513DED /* FBLPromise+All.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FBLPromise+All.m"; path = "Sources/FBLPromises/FBLPromise+All.m"; sourceTree = "<group>"; };
-		69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods-MarketApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MarketApp"; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods_MarketApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E6F342E294E132CA1B24E2DDAC7FDA /* FBLPromise+Delay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FBLPromise+Delay.m"; path = "Sources/FBLPromises/FBLPromise+Delay.m"; sourceTree = "<group>"; };
 		6C915DAD3AA9CF13A9AC7E797ED771AE /* FirebaseCoreInternal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FirebaseCoreInternal.debug.xcconfig; sourceTree = "<group>"; };
 		6D512C319CAEF5226D6053AD3C3D0731 /* GoogleUtilities-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleUtilities-dummy.m"; sourceTree = "<group>"; };
@@ -841,7 +842,7 @@
 		9B33217A4AC76DCB217CBAB5B3E09985 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
 		9C6B9360DD3D34463749B35C0B366216 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		9D0DD8D6138041D6440A039D17C8C767 /* FIRDeviceCheckProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRDeviceCheckProvider.h; path = FirebaseAppCheck/Sources/Public/FirebaseAppCheck/FIRDeviceCheckProvider.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DD95CD7408295A5E2E7B0B221954B2E /* ImageBinder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageBinder.swift; path = Sources/SwiftUI/ImageBinder.swift; sourceTree = "<group>"; };
 		9DE4E0164F0291709F433858F8645780 /* GULAppEnvironmentUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULAppEnvironmentUtil.m; path = GoogleUtilities/Environment/third_party/GULAppEnvironmentUtil.m; sourceTree = "<group>"; };
 		9EEA813F19A5B058777C7027973C5EBF /* FIRAppCheckInterop.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppCheckInterop.h; path = FirebaseAppCheck/Interop/FIRAppCheckInterop.h; sourceTree = "<group>"; };
@@ -1167,7 +1168,6 @@
 				3ECF1CCD2D3E390BD5178E9B7ED65F88 /* Core */,
 				F80708CE0D5EA312895B1269520334F5 /* Support Files */,
 			);
-			name = Moya;
 			path = Moya;
 			sourceTree = "<group>";
 		};
@@ -1370,7 +1370,6 @@
 				F5C494982401FCEECB1E363BBECD636F /* FBLPromises.h */,
 				03B976F6E9A54D6FCA38FC08887D4FBE /* Support Files */,
 			);
-			name = PromisesObjC;
 			path = PromisesObjC;
 			sourceTree = "<group>";
 		};
@@ -1390,7 +1389,6 @@
 				D00E42FAC0C6B0A755B6992922A2DBA9 /* WeakContainer.swift */,
 				CEE6B554EC893790CF551B99D73CE3C3 /* Support Files */,
 			);
-			name = FirebaseCoreInternal;
 			path = FirebaseCoreInternal;
 			sourceTree = "<group>";
 		};
@@ -1495,7 +1493,6 @@
 				94838F2DCA873DBA350EE109D84B9D89 /* WKInterfaceImage+Kingfisher.swift */,
 				94E6A9636A4B208D3C4A66860B5C9E37 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -1559,7 +1556,6 @@
 				9C6B9360DD3D34463749B35C0B366216 /* Validation.swift */,
 				6AB2BE9B6C0A53B2F70EE4404270F6C4 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1586,7 +1582,6 @@
 				A2323CCB36DCE38FE2E250BEBC2901E4 /* NSData+zlib */,
 				D44D810696CAAA40AEADB92CF8908787 /* Support Files */,
 			);
-			name = GoogleUtilities;
 			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
@@ -1627,7 +1622,7 @@
 				B43874C6CBB50E7134FBEC24BABFE14F /* GoogleUtilities */,
 				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */,
 				3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */,
-				69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods-MarketApp */,
+				69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods_MarketApp.framework */,
 				D460AB61359D45C246962443FFD812BA /* Pods-MarketApp-MarketAppUITests */,
 				27813A198CAFB4A610C59AA9DD27B4D0 /* Pods-MarketAppTests */,
 				3347A1AB6546F0A3977529B8F199DC41 /* PromisesObjC */,
@@ -1674,7 +1669,6 @@
 				E59B943729488CE732F371F05FCC5BF6 /* FIRVersion.m */,
 				0747F814CDBB974AD951010B0B6D82E5 /* Support Files */,
 			);
-			name = FirebaseCore;
 			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
@@ -1786,7 +1780,6 @@
 				F06EE1D08983F291A189F4AFEED795F9 /* FIROptionsInternal.h */,
 				51C87382B62B9F038C643E809C1C146F /* Support Files */,
 			);
-			name = FirebaseAppCheck;
 			path = FirebaseAppCheck;
 			sourceTree = "<group>";
 		};
@@ -1833,7 +1826,6 @@
 				886F221E97DB4A7D4140C3D8D0DEDA5B /* Utils.swift */,
 				C1AABB88BBD2702115ECBEBAC5D47E8E /* Support Files */,
 			);
-			name = ExytePopupView;
 			path = ExytePopupView;
 			sourceTree = "<group>";
 		};
@@ -1857,7 +1849,6 @@
 			children = (
 				AE08F1118E699BBDDC1FA7D82C6180EA /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -2202,7 +2193,7 @@
 			);
 			name = "Pods-MarketApp";
 			productName = Pods_MarketApp;
-			productReference = 69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods-MarketApp */;
+			productReference = 69ADC59DA8BB7605085E3E60A07FAAF1 /* Pods_MarketApp.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8D7F5D5DD528D21A72DC87ADA5B12E2D /* GoogleUtilities */ = {

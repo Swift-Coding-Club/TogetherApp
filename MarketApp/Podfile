@@ -13,7 +13,7 @@ target 'MarketApp' do
   pod 'FirebaseAppCheck'
   pod 'Moya'
   pod 'Moya/Combine', '~> 15.0'
-#  pod 'GoogleSignIn', '~> 6.2.4'
+  pod 'GoogleSignIn', '~> 6.2.4'
   
   target 'MarketAppTests' do
     inherit! :search_paths
