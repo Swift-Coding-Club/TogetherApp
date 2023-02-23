@@ -861,8 +861,6 @@
 				7FDB1E6429A2399C00019099 /* PBXTargetDependency */,
 			);
 			name = MarketAppTests;
-			packageProductDependencies = (
-			);
 			productName = MarketAppTests;
 			productReference = 7FDB1E5F29A2399C00019099 /* MarketAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -883,8 +881,6 @@
 				7FDB1E7329A239A600019099 /* PBXTargetDependency */,
 			);
 			name = MarketAppUITests;
-			packageProductDependencies = (
-			);
 			productName = MarketAppUITests;
 			productReference = 7FDB1E6C29A239A600019099 /* MarketAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -906,8 +902,6 @@
 			dependencies = (
 			);
 			name = MarketApp;
-			packageProductDependencies = (
-			);
 			productName = MarketApp;
 			productReference = EC892A9B2908189600D02F99 /* MarketApp.app */;
 			productType = "com.apple.product-type.application";
@@ -924,17 +918,16 @@
 				TargetAttributes = {
 					7FDB1E5E29A2399C00019099 = {
 						CreatedOnToolsVersion = 14.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = EC892A9A2908189600D02F99;
 					};
 					7FDB1E6B29A239A600019099 = {
 						CreatedOnToolsVersion = 14.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = EC892A9A2908189600D02F99;
 					};
 					EC892A9A2908189600D02F99 = {
 						CreatedOnToolsVersion = 13.4.1;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -947,8 +940,6 @@
 				Base,
 			);
 			mainGroup = EC892A922908189600D02F99;
-			packageReferences = (
-			);
 			productRefGroup = EC892A9C2908189600D02F99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1268,7 +1259,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1294,7 +1285,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1318,7 +1309,7 @@
 			baseConfigurationReference = DAE05443C070FD4D365EBE21 /* Pods-MarketApp-MarketAppUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1342,7 +1333,7 @@
 			baseConfigurationReference = 86C7AD83955B4F72E26A2248 /* Pods-MarketApp-MarketAppUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1485,6 +1476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1511,6 +1503,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEVELOPE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1527,6 +1520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1553,6 +1547,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -63,7 +63,6 @@ error do |lane, exception, options|
    end
 
 
-
  desc "Install Profiles and Build My App"
   lane :build_ipa do
    clear_derived_data
@@ -71,42 +70,53 @@ error do |lane, exception, options|
       configuration: "Release",
       workspace: "MarketApp.xcworkspace",
       scheme: "MarketApp",
-      output_name: "Affinity",
       export_method: "app-store",
       include_bitcode: false,
       clean: true,
       silent: true,
       include_symbols: false,
-      xcargs: 'DEBUG_INFORMATION_FORMAT="dwarf-with-dsym"',
-      disable_package_automatic_updates: true,
+      xcargs: "ARCHIVE=YES",
       skip_package_ipa: false,
-      skip_package_dependencies_resolution: true,
-      skip_package_pkg: true,
- 	    export_options: { signingStyle: "automatic" },
         export_options: {
+        signingStyle: "automatic",
         compileBitcode: false,
          export_options: {
           provisioningProfiles: {
-            "com.example.bundleid" => "Provisioning Profile Name",
-            "com.example.bundleid2" => "Provisioning Profile Name 2"
+            "com.shoping.MarketApps" => "Affinity",
+            "com.shoping.MarketApps" => "com.shoping.MarketApps AppStore"
              }
            }
          }
        )
       end
 
+lane :sync_all_development do
+ match(type: "development", app_identifier:"com.shoping.MarketApps")
+end
+
   desc "Description of what the lane does"
    lane :beta do
     get_certificates
     get_provisioning_profile
-     lint
-     pod_install
     increment_build_number(
         build_number: latest_testflight_build_number + 1
     )
-    build_ipa
-
-    upload_to_testflight(skip_waiting_for_build_processing: true)
+  pod_install
+  lint
+  #sync_all_development
+  build_ipa
+     #build_app(
+        #workspace: "MarketApp.xcworkspace",
+        #scheme: "MarketApp",
+        #export_method: "app-store",
+        #export_options: {
+          #provisioningProfiles: { 
+           # "com.shoping.MarketApps" => "Affinity",
+	  #  "com.shoping.MarketApps" => "com.shoping.MarketApps AppStore"
+         # }
+      #  }
+     # )
+    upload_to_testflight(api_key_path: "fastlane/apikey.json")
     slack(
       message: "Testflight 배포에 성공했습니다!",
       slack_url: "https://affinity-x7y8156.slack.com/배포"
