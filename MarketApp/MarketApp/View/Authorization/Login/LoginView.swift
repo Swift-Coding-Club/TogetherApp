@@ -111,7 +111,7 @@ struct LoginView: View {
         VStack{
             Spacer()
                 .frame(height: UIScreen.screenWidth / 10)
-            Text("AFFIINITY")
+            Text("AFFINITY")
                 .nanumSquareNeo(family: .eHv, size: 50, color: Color.fontColor.fontColor)
         }
         .padding(.horizontal, LayoutMargin)
