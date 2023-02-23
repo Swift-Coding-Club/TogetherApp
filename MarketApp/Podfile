@@ -10,10 +10,24 @@ target 'MarketApp' do
   pod 'SwiftLint'
   pod 'ExytePopupView'
   pod 'Kingfisher'
-  pod 'FirebaseAppCheck'
   pod 'Moya'
   pod 'Moya/Combine', '~> 15.0'
   pod 'GoogleSignIn', '~> 6.2.4'
+  
+  #Firebase
+  pod 'Firebase'
+  pod 'FirebaseAuth' , '~> 9.6.0'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseAppCheck', '~> 9.6.0'
+  pod 'FirebaseFirestoreSwift'
+  pod 'FirebaseMessaging'
+  pod 'FirebaseStorage'
+  pod 'FirebaseCrashlytics'
+  pod 'FirebaseDynamicLinks'
+  pod 'FirebasePerformance'
+  pod 'FirebaseDatabase'
+  pod 'FirebaseRemoteConfig'
+  
   
   target 'MarketAppTests' do
     inherit! :search_paths

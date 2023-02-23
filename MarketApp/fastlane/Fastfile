@@ -48,9 +48,8 @@ platform :ios do
 
 slack(
       username: "로이",
-      message: "test 성공",
-      slack_url: "https://affinity-x7y8156.slack.com/archives/C04QW73T3M0",
-      payload: { "Version": version + "(" + build + ")" }
+      message: "Unit test  성공",
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
 # ✅ 에러 처리.
@@ -58,9 +57,9 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://affinity-x7y8156.slack.com/archives/C04QW73T3M0."
+      slack_url: "https://hooks.slack.com/services/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"
     )
-end
+     end
    end
 
 
@@ -95,8 +94,6 @@ end
          }
        )
       end
-
-
 
   desc "Description of what the lane does"
    lane :beta do
