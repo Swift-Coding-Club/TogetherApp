@@ -56,9 +56,8 @@ platform :ios do
       clean: true)
 
       slack(
-      username: "로이",
       message: "Unit test  성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
 # ✅ 에러 처리.
@@ -66,7 +65,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
      end
    end
