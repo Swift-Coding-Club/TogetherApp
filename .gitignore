@@ -19,7 +19,7 @@ Firebase/
 
 ## User settings
 xcuserdata/
-.DS_Store
+.DS_Store/
 AppStore_com.shoping.MarketApps.mobileprovision
 Gemfile
 MarketApp/Firebase/
