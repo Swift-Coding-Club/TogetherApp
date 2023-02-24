@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/MarketApp.app</string>
+		<key>Architectures</key>
+		<array>
+			<string>arm64</string>
+		</array>
+		<key>CFBundleIdentifier</key>
+		<string>com.shoping.MarketApps</string>
+		<key>CFBundleShortVersionString</key>
+		<string>1.0.0</string>
+		<key>CFBundleVersion</key>
+		<string>25</string>
+		<key>SigningIdentity</key>
+		<string>Apple Development: Wonji Suh (JUHYUL66HT)</string>
+		<key>Team</key>
+		<string>N94CS4N6VR</string>
+	</dict>
+	<key>ArchiveVersion</key>
+	<integer>2</integer>
+	<key>CreationDate</key>
+	<date>2023-02-24T19:06:07Z</date>
+	<key>Name</key>
+	<string>MarketApp</string>
+	<key>SchemeName</key>
+	<string>MarketApp</string>
+</dict>
+</plist>

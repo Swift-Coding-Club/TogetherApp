@@ -1,0 +1,79 @@
+/* 
+  productData.strings
+  MarketApp
+
+  Created by Keith on 2022/11/05.
+  
+*/
+[
+    {
+        "id": "1",
+        "productName": "더블 폭스 패치 스니커스",
+        "productPrice": "261000",
+        "brandName": "Maison Kitsune",
+        "productImage": "https://image.msscdn.net/images/prd_img/20201112/1688130/detail_1688130_1_500.jpg?t=20210907153039",
+        "description": "더블 폭스 패치 스니커스",
+        "state": "True",
+        "isFavorite": "False"
+    },
+    {
+        "id": "2",
+        "productName": "더블 폭스 패치 스니커스1",
+        "productPrice": "261000",
+        "brandName": "Maison Kitsune",
+        "productImage": "https://image.msscdn.net/images/prd_img/20201112/1688130/detail_1688130_1_500.jpg?t=20210907153039",
+        "description": "더블 폭스 패치 스니커스",
+        "state": "True",
+        "isFavorite": "True"
+    },
+    {
+        "id": "3",
+        "productName": "더블 폭스 패치 스니커스2",
+        "productPrice": "261000",
+        "brandName": "Maison Kitsune",
+        "productImage": "https://image.msscdn.net/images/prd_img/20201112/1688130/detail_1688130_1_500.jpg?t=20210907153039",
+        "description": "더블 폭스 패치 스니커스",
+        "state": "True",
+        "isFavorite": "False"
+    },
+    {
+        "id": "4",
+        "productName": "더블 폭스 패치 스니커스3",
+        "productPrice": "261000",
+        "brandName": "Maison Kitsune",
+        "productImage": "https://image.msscdn.net/images/prd_img/20201112/1688130/detail_1688130_1_500.jpg?t=20210907153039",
+        "description": "더블 폭스 패치 스니커스",
+        "state": "True",
+        "isFavorite": "False"
+    },
+    {
+        "id": "5",
+        "productName": "더블 폭스 패치 스니커스4",
+        "productPrice": "261000",
+        "brandName": "Maison Kitsune",
+        "productImage": "https://image.msscdn.net/images/prd_img/20201112/1688130/detail_1688130_1_500.jpg?t=20210907153039",
+        "description": "더블 폭스 패치 스니커스",
+        "state": "True",
+        "isFavorite": "False"
+    },
+    {
+        "id": "6",
+        "productName": "더블 폭스 패치 스니커스5",
+        "productPrice": "261000",
+        "brandName": "Maison Kitsune",
+        "productImage": "https://image.msscdn.net/images/prd_img/20201112/1688130/detail_1688130_1_500.jpg?t=20210907153039",
+        "description": "더블 폭스 패치 스니커스",
+        "state": "True",
+        "isFavorite": "False"
+    },
+    {
+        "id": "7",
+        "productName": "더블 폭스 패치 스니커스6",
+        "productPrice": "261000",
+        "brandName": "Maison Kitsune",
+        "productImage": "https://image.msscdn.net/images/prd_img/20201112/1688130/detail_1688130_1_500.jpg?t=20210907153039",
+        "description": "더블 폭스 패치 스니커스",
+        "state": "True",
+        "isFavorite": "False"
+    }
+]

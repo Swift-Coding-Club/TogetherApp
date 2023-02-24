@@ -57,7 +57,7 @@ platform :ios do
 
       slack(
       message: "Unit test  성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
 # ✅ 에러 처리.
@@ -65,19 +65,44 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
      end
    end
+
+desc:"build app"
+lane:build_ipa2 do 
+xcodebuild(
+       archive: true,
+       claen: true,
+       archive_path: "./output/MarketApp.xcarchive",
+       scheme: "MarketApp",
+       workspace: "MarketApp.xcworkspace"
+      )
+ slack(
+      message: "빌드 성공",
+      slack_url: "https://hooks.slack.com/services/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"
+    )
+
+# ✅ 에러 처리.
+error do |lane, exception, options|
+    slack(
+      message: "에러 발생 : #{exception}",
+      success: false,
+      slack_url: "https://hooks.slack.com/services/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"
+    )
+    end
+end
 
 
  desc "Install Profiles and Build My App"
   lane :build_ipa do
    clear_derived_data
+    build_ipa2
     gym(
       configuration: "Release",
       workspace: "MarketApp.xcworkspace",
-      output_name: "Affinity.ipa",
+      output_name: "MarketApp",
       scheme: "MarketApp",
       export_method: "app-store",
       include_bitcode: false,
@@ -86,11 +111,11 @@ error do |lane, exception, options|
       include_symbols: false,
       xcargs: "ARCHIVE=YES",
       disable_package_automatic_updates: true,
-      skip_package_ipa: true,
-     skip_package_dependencies_resolution: true,
+      skip_package_ipa: false,
+     skip_package_dependencies_resolution: false,
       skip_package_pkg: false,
         export_options: {
-        signingStyle: "automatic",
+       #signingStyle: "automatic",
         compileBitcode: false,
          export_options: {
           provisioningProfiles: {
@@ -100,13 +125,13 @@ error do |lane, exception, options|
            }
          }
        )
+       
 	output_directory = "./output"
       Dir.mkdir(output_directory) unless File.exists?(output_directory)
       ipa_path = Dir.glob("*.ipa").first
-
          slack(
       message: "빌드 성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
 # ✅ 에러 처리.
@@ -114,7 +139,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
     end
       end
@@ -131,11 +156,11 @@ end
         build_number: latest_testflight_build_number + 1
     )
   lint
-   build_ipa
+   build_ipa2
     upload_to_testflight(api_key_path: "fastlane/apikey.json")
     slack(
       message: "Testflight 배포에 성공했습니다!",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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c"
     )
   end
 
@@ -176,7 +201,7 @@ desc "Description of what the lane does"
  	
 	 slack(
       message: "배포  성공",
-      slack_url: "https://hooks.slack.com/services/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",
+      slack_url: "https://hooks.slack.com/services/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",
      default_payloads: [:git_branch, :git_author]
 
     )
@@ -186,7 +211,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
      end	         
     # ✅ if 문을 종료하기 위한 end
