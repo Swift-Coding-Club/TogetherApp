@@ -105,9 +105,8 @@ error do |lane, exception, options|
       ipa_path = Dir.glob("*.ipa").first
 
          slack(
-      username: "로이",
       message: "빌드 성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
 # ✅ 에러 처리.
@@ -115,7 +114,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
     end
       end
