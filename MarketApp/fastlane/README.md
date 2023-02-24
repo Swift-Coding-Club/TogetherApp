@@ -31,6 +31,14 @@ Runs `pod install`
 
 Run swift code validation using SwiftLint
 
+### ios increment_build
+
+```sh
+[bundle exec] fastlane ios increment_build
+```
+
+Incrementing Build Number
+
 ### ios unit_Test
 
 ```sh
@@ -47,6 +55,14 @@ Run swift code validation using SwiftLint
 
 Install Profiles and Build My App
 
+### ios sync_all_development
+
+```sh
+[bundle exec] fastlane ios sync_all_development
+```
+
+
+
 ### ios beta
 
 ```sh
@@ -54,6 +70,24 @@ Install Profiles and Build My App
 ```
 
 Description of what the lane does
+
+### ios get_dev_certs
+
+```sh
+[bundle exec] fastlane ios get_dev_certs
+```
+
+
+
+### ios release
+
+```sh
+[bundle exec] fastlane ios release
+```
+
+Description of what the lane does
+
+Push a new release build to the App Store
 
 ----
 

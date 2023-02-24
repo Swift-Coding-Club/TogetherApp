@@ -13,7 +13,8 @@ target 'MarketApp' do
   pod 'Moya'
   pod 'Moya/Combine', '~> 15.0'
   pod 'GoogleSignIn', '~> 6.2.4'
-  
+  #pod 'FirebaseAppCheck', '~> 9.6.0'
+ 
   #Firebase
   pod 'Firebase'
   pod 'FirebaseAuth' , '~> 9.6.0'

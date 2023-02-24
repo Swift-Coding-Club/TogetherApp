@@ -861,6 +861,8 @@
 				7FDB1E6429A2399C00019099 /* PBXTargetDependency */,
 			);
 			name = MarketAppTests;
+			packageProductDependencies = (
+			);
 			productName = MarketAppTests;
 			productReference = 7FDB1E5F29A2399C00019099 /* MarketAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -881,6 +883,8 @@
 				7FDB1E7329A239A600019099 /* PBXTargetDependency */,
 			);
 			name = MarketAppUITests;
+			packageProductDependencies = (
+			);
 			productName = MarketAppUITests;
 			productReference = 7FDB1E6C29A239A600019099 /* MarketAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -902,6 +906,8 @@
 			dependencies = (
 			);
 			name = MarketApp;
+			packageProductDependencies = (
+			);
 			productName = MarketApp;
 			productReference = EC892A9B2908189600D02F99 /* MarketApp.app */;
 			productType = "com.apple.product-type.application";
@@ -918,12 +924,10 @@
 				TargetAttributes = {
 					7FDB1E5E29A2399C00019099 = {
 						CreatedOnToolsVersion = 14.2;
-						ProvisioningStyle = Manual;
 						TestTargetID = EC892A9A2908189600D02F99;
 					};
 					7FDB1E6B29A239A600019099 = {
 						CreatedOnToolsVersion = 14.2;
-						ProvisioningStyle = Manual;
 						TestTargetID = EC892A9A2908189600D02F99;
 					};
 					EC892A9A2908189600D02F99 = {
@@ -940,6 +944,8 @@
 				Base,
 			);
 			mainGroup = EC892A922908189600D02F99;
+			packageReferences = (
+			);
 			productRefGroup = EC892A9C2908189600D02F99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1036,7 +1042,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n  \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n # \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		7F39FA95295333780041BF8B /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1259,7 +1265,8 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1268,6 +1275,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Roy.MarketApp.MarketAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1285,7 +1293,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1309,7 +1317,8 @@
 			baseConfigurationReference = DAE05443C070FD4D365EBE21 /* Pods-MarketApp-MarketAppUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1318,6 +1327,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Roy.MarketApp.MarketAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1333,7 +1343,8 @@
 			baseConfigurationReference = 86C7AD83955B4F72E26A2248 /* Pods-MarketApp-MarketAppUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1341,6 +1352,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketAppsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
