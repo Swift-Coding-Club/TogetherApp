@@ -43,7 +43,7 @@ IOS 개발 및 디자인 : [영](https://github.com/Dtzer0) ,  [미넴](https://
 
 
 ## 사용한 라이브러리
-- `Alamofire` , `Kingfisher` , `SwiftLint`,  `Firebase`
+- `Alamofire` , `Kingfisher` , `SwiftLint`,  `Firebase` ,  `Moya`
 
 ## 사용한 api
 
