@@ -11,7 +11,7 @@
 #
 
 # Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+update_fastlane
 
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "600"
 default_platform(:ios)
@@ -57,7 +57,7 @@ platform :ios do
 
       slack(
       message: "Unit test  성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
 # ✅ 에러 처리.
@@ -65,7 +65,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
      end
    end
@@ -87,7 +87,7 @@ error do |lane, exception, options|
       xcargs: "ARCHIVE=YES",
       disable_package_automatic_updates: true,
       skip_package_ipa: true,
-      skip_package_dependencies_resolution: true,
+     skip_package_dependencies_resolution: true,
       skip_package_pkg: false,
         export_options: {
         signingStyle: "automatic",
@@ -106,7 +106,7 @@ error do |lane, exception, options|
 
          slack(
       message: "빌드 성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
 # ✅ 에러 처리.
@@ -114,7 +114,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
     end
       end
@@ -135,7 +135,7 @@ end
     upload_to_testflight(api_key_path: "fastlane/apikey.json")
     slack(
       message: "Testflight 배포에 성공했습니다!",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
   end
 
@@ -160,13 +160,13 @@ desc "Description of what the lane does"
       upload_to_app_store(
         username: "shuwj81@daum.net",
         team_id: "N94CS4N6VR",
-				skip_metadata: true,
+	skip_metadata: true,
         skip_screenshots: true, 
         force: true,
         submit_for_review: true,
         automatic_release: true,
        precheck_include_in_app_purchases: false, 
-				submission_information: {
+	submission_information: {
        add_id_info_uses_idfa: false,
         export_compliance_encryption_updated: false,
         export_compliance_uses_encryption: false,
@@ -175,9 +175,10 @@ desc "Description of what the lane does"
 		)   
  	
 	 slack(
-      username: "로이",
-      message: "배포   성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      message: "배포  성공",
+      slack_url: "https://hooks.slack.com/services/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",
+     default_payloads: [:git_branch, :git_author]
+
     )
 
 # ✅ 에러 처리.
