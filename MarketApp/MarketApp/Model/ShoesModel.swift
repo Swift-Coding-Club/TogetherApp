@@ -8,16 +8,16 @@
 import Foundation
 
 struct ShoeResponse: Codable {
-    let data: [ShoeData]?
+    let code, message: String
+    let data: [ShoeData]
 }
 
-struct ShoeData: Codable, Identifiable {
-    let id = UUID()
-    let shoesId: Int?
-    let brandName: BrandName?
-    let productName, transName: String?
-    let image: String?
-    let price: String?
+struct ShoeData: Codable, Hashable {
+    let shoesId: Int
+    let brandName: BrandName
+    let productName, transName: String
+    let image: String
+    let price: String
 
     enum CodingKeys: String, CodingKey {
         case shoesId = "id"

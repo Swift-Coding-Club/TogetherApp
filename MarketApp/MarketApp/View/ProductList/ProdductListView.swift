@@ -9,23 +9,21 @@ import SwiftUI
 import Kingfisher
 
 struct ProdductListView: View {
-    @State private var btnTaped = false
-    @State private var btnCount = 1
     var shoesData: [ShoeData]
     
-    let columns = [
+    var columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 30) {
-                ForEach(shoesData) { item in
-                    gridList(image: item.image ?? " ",
-                             transName: item.transName ?? " ",
-                             price: item.price ?? " ",
-                             productName: item.productName ?? " ")
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(shoesData, id: \.self) { item in
+                    gridList(image: item.image,
+                             transName: item.transName,
+                             price: item.price,
+                             productName: item.productName)
                 }
             }
             
@@ -38,10 +36,10 @@ struct ProdductListView: View {
     @ViewBuilder
     private func gridList(image: String, transName: String, price: String,  productName: String) -> some View {
         NavigationLink(destination: ProductView()){
-            LazyVStack(spacing: 5) {
+            LazyVStack() {
                 KFImage(URL(string: image))
                     .resizable()
-                    .frame(width: 160, height: 200, alignment: .leading)
+                    .frame(width: 160, height: 200)
                 
                 Text(transName)
                     .nanumSquareNeo(family: .cBd, size: 13, color: .black)
@@ -57,7 +55,6 @@ struct ProdductListView: View {
                     .nanumSquareNeo(family: .cBd, size: 13, color: .black)
                     .frame(width: 160, height: 20, alignment: .leading)
                     .lineLimit(1)
-                   
             }
         }
     }
@@ -65,6 +62,6 @@ struct ProdductListView: View {
 
 struct ProdductListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProdductListView(shoesData: dev.shoesData.data ?? [])
+        ProdductListView(shoesData: dev.shoesData.data)
     }
 }

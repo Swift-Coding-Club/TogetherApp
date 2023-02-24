@@ -14,7 +14,7 @@ class ShoeNetwork : ObservableObject {
     var finished : AnyCancellable?
     
     func networking() {
-        guard let url = URL(string: "") else { return } //baseURL 나올때까지 공백
+        guard let url = URL(string: "https://63f4a59e55677ef68bc09638.mockapi.io/api/v1/shoes") else { return }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         

@@ -31,9 +31,8 @@ struct MainView: View {
                     
                     SortedViews()
                     
-                    //W : Problem ( 여기다 bp찍으면 광고배너 움직일때마다 걸림.
-                    ForEach(viewModel.shoeInfo) { item in
-                        ProdductListView(shoesData: [item])
+                    ForEach(viewModel.shoeInfo, id: \.self) { item in
+                        ProdductListView(shoesData: [ShoeData(shoesId: item.shoesId, brandName: item.brandName, productName: item.productName, transName: item.transName, image: item.image, price: item.price)])
                     }
                 }
                 .bounce(false)
@@ -41,7 +40,7 @@ struct MainView: View {
         }
         .navigationTitle("")
         .onAppear {
-            viewModel.shoeInfo
+            viewModel.networking()
         }
     }
     //MARK: - 검색 뷰 &  장바구니 뷰
