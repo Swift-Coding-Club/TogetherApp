@@ -22,15 +22,15 @@ xcuserdata/
 .DS_Store
 AppStore_com.shoping.MarketApps.mobileprovision
 Gemfile
-/MarketApp/Firebase
+MarketApp/Firebase
 Gemfile.lock
-/MarketApp/9KY7TMNU9D.cer
-/MarketApp/9KY7TMNU9D.certSigningRequest
-/MarketApp/9KY7TMNU9D.p12
-/MarketApp/N63MM4HD34.cer
-/MarketApp/N63MM4HD34.certSigningRequest
-/MarketApp/N63MM4HD34.p12
-/MarketApp/Gemfile.lock
+MarketApp/9KY7TMNU9D.cer
+MarketApp/9KY7TMNU9D.certSigningRequest
+MarketApp/9KY7TMNU9D.p12
+MarketApp/N63MM4HD34.cer
+MarketApp/N63MM4HD34.certSigningRequest
+MarketApp/N63MM4HD34.p12
+MarketApp/Gemfile.lock
 
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
