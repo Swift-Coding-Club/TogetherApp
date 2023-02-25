@@ -51,12 +51,12 @@ platform :ios do
       scheme: "MarketApp",
       devices: ["iPhone 12"],
       reinstall_app: true,
+      result_bundle: true,
       app_identifier: "com.shoping.MarketApps",
       clean: true)
-      slack_url=ENV["SLACK_URL1"]
       slack(
       message: "Unit test  성공",
-      slack_url: sleck_url
+      slack_url: ENV["SLACK_URL_TEST"]
     )
 
 # ✅ 에러 처리.
