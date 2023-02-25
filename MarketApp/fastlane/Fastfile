@@ -57,7 +57,7 @@ platform :ios do
 
       slack(
       message: "Unit test  성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
 # ✅ 에러 처리.
@@ -65,47 +65,25 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
      end
    end
 
-desc:"build app"
-lane:build_ipa2 do 
-xcodebuild(
-       archive: true,
-       claen: true,
-       archive_path: "./output/MarketApp.xcarchive",
-       scheme: "MarketApp",
-       workspace: "MarketApp.xcworkspace"
-      )
- slack(
-      message: "빌드 성공",
-      slack_url: "https://hooks.slack.com/services/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"
-    )
-
-# ✅ 에러 처리.
-error do |lane, exception, options|
-    slack(
-      message: "에러 발생 : #{exception}",
-      success: false,
-      slack_url: "https://hooks.slack.com/services/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"
-    )
-    end
-end
-
-
  desc "Install Profiles and Build My App"
   lane :build_ipa do
    clear_derived_data
-    build_ipa2
     gym(
       configuration: "Release",
       workspace: "MarketApp.xcworkspace",
-      output_name: "MarketApp",
+      output_name: "MarketApp.ipa",
       scheme: "MarketApp",
       export_method: "app-store",
+      xcodebuild_command: "xcodebuild",
       include_bitcode: false,
+     #skip_build_archive: false,
+      xcodebuild_formatter: "xcpretty",
+      output_directory: "./output/",
       clean: true,
       silent: true,
       include_symbols: false,
@@ -115,61 +93,69 @@ end
      skip_package_dependencies_resolution: false,
       skip_package_pkg: false,
         export_options: {
-       #signingStyle: "automatic",
-        compileBitcode: false,
-         export_options: {
+         signingStyle: "automatic",
+          uploadBitcode: false,
           provisioningProfiles: {
             "com.shoping.MarketApps" => "Affinity",
             "com.shoping.MarketApps" => "com.shoping.MarketApps AppStore"
              }
            }
-         }
        )
-       
-	output_directory = "./output"
-      Dir.mkdir(output_directory) unless File.exists?(output_directory)
-      ipa_path = Dir.glob("*.ipa").first
-         slack(
+     #output_directory = "./output"
+     #Dir.mkdir(output_directory) unless File.exists?(output_directory)
+      #ipa_path = Dir.glob("*.ipa").first
+      slack(
       message: "빌드 성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
-# ✅ 에러 처리.
-error do |lane, exception, options|
+ # ✅ 에러 처리.
+  error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
     end
-      end
+  end
 
-lane :sync_all_development do
- match(type: "development", app_identifier:"com.shoping.MarketApps")
-end
+ lane :sync_all_development do
+   match(type: "development", app_identifier:"com.shoping.MarketApps")
+ end
 
   desc "Description of what the lane does"
-   lane :beta do
+   lane :upload_testflight do
     get_certificates
     get_provisioning_profile
     increment_build_number(
         build_number: latest_testflight_build_number + 1
     )
-  lint
-   build_ipa2
-    upload_to_testflight(api_key_path: "fastlane/apikey.json")
+    lint
+    build_ipa
+    upload_to_testflight(
+    api_key_path: "fastlane/apikey.json", 
+    ipa:"./output/MarketApp.ipa",
+    skip_waiting_for_build_processing: true)
     slack(
       message: "Testflight 배포에 성공했습니다!",
-      slack_url: "https://hooks.slack.com/services/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c"
+      slack_url: "https://hooks.slack.com/services/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"
     )
+ # ✅ 에러 처리.
+    error do |lane, exception, options|
+    slack(
+      message: "에러 발생 : #{exception}",
+      success: false,
+      slack_url: "https://hooks.slack.com/services/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"
+    )
+    end
   end
 
-lane :get_dev_certs  do
+ lane :get_dev_certs  do
     cert(development: true)
     sign(development: true)
-end
+ end
 
-desc "Description of what the lane does"
+ desc "Description of what the lane does"
    desc "Push a new release build to the App Store"
   lane :release do |options|
   # ✅ 매개변수를 넣어서
@@ -180,38 +166,38 @@ desc "Description of what the lane does"
       increment_version_number(version_number: options[:version])
       get_certificates
       get_provisioning_profile
-     #build_ipa
-      unit_Test
-      upload_to_app_store(
+      build_ipa
+       unit_Test
+       upload_to_app_store(
         username: "shuwj81@daum.net",
         team_id: "N94CS4N6VR",
-	skip_metadata: true,
-        skip_screenshots: true, 
+        api_key_path: "fastlane/apikey.json",
+	skip_metadata: false,
+        skip_screenshots: false, 
         force: true,
         submit_for_review: true,
         automatic_release: true,
-       precheck_include_in_app_purchases: false, 
+        precheck_include_in_app_purchases: false, 
 	submission_information: {
-       add_id_info_uses_idfa: false,
+        add_id_info_uses_idfa: false,
         export_compliance_encryption_updated: false,
         export_compliance_uses_encryption: false,
-        content_rights_contains_third_party_content: false
-			}
-		)   
- 	
-	 slack(
-      message: "배포  성공",
-      slack_url: "https://hooks.slack.com/services/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",
-     default_payloads: [:git_branch, :git_author]
+        content_rights_contains_third_party_content: false}
+	   )
 
+    #성공했을때  슬랙 메세지   
+      slack(
+      message: "배포  성공",
+      slack_url: "https://hooks.slack.com/services/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",
+      default_payloads: [:git_branch, :git_author]
     )
 
-# ✅ 에러 처리.
-error do |lane, exception, options|
+ # ✅ 에러 처리.
+   error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
      end	         
     # ✅ if 문을 종료하기 위한 end

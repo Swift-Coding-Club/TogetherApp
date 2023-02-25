@@ -71,10 +71,10 @@ Install Profiles and Build My App
 
 
 
-### ios beta
+### ios upload_testflight
 
 ```sh
-[bundle exec] fastlane ios beta
+[bundle exec] fastlane ios upload_testflight
 ```
 
 Description of what the lane does
