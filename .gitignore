@@ -27,8 +27,13 @@ MarketApp/cer/
 MarketApp/Gemfile.lock
 MarketApp/9KY7TMNU9D.cer
 MarketApp/build/
-.env
-.cer
+
+
+*.env
+*.cer
+*.swp
+
+
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
 *.xccheckout
@@ -104,7 +109,8 @@ Dependencies/
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
-fastlane/test_output
+fastlane/test_output/
+
 fastlane/.env
 # Code Injection
 #
