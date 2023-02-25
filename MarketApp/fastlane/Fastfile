@@ -12,7 +12,6 @@
 
 # Uncomment the line if you want fastlane to automatically update itself
 update_fastlane
-
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "600"
 default_platform(:ios)
 
@@ -54,10 +53,10 @@ platform :ios do
       reinstall_app: true,
       app_identifier: "com.shoping.MarketApps",
       clean: true)
-
+      slack_url=ENV["SLACK_URL1"]
       slack(
       message: "Unit test  성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: sleck_url
     )
 
 # ✅ 에러 처리.
@@ -65,7 +64,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: slack_url
     )
      end
    end
@@ -104,6 +103,7 @@ error do |lane, exception, options|
      #output_directory = "./output"
      #Dir.mkdir(output_directory) unless File.exists?(output_directory)
       #ipa_path = Dir.glob("*.ipa").first
+      slack_url = ENV["SLACK_URL"]
       slack(
       message: "빌드 성공",
       slack_url: ENV["SLACK_URL"],
@@ -116,7 +116,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: slack_url
     )
     end
   end
