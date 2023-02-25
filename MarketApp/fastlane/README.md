@@ -47,14 +47,6 @@ Incrementing Build Number
 
 
 
-### ios build_ipa2
-
-```sh
-[bundle exec] fastlane ios build_ipa2
-```
-
-build app
-
 ### ios build_ipa
 
 ```sh
