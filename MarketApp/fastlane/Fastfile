@@ -136,10 +136,10 @@ error do |lane, exception, options|
     api_key_path: "fastlane/apikey.json", 
     ipa:"./output/MarketApp.ipa",
     skip_waiting_for_build_processing: true)
-      slack(
+      
+       slack(
       message: "Testflight 배포에 성공했습니다!",
       slack_url: ENV["SLACK_URL_UPLOAD"],
-      default_payloads: [:git_branch, :git_author, :test_result],
       payload: { "Version": version + " (" + build + ")"  }
     )
  # ✅ 에러 처리.
@@ -195,7 +195,6 @@ error do |lane, exception, options|
       slack(
       message: "배포  성공",
       slack_url: ENV["SLACK_URL_UPLOAD"],
-      default_payloads: [:git_branch, :git_author, :test_result],
        payload: {
         "Version": version + " (" + build + ")"
       }
