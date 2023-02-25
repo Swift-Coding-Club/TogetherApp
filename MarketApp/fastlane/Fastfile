@@ -54,17 +54,18 @@ platform :ios do
       result_bundle: true,
       app_identifier: "com.shoping.MarketApps",
       clean: true)
-      slack(
+       slack(
       message: "Unit test  성공",
-      slack_url: ENV["SLACK_URL_TEST"]
+      slack_url: ENV["SLACK_URL_TEST"],
+      payload: { "Build Date" => Time.new.to_s }
     )
-
+      
 # ✅ 에러 처리.
 error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: slack_url
+      slack_url: ENV["SLACK_URL_TEST"]
     )
      end
    end
@@ -101,15 +102,10 @@ error do |lane, exception, options|
              }
            }
        )
-     #output_directory = "./output"
-     #Dir.mkdir(output_directory) unless File.exists?(output_directory)
-      #ipa_path = Dir.glob("*.ipa").first
-      slack_url = ENV["SLACK_URL"]
       slack(
       message: "빌드 성공",
-      slack_url: ENV["SLACK_URL"],
-      channel: "#앱-빌드"
-     
+      slack_url: ENV["SLACK_URL_BUILD"],
+      payload: { "Build Date" => Time.new.to_s }     
     )
 
  # ✅ 에러 처리.
@@ -117,19 +113,10 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: slack_url
+      slack_url: ENV["SLACK_URL_BUILD"]
     )
     end
   end
-
- desc:"앱 버전"
- lane:target_version do 
-  version = get_version_number(
-        xcodeproj: "MarketApp.xcodeproj",
-        target: "MarketApp"
-       )
-     build = get_build_number
-end
 
   desc "Description of what the lane does"
    lane :upload_testflight do
@@ -151,9 +138,10 @@ end
     skip_waiting_for_build_processing: true)
     slack(
       message: "Testflight 배포에 성공했습니다!",
-      slack_url: "https://hooks.slack.com/services/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",
+      slack_url: ENV["SLACK_URL_UPLOAD"],
        payload: {
-	"Version": version + " (" + build + ")"
+	"Version": version + " (" + build + ")",
+        "Build Date" => Time.new.to_s 
       }
     )
  # ✅ 에러 처리.
@@ -161,7 +149,7 @@ end
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: ENV["SLACK_URL_UPLOAD"]
     )
     end
   end
@@ -209,10 +197,10 @@ end
     #성공했을때  슬랙 메세지   
       slack(
       message: "배포  성공",
-      slack_url: "https://hooks.slack.com/services/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",
-      default_payloads: [:git_branch, :git_author, :test_result],
+      slack_url: ENV["SLACK_URL_UPLOAD"],
       payload: {
-        "Version": version + " (" + build + ")"
+        "Version": version + " (" + build + ")",
+         "Build Date" => Time.new.to_s 
       }
     )
 
@@ -221,7 +209,7 @@ end
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: ENV["SLACK_URL_UPLOAD"]
     )
      end	         
     # ✅ if 문을 종료하기 위한 end
