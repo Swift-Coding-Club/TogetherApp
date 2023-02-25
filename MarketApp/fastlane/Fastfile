@@ -72,6 +72,7 @@ error do |lane, exception, options|
  desc "Install Profiles and Build My App"
   lane :build_ipa do
    clear_derived_data
+    scan
     gym(
       configuration: "Release",
       workspace: "MarketApp.xcworkspace",
