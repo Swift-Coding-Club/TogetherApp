@@ -106,7 +106,9 @@ error do |lane, exception, options|
       #ipa_path = Dir.glob("*.ipa").first
       slack(
       message: "빌드 성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: ENV["SLACK_URL"],
+      channel: "#앱-빌드"
+     
     )
 
  # ✅ 에러 처리.
