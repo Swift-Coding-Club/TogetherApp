@@ -55,13 +55,13 @@ Incrementing Build Number
 
 Install Profiles and Build My App
 
-### ios sync_all_development
+### ios target_version
 
 ```sh
-[bundle exec] fastlane ios sync_all_development
+[bundle exec] fastlane ios target_version
 ```
 
-
+앱 버전
 
 ### ios upload_testflight
 

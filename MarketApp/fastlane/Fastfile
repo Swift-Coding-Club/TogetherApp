@@ -57,7 +57,7 @@ platform :ios do
 
       slack(
       message: "Unit test  성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
 # ✅ 에러 처리.
@@ -65,7 +65,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
      end
    end
@@ -106,7 +106,7 @@ error do |lane, exception, options|
       #ipa_path = Dir.glob("*.ipa").first
       slack(
       message: "빌드 성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
 
  # ✅ 에러 처리.
@@ -114,7 +114,7 @@ error do |lane, exception, options|
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
     end
   end
@@ -130,7 +130,11 @@ end
 
   desc "Description of what the lane does"
    lane :upload_testflight do
-     increment_build
+    version = get_version_number(
+        xcodeproj: "MarketApp.xcodeproj",
+        target: "MarketApp"
+       )
+     build = get_build_number
     get_certificates
     get_provisioning_profile
     increment_build_number(
@@ -144,8 +148,7 @@ end
     skip_waiting_for_build_processing: true)
     slack(
       message: "Testflight 배포에 성공했습니다!",
-      channel: "#배포",
-      slack_url: "https://hooks.slack.com/services/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",
+      slack_url: "https://hooks.slack.com/services/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",
        payload: {
 	"Version": version + " (" + build + ")"
       }
@@ -155,7 +158,7 @@ end
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
     end
   end
@@ -174,6 +177,11 @@ end
     if options[:version]
     #enable_automatic_code_signing
       increment_version_number(version_number: options[:version])
+       version = get_version_number(
+        xcodeproj: "MarketApp.xcodeproj",
+        target: "MarketApp"
+       )
+     build = get_build_number
       get_certificates
       get_provisioning_profile
       build_ipa
@@ -198,8 +206,11 @@ end
     #성공했을때  슬랙 메세지   
       slack(
       message: "배포  성공",
-      slack_url: "https://hooks.slack.com/services/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",
-      default_payloads: [:git_branch, :git_author]
+      slack_url: "https://hooks.slack.com/services/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",
+      default_payloads: [:git_branch, :git_author, :test_result],
+      payload: {
+        "Version": version + " (" + build + ")"
+      }
     )
 
  # ✅ 에러 처리.
@@ -207,7 +218,7 @@ end
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
      end	         
     # ✅ if 문을 종료하기 위한 end
