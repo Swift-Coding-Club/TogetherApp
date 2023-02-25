@@ -27,6 +27,8 @@ MarketApp/cer/
 MarketApp/Gemfile.lock
 MarketApp/9KY7TMNU9D.cer
 MarketApp/build/
+.env
+.cer
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
 *.xccheckout
