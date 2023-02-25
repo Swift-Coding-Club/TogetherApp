@@ -74,6 +74,7 @@ error do |lane, exception, options|
  desc "Install Profiles and Build My App"
   lane :build_ipa do
    clear_derived_data
+    scan
     gym(
       configuration: "Release",
       workspace: "MarketApp.xcworkspace",
@@ -82,7 +83,7 @@ error do |lane, exception, options|
       export_method: "app-store",
       xcodebuild_command: "xcodebuild",
       include_bitcode: false,
-     #skip_build_archive: false,
+     skip_build_archive: false,
       xcodebuild_formatter: "xcpretty",
       output_directory: "./output/",
       clean: true,
