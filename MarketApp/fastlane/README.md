@@ -47,14 +47,6 @@ Incrementing Build Number
 
 
 
-### ios build_ipa2
-
-```sh
-[bundle exec] fastlane ios build_ipa2
-```
-
-build app
-
 ### ios build_ipa
 
 ```sh
@@ -62,14 +54,6 @@ build app
 ```
 
 Install Profiles and Build My App
-
-### ios sync_all_development
-
-```sh
-[bundle exec] fastlane ios sync_all_development
-```
-
-
 
 ### ios upload_testflight
 
