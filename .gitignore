@@ -15,7 +15,7 @@ Firebase/
 ### Firebase Patch ###
 .runtimeconfig.json
 .firebase/
-.env
+.*env
 .cer
 .*.swp
 
