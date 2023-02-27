@@ -31,6 +31,10 @@ struct MainView: View {
                     
                     SortedViews()
                     
+                    NavigationLink("next") {
+                        ProductView()
+                    }
+                    
                     if let shoesData = viewModel.shoesData {
                         ProdductListView(shoesData: shoesData)
                     }

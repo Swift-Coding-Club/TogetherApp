@@ -22,7 +22,6 @@ class SignUPViewModel: ObservableObject {
     //MARK: - 로그인 애니메이션 판별
     @AppStorage("log_status") var log_Status = false
     
-    let ref = Database.database().reference()
     
     init() {
         self.userSession = Auth.auth().currentUser

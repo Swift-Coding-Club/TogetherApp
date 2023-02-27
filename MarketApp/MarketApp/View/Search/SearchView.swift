@@ -14,7 +14,8 @@ struct SearchView: View {
     @Environment(\.isSearching) private var isSearching
     
     private let searchBarPlaceholder: String = "신발을 검색해주세요"
-    let mockShoseData : [ShoeData] = []
+    @State var mockShoseData : ShoesModel = []
+   @State var fillterShoes : ShoesModel = []
     
     @StateObject var viewModel: MainShoesViewModel = MainShoesViewModel()
     
@@ -26,17 +27,25 @@ struct SearchView: View {
         VStack {
             SearchBar(searchBarText: $searchText, placeholder: searchBarPlaceholder)
                 .padding(.horizontal)
+            
+            CurrentSearchView()
+            
+            
             if !searchText.isEmpty {
                 SearchResultView()
             } else {
                 PopularSearchView()
             }
+            Spacer()
+        }
+        .onAppear {
+            viewModel.mainShoesRequest()
         }
     }
     
     @ViewBuilder
     private func PopularSearchView() -> some View{
-        CurrentSearchView()
+//        CurrentSearchView()
         List {
             Section(header: Text("인기 검색어 Top10")){
                 ForEach(popularSearchList.indices, id: \.self) { index in
@@ -92,12 +101,11 @@ struct SearchView: View {
     
     @ViewBuilder
     private func SearchResultView() -> some View{
-        List {
-            ForEach(mockBrandList.filter{ $0.lowercased().contains(searchText.lowercased()) }, id: \.self) { item in
-                Text(item)
+        VStack{
+            ForEach(mockShoseData.filter { searchText.isEmpty ? true : $0.productName?.contains(searchText) == true}) { shoes in
+                Text(shoes.productName ?? "")
             }
         }
-        .listStyle(.plain)
     }
 }
 

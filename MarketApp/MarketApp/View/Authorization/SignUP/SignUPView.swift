@@ -10,6 +10,8 @@ import ExytePopupView
 import FirebaseAuth
 
 struct SignUPView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @State private var emailTextField: String = ""
     @State private var passwordTextField: String = ""
     @State private var recheckPsswordTextField: String = ""
@@ -42,6 +44,19 @@ struct SignUPView: View {
             singUPNextViewButton()
             
             Spacer(minLength: .zero)
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.black)
+                }
+
+            }
         }
         .navigationDestination(isPresented: $showNickNameView) {
             SignUPNickNameView()

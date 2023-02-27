@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NaviagationSearchView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @State var searchText = ""
     @State private var removeSearch = false
     @State var recentSearchList : [String] = ["Head","Addidas","Kappa","JDX","ELLE","Armani"]
@@ -28,6 +30,19 @@ struct NaviagationSearchView: View {
             }
         }
         .searchable(text: $searchText)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.black)
+                }
+
+            }
+        }
     }
     
     @ViewBuilder

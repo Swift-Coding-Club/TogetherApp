@@ -12,6 +12,8 @@ struct SignUPNickNameView: View {
     
     @StateObject var viewModel: SignUPViewModel = SignUPViewModel()
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @State var nickNameTextField: String = ""
     @State private var showProfileView: Bool = false
     @State private var checkNickName: Bool = false
@@ -36,6 +38,19 @@ struct SignUPNickNameView: View {
             nicknameSignUPButton()
             
             Spacer(minLength: .zero)
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.black)
+                }
+
+            }
         }
         .fullScreenCover(isPresented: $showProfileView) {
             NavigationStack {
