@@ -40,14 +40,7 @@ struct ProductView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.black)
-                }
-
+                customBackButton()
             }
         }
     }
@@ -87,6 +80,18 @@ struct ProductView: View {
         }
     }
     
+    //MARK: - 뒤로 가기 버튼
+    @ViewBuilder
+    private func customBackButton() -> some View {
+        Button {
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .frame(width: 30, height: 30)
+                .foregroundColor(.black)
+        }
+
+    }
     //MARK: - 가격및 info 화면
     @ViewBuilder
     private func detailInfoView() -> some View {

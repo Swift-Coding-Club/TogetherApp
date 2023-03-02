@@ -8,7 +8,7 @@ target 'MarketApp' do
   # Pods for MarketApp
   #pod 'Alamofire'
   pod 'SwiftLint'
-  pod 'ExytePopupView'
+  pod 'ExytePopupView', '~> 1.2.1'
   pod 'Kingfisher'
   pod 'Moya'
   pod 'Moya/Combine', '~> 15.0'

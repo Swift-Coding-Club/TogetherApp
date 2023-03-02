@@ -33,16 +33,22 @@ struct NaviagationSearchView: View {
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.black)
-                }
-
+                customBackButton()
             }
         }
+    }
+    
+    //MARK: - 뒤로 가기 버튼
+    @ViewBuilder
+    private func customBackButton() -> some View {
+        Button {
+            self.presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .frame(width: 30, height: 30)
+                .foregroundColor(.black)
+        }
+
     }
     
     @ViewBuilder

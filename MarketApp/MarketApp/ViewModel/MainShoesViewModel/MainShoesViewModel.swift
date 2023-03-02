@@ -15,7 +15,7 @@ class MainShoesViewModel: ObservableObject {
     var shoesCancelable: AnyCancellable?
     
     init() {
-        mainShoesRequest()
+//        mainShoesRequest()
     }
     
     func toViewModel(_ list: ShoesModel) {
@@ -34,7 +34,7 @@ class MainShoesViewModel: ObservableObject {
                 case .failure(let error):
                     print(error.localizedDescription)
                 case .finished:
-                    break
+                    print("신발 데이터")
                 }
             }, receiveValue: { model in
                 let data = try? model.map(ShoesModel.self)
