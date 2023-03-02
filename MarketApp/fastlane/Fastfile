@@ -73,7 +73,21 @@ error do |lane, exception, options|
  desc "Install Profiles and Build My App"
   lane :build_ipa do
    clear_derived_data
-    scan
+   scan
+    slack(
+      message: "Unit test  성공",
+      slack_url: ENV["SLACK_URL_TEST"],
+      payload: { "Build Date" => Time.new.to_s }
+    )
+
+# ✅ 에러 처리.
+error do |lane, exception, options|
+    slack(
+      message: "에러 발생 : #{exception}",
+      success: false,
+      slack_url: ENV["SLACK_URL_TEST"]
+    )
+     end
     gym(
       configuration: "Release",
       workspace: "MarketApp.xcworkspace",
@@ -82,17 +96,17 @@ error do |lane, exception, options|
       export_method: "app-store",
       xcodebuild_command: "xcodebuild",
       include_bitcode: false,
-     #skip_build_archive: false,
+     skip_build_archive: false,
       xcodebuild_formatter: "xcpretty",
       output_directory: "./output/",
       clean: true,
       silent: true,
       include_symbols: false,
       xcargs: "ARCHIVE=YES",
-      disable_package_automatic_updates: true,
+     # disable_package_automatic_updates: true,
       skip_package_ipa: false,
-     skip_package_dependencies_resolution: false,
-      skip_package_pkg: false,
+     #skip_package_dependencies_resolution: false,
+      #skip_package_pkg: false,
         export_options: {
          signingStyle: "automatic",
           uploadBitcode: false,
@@ -133,8 +147,11 @@ error do |lane, exception, options|
     lint
     build_ipa
     upload_to_testflight(
+    demo_account_required: true,
+    beta_app_description:"신발 커뮤니티 앱"
     api_key_path: "fastlane/apikey.json", 
     ipa:"./output/MarketApp.ipa",
+    changelog:"변경사항"
     skip_waiting_for_build_processing: true)
     slack(
       message: "Testflight 배포에 성공했습니다!",
@@ -152,7 +169,42 @@ error do |lane, exception, options|
       slack_url: ENV["SLACK_URL_UPLOAD"]
     )
     end
+   upload_firebase
   end
+
+
+ desc:"upload Firebase App Distribution"
+  lane:upload_firebase do
+   version = get_version_number(
+        xcodeproj: "MarketApp.xcodeproj",
+        target: "MarketApp"
+       )
+     build = get_build_number
+    #get_dev_certs
+    build_ipa
+    firebase_app_distribution(
+     app: ENV["IOS_FIREBASE_APP_DISTRIBUTION_APP"],
+      groups: "Affinity",
+      #googleservice_info_plist_path: "./Firebase/GoogleService-Info.plist",
+       release_notes: "upload test",debug: true)
+         slack(
+          message: "파이어베스  배포에 성공했습니다!",
+           slack_url: ENV["SLACK_URL_UPLOAD"],
+            payload: {
+            "Version": version + " (" + build + ")",
+             "Build Date" => Time.new.to_s
+              }
+             )
+         # ✅ 에러 처리.
+        error do |lane, exception, options|
+         slack(
+           message: "에러 발생 : #{exception}",
+           success: false,
+           slack_url: ENV["SLACK_URL_UPLOAD"]
+            )
+        end
+     end 
+
 
  lane :get_dev_certs  do
     cert(development: true)
@@ -182,6 +234,7 @@ error do |lane, exception, options|
         team_id: "N94CS4N6VR",
         api_key_path: "fastlane/apikey.json",
 	skip_metadata: false,
+        metadat_path: "./metadata",
         skip_screenshots: false, 
         force: true,
         submit_for_review: true,

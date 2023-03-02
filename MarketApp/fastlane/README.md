@@ -55,14 +55,6 @@ Incrementing Build Number
 
 Install Profiles and Build My App
 
-### ios target_version
-
-```sh
-[bundle exec] fastlane ios target_version
-```
-
-앱 버전
-
 ### ios upload_testflight
 
 ```sh
@@ -70,6 +62,14 @@ Install Profiles and Build My App
 ```
 
 Description of what the lane does
+
+### ios upload_firebase
+
+```sh
+[bundle exec] fastlane ios upload_firebase
+```
+
+upload Firebase App Distribution
 
 ### ios get_dev_certs
 
