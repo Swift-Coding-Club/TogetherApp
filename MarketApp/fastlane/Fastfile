@@ -151,7 +151,7 @@ error do |lane, exception, options|
     beta_app_description:"신발 커뮤니티 앱"
     api_key_path: "fastlane/apikey.json", 
     ipa:"./output/MarketApp.ipa",
-    changelog:"변경사항"
+    changelog:"변경사항",
     skip_waiting_for_build_processing: true)
     slack(
       message: "Testflight 배포에 성공했습니다!",
