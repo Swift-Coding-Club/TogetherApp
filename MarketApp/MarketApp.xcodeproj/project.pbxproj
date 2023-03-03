@@ -59,6 +59,8 @@
 		7F39FAC0295342BD0041BF8B /* NanumSquareNeo-dEb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAB0295341A50041BF8B /* NanumSquareNeo-dEb.ttf */; };
 		7F39FAC1295342BD0041BF8B /* NanumSquareNeo-eHv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39FAB1295341A50041BF8B /* NanumSquareNeo-eHv.ttf */; };
 		7F3E17C5299C6DF80095BB2F /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E17C4299C6DF80095BB2F /* InfoViewModel.swift */; };
+		7F4189C029B2185D00965AB4 /* BannerImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4189BF29B2185D00965AB4 /* BannerImages.swift */; };
+		7F4189C229B2375600965AB4 /* BrandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4189C129B2375600965AB4 /* BrandType.swift */; };
 		7F4B9621298D169E006AAF48 /* ACarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4B9620298D169E006AAF48 /* ACarousel.swift */; };
 		7F4B9623298D16E9006AAF48 /* ACarouselAutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4B9622298D16E9006AAF48 /* ACarouselAutoScroll.swift */; };
 		7F4B9625298D171B006AAF48 /* ACarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4B9624298D171B006AAF48 /* ACarouselViewModel.swift */; };
@@ -183,6 +185,8 @@
 		7F39FAB1295341A50041BF8B /* NanumSquareNeo-eHv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-eHv.ttf"; sourceTree = "<group>"; };
 		7F39FAB2295341A50041BF8B /* NanumSquareNeo-cBd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-cBd.ttf"; sourceTree = "<group>"; };
 		7F3E17C4299C6DF80095BB2F /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		7F4189BF29B2185D00965AB4 /* BannerImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImages.swift; sourceTree = "<group>"; };
+		7F4189C129B2375600965AB4 /* BrandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandType.swift; sourceTree = "<group>"; };
 		7F4B9620298D169E006AAF48 /* ACarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACarousel.swift; sourceTree = "<group>"; };
 		7F4B9622298D16E9006AAF48 /* ACarouselAutoScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACarouselAutoScroll.swift; sourceTree = "<group>"; };
 		7F4B9624298D171B006AAF48 /* ACarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACarouselViewModel.swift; sourceTree = "<group>"; };
@@ -503,6 +507,8 @@
 				EC892AA02908189600D02F99 /* MainContentView.swift */,
 				7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */,
 				7F6250B6297030B4004CCC10 /* TabIndex.swift */,
+				7F4189BF29B2185D00965AB4 /* BannerImages.swift */,
+				7F4189C129B2375600965AB4 /* BrandType.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1225,6 +1231,7 @@
 				7F2432B12958638400C1077E /* AppDelegate.swift in Sources */,
 				7F0F1646296008D900FB4C30 /* FontColor.swift in Sources */,
 				7F6250B7297030B4004CCC10 /* TabIndex.swift in Sources */,
+				7F4189C229B2375600965AB4 /* BrandType.swift in Sources */,
 				7F4B9635298D2909006AAF48 /* DotIndicator.swift in Sources */,
 				7F0565DD298A92A70066BE4A /* SearchBar.swift in Sources */,
 				7F0F1664296EF2A000FB4C30 /* PreviewProvider.swift in Sources */,
@@ -1251,6 +1258,7 @@
 				7F2AD62F299137C5004DB28B /* withDrawPOPUPView.swift in Sources */,
 				7F4B9625298D171B006AAF48 /* ACarouselViewModel.swift in Sources */,
 				7F2AD62D29912F0C004DB28B /* ModalShapeCorner.swift in Sources */,
+				7F4189C029B2185D00965AB4 /* BannerImages.swift in Sources */,
 				7F93C34C29854D2100345AEC /* AppManger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1279,7 +1287,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1306,7 +1314,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1331,7 +1339,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1357,7 +1365,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1502,7 +1510,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1546,7 +1554,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;

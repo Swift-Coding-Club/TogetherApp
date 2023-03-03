@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-let bannerImages  = ["blue", "pink" , "yellow"]
+//let bannerImages  = ["blue", "pink" , "yellow"]
 
 enum demoImage : String, CaseIterable, Hashable {
     case one = "blue"

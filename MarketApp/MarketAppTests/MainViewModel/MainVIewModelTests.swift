@@ -46,7 +46,7 @@ final class MainVIewModelTests: XCTestCase {
     
     func test_신발APIRequestTest() {
         let expectation = XCTestExpectation(description: "api 통신 테스트")
-        viewModel.shoesCancelable = MoyaProvider<MainShoesService>().requestPublisher(.mainShoesData)
+        viewModel.shoesCancellable = MoyaProvider<MainShoesService>().requestPublisher(.mainShoesData)
             .compactMap { $0 }
             .sink(receiveCompletion: { result in
                 switch result {

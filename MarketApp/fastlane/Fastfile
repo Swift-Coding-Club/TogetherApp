@@ -148,7 +148,7 @@ error do |lane, exception, options|
     build_ipa
     upload_to_testflight(
     demo_account_required: true,
-    beta_app_description:"신발 커뮤니티 앱"
+    beta_app_description:"신발 커뮤니티 앱",
     api_key_path: "fastlane/apikey.json", 
     ipa:"./output/MarketApp.ipa",
     changelog:"변경사항",
@@ -181,7 +181,7 @@ error do |lane, exception, options|
        )
      build = get_build_number
     #get_dev_certs
-    build_ipa
+    #build_ipa
     firebase_app_distribution(
      app: ENV["IOS_FIREBASE_APP_DISTRIBUTION_APP"],
       groups: "Affinity",

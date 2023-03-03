@@ -10,6 +10,7 @@ import Moya
 
 enum MainShoesService {
     case mainShoesData
+    case nikeShoesData
 }
 
 extension MainShoesService: TargetType {
@@ -21,12 +22,16 @@ extension MainShoesService: TargetType {
         switch self {
         case .mainShoesData:
             return AffinityAPI.MainShoes
+        case .nikeShoesData:
+            return AffinityAPI.nikeShoes
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .mainShoesData:
+            return .get
+        case .nikeShoesData:
             return .get
         }
     }
@@ -35,12 +40,19 @@ extension MainShoesService: TargetType {
         switch self {
         case .mainShoesData:
             return .requestPlain
+        case .nikeShoesData:
+            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
         case .mainShoesData:
+            return [
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            ]
+        case .nikeShoesData:
             return [
                 "Accept": "application/json",
                 "Content-Type": "application/json"

@@ -12,7 +12,7 @@ import Moya
 class MainShoesViewModel: ObservableObject {
     
     @Published var shoesData: ShoesModel?
-    var shoesCancelable: AnyCancellable?
+    var shoesCancellable: AnyCancellable?
     
     init() {
 //        mainShoesRequest()
@@ -22,12 +22,14 @@ class MainShoesViewModel: ObservableObject {
         self.shoesData = list
     }
     
+    
+    //MARK: - 신발 전체 데이터
     func mainShoesRequest() {
-        if let cancelable = shoesCancelable {
-            cancelable.cancel()
+        if let cancellable = shoesCancellable {
+            cancellable.cancel()
         }
         let provider = MoyaProvider<MainShoesService>()
-        shoesCancelable = provider.requestPublisher(.mainShoesData)
+        shoesCancellable = provider.requestPublisher(.mainShoesData)
             .compactMap { $0 }
             .sink(receiveCompletion: { result in
                 switch result {
@@ -42,6 +44,5 @@ class MainShoesViewModel: ObservableObject {
                 print("신발 데이터 \(shoesData)")
                 self.toViewModel(shoesData)
             })
-        
     }
 }

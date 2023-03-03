@@ -14,6 +14,10 @@ struct MainView: View {
     @State private var pageIndex = 0
     @State var bannerSize: CGSize = .zero
     @State private var selectPage : Int = .zero
+    @State private var showABCView: Bool = false
+    @State private var showNikeView:  Bool = false
+    
+    @State private var selectBrandType: BrandType = .all
     
     @State var path = NavigationPath()
     
@@ -30,15 +34,19 @@ struct MainView: View {
                         .padding()
                     
                     SortedViews()
-                       
-                    if let shoesData = viewModel.shoesData {
-                        ProdductListView(shoesData: shoesData)
-                    }
+                    
+                    selectBrandProductVIew()
                 }
                 .bounce(false)
             }
         }
         .navigationTitle("")
+        .navigationDestination(isPresented: $showABCView) {
+            WebView(urlToLoad: BannerImages.abcMarket.bannerURL)
+        }
+        .navigationDestination(isPresented: $showNikeView) {
+            WebView(urlToLoad: BannerImages.nikeMarket.bannerURL)
+        }
         .onAppear {
             viewModel.mainShoesRequest()
         }
@@ -58,7 +66,7 @@ struct MainView: View {
             
             Spacer()
             
-
+            
             ForEach(MainNavigaionItem.allCases, id: \.description) { item in
                 if item == .search {
                     NavigationLink(destination: NaviagationSearchView()){
@@ -78,7 +86,7 @@ struct MainView: View {
         }
         .padding(.horizontal)
         .frame(width: UIScreen.screenWidth)
-       
+        
     }
     
     //MARK:  - 알림 뷰
@@ -102,6 +110,13 @@ struct MainView: View {
                       , sidesScaling: 0.7
                       , autoScroll: .active(5)) { item in
                 BannerImage(image: item)
+                    .onTapGesture {
+                        if item == "ABC" {
+                            showABCView = true
+                        } else if item == "Nike" {
+                            showNikeView = true
+                        }
+                    }
             }.frame(height: 200)
                 .readSize {
                     bannerSize = $0
@@ -132,14 +147,18 @@ struct MainView: View {
     private func CategoryViews() -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
-                ForEach(BrandName.allCases, id: \.description) { item in
+                ForEach(BrandType.allCases, id: \.rawValue) { item in
                     Button(item.description) {
-                        //Action Here.
+                        withAnimation(.easeInOut) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                self.selectBrandType = item
+                            }
+                        }
                     }
-                    .font(.system(size: 15, weight: .bold))
+                    
+                    .nanumSquareNeo(family: .cBd, size: 15, color: .white)
                     .frame(width: 110, height: 40, alignment: .center)
                     .background(Color.black)
-                    .foregroundColor(.white)
                     .cornerRadius(12)
                 }
             }
@@ -155,6 +174,24 @@ struct MainView: View {
                 //TODO : tag가 변경될때마다 해당 tag에 맞게끔 리스트 정렬 변경 ( default : 인기순 )
             }
         }.pickerStyle(.menu)
+    }
+    
+    @ViewBuilder
+    private func productView() -> some View {
+        LazyVStack {
+            if let shoesData = viewModel.shoesData {
+                ProdductListView(shoesData: shoesData)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func selectBrandProductVIew() -> some View {
+        if selectBrandType == .all {
+            productView()
+        } else {
+            productView()
+        }
     }
 }
 
