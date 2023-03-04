@@ -12,7 +12,7 @@ typealias ShoesModel = [ShoeData]
 struct ShoeData: Codable, Identifiable {
     let id = UUID()
     let shoesId: Int?
-    let brandName: String?
+    let brandName: BrandName?
     let productName, transName: String?
     let image: String?
     let price: String?
