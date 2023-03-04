@@ -15,12 +15,12 @@ struct NaviagationSearchView: View {
     
     @State var searchText = ""
     @State private var removeSearch = false
-    @State var recentSearchList : [String] = ["Head","Addidas","Kappa","JDX","ELLE","Armani"]
+    @State var recentSearchList : [String] = []
    
     @State var searchShoesResults : ShoesModel = []
     private let searchBarPlaceholder: String = "신발을 검색해주세요"
     
-    let popularSearchList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani"]
+    private let minCharacters = 3
     
     var body: some View {
         VStack {
@@ -33,7 +33,7 @@ struct NaviagationSearchView: View {
             
             Spacer()
         }
-        .searchable(text: $searchText)
+        .searchable(text: $searchText, prompt: searchBarPlaceholder)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -51,6 +51,9 @@ struct NaviagationSearchView: View {
                     shoes.transName?.contains(searchText) ?? true
                 }) ?? []
             }
+            if searchText.count >=  minCharacters{
+                appendItem()
+            }
         }
     }
     
@@ -65,19 +68,6 @@ struct NaviagationSearchView: View {
                 .foregroundColor(.black)
         }
 
-    }
-    
-    @ViewBuilder
-    private func PopularSearchView() -> some View{
-        CurrentSearchView()
-        List {
-            Section(header: Text("인기 검색어 Top10")){
-                ForEach(popularSearchList.indices, id: \.self) { index in
-                        Text(popularSearchList[index])
-                }
-            }
-        }
-        .listStyle(.plain)
     }
     
     @ViewBuilder
@@ -105,17 +95,13 @@ struct NaviagationSearchView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(recentSearchList.indices, id: \.self) { data in
-                        Button(action: {
-                            
-                        }, label: {
-                                Text(recentSearchList[data])
-                                    .frame(width: 100, height: 30, alignment: .center)
-                                    .font(.system(size: 15))
-                                    .foregroundColor(.white)
-                                    .background(.black)
-                                    .cornerRadius(20)
-                        })
+                    ForEach(recentSearchList.sorted(), id: \.self) { searchText in
+                        Text(searchText)
+                            .frame(width: 100, height: 30, alignment: .center)
+                            .nanumSquareNeo(family: .bRG, size: 15, color: .white)
+                            .background(.black)
+                            .cornerRadius(20)
+
                     }
                 }
             }
@@ -129,6 +115,11 @@ struct NaviagationSearchView: View {
             SearchRowListView(shoesData: searchShoesResults)
         }
         .bounce(false)
+    }
+    
+    private func appendItem() {
+        recentSearchList.append(searchText)
+        searchText = ""
     }
 }
 

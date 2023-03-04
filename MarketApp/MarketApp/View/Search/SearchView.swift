@@ -14,12 +14,11 @@ struct SearchView: View {
     @State var searchText = ""
     @State private var removeSearch = false
     @State var searchShoesResults : ShoesModel = []
-    @State var recentSearchList : [String] = ["Head","Addidas","Kappa","JDX","ELLE","Armani"]
+    @State var recentSearchList : [String] = []
     
     private let searchBarPlaceholder: String = "신발을 검색해주세요"
+    private let minCharacters = 3
     
-    
-    let popularSearchList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani"]
     
     var body: some View {
         VStack {
@@ -43,6 +42,9 @@ struct SearchView: View {
                     shoes.transName?.contains(searchText) ?? true
                 }) ?? []
             }
+            if searchText.count >=  minCharacters{
+                appendItem()
+            }
         }
     }
     
@@ -62,7 +64,8 @@ struct SearchView: View {
                         .foregroundColor(.gray)
                 })
                 .alert(Text("기록 전체 삭제"), isPresented: $removeSearch, actions: {
-                    Button("확인", role: .destructive) { recentSearchList.removeAll() }
+                    Button("확인", role: .destructive) {
+                        recentSearchList.removeAll() }
                     Button("취소", role: .cancel) {}
                 }, message: {
                     Text("정말 삭제하시겠어요?")
@@ -71,17 +74,13 @@ struct SearchView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(recentSearchList.indices, id: \.self) { data in
-                        Button(action: {
-                            
-                        }, label: {
-                            Text(recentSearchList[data])
-                                .frame(width: 100, height: 30, alignment: .center)
-                                .font(.system(size: 15))
-                                .foregroundColor(.white)
-                                .background(.black)
-                                .cornerRadius(20)
-                        })
+                    ForEach(recentSearchList.sorted(), id: \.self) { searchText in
+                        Text(searchText)
+                            .frame(width: 100, height: 30, alignment: .center)
+                            .nanumSquareNeo(family: .bRG, size: 15, color: .white)
+                            .background(.black)
+                            .cornerRadius(20)
+
                     }
                 }
             }
@@ -97,6 +96,10 @@ struct SearchView: View {
         .bounce(false)
     }
     
+    private func appendItem() {
+        recentSearchList.append(searchText)
+        searchText = ""
+    }
 }
 
 struct SearchView_Previews: PreviewProvider {
