@@ -42,10 +42,10 @@ struct MainView: View {
         }
         .navigationTitle("")
         .navigationDestination(isPresented: $showABCView) {
-            WebView(urlToLoad: BannerImages.abcMarket.bannerURL)
+            WebViews(url: BannerImages.abcMarket.bannerURL)
         }
         .navigationDestination(isPresented: $showNikeView) {
-            WebView(urlToLoad: BannerImages.nikeMarket.bannerURL)
+            WebViews(url: BannerImages.nikeMarket.bannerURL)
         }
         .onAppear {
             viewModel.mainShoesRequest()

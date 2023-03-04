@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainContentView: View {
     @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
+//    @StateObject var mainViewModel: MainShoesViewModel = MainShoesViewModel()
     
     @State var showView: Bool = false
     @State private var selectView: Int = 0
