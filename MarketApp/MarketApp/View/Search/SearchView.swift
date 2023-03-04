@@ -31,7 +31,7 @@ struct SearchView: View {
             CurrentSearchView()
             
             
-            if !searchText.isEmpty {
+            if searchText.isEmpty {
                 SearchResultView()
             } else {
                 PopularSearchView()

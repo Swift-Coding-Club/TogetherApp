@@ -27,7 +27,6 @@ struct ShoeData: Codable, Identifiable {
 }
 
 enum BrandName:  String, Codable , CaseIterable, CustomStringConvertible {
-    case all = "전체"
     case nike = "Nike"
     case adidas = "Adidas"
     case converse = "Converse"
@@ -37,8 +36,6 @@ enum BrandName:  String, Codable , CaseIterable, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .all:
-            return "전체"
         case .nike:
             return "나이키"
         case .adidas:
