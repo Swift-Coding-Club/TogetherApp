@@ -13,6 +13,7 @@ struct WebViews: View {
     var body: some View {
         VStack{
             WebView(urlToLoad: url)
+
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {

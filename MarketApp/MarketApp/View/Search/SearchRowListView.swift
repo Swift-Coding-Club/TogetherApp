@@ -16,7 +16,6 @@ struct SearchRowListView: View {
         GridItem(.flexible())
     ]
     
-    
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 30) {
@@ -24,7 +23,6 @@ struct SearchRowListView: View {
                     gridList(image: item.image ?? "", brandName: item.brandName ?? "", price: item.price ?? "", productName: item.transName ?? "")
                 }
             }
-            
             Spacer()
         }
         .bounce(false)
@@ -39,7 +37,7 @@ struct SearchRowListView: View {
                     .resizable()
                     .frame(width: 160, height: 200, alignment: .leading)
                 
-                Text(brandName)
+               Text(brandName)
                     .nanumSquareNeo(family: .cBd, size: 12, color: .black)
                     .frame(width: 160, height: 20, alignment: .leading)
                     .lineLimit(1)
@@ -48,15 +46,14 @@ struct SearchRowListView: View {
                     .nanumSquareNeo(family: .cBd, size: 13, color: .black)
                     .frame(width: 160, height: 20, alignment: .leading)
                     .lineLimit(1)
-                
+
                 Text(price + "원")
                     .nanumSquareNeo(family: .cBd, size: 13, color: .black)
                     .frame(width: 160, height: 20, alignment: .leading)
                     .lineLimit(1)
-                
+                   
             }
         }
-        
     }
 }
 
