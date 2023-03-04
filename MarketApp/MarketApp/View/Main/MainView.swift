@@ -35,7 +35,7 @@ struct MainView: View {
                     
                     SortedViews()
                     
-                    selectBrandProductVIew()
+                    SelectBrandProductVIew()
                 }
                 .bounce(false)
             }
@@ -58,14 +58,11 @@ struct MainView: View {
             Spacer()
                 .frame(width:  UIScreen.screenWidth / 3 - 10)
             
-            
-            
             Text("Affinity")
                 .nanumSquareNeo(family: .bRG, size: 20, color: .black)
                 .frame(width: 130)
             
             Spacer()
-            
             
             ForEach(MainNavigaionItem.allCases, id: \.description) { item in
                 if item == .search {
@@ -107,7 +104,7 @@ struct MainView: View {
                       , index: $pageIndex
                       , spacing: 10
                       , headspace: 0
-                      , sidesScaling: 0.7
+                      , sidesScaling: 1
                       , autoScroll: .active(5)) { item in
                 BannerImage(image: item)
                     .onTapGesture {
@@ -186,7 +183,7 @@ struct MainView: View {
     }
     
     @ViewBuilder
-    private func selectBrandProductVIew() -> some View {
+    private func SelectBrandProductVIew() -> some View {
         if selectBrandType == .all {
             productView()
         } else {

@@ -8,20 +8,17 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State var searchText = ""
-    @State private var removeSearch = false
-    @State var recentSearchList : [String] = ["Head","Addidas","Kappa","JDX","ELLE","Armani"]
-    @Environment(\.isSearching) private var isSearching
-    
-    private let searchBarPlaceholder: String = "신발을 검색해주세요"
-    @State var mockShoseData : ShoesModel = []
-   @State var fillterShoes : ShoesModel = []
     
     @StateObject var viewModel: MainShoesViewModel = MainShoesViewModel()
     
-    //    let searchText: String
-    let mockBrandList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani", "Columbia","H&M","ZARA","LouisVitton","UNIQLO","Hermes","Gucci","UnderArmour"]
-    let popularSearchList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani"]
+    @State var searchText = ""
+    @State private var removeSearch = false
+    @State var searchShoesResults : ShoesModel = []
+    @State var recentSearchList : [String] = []
+    
+    private let searchBarPlaceholder: String = "신발을 검색해주세요"
+    private let minCharacters = 3
+    
     
     var body: some View {
         VStack {
@@ -30,30 +27,25 @@ struct SearchView: View {
             
             CurrentSearchView()
             
+            SearchResultView()
             
-            if searchText.isEmpty {
-                SearchResultView()
-            } else {
-                PopularSearchView()
-            }
             Spacer()
         }
         .onAppear {
             viewModel.mainShoesRequest()
         }
-    }
-    
-    @ViewBuilder
-    private func PopularSearchView() -> some View{
-//        CurrentSearchView()
-        List {
-            Section(header: Text("인기 검색어 Top10")){
-                ForEach(popularSearchList.indices, id: \.self) { index in
-                    Text(popularSearchList[index])
-                }
+        .onChange(of: searchText) { searchText in
+            if searchText.isEmpty {
+                searchShoesResults = viewModel.shoesData ?? []
+            } else {
+                searchShoesResults = viewModel.shoesData?.filter({ shoes in
+                    shoes.transName?.contains(searchText) ?? true
+                }) ?? []
+            }
+            if searchText.count >=  minCharacters{
+                appendItem()
             }
         }
-        .listStyle(.plain)
     }
     
     @ViewBuilder
@@ -72,7 +64,8 @@ struct SearchView: View {
                         .foregroundColor(.gray)
                 })
                 .alert(Text("기록 전체 삭제"), isPresented: $removeSearch, actions: {
-                    Button("확인", role: .destructive) { recentSearchList.removeAll() }
+                    Button("확인", role: .destructive) {
+                        recentSearchList.removeAll() }
                     Button("취소", role: .cancel) {}
                 }, message: {
                     Text("정말 삭제하시겠어요?")
@@ -81,17 +74,13 @@ struct SearchView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(recentSearchList.indices, id: \.self) { data in
-                        Button(action: {
-                            
-                        }, label: {
-                            Text(recentSearchList[data])
-                                .frame(width: 100, height: 30, alignment: .center)
-                                .font(.system(size: 15))
-                                .foregroundColor(.white)
-                                .background(.black)
-                                .cornerRadius(20)
-                        })
+                    ForEach(recentSearchList.sorted(), id: \.self) { searchText in
+                        Text(searchText)
+                            .frame(width: 100, height: 30, alignment: .center)
+                            .nanumSquareNeo(family: .bRG, size: 15, color: .white)
+                            .background(.black)
+                            .cornerRadius(20)
+
                     }
                 }
             }
@@ -100,12 +89,16 @@ struct SearchView: View {
     }
     
     @ViewBuilder
-    private func SearchResultView() -> some View{
-        VStack{
-            ForEach(mockShoseData.filter { searchText.isEmpty ? true : $0.productName?.contains(searchText) == true}) { shoes in
-                Text(shoes.productName ?? "")
-            }
+    private func SearchResultView() -> some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            SearchRowListView(shoesData: searchShoesResults)
         }
+        .bounce(false)
+    }
+    
+    private func appendItem() {
+        recentSearchList.append(searchText)
+        searchText = ""
     }
 }
 
