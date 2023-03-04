@@ -109,7 +109,7 @@ Dependencies/
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
-fastlane/test_output/
+MarketApp/fastlane/test_output/
 
 fastlane/.env
 # Code Injection
