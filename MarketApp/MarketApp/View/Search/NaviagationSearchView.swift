@@ -9,55 +9,33 @@ import SwiftUI
 
 struct NaviagationSearchView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Environment(\.isSearching) private var isSearching
-    
-    @StateObject var viewModel: MainShoesViewModel = MainShoesViewModel()
     
     @State var searchText = ""
     @State private var removeSearch = false
-    @State var recentSearchList : [String] = []
-    @State var searchShoesResults : ShoesModel = []
+    @State var recentSearchList : [String] = ["Head","Addidas","Kappa","JDX","ELLE","Armani"]
+    @Environment(\.isSearching) private var isSearching
     
     private let searchBarPlaceholder: String = "신발을 검색해주세요"
-    private let minCharacters = 3
     
+//    let searchText: String
+    let mockBrandList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani", "Columbia","H&M","ZARA","LouisVitton","UNIQLO","Hermes","Gucci","UnderArmour"]
+    let popularSearchList : [String] = ["Nike","Puma","A.testoni","Reebok","Head","Addidas","Kappa","JDX","ELLE","Armani"]
     
     var body: some View {
         VStack {
-            if isSearching {
+            if !searchText.isEmpty {
                 SearchResultView()
+            } else {
+                PopularSearchView()
             }
-            
-            CurrentSearchView()
-            
-            SearchResultView()
-            Spacer()
-            
         }
-        .searchable(text: $searchText, prompt: searchBarPlaceholder)
+        .searchable(text: $searchText)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 customBackButton()
             }
         }
-        .onAppear {
-            viewModel.mainShoesRequest()
-        }
-        .onChange(of: searchText) { searchText in
-            if searchText.isEmpty {
-                searchShoesResults = viewModel.shoesData ?? []
-            } else {
-                searchShoesResults = viewModel.shoesData?.filter({ shoes in
-                    shoes.transName?.contains(searchText) ?? true
-                }) ?? []
-            }
-            if searchText.count >=  minCharacters{
-                appendItem()
-            }
-        }
-        
-        
     }
     
     //MARK: - 뒤로 가기 버튼
@@ -70,7 +48,20 @@ struct NaviagationSearchView: View {
                 .frame(width: 30, height: 30)
                 .foregroundColor(.black)
         }
-        
+
+    }
+    
+    @ViewBuilder
+    private func PopularSearchView() -> some View{
+        CurrentSearchView()
+        List {
+            Section(header: Text("인기 검색어 Top10")){
+                ForEach(popularSearchList.indices, id: \.self) { index in
+                        Text(popularSearchList[index])
+                }
+            }
+        }
+        .listStyle(.plain)
     }
     
     @ViewBuilder
@@ -98,15 +89,18 @@ struct NaviagationSearchView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(recentSearchList.sorted(), id: \.self) { searchText in
-                        Text(searchText)
-                            .frame(width: 100, height: 30, alignment: .center)
-                            .nanumSquareNeo(family: .bRG, size: 15, color: .white)
-                            .background(.black)
-                            .cornerRadius(20)
-                        
+                    ForEach(recentSearchList.indices, id: \.self) { data in
+                        Button(action: {
+                            
+                        }, label: {
+                                Text(recentSearchList[data])
+                                    .frame(width: 100, height: 30, alignment: .center)
+                                    .font(.system(size: 15))
+                                    .foregroundColor(.white)
+                                    .background(.black)
+                                    .cornerRadius(20)
+                        })
                     }
-                    
                 }
             }
             .padding(.horizontal)
@@ -115,17 +109,12 @@ struct NaviagationSearchView: View {
     
     @ViewBuilder
     private func SearchResultView() -> some View{
-        ScrollView(.vertical, showsIndicators: false) {
-            SearchRowListView(shoesData: searchShoesResults)
+        List {
+            ForEach(mockBrandList.filter{ $0.lowercased().contains(searchText.lowercased()) }, id: \.self) { item in
+                    Text(item)
+            }
         }
-        .bounce(false)
     }
-    
-    private func appendItem() {
-        recentSearchList.append(searchText)
-        searchText = ""
-    }
-    
 }
 
 
