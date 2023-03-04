@@ -42,10 +42,10 @@ struct MainView: View {
         }
         .navigationTitle("")
         .navigationDestination(isPresented: $showABCView) {
-            WebView(urlToLoad: BannerImages.abcMarket.bannerURL)
+            WebViews(url: BannerImages.abcMarket.bannerURL)
         }
         .navigationDestination(isPresented: $showNikeView) {
-            WebView(urlToLoad: BannerImages.nikeMarket.bannerURL)
+            WebViews(url: BannerImages.nikeMarket.bannerURL)
         }
         .onAppear {
             viewModel.mainShoesRequest()
@@ -107,7 +107,7 @@ struct MainView: View {
                       , index: $pageIndex
                       , spacing: 10
                       , headspace: 0
-                      , sidesScaling: 0.7
+                      , sidesScaling: 1
                       , autoScroll: .active(5)) { item in
                 BannerImage(image: item)
                     .onTapGesture {

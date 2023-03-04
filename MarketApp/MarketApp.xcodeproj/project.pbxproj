@@ -62,6 +62,7 @@
 		7F4189C029B2185D00965AB4 /* BannerImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4189BF29B2185D00965AB4 /* BannerImages.swift */; };
 		7F4189C229B2375600965AB4 /* BrandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4189C129B2375600965AB4 /* BrandType.swift */; };
 		7F4A041629B2F47C00D45CF4 /* SearchRowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A041529B2F47C00D45CF4 /* SearchRowListView.swift */; };
+		7F4A041C29B3702300D45CF4 /* WebViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A041B29B3702300D45CF4 /* WebViews.swift */; };
 		7F4B9621298D169E006AAF48 /* ACarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4B9620298D169E006AAF48 /* ACarousel.swift */; };
 		7F4B9623298D16E9006AAF48 /* ACarouselAutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4B9622298D16E9006AAF48 /* ACarouselAutoScroll.swift */; };
 		7F4B9625298D171B006AAF48 /* ACarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4B9624298D171B006AAF48 /* ACarouselViewModel.swift */; };
@@ -189,6 +190,7 @@
 		7F4189BF29B2185D00965AB4 /* BannerImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImages.swift; sourceTree = "<group>"; };
 		7F4189C129B2375600965AB4 /* BrandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandType.swift; sourceTree = "<group>"; };
 		7F4A041529B2F47C00D45CF4 /* SearchRowListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowListView.swift; sourceTree = "<group>"; };
+		7F4A041B29B3702300D45CF4 /* WebViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViews.swift; sourceTree = "<group>"; };
 		7F4B9620298D169E006AAF48 /* ACarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACarousel.swift; sourceTree = "<group>"; };
 		7F4B9622298D16E9006AAF48 /* ACarouselAutoScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACarouselAutoScroll.swift; sourceTree = "<group>"; };
 		7F4B9624298D171B006AAF48 /* ACarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACarouselViewModel.swift; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 			isa = PBXGroup;
 			children = (
 				7F573DCC299F6F1B00A5652A /* WebView.swift */,
+				7F4A041B29B3702300D45CF4 /* WebViews.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -1261,6 +1264,7 @@
 				7F39FA7F29508FAF0041BF8B /* APIError.swift in Sources */,
 				7F2AD62F299137C5004DB28B /* withDrawPOPUPView.swift in Sources */,
 				7F4B9625298D171B006AAF48 /* ACarouselViewModel.swift in Sources */,
+				7F4A041C29B3702300D45CF4 /* WebViews.swift in Sources */,
 				7F2AD62D29912F0C004DB28B /* ModalShapeCorner.swift in Sources */,
 				7F4189C029B2185D00965AB4 /* BannerImages.swift in Sources */,
 				7F93C34C29854D2100345AEC /* AppManger.swift in Sources */,
