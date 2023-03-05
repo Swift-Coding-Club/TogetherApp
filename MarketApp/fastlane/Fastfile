@@ -74,7 +74,7 @@ platform :ios do
  desc "Install Profiles and Build My App"
   lane :build_ipa do
    clear_derived_data
-   scan
+   #scan
     slack(
       message: "Unit test  성공",
       slack_url: ENV["SLACK_URL_TEST"],
