@@ -14,7 +14,7 @@ struct ListArrowView: View {
     var body: some View {
         HStack {
             Text(listTitle)
-                .nanumSquareNeo(family: .cBd, size: 18, color: .black)
+                .nanumSquareNeo(family: .cBd, size: 18, color: Color.colorAsset.lightBlack)
             
             Spacer()
             
@@ -25,7 +25,7 @@ struct ListArrowView: View {
                 Image(systemName: "chevron.right")
                     .resizable()
                     .frame(width: 10, height: 20)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color.colorAsset.lightBlack)
             }
         }
         .padding(20)
@@ -33,7 +33,7 @@ struct ListArrowView: View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(.clear)
                 .frame(height: 50)
-                .shadow(color: .black.opacity(0.8), radius: 10, x: 10, y: .zero)
+                .shadow(color: Color.colorAsset.lightBlack, radius: 10, x: 10, y: .zero)
         }
     }
 }

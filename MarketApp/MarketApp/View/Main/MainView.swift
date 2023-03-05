@@ -33,7 +33,7 @@ struct MainView: View {
                     CategoryViews()
                         .padding()
                     
-                    SortedViews()
+//                    SortedViews()
                     
                     selectBrandProductVIew()
                 }
@@ -59,13 +59,11 @@ struct MainView: View {
                 .frame(width:  UIScreen.screenWidth / 3 - 10)
             
             
-            
             Text("Affinity")
-                .nanumSquareNeo(family: .bRG, size: 20, color: .black)
+                .nanumSquareNeo(family: .bRG, size: 20, color: Color.colorAsset.lightBlack)
                 .frame(width: 130)
             
             Spacer()
-            
             
             ForEach(MainNavigaionItem.allCases, id: \.description) { item in
                 if item == .search {
@@ -125,8 +123,8 @@ struct MainView: View {
             VStack(spacing: 10) {
                 PagerIndicator(selectedPage: $pageIndex
                                , size: 8
-                               , activeColor: .gray
-                               , inactiveColor: .black.opacity(0.3)
+                               , activeColor: Color.colorAsset.blueGray
+                               , inactiveColor: Color.colorAsset.lightBlack
                                , pageCount: bannerImages.count)
                 .padding(.bottom, 20)
             }
@@ -156,9 +154,9 @@ struct MainView: View {
                         }
                     }
                     
-                    .nanumSquareNeo(family: .cBd, size: 15, color: .white)
+                    .nanumSquareNeo(family: .cBd, size: 15, color: Color.colorAsset.white)
                     .frame(width: 110, height: 40, alignment: .center)
-                    .background(Color.black)
+                    .background(Color.colorAsset.black)
                     .cornerRadius(12)
                 }
             }

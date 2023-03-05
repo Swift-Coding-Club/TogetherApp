@@ -88,7 +88,7 @@ struct ProductView: View {
         } label: {
             Image(systemName: "chevron.left")
                 .frame(width: 30, height: 30)
-                .foregroundColor(.black)
+                .foregroundColor(Color.colorAsset.lightBlack)
         }
 
     }

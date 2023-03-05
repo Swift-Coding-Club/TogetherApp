@@ -13,6 +13,8 @@ import FirebaseAppCheck
 struct MarketAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
+    @State private var showLanchView: Bool = true
+    
     let providerFactory = AffinityAppCheck()
     
     init() {
@@ -24,7 +26,15 @@ struct MarketAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainContentView()
+            ZStack {
+                MainContentView()
+                
+                ZStack {
+                    if showLanchView {
+                        LanuchView(showLanchView: $showLanchView)
+                    }
+                }
+            }
         }
     }
 }

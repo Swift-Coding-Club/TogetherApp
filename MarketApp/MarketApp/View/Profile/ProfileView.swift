@@ -57,7 +57,7 @@ struct ProfileView: View {
             }
             
             .popup(isPresented: $deniedAlbum, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-                POPUPViews(title: "사진 접근 허용 불가", message: "사진 접근 허용 불가", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
+                POPUPViews(title: "사진 접근 허용 불가", message: "사진 접근 허용 불가", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.blueGray)
             }
         }
     }
@@ -87,7 +87,7 @@ struct ProfileView: View {
                                 .frame(width: 20)
                             
                             Text(profileViewModel.userNickName ?? "닉네임")
-                                .nanumSquareNeo(family: .eHv, size: 30, color: .white)
+                                .nanumSquareNeo(family: .eHv, size: 30, color: Color.colorAsset.white)
                             
                             Spacer()
                         }
@@ -100,13 +100,13 @@ struct ProfileView: View {
                             Spacer()
                             
                             Text("작성댓글")
-                                .nanumSquareNeo(family: .eHv, size: 24, color: .white)
+                                .nanumSquareNeo(family: .eHv, size: 24, color: Color.colorAsset.white)
                             
                             Spacer()
                                 .frame(width: 120)
                             
                             Text("좋아요")
-                                .nanumSquareNeo(family: .eHv, size: 24, color: .white)
+                                .nanumSquareNeo(family: .eHv, size: 24, color: Color.colorAsset.white)
                             
                             Spacer()
                         }
@@ -217,7 +217,7 @@ struct ProfileView: View {
                 
                 switch item {
                 case .logout:
-                    ListtLoginView(listTitle: item.description, showPOPUPView: $showLogoutPOPUPView, color: Color.colorAsset.mainColor)
+                    ListtLoginView(listTitle: item.description, showPOPUPView: $showLogoutPOPUPView, color: Color.colorAsset.blueGray)
                     
                 case  .withdrawal:
                     ListtLoginView(listTitle: item.description, showPOPUPView: $showWithDrawPOPUPView, color: Color.red.opacity(0.5))

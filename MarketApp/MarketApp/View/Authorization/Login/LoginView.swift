@@ -166,7 +166,7 @@ struct LoginView: View {
                     .nanumSquareNeo(family: .bRG, size: 22, color: .white)
                     .background {
                         RoundedRectangle(cornerRadius: 12)
-                            .fill(Color.colorAsset.gray.opacity(0.5))
+                            .fill(Color.colorAsset.lightBlack)
                             .frame(width: UIScreen.screenWidth - 80, height: 50)
                     }
             }
@@ -182,7 +182,7 @@ struct LoginView: View {
                     Text("아이디 찾기")
                         .nanumSquareNeo(family: .bRG, size: 12, color:  .white)
                         .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
-                        .background(Color.colorAsset.gray)
+                        .background(Color.colorAsset.lightBlack)
                         .clipShape(Capsule())
                 }
                 
@@ -192,7 +192,7 @@ struct LoginView: View {
                     Text("비밀번호 찾기")
                         .nanumSquareNeo(family: .bRG, size: 12, color:  .white)
                         .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
-                        .background(Color.colorAsset.gray)
+                        .background(Color.colorAsset.lightBlack)
                         .clipShape(Capsule())
                 }
                 
@@ -202,7 +202,7 @@ struct LoginView: View {
                     Text("이메일 가입")
                         .nanumSquareNeo(family: .bRG, size: 12, color:  .white)
                         .padding(EdgeInsets(top: 10, leading: 22, bottom: 10, trailing: 22))
-                        .background(Color.colorAsset.gray)
+                        .background(Color.colorAsset.lightBlack)
                         .clipShape(Capsule())
                 }
             }
@@ -287,11 +287,11 @@ struct LoginView: View {
         }
         
         .frame(height: 50)
-        .background(Color.black)
+        .background(Color.colorAsset.lightBlack)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.black, lineWidth: 1)
+                .stroke(Color.colorAsset.lightBlack, lineWidth: 1)
             
         )
         .padding(.horizontal, 40)

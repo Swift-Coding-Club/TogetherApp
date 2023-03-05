@@ -66,7 +66,7 @@ struct MainContentView: View {
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear{
-            UITabBar.appearance().tintColor = UIColor(Color.colorAsset.mauve2)
+            UITabBar.appearance().tintColor = UIColor(Color.colorAsset.blueGray)
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color.fontColor.secondaryTextColor)
         }
         .onChange(of: selectView, perform: {
@@ -82,7 +82,7 @@ struct MainContentView: View {
                 self.showView = true
             }
         })
-        .accentColor(Color.colorAsset.mainColor)
+        .accentColor(Color.colorAsset.blueGray)
         .fullScreenCover(isPresented: $showView){
             LoginView(viewModel: loginViewModel)
                 .transition(.move(edge: .bottom))

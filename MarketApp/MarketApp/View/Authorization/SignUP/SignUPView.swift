@@ -111,7 +111,7 @@ struct SignUPView: View {
                     .nanumSquareNeo(family: .cBd, size: 17, color: .white)
                     .background (
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(.black)
+                            .fill(Color.colorAsset.blueGray)
                             .frame(width: UIScreen.screenWidth - 60, height: 44)
                         )
             }

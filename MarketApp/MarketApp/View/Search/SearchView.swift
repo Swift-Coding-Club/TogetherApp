@@ -29,7 +29,7 @@ struct SearchView: View {
             
             SearchResultView()
             
-            Spacer()
+            Spacer(minLength: .zero)
         }
         .onAppear {
             viewModel.mainShoesRequest()
@@ -54,7 +54,7 @@ struct SearchView: View {
             HStack {
                 Text("최근 검색어")
                     .frame(width: 200, height: 30, alignment: .leading)
-                    .font(.system(size: 17, weight: .semibold))
+                    .nanumSquareNeo(family: .cBd, size: 18, color: Color.colorAsset.lightBlack)
                 Button(action: {
                     self.removeSearch.toggle()
                 }, label: {
@@ -92,6 +92,7 @@ struct SearchView: View {
     private func SearchResultView() -> some View {
         ScrollView(.vertical, showsIndicators: false) {
             SearchRowListView(shoesData: searchShoesResults)
+                .edgesIgnoringSafeArea(.all)
         }
         .bounce(false)
     }

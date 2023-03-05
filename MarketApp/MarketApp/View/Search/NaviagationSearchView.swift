@@ -23,15 +23,20 @@ struct NaviagationSearchView: View {
     private let minCharacters = 3
     
     var body: some View {
-        VStack {
-            if isSearching {
+        ZStack{
+            Color.colorAsset.white
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                if isSearching {
+                    SearchResultView()
+                }
+                CurrentSearchView()
+                
                 SearchResultView()
+                
+                Spacer(minLength: .zero)
             }
-            CurrentSearchView()
-            
-            SearchResultView()
-            
-            Spacer()
         }
         .searchable(text: $searchText, prompt: searchBarPlaceholder)
         .navigationBarBackButtonHidden(true)
@@ -76,7 +81,7 @@ struct NaviagationSearchView: View {
             HStack {
                 Text("최근 검색어")
                     .frame(width: 200, height: 30, alignment: .leading)
-                    .font(.system(size: 17, weight: .semibold))
+                    .nanumSquareNeo(family: .cBd, size: 18, color: Color.colorAsset.lightBlack)
                 Button(action: {
                     self.removeSearch.toggle()
                 }, label: {
@@ -116,7 +121,6 @@ struct NaviagationSearchView: View {
                 
         }
         .bounce(false)
-        .edgesIgnoringSafeArea(.bottom)
     }
     
     private func appendItem() {
