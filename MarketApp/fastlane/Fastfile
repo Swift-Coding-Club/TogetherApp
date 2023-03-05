@@ -97,7 +97,7 @@ error do |lane, exception, options|
       export_method: "app-store",
       xcodebuild_command: "xcodebuild",
       include_bitcode: false,
-     skip_build_archive: false,
+     # skip_build_archive: false,
       xcodebuild_formatter: "xcpretty",
       output_directory: "./output/",
       clean: true,
