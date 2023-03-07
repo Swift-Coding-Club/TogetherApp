@@ -18,6 +18,7 @@ struct MainView: View {
     @State private var showNikeView:  Bool = false
     
     @State private var selectBrandType: BrandType = .all
+    @State private var filterBrand: [ShoeData] = []
     
     @State var path = NavigationPath()
     
@@ -33,8 +34,6 @@ struct MainView: View {
                     CategoryViews()
                         .padding()
                     
-//                    SortedViews()
-                    
                     selectBrandProductVIew()
                 }
                 .bounce(false)
@@ -49,6 +48,11 @@ struct MainView: View {
         }
         .onAppear {
             viewModel.mainShoesRequest()
+        }
+        .onChange(of: selectBrandType) { newValue in
+            filterBrand =  viewModel.shoesData?.filter({ shoes  in
+                shoes.brandName == selectBrandType.brandDescription
+            }) ?? []
         }
     }
     //MARK: - 검색 뷰 &  장바구니 뷰
@@ -153,6 +157,7 @@ struct MainView: View {
                             }
                         }
                     }
+                    .tag(selectBrandType.brandDescription)
                     
                     .nanumSquareNeo(family: .cBd, size: 15, color: Color.colorAsset.white)
                     .frame(width: 110, height: 40, alignment: .center)
@@ -184,11 +189,30 @@ struct MainView: View {
     }
     
     @ViewBuilder
+    private func selectBrandProductView() -> some View {
+        LazyVStack {
+            if let shoesData = filterBrand {
+                ProdductListView(shoesData: shoesData)
+            }
+        }
+    }
+    
+    @ViewBuilder
     private func selectBrandProductVIew() -> some View {
         if selectBrandType == .all {
             productView()
-        } else {
-            productView()
+        } else if selectBrandType.brandDescription == "Nike" {
+            selectBrandProductView()
+        } else if selectBrandType.brandDescription == "Adidas"{
+            selectBrandProductView()
+        } else if selectBrandType.brandDescription == "Converse" {
+            selectBrandProductView()
+        } else if selectBrandType.brandDescription == "Jordan" {
+            selectBrandProductView()
+        } else if selectBrandType.brandDescription == "Mihara Yasuhiro" {
+            selectBrandProductView()
+        } else if selectBrandType.brandDescription == "New Balance" {
+            selectBrandProductView()
         }
     }
 }

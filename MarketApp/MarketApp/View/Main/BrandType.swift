@@ -34,4 +34,23 @@ enum BrandType:  Int , CaseIterable, CustomStringConvertible {
             return "뉴발"
         }
     }
+    
+    var brandDescription: String {
+        switch self {
+        case .all:
+            return ""
+        case .nike:
+            return "Nike"
+        case .adidas:
+            return "Adidas"
+        case .converse:
+            return "Converse"
+        case .jordan:
+            return "Jordan"
+        case .miharaYasuhiro:
+            return "Mihara Yasuhiro"
+        case .newBalance:
+            return "New Balance"
+        }
+    }
 }

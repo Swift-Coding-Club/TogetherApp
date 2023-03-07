@@ -48,6 +48,7 @@ class AppDelegate: UIViewController, UIApplicationDelegate, MessagingDelegate, U
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
         application.registerForRemoteNotifications()
+//        application.applicationIconBadgeNumber = .zero
         
         // init fcm
         Messaging.messaging().delegate = self
