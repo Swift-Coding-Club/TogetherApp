@@ -108,13 +108,7 @@ struct ProductView: View {
                     .frame(width: 250, height: 20, alignment: .leading)
             }
             
-            VStack {
-                Image(systemName: "star.fill").resizable()
-                    .frame(width: 30, height: 30, alignment: .center)
-                    .foregroundColor(.yellow)
-                Text("4.5")
-                    .font(.system(size: 18, weight: .medium, design: .default))
-            }.frame(width: 50)
+            Spacer()
             
             VStack(alignment: .center) {
                 Button(action: {
@@ -130,8 +124,7 @@ struct ProductView: View {
                     .font(.system(size: 18, weight: .medium, design: .default))
             }.frame(width: 50)
         }
-        .padding(.top, 10)
-        .padding(.bottom, 10)
+        .padding()
     }
 }
 struct ProductView_Previews: PreviewProvider {

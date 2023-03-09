@@ -12,7 +12,7 @@ struct SearchView: View {
     @StateObject var viewModel: MainShoesViewModel = MainShoesViewModel()
     
     @State var searchText = ""
-    @State private var removeSearch = false
+    @State var removeSearch = false
     @State var searchShoesResults : ShoesModel = []
     @State var recentSearchList : [String] = []
     
@@ -42,7 +42,7 @@ struct SearchView: View {
                     shoes.transName?.contains(searchText) ?? true
                 }) ?? []
             }
-            if searchText.count >=  minCharacters{
+            if searchText.count >=  minCharacters {
                 appendItem()
             }
         }

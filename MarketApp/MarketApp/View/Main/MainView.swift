@@ -34,7 +34,7 @@ struct MainView: View {
                     CategoryViews()
                         .padding()
                     
-                    selectBrandProductVIew()
+                    SelectBrandProductVIew()
                 }
                 .bounce(false)
             }
@@ -78,7 +78,7 @@ struct MainView: View {
                     }
                 }
             }
-            //                else if item == .cart {
+            // else if item == .cart {
             //                    NavigationLink(destination: CartView()){
             //                        Image(systemName: item.image ).resizable()
             //                            .frame(width: 25, height: 25, alignment: .trailing)
@@ -104,18 +104,18 @@ struct MainView: View {
     @ViewBuilder
     private func BannerView() -> some View {
         ZStack(alignment: .bottom) {
-            ACarousel(bannerImages
+            ACarousel(BannerImages.allCases
                       , id: \.self
                       , index: $pageIndex
                       , spacing: 10
                       , headspace: 0
                       , sidesScaling: 1
                       , autoScroll: .active(5)) { item in
-                BannerImage(image: item)
+                BannerImage(image: item.bannerImage)
                     .onTapGesture {
-                        if item == "ABC" {
+                        if item.description == "ABC" {
                             showABCView = true
-                        } else if item == "Nike" {
+                        } else if item.description == "NIKE" {
                             showNikeView = true
                         }
                     }
@@ -129,7 +129,7 @@ struct MainView: View {
                                , size: 8
                                , activeColor: Color.colorAsset.blueGray
                                , inactiveColor: Color.colorAsset.lightBlack
-                               , pageCount: bannerImages.count)
+                               , pageCount: BannerImages.allCases.count)
                 .padding(.bottom, 20)
             }
         }
@@ -144,7 +144,7 @@ struct MainView: View {
             .frame(height: 200)
     }
     
-    
+    //MARK: - 카테고리 view
     @ViewBuilder
     private func CategoryViews() -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -168,19 +168,9 @@ struct MainView: View {
         }
     }
     
+   //MARK: - 리스트 뷰
     @ViewBuilder
-    private func SortedViews() -> some View {
-        Picker("Sort List", selection: $sortList) {
-            ForEach(demoSort.allCases, id: \.self) { menu in
-                Text(menu.rawValue).tag(menu.rawValue)
-                
-                //TODO : tag가 변경될때마다 해당 tag에 맞게끔 리스트 정렬 변경 ( default : 인기순 )
-            }
-        }.pickerStyle(.menu)
-    }
-    
-    @ViewBuilder
-    private func productView() -> some View {
+    private func ProductView() -> some View {
         LazyVStack {
             if let shoesData = viewModel.shoesData {
                 ProdductListView(shoesData: shoesData)
@@ -189,7 +179,7 @@ struct MainView: View {
     }
     
     @ViewBuilder
-    private func selectBrandProductView() -> some View {
+    private func SelectBrandProductView() -> some View {
         LazyVStack {
             if let shoesData = filterBrand {
                 ProdductListView(shoesData: shoesData)
@@ -198,21 +188,23 @@ struct MainView: View {
     }
     
     @ViewBuilder
-    private func selectBrandProductVIew() -> some View {
+    private func SelectBrandProductVIew() -> some View {
         if selectBrandType == .all {
-            productView()
-        } else if selectBrandType.brandDescription == "Nike" {
-            selectBrandProductView()
-        } else if selectBrandType.brandDescription == "Adidas"{
-            selectBrandProductView()
-        } else if selectBrandType.brandDescription == "Converse" {
-            selectBrandProductView()
-        } else if selectBrandType.brandDescription == "Jordan" {
-            selectBrandProductView()
-        } else if selectBrandType.brandDescription == "Mihara Yasuhiro" {
-            selectBrandProductView()
-        } else if selectBrandType.brandDescription == "New Balance" {
-            selectBrandProductView()
+            ProductView()
+        } else if selectBrandType.brandDescription == BrandType.nike.brandDescription {
+            SelectBrandProductView()
+        } else if selectBrandType.brandDescription == BrandType.adidas.brandDescription {
+            SelectBrandProductView()
+        } else if selectBrandType.brandDescription == BrandType.converse.brandDescription {
+            SelectBrandProductView()
+        } else if selectBrandType.brandDescription ==  BrandType.jordan.brandDescription{
+            SelectBrandProductView()
+        } else if selectBrandType.brandDescription == BrandType.miharaYasuhiro.brandDescription {
+            SelectBrandProductView()
+        } else if selectBrandType.brandDescription == BrandType.newBalance.brandDescription {
+            SelectBrandProductView()
+        } else {
+            ProductView()
         }
     }
 }

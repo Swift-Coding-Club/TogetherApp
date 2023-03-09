@@ -9,11 +9,7 @@ import Foundation
 import SwiftUI
 
 
-let bannerImages  = ["ABC", "Nike"]
-
-let banner = [BannerImages].self
-
-enum BannerImages: CaseIterable, CustomStringConvertible {
+enum BannerImages: CaseIterable, CustomStringConvertible, Hashable {
     case abcMarket
     case nikeMarket
     
@@ -23,6 +19,15 @@ enum BannerImages: CaseIterable, CustomStringConvertible {
             return "ABC"
         case .nikeMarket:
             return "NIKE"
+        }
+    }
+    
+    var bannerImage: String {
+        switch self {
+        case .abcMarket:
+            return "ABC"
+        case .nikeMarket:
+            return "Nike"
         }
     }
     

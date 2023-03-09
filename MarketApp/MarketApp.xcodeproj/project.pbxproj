@@ -75,7 +75,6 @@
 		7F6037AB297AB5FA0034CFF7 /* SignUPNickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6037AA297AB5FA0034CFF7 /* SignUPNickNameView.swift */; };
 		7F6037AD297AC5890034CFF7 /* SignupPOPUPVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6037AC297AC5890034CFF7 /* SignupPOPUPVIew.swift */; };
 		7F6037CE297C16F30034CFF7 /* SignOutPOPUPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6037CD297C16F30034CFF7 /* SignOutPOPUPView.swift */; };
-		7F6250B7297030B4004CCC10 /* TabIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6250B6297030B4004CCC10 /* TabIndex.swift */; };
 		7F6250BF29719657004CCC10 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6250BE29719657004CCC10 /* KeyboardHandler.swift */; };
 		7F66ECC02979778A0039CC42 /* SignUPTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F66ECBF2979778A0039CC42 /* SignUPTextFieldView.swift */; };
 		7F66ECC62979A6FE0039CC42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */; };
@@ -203,7 +202,6 @@
 		7F6037AA297AB5FA0034CFF7 /* SignUPNickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPNickNameView.swift; sourceTree = "<group>"; };
 		7F6037AC297AC5890034CFF7 /* SignupPOPUPVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPOPUPVIew.swift; sourceTree = "<group>"; };
 		7F6037CD297C16F30034CFF7 /* SignOutPOPUPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutPOPUPView.swift; sourceTree = "<group>"; };
-		7F6250B6297030B4004CCC10 /* TabIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabIndex.swift; sourceTree = "<group>"; };
 		7F6250BE29719657004CCC10 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		7F66ECBF2979778A0039CC42 /* SignUPTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPTextFieldView.swift; sourceTree = "<group>"; };
 		7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -511,7 +509,6 @@
 				EC892AAE2908201700D02F99 /* MainView.swift */,
 				EC892AA02908189600D02F99 /* MainContentView.swift */,
 				7F2432802956CF5F00C1077E /* MainNavigaionItem.swift */,
-				7F6250B6297030B4004CCC10 /* TabIndex.swift */,
 				7F4189BF29B2185D00965AB4 /* BannerImages.swift */,
 				7F4189C129B2375600965AB4 /* BrandType.swift */,
 			);
@@ -1237,7 +1234,6 @@
 				7F39FA882950912F0041BF8B /* ScreenSize.swift in Sources */,
 				7F2432B12958638400C1077E /* AppDelegate.swift in Sources */,
 				7F0F1646296008D900FB4C30 /* FontColor.swift in Sources */,
-				7F6250B7297030B4004CCC10 /* TabIndex.swift in Sources */,
 				7F4189C229B2375600965AB4 /* BrandType.swift in Sources */,
 				7F4B9635298D2909006AAF48 /* DotIndicator.swift in Sources */,
 				7F0565DD298A92A70066BE4A /* SearchBar.swift in Sources */,
@@ -1295,7 +1291,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1322,7 +1318,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1347,7 +1343,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1373,7 +1369,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1518,7 +1514,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1562,7 +1558,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
