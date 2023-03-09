@@ -32,7 +32,7 @@ struct MainView: View {
                     SortedViews()
                     
                     ForEach(viewModel.shoeInfo, id: \.self) { item in
-                        ProdductListView(shoesData: [ShoeData(shoesId: item.shoesId, brandName: item.brandName, productName: item.productName, transName: item.transName, image: item.image, price: item.price)])
+                        ProdductListView(shoesData: [item])
                     }
                 }
                 .bounce(false)

@@ -14,7 +14,7 @@ class ShoeNetwork : ObservableObject {
     var finished : AnyCancellable?
     
     func networking() {
-        guard let url = URL(string: "https://63f4a59e55677ef68bc09638.mockapi.io/api/v1/shoes") else { return }
+        guard let url = URL(string: "https://run.mocky.io/v3/a238cfb6-d2fa-4884-b42c-a796abe580a1") else { return }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         
