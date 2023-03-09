@@ -107,6 +107,7 @@
 		EC892ABB290820B800D02F99 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABA290820B800D02F99 /* FavoriteView.swift */; };
 		EC892ABD290820C600D02F99 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABC290820C600D02F99 /* ProfileView.swift */; };
 		EC892ABF2908214900D02F99 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892ABE2908214900D02F99 /* ProductView.swift */; };
+		EC92575C29B03D0700F13132 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC92575B29B03D0700F13132 /* CommunityView.swift */; };
 		ECB2F1362909258B00E9F7D3 /* PopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB2F1352909258B00E9F7D3 /* PopView.swift */; };
 		ECF5BE462914D01E0052655B /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF5BE452914D01E0052655B /* ReviewView.swift */; };
 /* End PBXBuildFile section */
@@ -199,6 +200,7 @@
 		EC892ABA290820B800D02F99 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		EC892ABC290820C600D02F99 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EC892ABE2908214900D02F99 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		EC92575B29B03D0700F13132 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
 		ECB2F1352909258B00E9F7D3 /* PopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopView.swift; sourceTree = "<group>"; };
 		ECF5BE452914D01E0052655B /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -663,6 +665,7 @@
 				EC892ABE2908214900D02F99 /* ProductView.swift */,
 				ECB2F1352909258B00E9F7D3 /* PopView.swift */,
 				EC451F6D290BBCD7008C88A7 /* InfoView.swift */,
+				EC92575B29B03D0700F13132 /* CommunityView.swift */,
 				ECF5BE452914D01E0052655B /* ReviewView.swift */,
 			);
 			path = ProductDetail;
@@ -945,6 +948,7 @@
 				7F0F165B296C4CBF00FB4C30 /* SignUPView.swift in Sources */,
 				7F4B9629298D17C3006AAF48 /* View+ReceiveTimer.swift in Sources */,
 				EC892ABB290820B800D02F99 /* FavoriteView.swift in Sources */,
+				EC92575C29B03D0700F13132 /* CommunityView.swift in Sources */,
 				7F0F1655296C456E00FB4C30 /* LoginItem.swift in Sources */,
 				7F4B9623298D16E9006AAF48 /* ACarouselAutoScroll.swift in Sources */,
 				7F0F1653296C3AFD00FB4C30 /* SignUPViewModel.swift in Sources */,
@@ -1141,7 +1145,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
-				DEVELOPMENT_TEAM = N94CS4N6VR;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarketApp/Info.plist;
@@ -1183,7 +1187,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
-				DEVELOPMENT_TEAM = N94CS4N6VR;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarketApp/Info.plist;
