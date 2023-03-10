@@ -15,6 +15,7 @@ struct LanuchView: View {
         ZStack{
             Color.white
                 .edgesIgnoringSafeArea(.all)
+                .accessibility(identifier: "LaunchView")
             
             VStack {
                 Spacer()
