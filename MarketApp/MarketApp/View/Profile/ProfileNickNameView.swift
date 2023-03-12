@@ -1,15 +1,14 @@
 //
-//  SignUPNickNameView.swift
+//  ProfileNickNameView.swift
 //  MarketApp
 //
-//  Created by 서원지 on 2023/01/20.
+//  Created by 서원지 on 2023/03/12.
 //
 
 import SwiftUI
 import ExytePopupView
 
-struct SignUPNickNameView: View {
-    
+struct ProfileNickNameView: View {
     @StateObject var viewModel: SignUPViewModel = SignUPViewModel()
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -52,11 +51,11 @@ struct SignUPNickNameView: View {
 
             }
         }
-        .fullScreenCover(isPresented: $showProfileView) {
-            NavigationStack {
-                MainTabView()
-            }
-        }
+//        .fullScreenCover(isPresented: $showProfileView) {
+//            NavigationStack {
+//                ProfileView()
+//            }
+//        }
         
         .popup(isPresented: $checkNickName, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
                 SignupPOPUPVIew(image: "person", title: "회원가입 양식을 확인 해주세요", alertMessage: "닉네임을 한번 더 확인해주세요")
@@ -106,13 +105,14 @@ struct SignUPNickNameView: View {
         if !CheckRegister.isValidateNickName(nickNameTextField) {
             checkNickName.toggle()
         } else {
-            showProfileView.toggle()
+            presentationMode.wrappedValue.dismiss()
         }
     }
 }
 
-struct SignUPNickNameView_Previews: PreviewProvider {
+
+struct ProfileNickNameView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUPNickNameView()
+        ProfileNickNameView()
     }
 }

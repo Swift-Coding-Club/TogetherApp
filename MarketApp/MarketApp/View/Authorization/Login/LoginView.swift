@@ -14,6 +14,7 @@ struct LoginView: View {
     
     @StateObject var viewModel : SignUPViewModel = SignUPViewModel()
     
+    @StateObject var profileViewModel = ProfileViewModel()
     @Environment(\.dismiss) var dismiss
     
     @State private var emailTextField: String = ""
@@ -26,7 +27,7 @@ struct LoginView: View {
     @State private var loginErrorPopUp: Bool = false
     @State private var loginPopUP: Bool = false
     @State private var confirmAction: Bool = false
-    @State private var showMainview : Bool = false
+    @State private var showMainView : Bool = false
     
     var body: some View {
         NavigationStack{
@@ -82,9 +83,9 @@ struct LoginView: View {
         .popup(isPresented: $loginPopUP, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
             POPUPViews(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
         }
-        .fullScreenCover(isPresented: $showMainview) {
+        .fullScreenCover(isPresented: $showMainView) {
             NavigationStack {
-                MainContentView()
+                MainTabView()
             }
         }
     }
@@ -159,7 +160,7 @@ struct LoginView: View {
                 viewModel.login(withEmail: emailTextField, password: passwordTextField)
                 UIApplication.shared.endEditing()
                 if viewModel.loginStatus == true {
-                    showMainview.toggle()
+                    showMainView.toggle()
                 }
             } label: {
                 Text("로그인")
@@ -221,7 +222,7 @@ struct LoginView: View {
         } else if emailTextField != emailTextField {
             loginErrorPopUp.toggle()
         } else {
-            showMainview.toggle()
+            showMainView.toggle()
         }
     }
     
@@ -243,9 +244,12 @@ struct LoginView: View {
                     debugPrint("파이어 베이스 로그인 에러 ")
                     return
                 }
-                
                 viewModel.appleLogin(credential: credential)
-                dismiss()
+//                DispatchQueue.main.asyncAfter(deadline:.now() +  1) {
+//                    showMainView.toggle()
+//                }
+                    
+                    
             case .failure(let error):
                 print("Authorisation failed: \(error.localizedDescription)")
             }
@@ -268,7 +272,9 @@ struct LoginView: View {
         
         Button{
             viewModel.googleLogin()
-//            dismiss()
+//            DispatchQueue.main.asyncAfter(deadline:.now() +  1) {
+//                showMainView.toggle()
+//            }
         } label: {
             HStack(spacing: 10) {
                 
@@ -301,7 +307,7 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LoginView(viewModel: dev.signUPViewModel)
+            LoginView()
         }
     }
 }

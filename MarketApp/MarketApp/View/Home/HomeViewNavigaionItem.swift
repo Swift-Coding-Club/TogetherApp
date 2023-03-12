@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MainNavigaionItem: CaseIterable, CustomStringConvertible {
+enum HomeViewNavigaionItem: CaseIterable, CustomStringConvertible {
     case search
     case cart
      

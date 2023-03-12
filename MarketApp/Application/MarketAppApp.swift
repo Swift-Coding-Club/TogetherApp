@@ -15,10 +15,10 @@ struct MarketAppApp: App {
     @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
     @State private var showLanchView: Bool = true
     
-    let providerFactory = AffinityAppCheck()
+//    let providerFactory = AffinityAppCheck()
     
     init() {
-        AppCheck.setAppCheckProviderFactory(providerFactory)
+//        AppCheck.setAppCheckProviderFactory(providerFactory)
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.black)]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor(Color.black)]
         UINavigationBar.appearance().tintColor = UIColor(Color.black)
@@ -27,7 +27,8 @@ struct MarketAppApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                MainContentView()
+                MainTabView()
+                    .environmentObject(loginViewModel)
                 
                 ZStack {
                     if showLanchView {

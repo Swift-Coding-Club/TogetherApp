@@ -29,20 +29,21 @@ class SignUPViewModel: ObservableObject {
     
     //MARK: - 로그인
     func login(withEmail email: String, password: String) {
-            
+        
         Auth.auth().signIn(withEmail: email, password: password) { result ,error in
             if let error = error {
                 debugPrint("[🔥] 로그인 에 실패 하였습니다 \(error.localizedDescription)")
                 return
             } else {
                 guard let user = result?.user else { return }
+                debugPrint("로그인에 성공 하였습니다")
                 self.userSession = user
                 self.loginStatus = true
-                debugPrint("로그인에 성공 하였습니다")
+                
             }
         }
     }
-
+    
     //MARK: - 회원가입
     func register(withEmail email: String, password: String, nickName: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result , error in
@@ -87,13 +88,13 @@ class SignUPViewModel: ObservableObject {
             self.loginStatus.toggle()
         }
         let firebaseAuth = Auth.auth()
-      do {
-        try firebaseAuth.signOut()
-      } catch let signOutError as NSError {
-        print("Error signing out: %@", signOutError)
-      }
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
-
+    
     func withdrawUser() {
         let firebaseAuth = Auth.auth()
         
@@ -142,7 +143,7 @@ class SignUPViewModel: ObservableObject {
         }
         Auth.auth().currentUser?.reload()
     }
-
+    
     //MARK: -  애플 로그인
     func appleLogin(credential : ASAuthorizationAppleIDCredential ) {
         //MARK:  - 토큰 가져오기
@@ -173,6 +174,14 @@ class SignUPViewModel: ObservableObject {
                 withAnimation(.easeInOut) {
                     self.loginStatus = true
                 }
+                
+                let data = ["email" : result?.user.email ?? "" ,
+                            "uid" : result?.user.uid ?? ""]
+                Firestore.firestore().collection("users")
+                    .document(result?.user.uid ?? "")
+                    .setData(data) { data in
+                        debugPrint("DEBUG : Upload user data : \(String(describing: data))")
+                    }
             }
         }
     }
@@ -180,27 +189,26 @@ class SignUPViewModel: ObservableObject {
     //MARK: - 구글 로그인
     func googleLogin() {
         guard let clientID = FirebaseApp.app()?.options.clientID  else { return }
-
+        
         let config = GIDConfiguration(clientID: clientID)
-
+        
         GIDSignIn.sharedInstance.signIn(with: config, presenting:  LoginManger.shared.getRootViewController()) {[self] user, error in
             if let error = error {
                 debugPrint("[🔥] 로그인 에 실패 하였습니다 \(error.localizedDescription)")
                 return
             }
             guard
-              let authentication = user?.authentication,
-              let idToken = authentication.idToken
+                let authentication = user?.authentication,
+                let idToken = authentication.idToken
             else {
-
+                
                 debugPrint("[🔥]  로그인에  성공 하였습니다  \(String(describing: user?.profile?.email))")
-//                self.userSession = user
+                //                self.userSession = user
                 return
             }
-
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                            accessToken: authentication.accessToken)
-
+            
             Auth.auth().signIn(with: credential) { (authResult, error) in
                 if let error = error {
                     debugPrint("[🔥] 로그인 에 실패 하였습니다 \(error.localizedDescription)")
@@ -210,6 +218,13 @@ class SignUPViewModel: ObservableObject {
                     guard let user = authResult?.user else {return}
                     self.userSession = user
                     self.loginStatus = true
+                    let data = ["email" : authResult?.user.email ?? "" ,
+                                "uid" : authResult?.user.uid ?? ""]
+                    Firestore.firestore().collection("users")
+                        .document(authResult?.user.uid ?? "")
+                        .setData(data) { data in
+                            debugPrint("DEBUG : Upload user data : \(String(describing: data))")
+                        }
                 }
             }
         }

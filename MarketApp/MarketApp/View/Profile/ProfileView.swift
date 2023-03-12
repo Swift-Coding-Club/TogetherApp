@@ -23,27 +23,34 @@ struct ProfileView: View {
     @State private var showImagePicker = false
     @State private var deniedAlbum = false
     @State private var notDeterminedAlbum = false
+    @State private var editProfileName: Bool = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
     
     var body: some View {
-        VStack {
-            profileHeader()
-            
-            profileSettingView()
-            
-            profileLogOutTypeView()
-            
-            Spacer()
+        NavigationStack {
+            VStack {
+                
+                editProfileNameView()
+                
+                profileHeader()
+                
+                profileSettingView()
+                
+                profileLogOutTypeView()
+                
+                Spacer()
+            }
         }
-        .navigationBarHidden(true)
         .onAppear {
             profileViewModel.getUserInformation()
         }
-        
         //MARK: - 로그아웃 후
         .fullScreenCover(isPresented: $viewModel.loginStatus) {
             LoginView()
+        }
+        .navigationDestination(isPresented: $editProfileName) {
+            ProfileNickNameView()
         }
         //MARK: - 팝업 관련
         .popup(isPresented: $showLogoutPOPUPView, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
@@ -61,6 +68,27 @@ struct ProfileView: View {
             }
         }
     }
+    
+    @ViewBuilder
+    private func editProfileNameView() -> some View {
+        HStack {
+            
+            Spacer()
+            
+            Image(systemName: "square.and.pencil")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .foregroundColor(Color.colorAsset.lightBlack)
+                .onTapGesture {
+                    editProfileName = true
+                }
+        }
+        .padding(.horizontal)
+        
+        Spacer()
+            .frame(height: 15)
+    }
+    
     
     @ViewBuilder
      private func profileHeader() -> some View {
@@ -230,7 +258,9 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
-            .environmentObject(dev.signUPViewModel)
+        NavigationStack {
+            ProfileView()
+                .environmentObject(dev.signUPViewModel)
+        }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct HomeView: View {
     @StateObject var viewModel: MainShoesViewModel = MainShoesViewModel()
     
     @State private var sortList = demoSort.one
@@ -69,7 +69,7 @@ struct MainView: View {
             
             Spacer()
             
-            ForEach(MainNavigaionItem.allCases, id: \.description) { item in
+            ForEach(HomeViewNavigaionItem.allCases, id: \.description) { item in
                 if item == .search {
                     NavigationLink(destination: NaviagationSearchView()){
                         Image(systemName: item.image).resizable()
@@ -209,10 +209,10 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            MainView(viewModel: MainShoesViewModel())
+            HomeView(viewModel: MainShoesViewModel())
         }
     }
 }

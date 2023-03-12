@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainContentView: View {
+struct MainTabView: View {
     @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
     
     @State var showView: Bool = false
@@ -21,7 +21,7 @@ struct MainContentView: View {
         NavigationStack(root: {
             ZStack{
                 TabView(selection: $selectView) {
-                    MainView()
+                    HomeView()
                         .tabItem{
                             VStack{
                                 Image(systemName: "house.fill")
@@ -98,10 +98,10 @@ struct MainContentView: View {
     }
 }
 
-struct MainContentView_Previews: PreviewProvider {
+struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            MainContentView()
+            MainTabView()
                 .environmentObject(dev.signUPViewModel)
         }
     }
