@@ -15,7 +15,7 @@ Firebase/
 ### Firebase Patch ###
 .runtimeconfig.json
 .firebase/
-
+./fastalane/firebase_login_credentials.json
 
 ## User settings
 xcuserdata/
@@ -32,7 +32,7 @@ MarketApp/build/
 *.env
 *.cer
 *.swp
-
+*.json
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
