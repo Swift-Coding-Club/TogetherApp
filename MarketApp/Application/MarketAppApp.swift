@@ -14,11 +14,10 @@ struct MarketAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var loginViewModel: SignUPViewModel = SignUPViewModel()
     @State private var showLanchView: Bool = true
-    
-//    let providerFactory = AffinityAppCheck()
+    let providerFactory = AffinityAppCheck()
     
     init() {
-//        AppCheck.setAppCheckProviderFactory(providerFactory)
+        AppCheck.setAppCheckProviderFactory(providerFactory)
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.black)]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor(Color.black)]
         UINavigationBar.appearance().tintColor = UIColor(Color.black)
