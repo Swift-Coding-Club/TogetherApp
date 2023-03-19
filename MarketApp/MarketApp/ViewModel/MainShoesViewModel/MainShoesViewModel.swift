@@ -13,6 +13,7 @@ class MainShoesViewModel: ObservableObject {
     
     @Published var shoesData: ShoesModel?
     @Published var shoesDetailData: ShoesDetailModel?
+    @Published var shoesName: String?
     
     var shoesCancellable: AnyCancellable?
     var shoesDetailCancellable: AnyCancellable?
@@ -56,13 +57,13 @@ class MainShoesViewModel: ObservableObject {
     
     
     //MARK: - 신발  상세  데이터
-    func mainDetailShoesRequest(transName: String) {
+    func mainDetailShoesRequest() {
         if let cancellable = shoesDetailCancellable {
             cancellable.cancel()
         }
         
         let provider = MoyaProvider<MainDetailService>()
-        shoesDetailCancellable = provider.requestPublisher(.mainShoesDetail(trans_name: transName))
+        shoesDetailCancellable = provider.requestPublisher(.mainShoesDetail(trans_name: shoesName ?? ""))
             .compactMap { $0 }
             .sink(receiveCompletion: { result in
                 switch result {
@@ -76,6 +77,7 @@ class MainShoesViewModel: ObservableObject {
                 guard let shoesDetailData = data else { return }
                 print("신발 상세 데이터 \(shoesDetailData)")
                 self?.toDetailViewModel(shoesDetailData)
+
             })
         
     }

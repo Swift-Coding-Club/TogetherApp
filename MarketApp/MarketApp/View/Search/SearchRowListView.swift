@@ -9,6 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct SearchRowListView: View {
+    @StateObject var viewModel = MainShoesViewModel()
     let shoesData: [ShoeData]
     
     let columns = [
@@ -21,6 +22,10 @@ struct SearchRowListView: View {
             LazyVGrid(columns: columns, spacing: 30) {
                 ForEach(shoesData) { item in
                     gridList(image: item.image ?? "", brandName: item.brandName ?? "", price: item.price ?? "", productName: item.transName ?? "")
+                        .onAppear {
+                            viewModel.shoesName = item.transName
+                            viewModel.mainDetailShoesRequest()
+                        }
                 }
             }
             Spacer()
@@ -31,7 +36,7 @@ struct SearchRowListView: View {
     
     @ViewBuilder
     private func gridList(image: String, brandName: String, price: String,  productName: String) -> some View {
-        NavigationLink(destination: ProductView()){
+        NavigationLink(destination: ProductView(shoesDetail: viewModel.shoesDetailData ?? [], transName: productName)){
             LazyVStack(alignment: .listRowSeparatorLeading, spacing: 5) {
                 KFImage(URL(string: image))
                     .resizable()
@@ -68,6 +73,8 @@ struct SearchRowListView: View {
 
 struct SearchRowListView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchRowListView(shoesData:  dev.shoesData)
+        NavigationStack {
+            SearchRowListView(shoesData:  dev.shoesData)
+        }
     }
 }

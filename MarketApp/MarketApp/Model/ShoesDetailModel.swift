@@ -9,11 +9,11 @@ import Foundation
 
 typealias ShoesDetailModel = [ShoesDetailData]
 
-struct ShoesDetailData: Codable, Identifiable {
+struct ShoesDetailData: Codable, Identifiable, Hashable {
     let id = UUID()
     let shoesId: Int?
     let brandName, productName, transName, price: String?
-    let productImg: String?
+    let productImg: [String]
 
     enum CodingKeys: String, CodingKey {
         case shoesId = "id"

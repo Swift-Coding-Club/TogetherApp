@@ -9,20 +9,20 @@ import SwiftUI
 
 struct InfoView: View {
 
-    @State private var selectedPicker: tapInfo = .info
+    @State private var selectedPicker: DetailTapInfo = .info
     @Namespace private var animation
     
     var body: some View {
         VStack {
             animate()
-            testView(tests: selectedPicker)
+            ProductInfoImage(selectProductInfoTap: selectedPicker)
         }
     }
     
     @ViewBuilder
     private func animate() -> some View {
         HStack {
-            ForEach(tapInfo.allCases, id: \.self) { item in
+            ForEach(DetailTapInfo.allCases, id: \.self) { item in
                 VStack {
                     Text(item.rawValue)
                         .font(.title3)

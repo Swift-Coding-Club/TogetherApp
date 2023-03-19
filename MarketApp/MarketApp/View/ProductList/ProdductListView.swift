@@ -9,6 +9,10 @@ import SwiftUI
 import Kingfisher
 
 struct ProdductListView: View {
+    
+    @StateObject var viewModel = MainShoesViewModel()
+    
+    
     @State private var btnTaped = false
     @State private var btnCount = 1
     var shoesData: [ShoeData]
@@ -30,11 +34,15 @@ struct ProdductListView: View {
         }
         .bounce(false)
         .padding(.horizontal, 10)
+        .onAppear {
+            viewModel.mainDetailShoesRequest()
+            
+        }
     }
     
     @ViewBuilder
     private func gridList(image: String, transName: String, price: String,  productName: String) -> some View {
-        NavigationLink(destination: ProductView()){
+        NavigationLink(destination: ProductView(shoesDetail: viewModel.shoesDetailData ?? [], transName: transName)){
             LazyVStack(alignment: .listRowSeparatorLeading, spacing: 5) {
                 KFImage(URL(string: image))
                     .resizable()
@@ -58,6 +66,9 @@ struct ProdductListView: View {
                     .lineLimit(1)
                     .padding(.bottom)
                    
+            }
+            .onAppear {
+                viewModel.shoesName = transName
             }
             .padding(.leading, 8)
             .background {
