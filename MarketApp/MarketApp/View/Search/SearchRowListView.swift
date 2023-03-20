@@ -10,7 +10,7 @@ import Kingfisher
 
 struct SearchRowListView: View {
     @StateObject var viewModel = MainShoesViewModel()
-    let shoesData: [ShoeData]
+    let shoesData: [ShoesDetailData]
     
     let columns = [
         GridItem(.flexible()),
@@ -21,7 +21,7 @@ struct SearchRowListView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 30) {
                 ForEach(shoesData) { item in
-                    gridList(image: item.image ?? "", brandName: item.brandName ?? "", price: item.price ?? "", productName: item.transName ?? "")
+                    gridList(image: item.productImg.first ?? "", brandName: item.brandName ?? "", price: item.price ?? "", productName: item.transName ?? "")
                         .onAppear {
                             viewModel.shoesName = item.transName
                             viewModel.mainDetailShoesRequest()
@@ -74,7 +74,7 @@ struct SearchRowListView: View {
 struct SearchRowListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            SearchRowListView(shoesData:  dev.shoesData)
+            SearchRowListView(shoesData:  dev.shoesDetailData)
         }
     }
 }

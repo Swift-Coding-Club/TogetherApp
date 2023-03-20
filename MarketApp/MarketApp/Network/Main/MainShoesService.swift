@@ -14,7 +14,7 @@ enum MainShoesService {
 
 extension MainShoesService: TargetType {
     var baseURL: URL {
-        return URL(string: "https://run.mocky.io")!
+        return URL(string: "https://640de3d61a18a5db83827295.mockapi.io")!
     }
     
     var path: String {

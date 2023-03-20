@@ -15,7 +15,7 @@ struct ProdductListView: View {
     
     @State private var btnTaped = false
     @State private var btnCount = 1
-    var shoesData: [ShoeData]
+    var shoesData: [ShoesDetailData]
     
     let columns = [
         GridItem(.flexible()),
@@ -26,7 +26,7 @@ struct ProdductListView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(shoesData) { item in
-                    gridList(image: item.image ?? "", transName: item.transName ?? "", price: item.price ?? "", productName: item.productName ?? "")
+                    gridList(image: item.productImg.first ?? "", transName: item.transName ?? "", price: item.price ?? "", productName: item.productName ?? "")
                 }
             }
             
@@ -81,6 +81,6 @@ struct ProdductListView: View {
 
 struct ProdductListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProdductListView(shoesData: dev.shoesData)
+        ProdductListView(shoesData: dev.shoesDetailData)
     }
 }

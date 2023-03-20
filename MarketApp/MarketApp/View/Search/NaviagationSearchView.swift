@@ -17,7 +17,7 @@ struct NaviagationSearchView: View {
     @State private var removeSearch = false
     @State var recentSearchList : [String] = []
    
-    @State var searchShoesResults : ShoesModel = []
+    @State var searchShoesResults : ShoesDetailModel = []
     private let searchBarPlaceholder: String = "신발을 검색해주세요"
     
     private let minCharacters = 3
@@ -50,9 +50,9 @@ struct NaviagationSearchView: View {
         }
         .onChange(of: searchText) { searchText in
             if searchText.isEmpty {
-                searchShoesResults = viewModel.shoesData ?? []
+                searchShoesResults = viewModel.shoesDetailData ?? []
             } else {
-                searchShoesResults = viewModel.shoesData?.filter({ shoes in
+                searchShoesResults = viewModel.shoesDetailData?.filter({ shoes in
                     shoes.transName?.contains(searchText) ?? true
                 }) ?? []
             }

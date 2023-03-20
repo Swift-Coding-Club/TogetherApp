@@ -23,8 +23,8 @@ class MainShoesViewModel: ObservableObject {
 //        mainShoesRequest()
     }
     
-    func toViewModel(_ list: ShoesModel) {
-        self.shoesData = list
+    func toViewModel(_ list: ShoesDetailModel) {
+        self.shoesDetailData = list
     }
     
     func toDetailViewModel(_ list: ShoesDetailModel) {
@@ -48,7 +48,7 @@ class MainShoesViewModel: ObservableObject {
                     print("신발 데이터")
                 }
             }, receiveValue: { model in
-                let data = try? model.map(ShoesModel.self)
+                let data = try? model.map(ShoesDetailModel.self)
                 guard let shoesData = data else { return }
                 print("신발 데이터 \(shoesData)")
                 self.toViewModel(shoesData)

@@ -24,8 +24,10 @@ struct ProfileView: View {
     @State private var deniedAlbum = false
     @State private var notDeterminedAlbum = false
     @State private var editProfileName: Bool = false
+    @State private var showTermsPolicesView: Bool = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
+    
     
     var body: some View {
         NavigationStack {
@@ -52,6 +54,9 @@ struct ProfileView: View {
         .navigationDestination(isPresented: $editProfileName) {
             ProfileNickNameView()
         }
+        .navigationDestination(isPresented: $showTermsPolicesView, destination: {
+            WebViews(url: "https://velog.io/@suhwj/개인정보-처리-방침")
+        })
         //MARK: - 팝업 관련
         .popup(isPresented: $showLogoutPOPUPView, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
             SignOutPOPUPView()
@@ -138,9 +143,7 @@ struct ProfileView: View {
                             
                             Spacer()
                         }
-                        
-                        
-                        
+
                         Spacer()
                         
                     }
@@ -227,6 +230,9 @@ struct ProfileView: View {
                 switch item {
                 case .termsPolices:
                     ListArrowView(listTitle: item.description, showView: $showTermsView)
+                        .onTapGesture {
+                            showTermsPolicesView.toggle()
+                        }
                 case .connatAS:
                     ListArrowView(listTitle: item.description, showView: $showConnatView)
                 case .developer:

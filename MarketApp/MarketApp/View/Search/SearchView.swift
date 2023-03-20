@@ -13,7 +13,7 @@ struct SearchView: View {
     
     @State var searchText = ""
     @State var removeSearch = false
-    @State var searchShoesResults : ShoesModel = []
+    @State var searchShoesResults : ShoesDetailModel = []
     @State var recentSearchList : [String] = []
     
     private let searchBarPlaceholder: String = "신발을 검색해주세요"
@@ -36,9 +36,9 @@ struct SearchView: View {
         }
         .onChange(of: searchText) { searchText in
             if searchText.isEmpty {
-                searchShoesResults = viewModel.shoesData ?? []
+                searchShoesResults = viewModel.shoesDetailData ?? []
             } else {
-                searchShoesResults = viewModel.shoesData?.filter({ shoes in
+                searchShoesResults = viewModel.shoesDetailData?.filter({ shoes in
                     shoes.transName?.contains(searchText) ?? true
                 }) ?? []
             }

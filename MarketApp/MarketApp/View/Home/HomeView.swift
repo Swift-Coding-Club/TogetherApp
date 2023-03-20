@@ -18,7 +18,7 @@ struct HomeView: View {
     @State private var showNikeView:  Bool = false
     
     @State private var selectBrandType: BrandType = .all
-    @State private var filterBrand: [ShoeData] = []
+    @State private var filterBrand: [ShoesDetailData] = []
     
     @State var path = NavigationPath()
     
@@ -50,7 +50,7 @@ struct HomeView: View {
             viewModel.mainShoesRequest()
         }
         .onChange(of: selectBrandType) { newValue in
-            filterBrand =  viewModel.shoesData?.filter({ shoes  in
+            filterBrand =  viewModel.shoesDetailData?.filter({ shoes  in
                 shoes.brandName == selectBrandType.brandDescription
             }) ?? []
         }
@@ -168,53 +168,58 @@ struct HomeView: View {
         }
     }
     
-   //MARK: - 리스트 뷰
+    //MARK: - 리스트 뷰
     @ViewBuilder
     private func ProductView() -> some View {
         LazyVStack {
-            if let shoesData = viewModel.shoesData {
+            if let shoesData = viewModel.shoesDetailData {
                 ProdductListView(shoesData: shoesData)
+            } else {
+                ProgressView()
+                    .onAppear {
+                        viewModel.mainShoesRequest()
+                    }
+            }
+        }
+    }
+        
+        @ViewBuilder
+        private func SelectBrandProductView() -> some View {
+            LazyVStack {
+                if let shoesData = filterBrand {
+                    ProdductListView(shoesData: shoesData)
+                }
+            }
+        }
+        
+        @ViewBuilder
+        private func SelectBrandProductVIew() -> some View {
+            if selectBrandType == .all {
+                ProductView()
+            } else if selectBrandType.brandDescription == BrandType.nike.brandDescription {
+                SelectBrandProductView()
+            } else if selectBrandType.brandDescription == BrandType.adidas.brandDescription {
+                SelectBrandProductView()
+            } else if selectBrandType.brandDescription == BrandType.converse.brandDescription {
+                SelectBrandProductView()
+            } else if selectBrandType.brandDescription ==  BrandType.jordan.brandDescription{
+                SelectBrandProductView()
+            } else if selectBrandType.brandDescription == BrandType.miharaYasuhiro.brandDescription {
+                SelectBrandProductView()
+            } else if selectBrandType.brandDescription == BrandType.newBalance.brandDescription {
+                SelectBrandProductView()
+            } else {
+                ProductView()
             }
         }
     }
     
-    @ViewBuilder
-    private func SelectBrandProductView() -> some View {
-        LazyVStack {
-            if let shoesData = filterBrand {
-                ProdductListView(shoesData: shoesData)
+    struct HomeView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationStack {
+                HomeView(viewModel: MainShoesViewModel())
             }
         }
     }
     
-    @ViewBuilder
-    private func SelectBrandProductVIew() -> some View {
-        if selectBrandType == .all {
-            ProductView()
-        } else if selectBrandType.brandDescription == BrandType.nike.brandDescription {
-            SelectBrandProductView()
-        } else if selectBrandType.brandDescription == BrandType.adidas.brandDescription {
-            SelectBrandProductView()
-        } else if selectBrandType.brandDescription == BrandType.converse.brandDescription {
-            SelectBrandProductView()
-        } else if selectBrandType.brandDescription ==  BrandType.jordan.brandDescription{
-            SelectBrandProductView()
-        } else if selectBrandType.brandDescription == BrandType.miharaYasuhiro.brandDescription {
-            SelectBrandProductView()
-        } else if selectBrandType.brandDescription == BrandType.newBalance.brandDescription {
-            SelectBrandProductView()
-        } else {
-            ProductView()
-        }
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            HomeView(viewModel: MainShoesViewModel())
-        }
-    }
-}
-
-
+    
