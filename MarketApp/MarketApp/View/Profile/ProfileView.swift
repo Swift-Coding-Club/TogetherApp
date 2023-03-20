@@ -55,7 +55,7 @@ struct ProfileView: View {
             ProfileNickNameView()
         }
         .navigationDestination(isPresented: $showTermsPolicesView, destination: {
-            WebViews(url: "https://velog.io/@suhwj/개인정보-처리-방침")
+            WebViews(url: "https://velog.io/@suhwj/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4-%EC%B2%98%EB%A6%AC-%EB%B0%A9%EC%B9%A8")
         })
         //MARK: - 팝업 관련
         .popup(isPresented: $showLogoutPOPUPView, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
