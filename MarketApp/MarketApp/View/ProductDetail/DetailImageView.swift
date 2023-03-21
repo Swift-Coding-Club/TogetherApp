@@ -29,14 +29,15 @@ struct DetailImageView: View {
             if selectedPicker == .info {
                 productImageInfo(transName: transName)
                 
-            } else if selectedPicker == .community {
-                ScrollView(showsIndicators: false) {
-                    ForEach(0..<7) { _ in
-                        CommunityView(nickName: "Zero",
-                                       comment: "요즘 매종 키츠네 신발 유행인가요? 알려주세요 :)")
-                    }
-                }
             }
+//            else if selectedPicker == .community {
+//                ScrollView(showsIndicators: false) {
+//                    ForEach(0..<7) { _ in
+//                        CommunityView(nickName: "Zero",
+//                                       comment: "요즘 매종 키츠네 신발 유행인가요? 알려주세요 :)")
+//                    }
+//                }
+//            }
         }
         .animation(nil)
     }

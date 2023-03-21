@@ -5,112 +5,89 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: update_fastlane" time="2.892545">
+      <testcase classname="fastlane.lanes" name="00: update_fastlane" time="3.072">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: default_platform" time="0.000236">
+      <testcase classname="fastlane.lanes" name="01: default_platform" time="0.000251">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: get_version_number" time="0.064393">
+      <testcase classname="fastlane.lanes" name="02: increment_version_number" time="5.272644">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: get_build_number" time="3.835937">
+      <testcase classname="fastlane.lanes" name="03: get_version_number" time="0.077034">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: get_certificates" time="7.890123">
+      <testcase classname="fastlane.lanes" name="04: get_build_number" time="2.610474">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: get_provisioning_profile" time="6.94059">
+      <testcase classname="fastlane.lanes" name="05: get_certificates" time="40.998548">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="06: latest_testflight_build_number" time="20.633705">
+      <testcase classname="fastlane.lanes" name="06: get_provisioning_profile" time="5.71602">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="07: increment_build_number" time="4.791651">
+      <testcase classname="fastlane.lanes" name="07: Switch to ios build_ipa lane" time="0.000252">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="08: Switch to ios lint lane" time="0.000251">
+      <testcase classname="fastlane.lanes" name="08: clear_derived_data" time="6.968472">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="09: swiftlint" time="1.840967">
+      <testcase classname="fastlane.lanes" name="09: slack" time="0.455912">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="10: Switch to ios build_ipa lane" time="0.000204">
+      <testcase classname="fastlane.lanes" name="10: gym" time="334.681644">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="11: clear_derived_data" time="30.690759">
+      <testcase classname="fastlane.lanes" name="11: slack" time="0.510277">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="12: slack" time="0.587947">
+      <testcase classname="fastlane.lanes" name="12: Switch to ios unit_Test lane" time="0.000263">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="13: gym" time="345.018505">
+      <testcase classname="fastlane.lanes" name="13: run_tests" time="517.696318">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="14: slack" time="0.470776">
+      <testcase classname="fastlane.lanes" name="14: slack" time="0.654004">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="15: upload_to_testflight" time="464.424362">
+      <testcase classname="fastlane.lanes" name="15: upload_to_app_store" time="0.936098">
+        
+          <failure message="/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/actions/actions_helper.rb:67:in `execute_action&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:255:in `block in execute_action&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:229:in `chdir&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:229:in `execute_action&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/fast_file.rb:159:in `method_missing&apos;&#10;Fastfile:233:in `block (2 levels) in parsing_binding&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/lane.rb:33:in `call&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:49:in `block in execute&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:45:in `chdir&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:45:in `execute&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/lane_manager.rb:47:in `cruise_lane&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/commands_generator.rb:110:in `block (2 levels) in run&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/commander-4.6.0/lib/commander/command.rb:187:in `call&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/commander-4.6.0/lib/commander/command.rb:157:in `run&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/commander-4.6.0/lib/commander/runner.rb:444:in `run_active_command&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:124:in `run!&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/commander-4.6.0/lib/commander/delegates.rb:18:in `run!&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/commands_generator.rb:354:in `run&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/commands_generator.rb:43:in `start&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/cli_tools_distributor.rb:123:in `take_off&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/lib/ruby/gems/3.0.0/gems/fastlane-2.212.1/bin/fastlane:23:in `&lt;top (required)&gt;&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/bin/fastlane:25:in `load&apos;&#10;/Users/suhwonji/.rbenv/versions/3.0.5/bin/fastlane:25:in `&lt;main&gt;&apos;&#10;&#10;The request cannot be fulfilled because of the state of another resource. - The resource &apos;appPrices&apos; cannot be viewed, created or updated. Please view and create &apos;manualPrices&apos; using the resource &apos;appPriceSchedules&apos;." />
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="16: slack" time="0.46549">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="17: Switch to ios upload_firebase lane" time="0.000208">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="18: get_version_number" time="0.056445">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="19: get_build_number" time="2.656961">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="20: firebase_app_distribution" time="13.366334">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="21: slack" time="0.43558">
+      <testcase classname="fastlane.lanes" name="16: slack" time="0.461119">
         
       </testcase>
     
