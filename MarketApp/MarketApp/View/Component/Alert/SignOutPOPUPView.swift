@@ -27,7 +27,7 @@ struct SignOutPOPUPView: View {
         }
         .padding(EdgeInsets(top: 40, leading: 30, bottom: 31, trailing: 30))
         .frame(width: ContentsWidth, height: 200)
-        .background(Color.colorAsset.mainColor)
+        .background(Color.colorAsset.blueGray)
         .cornerRadius(30.0)
         .shadow(color: Color.fontColor.secondaryTextColor, radius: 6, x: 0, y: .zero)
         .animation(.easeOut)

@@ -100,7 +100,7 @@
 		7FF4DA192995192200AC04D7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4DA182995192200AC04D7 /* SearchView.swift */; };
 		C9A7B73D294353290051E644 /* mockData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9A7B73C294353290051E644 /* mockData.json */; };
 		D3BAB82DFC4CADBC9DF5A1CE /* Pods_MarketAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB0C99A0B06EDFEE1C4A1C /* Pods_MarketAppTests.framework */; };
-		EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* InfoView.swift */; };
+		EC451F6E290BBCD7008C88A7 /* DetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC451F6D290BBCD7008C88A7 /* DetailImageView.swift */; };
 		EC892A9F2908189600D02F99 /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892A9E2908189600D02F99 /* MarketAppApp.swift */; };
 		EC892AA12908189600D02F99 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC892AA02908189600D02F99 /* MainTabView.swift */; };
 		EC892AA32908189700D02F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC892AA22908189700D02F99 /* Assets.xcassets */; };
@@ -233,7 +233,7 @@
 		B8B1F400B0E00C4FA897EBD2 /* Pods-MarketApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp.release.xcconfig"; path = "Target Support Files/Pods-MarketApp/Pods-MarketApp.release.xcconfig"; sourceTree = "<group>"; };
 		C9A7B73C294353290051E644 /* mockData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockData.json; sourceTree = "<group>"; };
 		DAE05443C070FD4D365EBE21 /* Pods-MarketApp-MarketAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketApp-MarketAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarketApp-MarketAppUITests/Pods-MarketApp-MarketAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		EC451F6D290BBCD7008C88A7 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		EC451F6D290BBCD7008C88A7 /* DetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageView.swift; sourceTree = "<group>"; };
 		EC892A9B2908189600D02F99 /* MarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC892A9E2908189600D02F99 /* MarketAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppApp.swift; sourceTree = "<group>"; };
 		EC892AA02908189600D02F99 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -804,7 +804,7 @@
 				EC892ABE2908214900D02F99 /* ProductView.swift */,
 				ECB2F1352909258B00E9F7D3 /* PopView.swift */,
 				7F3E17C4299C6DF80095BB2F /* InfoViewModel.swift */,
-				EC451F6D290BBCD7008C88A7 /* InfoView.swift */,
+				EC451F6D290BBCD7008C88A7 /* DetailImageView.swift */,
 				ECF5BE452914D01E0052655B /* ReviewView.swift */,
 				7F40E25F29C6F01800EC8AB6 /* ProductInfoImage.swift */,
 			);
@@ -1255,7 +1255,7 @@
 				7FF4DA192995192200AC04D7 /* SearchView.swift in Sources */,
 				7F0F1661296EF0B400FB4C30 /* SignManger.swift in Sources */,
 				7F0F164929600AEF00FB4C30 /* CustomInputField.swift in Sources */,
-				EC451F6E290BBCD7008C88A7 /* InfoView.swift in Sources */,
+				EC451F6E290BBCD7008C88A7 /* DetailImageView.swift in Sources */,
 				7F0F163E2960033F00FB4C30 /* LoginView.swift in Sources */,
 				7F6037AB297AB5FA0034CFF7 /* SignUPNickNameView.swift in Sources */,
 				7F4B9627298D1758006AAF48 /* AppLifeCycleModifier.swift in Sources */,
@@ -1327,7 +1327,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1354,7 +1354,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1379,7 +1379,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1405,7 +1405,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1550,7 +1550,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1594,7 +1594,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;

@@ -30,11 +30,11 @@ struct ProductView: View {
         VStack {
             ScrollView(.vertical, showsIndicators: true) {
                 
-                ProductImageView()
+                productTopImageView()
                 
-                ProductInfoView(transName: transName)
+                productInfoView(transName: transName)
                 
-                InfoView()
+                DetailImageView(transName: transName)
             }
             .bounce(false)
             
@@ -70,7 +70,7 @@ struct ProductView: View {
     }
     
     @ViewBuilder
-    private func ProductImageView() -> some View {
+    private func productTopImageView() -> some View {
         if let shoesDetail = viewModel.shoesDetailData {
             let filteredShoesDetail = shoesDetail.filter { $0.transName == self.transName }
             if !filteredShoesDetail.isEmpty {
@@ -159,7 +159,7 @@ struct ProductView: View {
     
     //MARK: - 가격및 info 화면
     @ViewBuilder
-    private func ProductInfoView(transName: String) -> some View {
+    private func productInfoView(transName: String) -> some View {
         if let shoesDetailData = viewModel.shoesDetailData?.filter({ $0.transName == transName }).first {
             HStack {
                 VStack {
@@ -204,6 +204,16 @@ struct ProductView: View {
             .padding()
         } else {
             ProgressView()
+        }
+    }
+    
+    @ViewBuilder
+    private func ProductImageInfo(transName: String) -> some View {
+        if let shoesDetailData = viewModel.shoesDetailData?.filter({ $0.transName == transName }).first {
+            ForEach(shoesDetailData.productImg, id: \.self) { item in
+                KFImage(URL(string: item))
+                
+            }
         }
     }
 }
