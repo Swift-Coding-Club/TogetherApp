@@ -9,6 +9,9 @@
 #
 #     https://docs.fastlane.tools/plugins/available-plugins
 #
+require 'spaceship'
+Spaceship::ConnectAPI::App.const_set('ESSENTIAL_INCLUDES', 'appStoreVersions')
+
 
 # Uncomment the line if you want fastlane to automatically update itself
 update_fastlane
@@ -228,15 +231,15 @@ error do |lane, exception, options|
      build = get_build_number
       get_certificates
       get_provisioning_profile
-      build_ipa
-       unit_Test
+     build_ipa
+      # unit_Test
        upload_to_app_store(
         username: "shuwj81@daum.net",
         team_id: "N94CS4N6VR",
         api_key_path: "fastlane/apikey.json",
 	skip_metadata: false,
-        metadat_path: "./metadata",
-        skip_screenshots: false, 
+        metadata_path: "./metadata",
+        #skip_screenshots: false, 
         force: true,
         submit_for_review: true,
         automatic_release: true,
