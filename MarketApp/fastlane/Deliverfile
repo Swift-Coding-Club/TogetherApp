@@ -2,6 +2,10 @@
 # For more information, check out the docs
 # https://docs.fastlane.tools/actions/deliver/
 
+
+require 'spaceship'
+Spaceship::ConnectAPI::App.const_set('ESSENTIAL_INCLUDES', 'appStoreVersions')
+
 app_identifier "com.shoping.MarketApps"
 #elease_notes("버그수정")
 #price_tier(0)
