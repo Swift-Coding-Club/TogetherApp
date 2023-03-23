@@ -8,14 +8,26 @@
 # For a list of all available plugins, check out
 #
 #     https://docs.fastlane.tools/plugins/available-plugins
-#
+
+#import "Fastfiles/ReleaseFastfile.rb"
+#import "Fastfiles/SandboxFastfile.rb"
+#import "Fastfiles/AppDistributionFastfile.rb"
+#import "Fastfiles/LicenseFastfile.rb
+
+#require 'fastlane/plugin/spaceship'
 
 # Uncomment the line if you want fastlane to automatically update itself
-update_fastlane
+# update_fastlane
+require 'spaceship'
+Spaceship::ConnectAPI::App.const_set('ESSENTIAL_INCLUDES', 'appStoreVersions')
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "600"
-default_platform(:ios)
 
+default_platform(:ios)
 platform :ios do
+
+
+
+
  desc "Runs `pod install`"
   puts "Runs `pod install`"
   lane :pod_install do
@@ -219,7 +231,10 @@ error do |lane, exception, options|
   # fastlane release version:"2.1.0"
   # 과 같이 사용할 수 있다.
     if options[:version]
-    #enable_automatic_code_signing
+      version = options[:version]
+
+   
+
       increment_version_number(version_number: options[:version])
        version = get_version_number(
         xcodeproj: "MarketApp.xcodeproj",
@@ -228,15 +243,17 @@ error do |lane, exception, options|
      build = get_build_number
       get_certificates
       get_provisioning_profile
-      build_ipa
+        build_ipa
        unit_Test
        upload_to_app_store(
         username: "shuwj81@daum.net",
-        team_id: "N94CS4N6VR",
+        team_id: "N94CS4N6R",
+        #release_notes:  "버그 수정 .",
+        ipa:"./output/MarketApp.ipa",
         api_key_path: "fastlane/apikey.json",
-	skip_metadata: true,
-        #metadata_path: "./metadata",
-        skip_screenshots: true, 
+	skip_metadata: false,
+        metadata_path: "./metadata",
+        #skip_screenshots: false, 
         force: true,
         submit_for_review: true,
         automatic_release: true,
@@ -245,9 +262,15 @@ error do |lane, exception, options|
         add_id_info_uses_idfa: false,
         export_compliance_encryption_updated: false,
         export_compliance_uses_encryption: false,
-        content_rights_contains_third_party_content: false}
+        content_rights_contains_third_party_content: false
+             },
+    # app_version: version,
+     # build_number: build,
+     # whats_new: "Update for version #{version}"
 	   )
 
+    
+    end
     #성공했을때  슬랙 메세지   
       slack(
       message: "배포  성공",
@@ -265,8 +288,7 @@ error do |lane, exception, options|
       success: false,
       slack_url: ENV["SLACK_URL_UPLOAD"]
     )
+end
      end	         
     # ✅ if 문을 종료하기 위한 end
-    end
-   end 
-end
+    end 
