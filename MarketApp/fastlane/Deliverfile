@@ -3,19 +3,23 @@
 # https://docs.fastlane.tools/actions/deliver/
 
 app_identifier "com.shoping.MarketApps"
-price_tier(0)
-# skip_metadata: false
+#elease_notes("버그수정")
+#price_tier(0)
+#skip_metadata: false
 # metadata_path: "./fastlane/metadata"
+# whats_new( {
+ #      "ko-KR": "버그 수정 "
+  #    })
 
-submission_information({
-    export_compliance_encryption_updated: false,
-    export_compliance_uses_encryption: false,
-    content_rights_contains_third_party_content: false, # 3party콘텐츠가 포함 여부
-    add_id_info_uses_idfa: false # 내 앱에서 IDFA를 사용 여부
-})
+#submission_information({
+  #  export_compliance_encryption_updated: false,
+   # export_compliance_uses_encryption: false,
+   # content_rights_contains_third_party_content: false, # 3party콘텐츠가 포함 여부
+    #add_id_info_uses_idfa: false # 내 앱에서 IDFA를 사용 여부
+#})
 
-ipa("./output/MarketApp.ipa")
-submit_for_review(true)
-automatic_release(true)
-force(true)
+#ipa("./output/MarketApp.ipa")
+#submit_for_review(true)
+#automatic_release(true)
+#force(true)
 
