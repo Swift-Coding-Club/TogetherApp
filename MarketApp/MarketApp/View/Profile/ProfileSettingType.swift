@@ -9,7 +9,7 @@ import Foundation
 
 enum ProfileSettingType: CaseIterable, CustomStringConvertible {
     case termsPolices
-    case  connatAS
+    case connatAS
     case developer
  
     var description: String {

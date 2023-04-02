@@ -83,7 +83,7 @@ struct DetailImageView: View {
                     }
             }
         } else {
-            ProgressView()
+            LottieLoadingView()
                 .onAppear {
                     viewModel.mainDetailShoesRequest()
                 }
@@ -94,6 +94,6 @@ struct DetailImageView: View {
 
 struct DetailImageView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailImageView(transName: "")
+        DetailImageView(transName: "살로몬 XT-6 ADV 화이트")
     }
 }

@@ -185,7 +185,7 @@ error do |lane, exception, options|
       slack_url: ENV["SLACK_URL_UPLOAD"]
     )
     end
-   upload_firebase
+  #upload_firebase
   end
 
 
@@ -196,18 +196,22 @@ error do |lane, exception, options|
         target: "MarketApp"
        )
      build = get_build_number
-    #get_dev_certs
-   #build_ipa
-
+   
+  build_ios_app(
+    scheme: "MarketApp",
+    configuration: "Release",
+    export_method: "app-store"
+  )
+  
     firebase_cli_token = ENV["FIREBASE_CLI_TOKEN"]
 
     firebase_app_distribution(
       app: ENV["IOS_FIREBASE_APP_DISTRIBUTION_APP"],
       groups: "testgroup",
-      firebase_cli_token: firebase_cli_token,
-      ipa_path: "./fastlane/output/MarketApp.ipa",
+     # firebase_cli_token: firebase_cli_token,
+     ipa_path: "./fastlane/output/MarketApp.ipa",
       release_notes: "Release notes",
-      debug: true)   
+      debug: false)   
          slack(
           message: "파이어베스  배포에 성공했습니다!",
            slack_url: ENV["SLACK_URL_UPLOAD"],
@@ -293,7 +297,7 @@ error do |lane, exception, options|
       success: false,
       slack_url: ENV["SLACK_URL_UPLOAD"]
     )
-end
+      end
      end	         
     # ✅ if 문을 종료하기 위한 end
     end 

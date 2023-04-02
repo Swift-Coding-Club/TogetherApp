@@ -30,10 +30,10 @@ struct MainTabView: View {
                             }
                         }
                         .tag(0)
-        //                .highPriorityGesture(DragGesture().onEnded({
-        //                    self.handleSwipe(translation:  $0.translation.width)
-        //                }))
-                      
+                    //                .highPriorityGesture(DragGesture().onEnded({
+                    //                    self.handleSwipe(translation:  $0.translation.width)
+                    //                }))
+                    
                     SearchView()
                         .tabItem{
                             VStack{
@@ -43,9 +43,9 @@ struct MainTabView: View {
                             }
                         }
                         .tag(1)
-        //                .highPriorityGesture(DragGesture().onEnded({
-        //                    self.handleSwipe(translation:  $0.translation.width)
-        //                }))
+                    //                .highPriorityGesture(DragGesture().onEnded({
+                    //                    self.handleSwipe(translation:  $0.translation.width)
+                    //                }))
                     
                     ProfileView()
                         .environmentObject(loginViewModel)
@@ -80,6 +80,11 @@ struct MainTabView: View {
             } else if loginViewModel.loginStatus == false || loginViewModel.deleteUser == true {
                 self.selectOldView = $0
                 self.showView = true
+            }
+        })
+        .onChange(of: loginViewModel.userSession, perform: { newValue in
+            if newValue == nil && selectView == 2 {
+                selectView = selectOldView
             }
         })
         .accentColor(Color.colorAsset.blueGray)

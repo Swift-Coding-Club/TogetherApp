@@ -18,9 +18,10 @@ class SignUPViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
 
     @Published var nonce: String  = ""
-    @Published var loginStatus: Bool = false
+    
     @Published var deleteUser: Bool = false
     //MARK: - 로그인 애니메이션 판별
+    @Published var loginStatus: Bool = false
     @AppStorage("log_status") var log_Status = false
     
     
@@ -28,18 +29,24 @@ class SignUPViewModel: ObservableObject {
         self.userSession = Auth.auth().currentUser
     }
     
+    
+    
+    
+    
     //MARK: - 로그인
     func login(withEmail email: String, password: String) {
         
         Auth.auth().signIn(withEmail: email, password: password) { result ,error in
             if let error = error {
                 debugPrint("[🔥] 로그인 에 실패 하였습니다 \(error.localizedDescription)")
-                return
+                self.loginStatus = false
             } else {
                 guard let user = result?.user else { return }
                 debugPrint("로그인에 성공 하였습니다")
                 self.userSession = user
-                self.loginStatus = true
+                DispatchQueue.main.async {
+                    self.loginStatus = true
+                }
                 
             }
         }
@@ -101,6 +108,7 @@ class SignUPViewModel: ObservableObject {
         
         firebaseAuth.currentUser?.delete(completion: { error  in
             self.deleteUser = true
+            self.userSession = nil
             print("유저가 삭제 되었습니다 \(String(describing: error?.localizedDescription))")
         })
         

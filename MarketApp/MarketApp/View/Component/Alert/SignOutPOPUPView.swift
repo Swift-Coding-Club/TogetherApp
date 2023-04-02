@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct SignOutPOPUPView: View {
-    private var title: String = "로그아웃 하시겠어요"
-    private var message: String = "로그아웃 하셔도 Affinity는 유저님을 기다립니다"
-    private var cancelTitle: String = "취소"
-    private var confiremTitle: String = "확인"
     
-    @EnvironmentObject var viewModel: SignUPViewModel
     @State var closedAlert: Bool = false
+    
+    var title: String
+    var message: String
+    var cancelTitle: String = "취소"
+    var confiremTitle: String = "확인"
+    var confirmAction: () -> Void = {}
     
     var body: some View {
         VStack(alignment: .center) {
@@ -78,8 +79,7 @@ struct SignOutPOPUPView: View {
                 .frame(width: 30)
             
             Button {
-                viewModel.signOut()
-                viewModel.loginStatus = false
+                confirmAction()
             } label: {
                 Text(confiremTitle)
                     .kerning(-0.34)
@@ -97,7 +97,6 @@ struct SignOutPOPUPView: View {
 
 struct SignOutPopView_Previews: PreviewProvider {
     static var previews: some View {
-        SignOutPOPUPView()
-            .environmentObject(dev.signUPViewModel)
+        SignOutPOPUPView(title: "로그아웃 하시겠어요", message: "로그아웃 하셔도 Affinity는 유저님을 기다립니다") {}
     }
 }

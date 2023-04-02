@@ -27,35 +27,39 @@ struct ProductView: View {
     let transName: String
     
     var body: some View {
-        VStack {
-            ScrollView(.vertical, showsIndicators: true) {
-                
-                productTopImageView()
-                
-                productInfoView(transName: transName)
-                
-                DetailImageView(transName: transName)
-            }
-            .bounce(false)
-            
-            .onAppear {
-                print("신발 이름 \(transName)")
-                viewModel.shoesName = transName
-                viewModel.mainDetailShoesRequest()
-            }
-        }
         
-        .navigationBarBackButtonHidden(true)
-        .navigationTitle("")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                shareButton()
+        if !transName.isEmpty {
+            VStack {
+                ScrollView(.vertical, showsIndicators: true) {
+                    
+                    productTopImageView()
+                    
+                    productInfoView(transName: transName)
+                    
+                    DetailImageView(transName: transName)
+                }
+                .bounce(false)
+                
+                .onAppear {
+                    print("신발 이름 \(transName)")
+                    viewModel.shoesName = transName
+                    viewModel.mainDetailShoesRequest()
+                }
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                customBackButton()
+            .navigationBarBackButtonHidden(true)
+            .navigationTitle("")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    shareButton()
+                }
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    customBackButton()
+                }
+            }
+        } else {
+            LottieLoadingView()
         }
     }
     
@@ -101,11 +105,6 @@ struct ProductView: View {
                 Text("No data found.")
                     .foregroundColor(.secondary)
             }
-        } else {
-            ProgressView()
-                .onAppear {
-                    viewModel.mainDetailShoesRequest()
-                }
         }
     }
 
@@ -202,9 +201,7 @@ struct ProductView: View {
                 }.frame(width: 50)
             }
             .padding()
-        } else {
-            ProgressView()
-        }
+        } 
     }
     
     @ViewBuilder

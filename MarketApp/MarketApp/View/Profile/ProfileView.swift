@@ -56,11 +56,13 @@ struct ProfileView: View {
         }
         
         .navigationDestination(isPresented: $showTermsPolicesView, destination: {
-            WebViews(url: "https://velog.io/@suhwj/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4-%EC%B2%98%EB%A6%AC-%EB%B0%A9%EC%B9%A8")
+            WebViews(url: AffinityAPI.TermsPolicesUrl)
         })
         //MARK: - 팝업 관련
         .popup(isPresented: $showLogoutPOPUPView, view: {
-            SignOutPOPUPView()
+            SignOutPOPUPView(title: "로그아웃 하시겠어요", message: "로그아웃 하셔도 Affinity는 유저님을 기다립니다") {
+                viewModel.signOut()
+            }
         }, customize: { popup in
             popup
                 .type(.default)

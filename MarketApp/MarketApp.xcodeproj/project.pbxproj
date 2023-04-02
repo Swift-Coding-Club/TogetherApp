@@ -98,11 +98,14 @@
 		7FA4B88529D8893000FA1569 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88429D8893000FA1569 /* FirebaseRemoteConfig */; };
 		7FA4B88729D8893000FA1569 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88629D8893000FA1569 /* FirebaseStorage */; };
 		7FA4B88A29D8899000FA1569 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88929D8899000FA1569 /* GoogleSignIn */; };
-		7FA4B88D29D889F800FA1569 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88C29D889F800FA1569 /* Lottie */; };
 		7FA4B89029D88A4600FA1569 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88F29D88A4600FA1569 /* CombineMoya */; };
 		7FA4B89229D88A4600FA1569 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B89129D88A4600FA1569 /* Moya */; };
 		7FA4B89529D88A8C00FA1569 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B89429D88A8C00FA1569 /* Kingfisher */; };
 		7FA4B89829D88ACB00FA1569 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B89729D88ACB00FA1569 /* PopupView */; };
+		7FA4B89E29D98D7E00FA1569 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B89D29D98D7E00FA1569 /* LottieView.swift */; };
+		7FA4B8A129D9933000FA1569 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B8A029D9933000FA1569 /* Lottie */; };
+		7FA4B8A529D999A500FA1569 /* LottieLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4B8A429D999A500FA1569 /* LottieLoadingView.swift */; };
+		7FA4B8A929D99DB200FA1569 /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FA4B8A829D99DB100FA1569 /* Loading.json */; };
 		7FA4BF44299A3EE800D8F2F7 /* MainShoesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4BF43299A3EE800D8F2F7 /* MainShoesService.swift */; };
 		7FA4BF46299A3F2A00D8F2F7 /* AffinityAPI-Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4BF45299A3F2A00D8F2F7 /* AffinityAPI-Main.swift */; };
 		7FDB1E6229A2399C00019099 /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB1E6129A2399C00019099 /* ProfileViewModelTests.swift */; };
@@ -235,6 +238,9 @@
 		7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F93C34B29854D2100345AEC /* AppManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManger.swift; sourceTree = "<group>"; };
 		7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffinityAppCheck.swift; sourceTree = "<group>"; };
+		7FA4B89D29D98D7E00FA1569 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		7FA4B8A429D999A500FA1569 /* LottieLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieLoadingView.swift; sourceTree = "<group>"; };
+		7FA4B8A829D99DB100FA1569 /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
 		7FA4BF43299A3EE800D8F2F7 /* MainShoesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShoesService.swift; sourceTree = "<group>"; };
 		7FA4BF45299A3F2A00D8F2F7 /* AffinityAPI-Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AffinityAPI-Main.swift"; sourceTree = "<group>"; };
 		7FDB1E5F29A2399C00019099 /* MarketAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,7 +302,7 @@
 				7FA4B87129D8893000FA1569 /* FirebaseAnalytics in Frameworks */,
 				7FA4B88529D8893000FA1569 /* FirebaseRemoteConfig in Frameworks */,
 				7FA4B88129D8893000FA1569 /* FirebaseMessaging in Frameworks */,
-				7FA4B88D29D889F800FA1569 /* Lottie in Frameworks */,
+				7FA4B8A129D9933000FA1569 /* Lottie in Frameworks */,
 				7FA4B87329D8893000FA1569 /* FirebaseAppCheck in Frameworks */,
 				7FA4B87729D8893000FA1569 /* FirebaseCrashlytics in Frameworks */,
 				0D0B745604915877639C073E /* Pods_MarketApp.framework in Frameworks */,
@@ -742,6 +748,15 @@
 			path = AppCheck;
 			sourceTree = "<group>";
 		};
+		7FA4B89929D98BE400FA1569 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				7FA4B89D29D98D7E00FA1569 /* LottieView.swift */,
+				7FA4B8A429D999A500FA1569 /* LottieLoadingView.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		7FA4BF42299A3E4500D8F2F7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -820,6 +835,7 @@
 		C9A7B73B294353110051E644 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7FA4B8A829D99DB100FA1569 /* Loading.json */,
 				C9A7B73C294353290051E644 /* mockData.json */,
 				EC892AA22908189700D02F99 /* Assets.xcassets */,
 			);
@@ -869,6 +885,7 @@
 		C9E3E7A7290823FA00914FE5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				7FA4B89929D98BE400FA1569 /* Lottie */,
 				7F573DCB299F6EED00A5652A /* WebView */,
 				7F2BCB8A29AD0E3B009DB8B7 /* Share */,
 				7F2815F72990DAE600B2C481 /* List */,
@@ -1001,11 +1018,11 @@
 				7FA4B88429D8893000FA1569 /* FirebaseRemoteConfig */,
 				7FA4B88629D8893000FA1569 /* FirebaseStorage */,
 				7FA4B88929D8899000FA1569 /* GoogleSignIn */,
-				7FA4B88C29D889F800FA1569 /* Lottie */,
 				7FA4B88F29D88A4600FA1569 /* CombineMoya */,
 				7FA4B89129D88A4600FA1569 /* Moya */,
 				7FA4B89429D88A8C00FA1569 /* Kingfisher */,
 				7FA4B89729D88ACB00FA1569 /* PopupView */,
+				7FA4B8A029D9933000FA1569 /* Lottie */,
 			);
 			productName = MarketApp;
 			productReference = EC892A9B2908189600D02F99 /* MarketApp.app */;
@@ -1046,10 +1063,10 @@
 			packageReferences = (
 				7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7FA4B88829D8899000FA1569 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				7FA4B88B29D889F800FA1569 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				7FA4B88E29D88A4600FA1569 /* XCRemoteSwiftPackageReference "Moya" */,
 				7FA4B89329D88A8C00FA1569 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				7FA4B89629D88ACB00FA1569 /* XCRemoteSwiftPackageReference "PopupView" */,
+				7FA4B89F29D9933000FA1569 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = EC892A9C2908189600D02F99 /* Products */;
 			projectDirPath = "";
@@ -1089,6 +1106,7 @@
 			files = (
 				7F66ECC62979A6FE0039CC42 /* GoogleService-Info.plist in Resources */,
 				7F39FABD295342BD0041BF8B /* NanumSquareNeo-aLt.ttf in Resources */,
+				7FA4B8A929D99DB200FA1569 /* Loading.json in Resources */,
 				7F2432AD2958630300C1077E /* GoogleService-Info-dev.plist in Resources */,
 				7F39FABE295342BD0041BF8B /* NanumSquareNeo-bRg.ttf in Resources */,
 				7F39FABF295342BD0041BF8B /* NanumSquareNeo-cBd.ttf in Resources */,
@@ -1278,6 +1296,7 @@
 				EC451F6E290BBCD7008C88A7 /* DetailImageView.swift in Sources */,
 				7F0F163E2960033F00FB4C30 /* LoginView.swift in Sources */,
 				7F6037AB297AB5FA0034CFF7 /* SignUPNickNameView.swift in Sources */,
+				7FA4B8A529D999A500FA1569 /* LottieLoadingView.swift in Sources */,
 				7F4B9627298D1758006AAF48 /* AppLifeCycleModifier.swift in Sources */,
 				7F2815F42990D99C00B2C481 /* ProfileLogoutType.swift in Sources */,
 				7F2432812956CF5F00C1077E /* HomeViewNavigaionItem.swift in Sources */,
@@ -1305,6 +1324,7 @@
 				7F4B9621298D169E006AAF48 /* ACarousel.swift in Sources */,
 				7F0565DA298698A20066BE4A /* MainShoesViewModel.swift in Sources */,
 				EC892AB72908207D00D02F99 /* NotiView.swift in Sources */,
+				7FA4B89E29D98D7E00FA1569 /* LottieView.swift in Sources */,
 				EC892AAF2908201700D02F99 /* HomeView.swift in Sources */,
 				7F4B962E298D27F1006AAF48 /* SizeReader.swift in Sources */,
 				7F39FA8F2950939D0041BF8B /* POPUPViews.swift in Sources */,
@@ -1347,7 +1367,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 78;
+				CURRENT_PROJECT_VERSION = 83;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				ENABLE_BITCODE = NO;
@@ -1375,7 +1395,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 78;
+				CURRENT_PROJECT_VERSION = 83;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1401,7 +1421,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 78;
+				CURRENT_PROJECT_VERSION = 83;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1427,7 +1447,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 78;
+				CURRENT_PROJECT_VERSION = 83;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1572,7 +1592,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 78;
+				CURRENT_PROJECT_VERSION = 83;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1616,7 +1636,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 78;
+				CURRENT_PROJECT_VERSION = 83;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1710,14 +1730,6 @@
 				minimumVersion = 6.2.4;
 			};
 		};
-		7FA4B88B29D889F800FA1569 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 4.1.0;
-			};
-		};
 		7FA4B88E29D88A4600FA1569 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1740,6 +1752,14 @@
 			requirement = {
 				kind = upToNextMinorVersion;
 				minimumVersion = 2.1.0;
+			};
+		};
+		7FA4B89F29D9933000FA1569 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1810,11 +1830,6 @@
 			package = 7FA4B88829D8899000FA1569 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
 		};
-		7FA4B88C29D889F800FA1569 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7FA4B88B29D889F800FA1569 /* XCRemoteSwiftPackageReference "lottie-spm" */;
-			productName = Lottie;
-		};
 		7FA4B88F29D88A4600FA1569 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7FA4B88E29D88A4600FA1569 /* XCRemoteSwiftPackageReference "Moya" */;
@@ -1834,6 +1849,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7FA4B89629D88ACB00FA1569 /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
+		};
+		7FA4B8A029D9933000FA1569 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B89F29D9933000FA1569 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

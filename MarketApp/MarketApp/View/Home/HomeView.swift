@@ -175,7 +175,7 @@ struct HomeView: View {
             if let shoesData = viewModel.shoesDetailData {
                 ProdductListView(shoesData: shoesData)
             } else {
-                ProgressView()
+                LottieLoadingView()
                     .onAppear {
                         viewModel.mainShoesRequest()
                     }
@@ -186,7 +186,11 @@ struct HomeView: View {
         @ViewBuilder
         private func SelectBrandProductView() -> some View {
             LazyVStack {
-                ProdductListView(shoesData: filterBrand)
+                if filterBrand != nil {
+                    ProdductListView(shoesData: filterBrand)
+                } else {
+                    LottieLoadingView()
+                }
             }
         }
         

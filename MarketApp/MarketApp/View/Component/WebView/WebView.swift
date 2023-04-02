@@ -17,13 +17,29 @@ struct WebView: UIViewRepresentable {
         guard let url = URL(string: self.urlToLoad) else {
             return WKWebView()
         }
+        
         //웹뷰 인스턴스 생성
-        let webView = WKWebView()
+        let configuration = WKWebViewConfiguration()
+        let websiteDataStore = WKWebsiteDataStore.default()
+        let webView = WKWebView(frame: .zero, configuration: configuration)
+        
         
         //웹뷰를 로드한다
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            webView.load(URLRequest(url: url))
+            let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy)
+            let configuration = webView.configuration
+            if let cookie = HTTPCookie(properties: [.domain: url.host!,
+                                                    .path: "/",
+                                                    .name: "CookieName",
+                                                    .value: "CookieValue"]) {
+                configuration.websiteDataStore.httpCookieStore.setCookie(cookie)
+            }
+            // Set power-saving preferences
+            configuration.preferences.minimumFontSize = 16
+            webView.load(request)
+            
         }
+        print("\(webView)")
         return webView
     }
     

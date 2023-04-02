@@ -28,6 +28,8 @@ struct LoginView: View {
     @State private var loginPopUP: Bool = false
     @State private var confirmAction: Bool = false
     @State private var showMainView : Bool = false
+    @State private var isLoggingIn = false
+    
     
     var body: some View {
         NavigationStack{
@@ -66,6 +68,13 @@ struct LoginView: View {
                 }
                 .bounce(false)
             }
+            .navigationDestination(isPresented: $showMainView) {
+                NavigationStack {
+                    MainTabView()
+                }
+                .navigationBarHidden(true)
+            }
+            
             .navigationDestination(isPresented: $showFindEmailView) {
                 FindEmailView()
             }
@@ -76,36 +85,35 @@ struct LoginView: View {
                 SignUPView()
             }
         }
-        
-        .popup(isPresented: $loginErrorPopUp, view: {
+        .popup(isPresented: $loginErrorPopUp) {
             POPUPViews(title: "로그인 에러", message: "아이디와 비밀 번호를 한번 확인 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
-        }, customize: { popup in
-            popup
+        } customize: { view in
+            view
                 .type(.default)
                 .position(.bottom)
                 .animation(.spring())
                 .autohideIn(2)
                 .closeOnTap(true)
                 .closeOnTapOutside(true)
-        })
-        
-        .popup(isPresented: $loginPopUP, view: {
-            POPUPViews(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
-        }, customize: { popup in
-            popup
-                .type(.default)
-                .position(.bottom)
-                .animation(.spring())
-                .autohideIn(2)
-                .closeOnTap(true)
-                .closeOnTapOutside(true)
-        })
-        
-        .fullScreenCover(isPresented: $showMainView) {
-            NavigationStack {
-                MainTabView()
-            }
         }
+        
+        .popup(isPresented: $loginPopUP) {
+            POPUPViews(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
+        } customize: { popup in
+            popup
+                .type(.default)
+                .position(.bottom)
+                .animation(.spring())
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        }
+       
+//        .fullScreenCover(isPresented: $showMainView) {
+//            NavigationStack {
+//                MainTabView()
+//            }
+//        }
     }
     //MARK: - 앱 로고
     @ViewBuilder
@@ -172,14 +180,11 @@ struct LoginView: View {
     }
     //MARK:  - 로그인 버튼
     @ViewBuilder
-    private func  loginButton() -> some View {
+    private func loginButton() -> some View {
         VStack {
             Button {
                 viewModel.login(withEmail: emailTextField, password: passwordTextField)
                 UIApplication.shared.endEditing()
-                if viewModel.loginStatus == true {
-                    showMainView.toggle()
-                }
             } label: {
                 Text("로그인")
                     .nanumSquareNeo(family: .bRG, size: 22, color: .white)
@@ -190,6 +195,13 @@ struct LoginView: View {
                     }
             }
             //            .disabled(emailTextField.isEmpty  || passwordTextField.isEmpty)
+            .onChange(of: viewModel.loginStatus) { _ in
+                if viewModel.loginStatus { // loginStatus가 변경됐을 때
+                    showMainView.toggle()
+                } else {
+                    loginCheck()
+                }
+            }
             
             Spacer()
                 .frame(height: 40)
@@ -230,17 +242,15 @@ struct LoginView: View {
     //MARK: - 로그인 검사
     private func loginCheck() {
         if emailTextField.isEmpty {
-            loginPopUP.toggle()
+            loginPopUP = true
         } else if !CheckRegister.isValidateEmail(emailTextField) {
-            loginErrorPopUp.toggle()
+            loginErrorPopUp = true
         }else if passwordTextField.isEmpty {
-            loginPopUP.toggle()
+            loginPopUP = true
         }else if !CheckRegister.isValidatePassword(passwordTextField) {
-            loginErrorPopUp.toggle()
+            loginErrorPopUp = true
         } else if emailTextField != emailTextField {
-            loginErrorPopUp.toggle()
-        } else {
-            showMainView.toggle()
+            loginErrorPopUp = true
         }
     }
     
