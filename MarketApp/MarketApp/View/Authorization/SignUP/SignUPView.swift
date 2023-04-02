@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import ExytePopupView
+import PopupView
 import FirebaseAuth
 
 struct SignUPView: View {
@@ -22,7 +22,7 @@ struct SignUPView: View {
     @State private var recheckPassword: Bool = false
     @State private var showNickNameView: Bool = false
     @State private var checkOnePassword: Bool = false
-
+    
     
     @StateObject var viewModel: SignUPViewModel = SignUPViewModel()
     
@@ -55,27 +55,52 @@ struct SignUPView: View {
                         .frame(width: 30, height: 30)
                         .foregroundColor(.black)
                 }
-
+                
             }
         }
         .navigationDestination(isPresented: $showNickNameView) {
             SignUPNickNameView()
         }
         
-        .popup(isPresented: $checkEmail, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+        .popup(isPresented: $checkEmail, view: {
             SignupPOPUPVIew(image: "envelope", title: "회원가입 양식을 확인 해주세요", alertMessage: "이메일을 확인 해주세요")
-        }
-        .popup(isPresented: $checkPassword, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-            SignupPOPUPVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 입력해주세요")
-        }
-        .popup(isPresented: $recheckPassword, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-            SignupPOPUPVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 입력해주세요")
-        }
+        }, customize: { popup in
+            popup
+                .type(.floater(verticalPadding: 20))
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
         
-        .popup(isPresented: $checkOnePassword, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+        .popup(isPresented: $checkPassword, view: {
+            SignupPOPUPVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 입력해주세요")
+        }, customize: { popup in
+            popup
+                .type(.floater(verticalPadding: 20))
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
+        
+        .popup(isPresented: $recheckPassword, view: {
+            SignupPOPUPVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 입력해주세요")
+        }, customize: { popup in
+            popup
+                .type(.floater(verticalPadding: 20))
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
+        
+        .popup(isPresented: $checkOnePassword, view: {
             SignupPOPUPVIew(image: "lock", title: "회원가입 양식을 확인 해주세요", alertMessage: "비밀번호를 한번더 확인해주세요")
-        }
-        
+        }, customize: { popup in
+            popup
+                .type(.floater(verticalPadding: 20))
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
     }
     
     @ViewBuilder
@@ -113,10 +138,10 @@ struct SignUPView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.colorAsset.blueGray)
                             .frame(width: UIScreen.screenWidth - 60, height: 44)
-                        )
+                    )
             }
             .disabled(emailTextField.isEmpty || passwordTextField.isEmpty || recheckPsswordTextField.isEmpty)
-
+            
         }
         
     }

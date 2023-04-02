@@ -8,26 +8,6 @@ target 'MarketApp' do
   # Pods for MarketApp
   #pod 'Alamofire'
   pod 'SwiftLint'
-  pod 'ExytePopupView', '~> 1.2.1'
-  pod 'Kingfisher'
-  pod 'Moya'
-  pod 'Moya/Combine', '~> 15.0'
-  pod 'GoogleSignIn', '~> 6.2.4'
-  #pod 'FirebaseAppCheck', '~> 9.6.0'
- 
-  #Firebase
-  pod 'Firebase'
-  pod 'FirebaseAuth' , '~> 9.6.0'
-  pod 'FirebaseFirestore'
-  pod 'FirebaseAppCheck', '~> 9.6.0'
-  pod 'FirebaseFirestoreSwift'
-  pod 'FirebaseMessaging'
-  pod 'FirebaseStorage'
-  pod 'FirebaseCrashlytics'
-  pod 'FirebaseDynamicLinks'
-  pod 'FirebasePerformance'
-  pod 'FirebaseDatabase'
-  pod 'FirebaseRemoteConfig'
   
   
   target 'MarketAppTests' do

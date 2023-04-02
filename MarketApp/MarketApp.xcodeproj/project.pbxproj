@@ -85,6 +85,24 @@
 		7F66ECC62979A6FE0039CC42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F66ECC42979A6EE0039CC42 /* GoogleService-Info.plist */; };
 		7F93C34C29854D2100345AEC /* AppManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34B29854D2100345AEC /* AppManger.swift */; };
 		7F93C34F29856C3A00345AEC /* AffinityAppCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93C34E29856C3A00345AEC /* AffinityAppCheck.swift */; };
+		7FA4B87129D8893000FA1569 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B87029D8893000FA1569 /* FirebaseAnalytics */; };
+		7FA4B87329D8893000FA1569 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B87229D8893000FA1569 /* FirebaseAppCheck */; };
+		7FA4B87529D8893000FA1569 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B87429D8893000FA1569 /* FirebaseAuth */; };
+		7FA4B87729D8893000FA1569 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B87629D8893000FA1569 /* FirebaseCrashlytics */; };
+		7FA4B87929D8893000FA1569 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B87829D8893000FA1569 /* FirebaseDatabase */; };
+		7FA4B87B29D8893000FA1569 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B87A29D8893000FA1569 /* FirebaseDynamicLinks */; };
+		7FA4B87D29D8893000FA1569 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B87C29D8893000FA1569 /* FirebaseFirestore */; };
+		7FA4B87F29D8893000FA1569 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B87E29D8893000FA1569 /* FirebaseFirestoreSwift */; };
+		7FA4B88129D8893000FA1569 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88029D8893000FA1569 /* FirebaseMessaging */; };
+		7FA4B88329D8893000FA1569 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88229D8893000FA1569 /* FirebasePerformance */; };
+		7FA4B88529D8893000FA1569 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88429D8893000FA1569 /* FirebaseRemoteConfig */; };
+		7FA4B88729D8893000FA1569 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88629D8893000FA1569 /* FirebaseStorage */; };
+		7FA4B88A29D8899000FA1569 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88929D8899000FA1569 /* GoogleSignIn */; };
+		7FA4B88D29D889F800FA1569 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88C29D889F800FA1569 /* Lottie */; };
+		7FA4B89029D88A4600FA1569 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B88F29D88A4600FA1569 /* CombineMoya */; };
+		7FA4B89229D88A4600FA1569 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B89129D88A4600FA1569 /* Moya */; };
+		7FA4B89529D88A8C00FA1569 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B89429D88A8C00FA1569 /* Kingfisher */; };
+		7FA4B89829D88ACB00FA1569 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA4B89729D88ACB00FA1569 /* PopupView */; };
 		7FA4BF44299A3EE800D8F2F7 /* MainShoesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4BF43299A3EE800D8F2F7 /* MainShoesService.swift */; };
 		7FA4BF46299A3F2A00D8F2F7 /* AffinityAPI-Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4BF45299A3F2A00D8F2F7 /* AffinityAPI-Main.swift */; };
 		7FDB1E6229A2399C00019099 /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB1E6129A2399C00019099 /* ProfileViewModelTests.swift */; };
@@ -271,7 +289,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA4B89229D88A4600FA1569 /* Moya in Frameworks */,
+				7FA4B88329D8893000FA1569 /* FirebasePerformance in Frameworks */,
+				7FA4B89829D88ACB00FA1569 /* PopupView in Frameworks */,
+				7FA4B87929D8893000FA1569 /* FirebaseDatabase in Frameworks */,
+				7FA4B87129D8893000FA1569 /* FirebaseAnalytics in Frameworks */,
+				7FA4B88529D8893000FA1569 /* FirebaseRemoteConfig in Frameworks */,
+				7FA4B88129D8893000FA1569 /* FirebaseMessaging in Frameworks */,
+				7FA4B88D29D889F800FA1569 /* Lottie in Frameworks */,
+				7FA4B87329D8893000FA1569 /* FirebaseAppCheck in Frameworks */,
+				7FA4B87729D8893000FA1569 /* FirebaseCrashlytics in Frameworks */,
 				0D0B745604915877639C073E /* Pods_MarketApp.framework in Frameworks */,
+				7FA4B88729D8893000FA1569 /* FirebaseStorage in Frameworks */,
+				7FA4B87D29D8893000FA1569 /* FirebaseFirestore in Frameworks */,
+				7FA4B89529D88A8C00FA1569 /* Kingfisher in Frameworks */,
+				7FA4B87B29D8893000FA1569 /* FirebaseDynamicLinks in Frameworks */,
+				7FA4B87529D8893000FA1569 /* FirebaseAuth in Frameworks */,
+				7FA4B87F29D8893000FA1569 /* FirebaseFirestoreSwift in Frameworks */,
+				7FA4B89029D88A4600FA1569 /* CombineMoya in Frameworks */,
+				7FA4B88A29D8899000FA1569 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,8 +948,6 @@
 				7FDB1E6429A2399C00019099 /* PBXTargetDependency */,
 			);
 			name = MarketAppTests;
-			packageProductDependencies = (
-			);
 			productName = MarketAppTests;
 			productReference = 7FDB1E5F29A2399C00019099 /* MarketAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -926,7 +960,6 @@
 				7FDB1E6829A239A600019099 /* Sources */,
 				7FDB1E6929A239A600019099 /* Frameworks */,
 				7FDB1E6A29A239A600019099 /* Resources */,
-				A7E9D1D36C9D6F43DB2B44EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -934,8 +967,6 @@
 				7FDB1E7329A239A600019099 /* PBXTargetDependency */,
 			);
 			name = MarketAppUITests;
-			packageProductDependencies = (
-			);
 			productName = MarketAppUITests;
 			productReference = 7FDB1E6C29A239A600019099 /* MarketAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -948,7 +979,6 @@
 				EC892A972908189600D02F99 /* Sources */,
 				EC892A982908189600D02F99 /* Frameworks */,
 				EC892A992908189600D02F99 /* Resources */,
-				DAA3929E740A81AEF9E43791 /* [CP] Embed Pods Frameworks */,
 				7F39FA95295333780041BF8B /* SwiftLint Script */,
 				7F2432B22958677000C1077E /* FirebaseCrashlytics Script */,
 			);
@@ -958,6 +988,24 @@
 			);
 			name = MarketApp;
 			packageProductDependencies = (
+				7FA4B87029D8893000FA1569 /* FirebaseAnalytics */,
+				7FA4B87229D8893000FA1569 /* FirebaseAppCheck */,
+				7FA4B87429D8893000FA1569 /* FirebaseAuth */,
+				7FA4B87629D8893000FA1569 /* FirebaseCrashlytics */,
+				7FA4B87829D8893000FA1569 /* FirebaseDatabase */,
+				7FA4B87A29D8893000FA1569 /* FirebaseDynamicLinks */,
+				7FA4B87C29D8893000FA1569 /* FirebaseFirestore */,
+				7FA4B87E29D8893000FA1569 /* FirebaseFirestoreSwift */,
+				7FA4B88029D8893000FA1569 /* FirebaseMessaging */,
+				7FA4B88229D8893000FA1569 /* FirebasePerformance */,
+				7FA4B88429D8893000FA1569 /* FirebaseRemoteConfig */,
+				7FA4B88629D8893000FA1569 /* FirebaseStorage */,
+				7FA4B88929D8899000FA1569 /* GoogleSignIn */,
+				7FA4B88C29D889F800FA1569 /* Lottie */,
+				7FA4B88F29D88A4600FA1569 /* CombineMoya */,
+				7FA4B89129D88A4600FA1569 /* Moya */,
+				7FA4B89429D88A8C00FA1569 /* Kingfisher */,
+				7FA4B89729D88ACB00FA1569 /* PopupView */,
 			);
 			productName = MarketApp;
 			productReference = EC892A9B2908189600D02F99 /* MarketApp.app */;
@@ -996,6 +1044,12 @@
 			);
 			mainGroup = EC892A922908189600D02F99;
 			packageReferences = (
+				7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7FA4B88829D8899000FA1569 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				7FA4B88B29D889F800FA1569 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				7FA4B88E29D88A4600FA1569 /* XCRemoteSwiftPackageReference "Moya" */,
+				7FA4B89329D88A8C00FA1569 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7FA4B89629D88ACB00FA1569 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = EC892A9C2908189600D02F99 /* Products */;
 			projectDirPath = "";
@@ -1093,7 +1147,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n # \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n # \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n\"${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\" \n";
 		};
 		7F39FA95295333780041BF8B /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1134,40 +1188,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A7E9D1D36C9D6F43DB2B44EF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarketApp-MarketAppUITests/Pods-MarketApp-MarketAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarketApp-MarketAppUITests/Pods-MarketApp-MarketAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarketApp-MarketAppUITests/Pods-MarketApp-MarketAppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DAA3929E740A81AEF9E43791 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarketApp/Pods-MarketApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarketApp/Pods-MarketApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarketApp/Pods-MarketApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E58ADA0E667660CDCF3C80D3 /* [CP] Check Pods Manifest.lock */ = {
@@ -1327,9 +1347,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 78;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
@@ -1354,8 +1375,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 78;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
@@ -1379,7 +1401,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 78;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1405,7 +1427,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 78;
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1550,7 +1572,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 78;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1571,7 +1593,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEVELOPE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1594,7 +1616,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 78;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1615,7 +1637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1669,6 +1691,151 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 11.0.0;
+				minimumVersion = 10.0.0;
+			};
+		};
+		7FA4B88829D8899000FA1569 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.2.4;
+			};
+		};
+		7FA4B88B29D889F800FA1569 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		7FA4B88E29D88A4600FA1569 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		7FA4B89329D88A8C00FA1569 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.6.0;
+			};
+		};
+		7FA4B89629D88ACB00FA1569 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7FA4B87029D8893000FA1569 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		7FA4B87229D8893000FA1569 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		7FA4B87429D8893000FA1569 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		7FA4B87629D8893000FA1569 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		7FA4B87829D8893000FA1569 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		7FA4B87A29D8893000FA1569 /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
+		};
+		7FA4B87C29D8893000FA1569 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		7FA4B87E29D8893000FA1569 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		7FA4B88029D8893000FA1569 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		7FA4B88229D8893000FA1569 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		7FA4B88429D8893000FA1569 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		7FA4B88629D8893000FA1569 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B86F29D8893000FA1569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		7FA4B88929D8899000FA1569 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B88829D8899000FA1569 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		7FA4B88C29D889F800FA1569 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B88B29D889F800FA1569 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		7FA4B88F29D88A4600FA1569 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B88E29D88A4600FA1569 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		7FA4B89129D88A4600FA1569 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B88E29D88A4600FA1569 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		7FA4B89429D88A8C00FA1569 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B89329D88A8C00FA1569 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		7FA4B89729D88ACB00FA1569 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA4B89629D88ACB00FA1569 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC892A932908189600D02F99 /* Project object */;
 }

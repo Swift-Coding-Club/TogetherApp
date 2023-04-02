@@ -47,6 +47,14 @@ Incrementing Build Number
 
 Unit test
 
+### ios resolve_packages
+
+```sh
+[bundle exec] fastlane ios resolve_packages
+```
+
+
+
 ### ios build_ipa
 
 ```sh

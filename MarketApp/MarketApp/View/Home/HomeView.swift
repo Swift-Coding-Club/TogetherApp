@@ -186,9 +186,7 @@ struct HomeView: View {
         @ViewBuilder
         private func SelectBrandProductView() -> some View {
             LazyVStack {
-                if let shoesData = filterBrand {
-                    ProdductListView(shoesData: shoesData)
-                }
+                ProdductListView(shoesData: filterBrand)
             }
         }
         

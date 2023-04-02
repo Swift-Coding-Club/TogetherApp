@@ -8,7 +8,7 @@
 import SwiftUI
 import AuthenticationServices
 import Firebase
-import ExytePopupView
+import PopupView
 
 struct LoginView: View {
     
@@ -77,12 +77,30 @@ struct LoginView: View {
             }
         }
         
-        .popup(isPresented: $loginErrorPopUp, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+        .popup(isPresented: $loginErrorPopUp, view: {
             POPUPViews(title: "로그인 에러", message: "아이디와 비밀 번호를 한번 확인 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
-        }
-        .popup(isPresented: $loginPopUP, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+        }, customize: { popup in
+            popup
+                .type(.default)
+                .position(.bottom)
+                .animation(.spring())
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
+        
+        .popup(isPresented: $loginPopUP, view: {
             POPUPViews(title: "로그인 하기", message: "로그인을 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
-        }
+        }, customize: { popup in
+            popup
+                .type(.default)
+                .position(.bottom)
+                .animation(.spring())
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
+        
         .fullScreenCover(isPresented: $showMainView) {
             NavigationStack {
                 MainTabView()

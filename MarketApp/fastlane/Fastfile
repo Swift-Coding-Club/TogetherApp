@@ -24,10 +24,6 @@ ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "600"
 
 default_platform(:ios)
 platform :ios do
-
-
-
-
  desc "Runs `pod install`"
   puts "Runs `pod install`"
   lane :pod_install do
@@ -83,6 +79,10 @@ platform :ios do
      end
    end
 
+lane :resolve_packages do
+  sh("swift package resolve")
+end
+
  desc "Install Profiles and Build My App"
   lane :build_ipa do
    clear_derived_data
@@ -101,28 +101,31 @@ error do |lane, exception, options|
       slack_url: ENV["SLACK_URL_TEST"]
     )
      end
-    gym(
+      get_certificates
+     get_provisioning_profile
+   # resolve_packages
+     gym(
       configuration: "Release",
       workspace: "MarketApp.xcworkspace",
       output_name: "MarketApp.ipa",
       scheme: "MarketApp",
-      export_method: "app-store",
+     export_method: "app-store",
       xcodebuild_command: "xcodebuild",
-      include_bitcode: false,
+       include_bitcode: false,
      # skip_build_archive: false,
       xcodebuild_formatter: "xcpretty",
-      output_directory: "./output/",
+      output_directory: "./fastlane/output/",
       clean: true,
       silent: true,
       include_symbols: false,
       xcargs: "ARCHIVE=YES",
-     # disable_package_automatic_updates: true,
-      skip_package_ipa: false,
-     #skip_package_dependencies_resolution: false,
-      #skip_package_pkg: false,
+     disable_package_automatic_updates: false,
+     skip_package_ipa: false,
+    skip_package_dependencies_resolution: false,
+      skip_package_pkg: false,
         export_options: {
          signingStyle: "automatic",
-          uploadBitcode: false,
+         uploadBitcode: false,
           provisioningProfiles: {
             "com.shoping.MarketApps" => "Affinity",
             "com.shoping.MarketApps" => "com.shoping.MarketApps AppStore"
@@ -152,8 +155,8 @@ error do |lane, exception, options|
         target: "MarketApp"
        )
      build = get_build_number
-    get_certificates
-    get_provisioning_profile
+    #get_certificates
+   # get_provisioning_profile
     increment_build_number(
         build_number: latest_testflight_build_number + 1
     )
@@ -163,7 +166,7 @@ error do |lane, exception, options|
     demo_account_required: true,
     beta_app_description:"신발 커뮤니티 앱",
     api_key_path: "fastlane/apikey.json", 
-    ipa:"./output/MarketApp.ipa",
+    ipa:"./fastlane/output/MarketApp.ipa",
     changelog:"변경사항",
     skip_waiting_for_build_processing: true)
     slack(
@@ -194,12 +197,17 @@ error do |lane, exception, options|
        )
      build = get_build_number
     #get_dev_certs
-    #build_ipa
+   #build_ipa
+
+    firebase_cli_token = ENV["FIREBASE_CLI_TOKEN"]
+
     firebase_app_distribution(
-     app: ENV["IOS_FIREBASE_APP_DISTRIBUTION_APP"],
-      groups: "Affinity",
-      #googleservice_info_plist_path: "./Firebase/GoogleService-Info.plist",
-       release_notes: "upload test",debug: true)
+      app: ENV["IOS_FIREBASE_APP_DISTRIBUTION_APP"],
+      groups: "testgroup",
+      firebase_cli_token: firebase_cli_token,
+      ipa_path: "./fastlane/output/MarketApp.ipa",
+      release_notes: "Release notes",
+      debug: true)   
          slack(
           message: "파이어베스  배포에 성공했습니다!",
            slack_url: ENV["SLACK_URL_UPLOAD"],
@@ -232,9 +240,6 @@ error do |lane, exception, options|
   # 과 같이 사용할 수 있다.
     if options[:version]
       version = options[:version]
-
-   
-
       increment_version_number(version_number: options[:version])
        version = get_version_number(
         xcodeproj: "MarketApp.xcodeproj",
@@ -249,7 +254,7 @@ error do |lane, exception, options|
         username: "shuwj81@daum.net",
         team_id: "N94CS4N6R",
         #release_notes:  "버그 수정 .",
-        ipa:"./output/MarketApp.ipa",
+        ipa:"./fastlane/output/MarketApp.ipa",
         api_key_path: "fastlane/apikey.json",
 	skip_metadata: false,
         metadata_path: "./metadata",

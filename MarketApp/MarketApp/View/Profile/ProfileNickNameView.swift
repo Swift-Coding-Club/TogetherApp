@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import ExytePopupView
+import PopupView
 
 struct ProfileNickNameView: View {
     @StateObject var viewModel: SignUPViewModel = SignUPViewModel()
@@ -57,9 +57,16 @@ struct ProfileNickNameView: View {
 //            }
 //        }
         
-        .popup(isPresented: $checkNickName, type: .floater(verticalPadding: 20), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-                SignupPOPUPVIew(image: "person", title: "회원가입 양식을 확인 해주세요", alertMessage: "닉네임을 한번 더 확인해주세요")
-            }
+        .popup(isPresented: $checkNickName, view: {
+            SignupPOPUPVIew(image: "person", title: "회원가입 양식을 확인 해주세요", alertMessage: "닉네임을 한번 더 확인해주세요")
+        }, customize: {  popup in
+            popup
+                .type(.floater(verticalPadding: 20))
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
+
     }
     //MARK: - 타이틀 헤더
     @ViewBuilder

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import ExytePopupView
+import PopupView
 import Kingfisher
 import Photos
 
@@ -54,24 +54,50 @@ struct ProfileView: View {
         .navigationDestination(isPresented: $editProfileName) {
             ProfileNickNameView()
         }
+        
         .navigationDestination(isPresented: $showTermsPolicesView, destination: {
             WebViews(url: "https://velog.io/@suhwj/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4-%EC%B2%98%EB%A6%AC-%EB%B0%A9%EC%B9%A8")
         })
         //MARK: - 팝업 관련
-        .popup(isPresented: $showLogoutPOPUPView, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+        .popup(isPresented: $showLogoutPOPUPView, view: {
             SignOutPOPUPView()
-        }
+        }, customize: { popup in
+            popup
+                .type(.default)
+                .position(.bottom)
+                .animation(.spring())
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
         
-        .popup(isPresented: $showWithDrawPOPUPView, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
+        .popup(isPresented: $showWithDrawPOPUPView, view: {
             withDrawPOPUPView(title: "회원탈퇴", message: "진짜 회원 탈퇴를 하시겠어요 ??") {
                 viewModel.withdrawUser()
                 viewModel.loginStatus = true
             }
-            
-            .popup(isPresented: $deniedAlbum, type: .default, position: .bottom, animation: .spring(), autohideIn: 2, closeOnTap: true, closeOnTapOutside: true) {
-                POPUPViews(title: "사진 접근 허용 불가", message: "사진 접근 허용 불가", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.blueGray)
-            }
-        }
+        }, customize: { popup in
+            popup
+                .type(.default)
+                .position(.bottom)
+                .animation(.spring())
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
+        
+        .popup(isPresented: $deniedAlbum, view: {
+            POPUPViews(title: "사진 접근 허용 불가", message: "사진 접근 허용 불가", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.blueGray)
+        }, customize: { popup in
+            popup
+                .type(.default)
+                .position(.bottom)
+                .animation(.spring())
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
+        
     }
     
     @ViewBuilder

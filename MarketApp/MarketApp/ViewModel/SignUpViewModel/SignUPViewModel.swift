@@ -16,6 +16,7 @@ class SignUPViewModel: ObservableObject {
     
     //MARK: - 유저
     @Published var userSession: FirebaseAuth.User?
+
     @Published var nonce: String  = ""
     @Published var loginStatus: Bool = false
     @Published var deleteUser: Bool = false
