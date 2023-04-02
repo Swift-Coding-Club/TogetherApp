@@ -265,7 +265,7 @@ error do |lane, exception, options|
         #skip_screenshots: false, 
         force: true,
         submit_for_review: true,
-        automatic_release: true,
+        automatic_release: false,
         precheck_include_in_app_purchases: false, 
 	submission_information: {
         add_id_info_uses_idfa: false,
