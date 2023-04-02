@@ -6,27 +6,34 @@
 //
 
 import XCTest
-import Combine
+import CombineMoya
 import Moya
+import Combine
 @testable import MarketApp
 
 final class MainVIewModelTests: XCTestCase {
     
     var viewModel: MainShoesViewModel!
-    
+    var shoesMaincancellables: Set<AnyCancellable>!
+    var shoesDetailcancellables: Set<AnyCancellable>!
     
     override func setUp() {
         super.setUp()
         viewModel = MainShoesViewModel()
+        shoesMaincancellables = Set()
+        shoesDetailcancellables = Set()
     }
     
     override func tearDown() {
         viewModel = nil
+        shoesMaincancellables = nil
+        shoesDetailcancellables = nil
         super.tearDown()
     }
     
     
     func testToViewModel() {
+        let expectation = XCTestExpectation(description: "mockdata 테스트")
         let mockData = [ShoesDetailData(shoesId: 1, brandName: "Nike", productName: "Nike Air Force 1 '07 Low White", transName: "나이키 에어포스 1 '07 로우 화이트", price: "128,000", productImg: ["https://kream-phinf.pstatic.net/MjAyMjA2MTVfMjYw/MDAxNjU1MjgzNjk2Mzk3.gh8n5rs7p-pWVqzIhNh7yj_KdyjLFBeJr9QbsDumoFEg.KdvPfvgBYmjm7MKKhcbIEQIP6FGeuof_GnmcDUgrvyAg.PNG/a_baa1ccea3726495badba419dfede63f9.png?type=m"])]
         
         viewModel.toViewModel(mockData)
@@ -44,6 +51,7 @@ final class MainVIewModelTests: XCTestCase {
     
     
     func testToDetailViewModel() {
+        let expectation = XCTestExpectation(description: "mockdata 테스트")
         let mockData = [ShoesDetailData(shoesId: 1, brandName: "Nike", productName: "Nike Air Force 1 '07 Low White", transName: "나이키 에어포스 1 '07 로우 화이트", price: "128,000", productImg: ["https://kream-phinf.pstatic.net/MjAyMTA5MDlfMTM2/MDAxNjMxMTY4NDgxNjYy.zbjY9wciksaYT7sUz-OdfVfMijT4zlN3ZrP1_FKTIkAg.q1tp-NTfS052i0hTqbYKf1mhtxZZBWEcEm9LUCfevhkg.PNG/a_bd87be02eddb460798690f5d082217c5.png?type=l", "https://kream-phinf.pstatic.net/MjAyMTA5MDlfMTE5/MDAxNjMxMTY4NDg0Mzk1.h6CHbDt3cSsoyGumXlzNmhTa8iNJvWcIzhzimNzNF2Ig.Gh0liKYzQEZ-r3l3gFAX0DBPT9bt2FuywdbiPK1-LJ0g.PNG/a_32465a09d3214e2e8cba85d1bc62ee04.png?type=l", "https://kream-phinf.pstatic.net/MjAyMTA5MDlfMTU5/MDAxNjMxMTY4NDg2Nzg3.Kf0RTLiVjQ2dxE8Z-ZgFPWDQGhJiQKt-LjVvrCo5NS4g.VPstVD7BiTciaEAwad02Z2i85fJvls4-zKUkaQHyElUg.PNG/a_dca56f9e768f4b028640d578f4703575.png?type=l"])]
         
         viewModel.toViewModel(mockData)
@@ -60,40 +68,29 @@ final class MainVIewModelTests: XCTestCase {
     
     
     func test_신발APIRequestTest() {
-        let expectation = XCTestExpectation(description: "api 통신 테스트")
-        viewModel.shoesCancellable = MoyaProvider<MainShoesService>().requestPublisher(.mainShoesData)
-            .compactMap { $0 }
-            .sink(receiveCompletion: { result in
-                switch result {
-                case .failure(let error):
-                    XCTFail("api 통신 에러 : \(error.localizedDescription)")
-                case .finished:
-                    break
-                }
-            }, receiveValue: { model in
-                let data = try? model.map(ShoesDetailData.self)
-                XCTAssertNotNil(data, "shoesModel maping error")
-                self.viewModel.toViewModel([data!])
+        let expectation = XCTestExpectation(description: "신발MainApi 통신 테스트")
+        viewModel.mainShoesRequest()
+        
+        viewModel.$shoesDetailData
+            .dropFirst()
+            .sink { shoesDetailData in
+                // Assert
+                XCTAssertNotNil(shoesDetailData)
                 expectation.fulfill()
-            })
+            }.store(in: &shoesMaincancellables)
     }
-    
+
     func test_신발상세APIRequestTest() {
-        let expectation = XCTestExpectation(description: "api 통신 테스트")
-        viewModel.shoesCancellable = MoyaProvider<MainDetailService>().requestPublisher(.mainShoesDetail(trans_name: "나이키 에어포스 1 '07 로우 화이트"))
-            .compactMap { $0 }
-            .sink(receiveCompletion: { result in
-                switch result {
-                case .failure(let error):
-                    XCTFail("api 통신 에러 : \(error.localizedDescription)")
-                case .finished:
-                    break
-                }
-            }, receiveValue: { model in
-                let data = try? model.map(ShoesDetailData.self)
-                XCTAssertNotNil(data, "shoesModel maping error")
-                self.viewModel.toDetailViewModel([data!])
+        let expectation = XCTestExpectation(description: "신발상세Api 통신 테스트")
+        viewModel.mainDetailShoesRequest()
+        
+        viewModel.$shoesDetailData
+            .dropFirst()
+            .sink { shoesDetailData in
+                // Assert
+                XCTAssertNotNil(shoesDetailData)
                 expectation.fulfill()
-            })
+            }.store(in: &shoesDetailcancellables)
+        
     }
 }
