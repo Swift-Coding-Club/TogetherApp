@@ -5,84 +5,82 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000403">
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000317">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: increment_version_number" time="3.116895">
+      <testcase classname="fastlane.lanes" name="01: increment_version_number" time="4.306858">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: get_version_number" time="0.123744">
+      <testcase classname="fastlane.lanes" name="02: get_version_number" time="0.106329">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: get_build_number" time="1.433043">
+      <testcase classname="fastlane.lanes" name="03: get_build_number" time="1.255152">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: get_certificates" time="6.197622">
+      <testcase classname="fastlane.lanes" name="04: Switch to ios build_ipa lane" time="0.0002">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: get_provisioning_profile" time="7.213621">
+      <testcase classname="fastlane.lanes" name="05: clear_derived_data" time="17.545821">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="06: Switch to ios build_ipa lane" time="0.000323">
+      <testcase classname="fastlane.lanes" name="06: slack" time="0.630529">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="07: clear_derived_data" time="39.624031">
+      <testcase classname="fastlane.lanes" name="07: get_certificates" time="110.290249">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="08: slack" time="0.999495">
+      <testcase classname="fastlane.lanes" name="08: get_provisioning_profile" time="3.46317">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="09: get_certificates" time="29.544529">
+      <testcase classname="fastlane.lanes" name="09: gym" time="511.723569">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="10: get_provisioning_profile" time="6.102603">
+      <testcase classname="fastlane.lanes" name="10: slack" time="0.526575">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="11: gym" time="623.398868">
+      <testcase classname="fastlane.lanes" name="11: Switch to ios unit_Test lane" time="0.000216">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="12: slack" time="0.542465">
+      <testcase classname="fastlane.lanes" name="12: run_tests" time="736.81393">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="13: Switch to ios unit_Test lane" time="0.000703">
+      <testcase classname="fastlane.lanes" name="13: slack" time="0.850446">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="14: run_tests" time="450.774834">
-        
-          <failure message="/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/actions/actions_helper.rb:67:in `execute_action&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:255:in `block in execute_action&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:229:in `chdir&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:229:in `execute_action&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/fast_file.rb:159:in `method_missing&apos;&#10;Fastfile:58:in `block (2 levels) in parsing_binding&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/lane.rb:33:in `call&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:204:in `try_switch_to_lane&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:146:in `trigger_action_by_name&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/fast_file.rb:159:in `method_missing&apos;&#10;Fastfile:256:in `block (2 levels) in parsing_binding&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/lane.rb:33:in `call&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:49:in `block in execute&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:45:in `chdir&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/runner.rb:45:in `execute&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/lane_manager.rb:47:in `cruise_lane&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/commands_generator.rb:110:in `block (2 levels) in run&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/commander-4.6.0/lib/commander/command.rb:187:in `call&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/commander-4.6.0/lib/commander/command.rb:157:in `run&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/commander-4.6.0/lib/commander/runner.rb:444:in `run_active_command&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:124:in `run!&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/commander-4.6.0/lib/commander/delegates.rb:18:in `run!&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/commands_generator.rb:354:in `run&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/commands_generator.rb:43:in `start&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/fastlane/lib/fastlane/cli_tools_distributor.rb:123:in `take_off&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/fastlane-2.212.1/bin/fastlane:23:in `&lt;top (required)&gt;&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/bin/fastlane:25:in `load&apos;&#10;/Users/suhwonji/.rbenv/versions/3.1.4/bin/fastlane:25:in `&lt;main&gt;&apos;&#10;&#10;Error building the application. See the log above." />
+      <testcase classname="fastlane.lanes" name="14: upload_to_app_store" time="381.971809">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="15: slack" time="0.66737">
+      <testcase classname="fastlane.lanes" name="15: slack" time="0.565155">
         
       </testcase>
     

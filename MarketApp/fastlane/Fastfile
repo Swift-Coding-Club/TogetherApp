@@ -58,7 +58,7 @@ platform :ios do
   run_tests(
      workspace: "MarketApp.xcworkspace",
       scheme: "MarketApp",
-      devices: ["iPhone 12"],
+      devices: ["iPhone 14"],
       reinstall_app: true,
       result_bundle: true,
       app_identifier: "com.shoping.MarketApps",
@@ -262,7 +262,7 @@ error do |lane, exception, options|
         api_key_path: "fastlane/apikey.json",
 	skip_metadata: false,
         metadata_path: "./metadata",
-        #skip_screenshots: false, 
+        skip_screenshots: true, 
         force: true,
         submit_for_review: true,
         automatic_release: false,
@@ -282,7 +282,7 @@ error do |lane, exception, options|
     end
     #성공했을때  슬랙 메세지   
       slack(
-      message: "배포  성공",
+      message: "앱 배포 성공",
       slack_url: ENV["SLACK_URL_UPLOAD"],
       payload: {
         "Version": version + " (" + build + ")",
