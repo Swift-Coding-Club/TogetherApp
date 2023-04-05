@@ -64,6 +64,7 @@ struct MainTabView: View {
             }
         })
         .navigationTitle("")
+        .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear{
             UITabBar.appearance().tintColor = UIColor(Color.colorAsset.blueGray)

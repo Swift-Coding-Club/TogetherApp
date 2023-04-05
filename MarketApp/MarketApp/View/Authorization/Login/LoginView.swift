@@ -68,10 +68,9 @@ struct LoginView: View {
                 }
                 .bounce(false)
             }
+            
             .navigationDestination(isPresented: $showMainView) {
-                NavigationStack {
-                    MainTabView()
-                }
+                MainTabView()
                 .navigationBarHidden(true)
             }
             
@@ -85,6 +84,7 @@ struct LoginView: View {
                 SignUPView()
             }
         }
+        .navigationBarHidden(true)
         .popup(isPresented: $loginErrorPopUp) {
             POPUPViews(title: "로그인 에러", message: "아이디와 비밀 번호를 한번 확인 해주세요", cancelTitle: "취소", confiremTitle: "확인", color: Color.colorAsset.mainColor)
         } customize: { view in

@@ -28,8 +28,8 @@ struct ProductView: View {
     
     var body: some View {
         
-        if !transName.isEmpty {
-            VStack {
+        VStack {
+            if viewModel.shoesName != nil {
                 ScrollView(.vertical, showsIndicators: true) {
                     
                     productTopImageView()
@@ -39,27 +39,33 @@ struct ProductView: View {
                     DetailImageView(transName: transName)
                 }
                 .bounce(false)
-                
                 .onAppear {
                     print("신발 이름 \(transName)")
                     viewModel.shoesName = transName
                     viewModel.mainDetailShoesRequest()
                 }
+            } else {
+                Spacer()
+                
+                LottieLoadingView()
+                    .onAppear {
+                        print("신발 이름 \(transName)")
+                        viewModel.shoesName = transName
+                        viewModel.mainDetailShoesRequest()
+                    }
             }
-            .navigationBarBackButtonHidden(true)
-            .navigationTitle("")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    shareButton()
-                }
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationTitle("")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                shareButton()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    customBackButton()
-                }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                customBackButton()
             }
-        } else {
-            LottieLoadingView()
         }
     }
     
@@ -88,9 +94,9 @@ struct ProductView: View {
                           , autoScroll: .active(5)) { imageUrl in
                     ProductImage(image: imageUrl)
                 }
-                .frame(height: 300)
-                .readSize {
-                    bannerSize = $0 }
+                          .frame(height: 300)
+                          .readSize {
+                              bannerSize = $0 }
                 
                 
                 VStack(spacing: 10) {
@@ -98,7 +104,7 @@ struct ProductView: View {
                                    , size: 8, activeColor: Color.colorAsset.blueGray
                                    , inactiveColor: Color.colorAsset.lightBlack
                                    , pageCount: imageUrls.count)
-                        .padding(.bottom, 20)
+                    .padding(.bottom, 20)
                 }
                 .transition(.opacity.animation(.easeInOut(duration: 0.5)))
             } else {
@@ -107,7 +113,7 @@ struct ProductView: View {
             }
         }
     }
-
+    
     //MARK: 배너 이미지 view
     @ViewBuilder
     private func ProductImage(image: String) -> some View {
@@ -117,7 +123,7 @@ struct ProductView: View {
             .scaledToFill()
             .frame(height: 300)
     }
-
+    
     //MARK: - 공유 버튼
     @ViewBuilder
     private func shareButton() -> some View {
@@ -201,7 +207,7 @@ struct ProductView: View {
                 }.frame(width: 50)
             }
             .padding()
-        } 
+        }
     }
     
     @ViewBuilder

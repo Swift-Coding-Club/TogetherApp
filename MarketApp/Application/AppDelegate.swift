@@ -21,19 +21,6 @@ class AppDelegate: UIViewController, UIApplicationDelegate, MessagingDelegate, U
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        
-//        var filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")
-//#if DEVELOPE
-//            filePath = Bundle.main.path(forResource: "GoogleService-Info-dev", ofType: "plist")
-//#endif
-//        if let fileopts = FirebaseOptions(contentsOfFile: filePath!) {
-//            FirebaseApp.configure(options: fileopts)
-//            // init fcm
-//            Messaging.messaging().delegate = self
-//        } else {
-//            assert(false, "Couldn't load config file")
-//        }
-//
         FirebaseApp.configure()
         FirebaseConfiguration.shared.setLoggerLevel(FirebaseLoggerLevel.min)
         remoteConfig = RemoteConfig.remoteConfig()
@@ -65,7 +52,7 @@ class AppDelegate: UIViewController, UIApplicationDelegate, MessagingDelegate, U
             if status == .success {
                 self.remoteConfig.activate() { (change, error) in
                     guard let minVersion = self.remoteConfig["ios_lastest_version"].stringValue else {
-                    return
+                        return
                     }
                 }
             }
