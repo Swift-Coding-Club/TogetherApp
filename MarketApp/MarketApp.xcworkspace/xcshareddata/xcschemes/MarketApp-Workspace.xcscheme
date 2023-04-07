@@ -20,6 +20,34 @@
                ReferencedContainer = "container:MarketApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "02C5F49A3F3F82E3E6D0271B"
+               BuildableName = "MarketAppTests.xctest"
+               BlueprintName = "MarketAppTests"
+               ReferencedContainer = "container:MarketApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AFDD825855F06A930B272225"
+               BuildableName = "MarketAppUITests.xctest"
+               BlueprintName = "MarketAppUITests"
+               ReferencedContainer = "container:MarketApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
