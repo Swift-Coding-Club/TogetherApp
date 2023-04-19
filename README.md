@@ -11,11 +11,15 @@
 
 
 ## 디자인
-- [피그마디자인](https://www.figma.com/file/2vhHPVAEBXwgygOfJ5mYqv/AFFINITY-UI-DESIGN?node-id=465%3A5315&t=pNlt3BYcSVo73aDn-0)
+- [피그마디자인](https://www.figma.com/file/2vhHPVAEBXwgygOfJ5mYqv/AFFINITY-UI-DESIGN?node-id=465-5315&t=nLpFGjk51FA2XNpV-0)
 
 
 ## 앱아이콘  
 <img src= "https://user-images.githubusercontent.com/75601594/221594192-8eb68e34-bcab-4319-8f69-81b2ecdf9492.png"  width="30%">
+
+
+## App Store
+<a href="https://apps.apple.com/us/app/affinity/id1665706797" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-US?size=250x83&amp" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
 ##  앱 UI
 
