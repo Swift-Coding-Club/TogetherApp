@@ -58,6 +58,7 @@ struct WriteComments : View {
                 
                 Button(action: {
                     //TODO : 문장 입력 후 완료 버튼을 누르면 CommunityBlock 뷰에 해당 문장이 올라가게끔 설계
+                    backPop = true
                 }, label: {
                     Text("올리기")
                         .frame(width: 50)
@@ -66,11 +67,15 @@ struct WriteComments : View {
             }
         }//동작안함. ( bp해두고 돌려봤을때는 잘찍힘 )
         .popup(isPresented: $backPop, type: .default, position: .top, animation: .spring(), dragToDismiss: true, closeOnTap: false, closeOnTapOutside: true) {
-            Text("서비스 준비중이에요!")
-                .frame(width: 300, height: 50)
-                .backgroundStyle(.black)
-                .cornerRadius(20)
-                .nanumSquareNeo(family: .cBd, size: 20, color: .white)
+            VStack {
+                Text("서비스 준비중이에요!")
+                    .padding(.bottom, 10)
+                Text("조금만 기다려주세요~")
+            }
+            .frame(width: 300, height: 200)
+            .background(.black)
+            .cornerRadius(10)
+            .nanumSquareNeo(family: .cBd, size: 20, color: .white)
         }
     }
 }
