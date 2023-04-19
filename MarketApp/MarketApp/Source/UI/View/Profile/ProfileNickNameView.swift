@@ -1,0 +1,125 @@
+//
+//  ProfileNickNameView.swift
+//  MarketApp
+//
+//  Created by 서원지 on 2023/03/12.
+//
+
+import SwiftUI
+import PopupView
+
+struct ProfileNickNameView: View {
+    @StateObject var viewModel: SignUPViewModel = SignUPViewModel()
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @State var nickNameTextField: String = ""
+    @State private var showProfileView: Bool = false
+    @State private var checkNickName: Bool = false
+    
+    
+    var body: some View {
+        VStack{
+            
+            Spacer()
+                .frame(height:  40)
+            
+            signUPNicknameHeader()
+            
+            Spacer()
+                .frame(height: 40)
+            
+            nickNameInputView()
+            
+            Spacer()
+                .frame(height: 220)
+            
+            nicknameSignUPButton()
+            
+            Spacer(minLength: .zero)
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.black)
+                }
+
+            }
+        }
+//        .fullScreenCover(isPresented: $showProfileView) {
+//            NavigationStack {
+//                ProfileView()
+//            }
+//        }
+        
+        .popup(isPresented: $checkNickName, view: {
+            SignupPOPUPVIew(image: "person", title: "회원가입 양식을 확인 해주세요", alertMessage: "닉네임을 한번 더 확인해주세요")
+        }, customize: {  popup in
+            popup
+                .type(.floater(verticalPadding: 20))
+                .autohideIn(2)
+                .closeOnTap(true)
+                .closeOnTapOutside(true)
+        })
+
+    }
+    //MARK: - 타이틀 헤더
+    @ViewBuilder
+    private func  signUPNicknameHeader() -> some View {
+        HStack{
+            Text("닉네임을 입력해주세요")
+                .nanumSquareNeo(family: .eHv, size: 30, color: .black)
+            
+            Spacer()
+        }
+        .padding(.horizontal, LayoutMargin)
+    }
+    //MARK: - 닉네임 텍스트 필드
+    @ViewBuilder
+    private func nickNameInputView() -> some View {
+        VStack{
+            SignUPTextFieldView(placeholder: "닉네임을 입력해주세요", signUpText: "닉네임", password: false, text: $nickNameTextField, showPassword: .constant(true))
+        }
+    }
+    //MARK: - 회원가입 완료 버튼
+    @ViewBuilder
+    private func nicknameSignUPButton() -> some View {
+        HStack{
+            Button {
+                viewModel.saveUserInformation(nickName: nickNameTextField)
+                checkRegister()
+            } label: {
+                Text("다음")
+                    .nanumSquareNeo(family: .cBd, size: 17, color: .white)
+                    .background (
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.black)
+                            .frame(width: UIScreen.screenWidth - 60, height: 44)
+                        )
+            }
+            .disabled(nickNameTextField.isEmpty)
+
+        }
+    }
+    
+    //MARK: - 유효성 검사
+    func checkRegister() {
+        if !CheckRegister.isValidateNickName(nickNameTextField) {
+            checkNickName.toggle()
+        } else {
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+}
+
+
+struct ProfileNickNameView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileNickNameView()
+    }
+}
