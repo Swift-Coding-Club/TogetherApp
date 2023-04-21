@@ -33,8 +33,6 @@ struct ProfileView: View {
         NavigationStack {
             VStack {
                 
-                editProfileNameView()
-                
                 profileHeader()
                 
                 profileSettingView()
@@ -151,6 +149,18 @@ struct ProfileView: View {
                                 .nanumSquareNeo(family: .eHv, size: 30, color: Color.colorAsset.white)
                             
                             Spacer()
+                                .frame(width: 10)
+                            
+                            Image(systemName: "pencil.line")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .bold()
+                                .foregroundColor(Color.colorAsset.white)
+                                .onTapGesture {
+                                    editProfileName = true
+                                }
+                            
+                            Spacer()
                         }
                         
                         Spacer()
@@ -206,34 +216,63 @@ struct ProfileView: View {
                     }
                 } label: {
                     if let profileImage = profileImage {
-                        ZStack {
-                            profileImage
-                                .resizable()
-                                .renderingMode(.original)
-                                .scaledToFill()
-                                .frame(width: 70, height: 70)
-                                .clipShape(Circle())
-                        }
-                        
-                    } else if profileViewModel.userImage == nil {
-                        ZStack{
-                            Image(systemName: "person.crop.circle.fill")
-                                .resizable()
-                                .renderingMode(.original)
-                                .scaledToFill()
-                                .frame(width: 70, height: 70)
-                                .clipShape(Circle())
-                                .foregroundColor(.gray)
-                        }
-                    } else {
-                        ZStack{
-                            if let profileImages = profileViewModel.userImage {
-                                Image(uiImage: profileImages)
+                        VStack {
+                            ZStack {
+                                profileImage
                                     .resizable()
                                     .renderingMode(.original)
                                     .scaledToFill()
-                                    .frame(width: 70, height: 70)
+                                    .frame(width: 75, height: 75)
                                     .clipShape(Circle())
+                                       
+                                
+                                Image("camera")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .scaledToFill()
+                                    .clipShape(Circle())
+                                    .offset(x: 26, y: 22)
+                            }
+                        }
+                        
+                    } else if profileViewModel.userImage == nil {
+                        VStack {
+                            ZStack{
+                                Image(systemName: "person.crop.circle.fill")
+                                    .resizable()
+                                    .renderingMode(.original)
+                                    .scaledToFill()
+                                    .frame(width: 75, height: 75)
+                                    .clipShape(Circle())
+                                    .foregroundColor(.gray)
+                                
+                                Image("camera")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .scaledToFill()
+                                    .clipShape(Circle())
+                                    .offset(x: 26, y: 22)
+                            }
+                            
+                        }
+                    } else {
+                        VStack {
+                            ZStack{
+                                if let profileImages = profileViewModel.userImage {
+                                    Image(uiImage: profileImages)
+                                        .resizable()
+                                        .renderingMode(.original)
+                                        .scaledToFill()
+                                        .frame(width: 75, height: 75)
+                                        .clipShape(Circle())
+                                    
+                                    Image("camera")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .scaledToFill()
+                                        .clipShape(Circle())
+                                        .offset(x: 26, y: 22)
+                                }
                             }
                         }
                     }
@@ -245,7 +284,7 @@ struct ProfileView: View {
             
         }
     }
-    
+        
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         profileImage = Image(uiImage: selectedImage)

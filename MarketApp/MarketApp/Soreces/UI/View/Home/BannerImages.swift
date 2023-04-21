@@ -12,6 +12,7 @@ import SwiftUI
 enum BannerImages: CaseIterable, CustomStringConvertible, Hashable {
     case abcMarket
     case nikeMarket
+    case addidasMarket
     
     var description: String {
         switch self {
@@ -19,6 +20,8 @@ enum BannerImages: CaseIterable, CustomStringConvertible, Hashable {
             return "ABC"
         case .nikeMarket:
             return "NIKE"
+        case .addidasMarket:
+            return "ADDIDAS"
         }
     }
     
@@ -27,7 +30,9 @@ enum BannerImages: CaseIterable, CustomStringConvertible, Hashable {
         case .abcMarket:
             return "ABC"
         case .nikeMarket:
-            return "Nike"
+            return "NIKE"
+        case .addidasMarket:
+            return "ADDIDAS"
         }
     }
     
@@ -37,6 +42,8 @@ enum BannerImages: CaseIterable, CustomStringConvertible, Hashable {
             return "https://abcmart.a-rt.com"
         case .nikeMarket:
             return "https://www.nike.com/kr"
+        case .addidasMarket:
+            return "https://www.adidas.co.kr"
         }
     }
 }

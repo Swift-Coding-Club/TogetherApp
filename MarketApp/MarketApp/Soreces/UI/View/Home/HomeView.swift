@@ -16,6 +16,7 @@ struct HomeView: View {
     @State private var selectPage : Int = .zero
     @State private var showABCView: Bool = false
     @State private var showNikeView:  Bool = false
+    @State private var showAddidasView: Bool = false
     
     @State private var selectBrandType: BrandType = .all
     @State private var filterBrand: [ShoesDetailData] = []
@@ -29,6 +30,7 @@ struct HomeView: View {
                 leadingNavigationTrallingView()
                 
                 ScrollView(.vertical, showsIndicators: false) {
+                    
                     BannerView()
                     
                     CategoryViews()
@@ -43,12 +45,19 @@ struct HomeView: View {
         .navigationDestination(isPresented: $showABCView) {
             WebViews(url: BannerImages.abcMarket.bannerURL)
         }
+        
         .navigationDestination(isPresented: $showNikeView) {
             WebViews(url: BannerImages.nikeMarket.bannerURL)
         }
+        
+        .navigationDestination(isPresented: $showNikeView) {
+            WebViews(url: BannerImages.addidasMarket.bannerURL)
+        }
+        
         .onAppear {
             viewModel.mainShoesRequest()
         }
+        
         .onChange(of: selectBrandType) { newValue in
             filterBrand =  viewModel.shoesDetailData?.filter({ shoes  in
                 shoes.brandName == selectBrandType.brandDescription
@@ -117,9 +126,11 @@ struct HomeView: View {
                             showABCView = true
                         } else if item.description == "NIKE" {
                             showNikeView = true
+                        } else if item.description == "ADDIDAS" {
+                            showAddidasView = true
                         }
                     }
-            }.frame(height: 200)
+            }.frame(height: 240)
                 .readSize {
                     bannerSize = $0
                 }
