@@ -50,7 +50,7 @@ struct HomeView: View {
             WebViews(url: BannerImages.nikeMarket.bannerURL)
         }
         
-        .navigationDestination(isPresented: $showNikeView) {
+        .navigationDestination(isPresented: $showAddidasView) {
             WebViews(url: BannerImages.addidasMarket.bannerURL)
         }
         
