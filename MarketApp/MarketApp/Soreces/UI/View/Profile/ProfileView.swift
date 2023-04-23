@@ -25,6 +25,8 @@ struct ProfileView: View {
     @State private var notDeterminedAlbum = false
     @State private var editProfileName: Bool = false
     @State private var showTermsPolicesView: Bool = false
+    @State private var showConnatASView: Bool = false
+    @State private var showMakeAppDeveloperView: Bool = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
     
@@ -49,13 +51,26 @@ struct ProfileView: View {
         .fullScreenCover(isPresented: $viewModel.loginStatus) {
             LoginView()
         }
+        //MARK: -  프로필 수정
         .navigationDestination(isPresented: $editProfileName) {
             ProfileNickNameView()
         }
         
+        //MARK: - 약관 정책  보여주는 화면
         .navigationDestination(isPresented: $showTermsPolicesView, destination: {
             WebViews(url: AffinityAPI.TermsPolicesUrl)
         })
+        
+        //MARK: - 문의하기 화면
+        .navigationDestination(isPresented: $showConnatASView, destination: {
+            WebViews(url: AffinityAPI.ConnactASUrl)
+        })
+        
+        //MARK: - 만든 개발자 뷰
+        .navigationDestination(isPresented: $showMakeAppDeveloperView, destination: {
+            WebViews(url: AffinityAPI.makeAppDeveloperUrl)
+        })
+        
         //MARK: - 팝업 관련
         .popup(isPresented: $showLogoutPOPUPView, view: {
             SignOutPOPUPView(title: "로그아웃 하시겠어요", message: "로그아웃 하셔도 Affinity는 유저님을 기다립니다") {
@@ -122,11 +137,11 @@ struct ProfileView: View {
     
     
     @ViewBuilder
-     private func profileHeader() -> some View {
+    private func profileHeader() -> some View {
         HStack{
             Rectangle()
                 .frame(width: UIScreen.screenWidth, height: 200)
-//                .edgesIgnoringSafeArea(.top)
+            //                .edgesIgnoringSafeArea(.top)
                 .overlay {
                     VStack(alignment: .leading, spacing: .zero){
                         Spacer()
@@ -166,22 +181,22 @@ struct ProfileView: View {
                         Spacer()
                             .frame(height: 20)
                         
-                        HStack(alignment: .center){
-                            
-                            Spacer()
-                            
-                            Text("작성댓글")
-                                .nanumSquareNeo(family: .eHv, size: 24, color: Color.colorAsset.white)
-                            
-                            Spacer()
-                                .frame(width: 120)
-                            
-                            Text("좋아요")
-                                .nanumSquareNeo(family: .eHv, size: 24, color: Color.colorAsset.white)
-                            
-                            Spacer()
-                        }
-
+                        //                        HStack(alignment: .center){
+                        //
+                        //                            Spacer()
+                        //
+                        //                            Text("작성댓글")
+                        //                                .nanumSquareNeo(family: .eHv, size: 24, color: Color.colorAsset.white)
+                        //
+                        //                            Spacer()
+                        //                                .frame(width: 120)
+                        //
+                        //                            Text("좋아요")
+                        //                                .nanumSquareNeo(family: .eHv, size: 24, color: Color.colorAsset.white)
+                        //
+                        //                            Spacer()
+                        //                        }
+                        
                         Spacer()
                         
                     }
@@ -192,7 +207,7 @@ struct ProfileView: View {
     }
     
     @ViewBuilder
-     private func imageEditView() -> some View {
+    private func imageEditView() -> some View {
         VStack{
             ZStack {
                 Button {
@@ -208,7 +223,7 @@ struct ProfileView: View {
                             deniedAlbum.toggle()
                             
                         case .restricted, .notDetermined:
-                           break
+                            break
                             
                         default:
                             break
@@ -224,7 +239,7 @@ struct ProfileView: View {
                                     .scaledToFill()
                                     .frame(width: 75, height: 75)
                                     .clipShape(Circle())
-                                       
+                                
                                 
                                 Image("camera")
                                     .resizable()
@@ -284,7 +299,7 @@ struct ProfileView: View {
             
         }
     }
-        
+    
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         profileImage = Image(uiImage: selectedImage)
@@ -300,12 +315,21 @@ struct ProfileView: View {
                         .onTapGesture {
                             showTermsPolicesView.toggle()
                         }
+                    
                 case .connatAS:
                     ListArrowView(listTitle: item.description, showView: $showConnatView)
+                        .onTapGesture {
+                            showConnatASView.toggle()
+                        }
+                    
                 case .developer:
                     ListArrowView(listTitle: item.description, showView: $showDeveloperView)
+                        .onTapGesture {
+                            showMakeAppDeveloperView.toggle()
+                        }
                 }
             }
+            
             Spacer()
                 .frame(height: 60)
         }

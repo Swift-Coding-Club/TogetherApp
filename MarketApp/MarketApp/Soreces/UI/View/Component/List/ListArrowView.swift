@@ -18,15 +18,10 @@ struct ListArrowView: View {
             
             Spacer()
             
-            
-            Button {
-                showView.toggle()
-            } label: {
-                Image(systemName: "chevron.right")
-                    .resizable()
-                    .frame(width: 10, height: 20)
-                    .foregroundColor(Color.colorAsset.lightBlack)
-            }
+            Image(systemName: "chevron.right")
+                .resizable()
+                .frame(width: 10, height: 20)
+                .foregroundColor(Color.colorAsset.lightBlack)
         }
         .padding(20)
         .overlay {
@@ -34,7 +29,11 @@ struct ListArrowView: View {
                 .fill(.clear)
                 .frame(height: 50)
                 .shadow(color: Color.colorAsset.lightBlack, radius: 10, x: 10, y: .zero)
+                .onTapGesture {
+                    showView.toggle()
+                }
         }
+       
     }
 }
 
