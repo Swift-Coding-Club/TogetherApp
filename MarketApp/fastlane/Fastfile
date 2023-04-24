@@ -262,7 +262,7 @@ error do |lane, exception, options|
         ipa:"./fastlane/output/MarketApp.ipa",
         api_key_path: "fastlane/apikey.json",
 	skip_metadata: false,
-        metadata_path: "./metadata",
+        metadata_path: "./fastlane/metadata",
         skip_screenshots: true, 
         force: true,
         submit_for_review: true,

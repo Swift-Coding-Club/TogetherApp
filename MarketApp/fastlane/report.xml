@@ -5,82 +5,82 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000712">
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000356">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: increment_version_number" time="1.905486">
+      <testcase classname="fastlane.lanes" name="01: increment_version_number" time="2.239307">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: get_version_number" time="0.104092">
+      <testcase classname="fastlane.lanes" name="02: get_version_number" time="0.102857">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: get_build_number" time="0.725831">
+      <testcase classname="fastlane.lanes" name="03: get_build_number" time="1.055266">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: Switch to ios unit_Test lane" time="0.000538">
+      <testcase classname="fastlane.lanes" name="04: Switch to ios unit_Test lane" time="0.000308">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: run_tests" time="502.125988">
+      <testcase classname="fastlane.lanes" name="05: run_tests" time="670.307529">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="06: slack" time="0.611337">
+      <testcase classname="fastlane.lanes" name="06: slack" time="0.682629">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="07: Switch to ios build_ipa lane" time="0.000307">
+      <testcase classname="fastlane.lanes" name="07: Switch to ios build_ipa lane" time="0.000504">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="08: clear_derived_data" time="12.556699">
+      <testcase classname="fastlane.lanes" name="08: clear_derived_data" time="17.599448">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="09: slack" time="0.561735">
+      <testcase classname="fastlane.lanes" name="09: slack" time="0.559492">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="10: get_certificates" time="11.616973">
+      <testcase classname="fastlane.lanes" name="10: get_certificates" time="9.076402">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="11: get_provisioning_profile" time="7.753472">
+      <testcase classname="fastlane.lanes" name="11: get_provisioning_profile" time="3.091505">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="12: gym" time="478.05002">
+      <testcase classname="fastlane.lanes" name="12: gym" time="509.706889">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="13: slack" time="0.589775">
+      <testcase classname="fastlane.lanes" name="13: slack" time="0.598298">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="14: upload_to_app_store" time="313.064608">
+      <testcase classname="fastlane.lanes" name="14: upload_to_app_store" time="352.491719">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="15: slack" time="0.589343">
+      <testcase classname="fastlane.lanes" name="15: slack" time="0.549844">
         
       </testcase>
     
