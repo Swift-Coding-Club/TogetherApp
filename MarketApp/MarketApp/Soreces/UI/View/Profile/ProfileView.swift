@@ -47,6 +47,9 @@ struct ProfileView: View {
         .onAppear {
             profileViewModel.getUserInformation()
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
+            viewModel.signOut()
+        }
         //MARK: - 로그아웃 후
         .fullScreenCover(isPresented: $viewModel.loginStatus) {
             LoginView()

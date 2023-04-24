@@ -38,8 +38,10 @@ class ProfileViewModel: ObservableObject {
             }
             
             for document in snap!.documentChanges {
-                self.userEmail = document.document.get("email") as? String
-                self.userNickName = document.document.get("nickname") as? String
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.userEmail = document.document.get("email") as? String
+                    self.userNickName = document.document.get("nickname") as? String
+                }
             }
         }
         

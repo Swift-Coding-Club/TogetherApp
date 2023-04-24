@@ -59,6 +59,18 @@ class AppDelegate: UIViewController, UIApplicationDelegate, MessagingDelegate, U
         }
     }
     
+    //MARK: -  앱이 삭제 되었을때  로그아웃 처리
+    func applicationWillTerminate(_ application: UIApplication) {
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            print("rror signing out: \(error.localizedDescription)")
+        }
+    }
+    
+    
+    
+    //MARK: - push 메세지 처리
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
         print("devoice token = \(deviceToken)")
