@@ -5,17 +5,82 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000379">
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000712">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: run_tests" time="549.717828">
+      <testcase classname="fastlane.lanes" name="01: increment_version_number" time="1.905486">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: slack" time="0.612928">
+      <testcase classname="fastlane.lanes" name="02: get_version_number" time="0.104092">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="03: get_build_number" time="0.725831">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: Switch to ios unit_Test lane" time="0.000538">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: run_tests" time="502.125988">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: slack" time="0.611337">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: Switch to ios build_ipa lane" time="0.000307">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: clear_derived_data" time="12.556699">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: slack" time="0.561735">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: get_certificates" time="11.616973">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="11: get_provisioning_profile" time="7.753472">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="12: gym" time="478.05002">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="13: slack" time="0.589775">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="14: upload_to_app_store" time="313.064608">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="15: slack" time="0.589343">
         
       </testcase>
     

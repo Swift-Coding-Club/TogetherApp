@@ -56,14 +56,14 @@ platform :ios do
 
  desc "Unit test"
   lane:unit_Test do 
-  run_tests(
-     workspace: "MarketApp.xcworkspace",
-      scheme: "MarketApp",
-      devices: ["iPhone 14"],
-      reinstall_app: true,
-      result_bundle: true,
-      app_identifier: "com.shoping.MarketApps",
-      clean: true)
+ run_tests(
+    # workspace: "MarketApp.xcworkspace",
+     # scheme: "MarketApp",
+     devices: ["iPhone 14"],
+     reinstall_app: true,
+     result_bundle: true,
+     # app_identifier: "com.shoping.MarketApps",
+     clean: true)
        slack(
       message: "Unit test  성공",
       slack_url: ENV["SLACK_URL_TEST"],
@@ -253,8 +253,8 @@ error do |lane, exception, options|
      build = get_build_number
     #get_certificates
      #get_provisioning_profile
-        build_ipa
-      	unit_Test
+        unit_Test
+        build_ipa      
        upload_to_app_store(
         username: "shuwj81@daum.net",
         team_id: "N94CS4N6R",
