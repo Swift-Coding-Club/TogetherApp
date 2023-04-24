@@ -1,62 +1,60 @@
-# TogetherAPP(MarketAPP)
-신발 커뮤니티 앱  
- 
+# Affinity 
+🗓 프로젝트 소개 : 신발 커뮤니티 앱 </br>
+🗓 기간 : 2023.10.15 ~   </br>
+🗓 팀원: [로이](https://github.com/Roy-wonji), [민](https://github.com/italsehf), [영](https://github.com/Dtzer0), [소낙](https://github.com/choo121600), [리넴](https://github.com/Duckduck1596), 루비 </br>
 
-## Projects
-## 신발 커뮤니티 앱(Affinity) 
-🗓 프로젝트 소개 : 신발 커뮤니티 앱 !</br>
-🗓 기간 : 2022.08.03 ~   </br>
-🗓 팀원: [로이](https://github.com/Roy-wonji) ,[민](https://github.com/italsehf), [영](https://github.com/Dtzer0), [소낙](https://github.com/choo121600), [미넴](https://github.com/Duckduck1596) </br>
+<br>
 
+## Affinity에 대하여
 
+> 많은 인기를 얻고 있는 신발이 무엇이 있는지를 확인해볼 수 있습니다. <br>
+> 신발과 관련하여 자유롭게 이야기를 나눌 수 있는 커뮤니티 기능을 담고 있습니다. <br>
 
-## 디자인
-- [피그마디자인](https://www.figma.com/file/2vhHPVAEBXwgygOfJ5mYqv/AFFINITY-UI-DESIGN?node-id=465-5315&t=nLpFGjk51FA2XNpV-0)
+<br>
 
-
-## 앱아이콘  
+## App Icon  
 <img src= "https://user-images.githubusercontent.com/75601594/221594192-8eb68e34-bcab-4319-8f69-81b2ecdf9492.png"  width="30%">
 
+<br>
 
 ## App Store
 <a href="https://apps.apple.com/us/app/affinity/id1665706797" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-US?size=250x83&amp" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
-##  앱 UI
+<br>
 
+## App UI
+- [피그마](https://www.figma.com/file/2vhHPVAEBXwgygOfJ5mYqv/AFFINITY-UI-DESIGN?node-id=465%3A5315&t=jLss8pZEyv8kTPw5-1)
 
-
-## Affinity앱은 어떤건가요??
-
-> 신발 커뮤니티 관련 댓글 을 달수 있는 커뮤니티앱이에요
-> 신발 사진을 들어가면 댓글을 남길수 있어요 !!
-
-
-## 시연영상
-
-
+<br>
 
 ## 팀원 소개
 
 IOS 메인 : [로이](https://github.com/Roy-wonji), <br>
 IOS 개발 및 PM : [민](https://github.com/italsehf),<br>
 IOS 개발 및 서버 : [소낙](https://github.com/choo121600)<br>
-IOS 개발 및 디자인 : [영](https://github.com/Dtzer0) ,  [미넴](https://github.com/Duckduck1596), <br>
+IOS 개발 및 디자인 : [영](https://github.com/Dtzer0) ,  [리넴](https://github.com/Duckduck1596), <br>
 디자이너 : 루비
 
-
-
+<br>
 
 ## 사용한 라이브러리
 - `Alamofire` , `Kingfisher` , `SwiftLint`,  `Firebase` ,  `Moya`
 
+<br>
+
 ## 사용한 api
 
+<br>
 
-## 사용할 협업툴 
+## 사용한 협업툴 
 - `Notion` , `Figma`
 
-## 디자인 패턴 #
+<br>
+
+## 디자인 패턴
 - MVVM 패턴 
+
+<br>
 
 ## 키워드 
 - `@published`
@@ -73,19 +71,23 @@ IOS 개발 및 디자인 : [영](https://github.com/Dtzer0) ,  [미넴](https://
 - `Firebase Crashlytics`
 - `Firebase FCM`
 
-### 폴더링
+<br>
 
+## 폴더링
+
+<br>
 
 ## 구현 내용 
 
-
-
+<br>
 
 ## 네트워크 통신
 
 ### viewModel 구현 
 
-## 컬러및 폰트 공용 
+<br>
+
+## Design System
 
 ```swift
 import UIKit
@@ -131,6 +133,7 @@ extension Font {
 
 ```
 
+<br>
 
 ## Commit 규칙
 > 커밋 제목은 최대 50자 입력 </br>
@@ -154,6 +157,8 @@ Commit 메세지 </br>
 🔀[merge]: 다른브렌치를 merge 할 때 사용합니다. </br>
 ✅ [test]: 테스트 코드를 작성할 때 사용합니다. </br>
 
+<br>
+
 ### Commit Body 규칙
 > 제목 끝에 마침표(.) 금지 </br>
 한글로 작성 </br>
@@ -161,7 +166,9 @@ Commit 메세지 </br>
 
 - `STEP1`, `STEP2`, `STEP3`
 
-### Git flow
+<br>
+
+## Git flow
 - `main` 브랜 치는 앱 출시 
 - `Dev`는 테스트 및 각종 파일 merge
 - 각 스텝 뱔로 브런치 생성해서 관리 
