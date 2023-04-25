@@ -22,6 +22,32 @@
 
 <br>
 
+## 업데이트 패치노트
+- [1.0.4](https://github.com/Swift-Coding-Club/TogetherApp/releases/tag/1.0.4)
+    - 프로필 화면 수정
+    - 배너 이미지 변경
+    - 로딩 화면 변경
+    - 로그인 이슈수정
+    - 앱 삭제 했을 경우 로그아웃 수정
+    - 버그 수정
+    
+<br>
+
+
+## 백로그
+- [백로그](https://github.com/Swift-Coding-Club/TogetherApp/issues?q=is%3Aissue+is%3Aclosed)
+
+
+
+## 업데이트 예정 
+### 기능 추가
+- [상세 페이지에 좋아요 버튼 탭 기능](https://github.com/Swift-Coding-Club/TogetherApp/issues/24)
+- [상세 페이지 커뮤니티 기능](https://github.com/Swift-Coding-Club/TogetherApp/issues/24)
+
+
+
+
+
 ## 팀원 소개
 
 ## 👨🏻‍💻👩🏻‍💻👩🏻‍🎨 Team 
@@ -40,7 +66,7 @@
 <br>
 
 ## 사용한 라이브러리
-- `Alamofire` , `Kingfisher` , `SwiftLint`,  `Firebase` ,  `Moya`
+- `Kingfisher` , `SwiftLint`,  `Firebase` ,  `Moya` , `PopupView`, `lottie`
 
 <br>
 
@@ -48,9 +74,9 @@
 
 |Environment|Version|
 |:-:|:-:|
-|Swift|5.7|
-|Xcode|14.0|
-|iOS Deployment Target|16.0|
+|Swift|<img src="https://img.shields.io/badge/swift-5.7-orange">|
+|Xcode|<img src="https://img.shields.io/badge/Xcode-14.0-blue">||
+|iOS Deployment Target|<img src="https://img.shields.io/badge/IOS-16.0-blue">|
 
 <br>
 
@@ -76,7 +102,8 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 
 ## 사용한 자동화 
 - `Fastlane` , `Slack`
-<br
+<br>
+
 
 ## 디자인 패턴
 - MVVM 패턴 
@@ -91,12 +118,29 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 - `커스텀 폰트`
 - `커스텀 컬러`
 - `extension view`
-- `Alamofire 통신`
+- `Moya 통신`
 - `컴포넌트 분리`
 - `Search bar`
 - `Firebase RemoteConfig`
 - `Firebase Crashlytics`
 - `Firebase FCM`
+- `앱이 삭제 되었을때 로그아웃`
+- `공유`
+
+<br>
+
+## 구현 내용 
+
+- `로그인 안했을경우 프로필뷰 숨김처리`
+- `프로필 사진 변경`
+- `push 알림`
+- `커스텀 폰트`
+- `커스텀 팝업`
+- `소셜 로그인`
+- `신발 검색`
+- `앱 공유`
+
+
 
 <br>
 
@@ -177,18 +221,62 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 ```
 <br>
 
-## 구현 내용 
 
-<br>
 
 ## 네트워크 통신
+```swift
+import Foundation
+import Moya
 
-### viewModel 구현 
+enum MainShoesService {
+    case mainShoesData
+}
 
+extension MainShoesService: TargetType {
+    var baseURL: URL {
+        return URL(string: "https://640de3d61a18a5db83827295.mockapi.io")!
+    }
+    
+    var path: String {
+        switch self {
+        case .mainShoesData:
+            return AffinityAPI.MainShoes
+        }
+    }
+    
+    var method: Moya.Method {
+        switch self {
+        case .mainShoesData:
+            return .get
+        }
+    }
+    
+    var task: Task {
+        switch self {
+        case .mainShoesData:
+            return .requestPlain
+        }
+    }
+    
+    var headers: [String : String]? {
+        switch self {
+        case .mainShoesData:
+            return [
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            ]
+        }
+    }
+}
+
+
+```
 <br>
+
 
 ## Design System
 
+### FONT
 ```swift
 import UIKit
 import SwiftUI
@@ -229,9 +317,35 @@ extension Font {
     }
 }
 
+```
+<br>
 
+### Color
+```swift
+
+import Foundation
+import SwiftUI
+
+struct ColorAsset {
+    let backGroudColor = Color("BackgroundColor")
+    let mauve = Color("mauve")
+    let mainColor = Color("MainColor")
+    let mauve2 = Color("mauve2")
+    let gray = Color("Gray")
+    let lightBlack = Color("LightBlack")
+    let black = Color("Black")
+    let blueGray = Color("BlueGray")
+    let lightGray = Color("LightGray")
+    let beige = Color("Beige")
+    let white = Color("White")
+}
+
+extension Color {
+    static let colorAsset = ColorAsset()
+}
 
 ```
+
 
 <br>
 
