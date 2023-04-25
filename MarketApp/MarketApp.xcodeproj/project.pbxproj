@@ -500,12 +500,12 @@
 			path = FindEmail;
 			sourceTree = "<group>";
 		};
-		7F16693F29A3CC4E00B5CED7 /* MainViewModel */ = {
+		7F16693F29A3CC4E00B5CED7 /* MainViewModelTest */ = {
 			isa = PBXGroup;
 			children = (
 				7F16694029A3CD5100B5CED7 /* MainVIewModelTests.swift */,
 			);
-			path = MainViewModel;
+			path = MainViewModelTest;
 			sourceTree = "<group>";
 		};
 		7F2403D229EFB08200ED09D2 /* Sources */ = {
@@ -617,6 +617,50 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		7F342E2329F7CD3700955182 /* ModalView */ = {
+			isa = PBXGroup;
+			children = (
+				7F2AD62C29912F0C004DB28B /* ModalShapeCorner.swift */,
+				7F0F163F2960061F00FB4C30 /* OverlayView.swift */,
+			);
+			path = ModalView;
+			sourceTree = "<group>";
+		};
+		7F342E2429F7CD8200955182 /* ScreenSize */ = {
+			isa = PBXGroup;
+			children = (
+				7F39FA872950912F0041BF8B /* ScreenSize.swift */,
+				7F39FA90295093FF0041BF8B /* Size.swift */,
+				7F4B962D298D27F1006AAF48 /* SizeReader.swift */,
+			);
+			path = ScreenSize;
+			sourceTree = "<group>";
+		};
+		7F342E2529F7CD9700955182 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				7F39FA892950915B0041BF8B /* ScrollViewModifier.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		7F342E2629F7CDA700955182 /* EditImage */ = {
+			isa = PBXGroup;
+			children = (
+				7F2AD62A29912E37004DB28B /* EditImageModifier.swift */,
+			);
+			path = EditImage;
+			sourceTree = "<group>";
+		};
+		7F342E2729F7D97D00955182 /* ShoesModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F0565D4298686AE0066BE4A /* ShoesModel.swift */,
+				7F2F571C29BF534B00E2FFC2 /* ShoesDetailModel.swift */,
+			);
+			path = ShoesModel;
+			sourceTree = "<group>";
+		};
 		7F39FA74294F4D630041BF8B /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,8 +714,7 @@
 		7F39FA78294F4DFF0041BF8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7F0565D4298686AE0066BE4A /* ShoesModel.swift */,
-				7F2F571C29BF534B00E2FFC2 /* ShoesDetailModel.swift */,
+				7F342E2729F7D97D00955182 /* ShoesModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -695,7 +738,7 @@
 		7F39FA7A294F4E120041BF8B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7FA4BF42299A3E4500D8F2F7 /* Main */,
+				7FA4BF42299A3E4500D8F2F7 /* MainService */,
 				7F39FA80295090080041BF8B /* MarketAPI */,
 				7F39FA7D29508F840041BF8B /* APIError */,
 			);
@@ -729,14 +772,11 @@
 		7F39FA86295091190041BF8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7F342E2629F7CDA700955182 /* EditImage */,
+				7F342E2529F7CD9700955182 /* ScrollView */,
+				7F342E2429F7CD8200955182 /* ScreenSize */,
+				7F342E2329F7CD3700955182 /* ModalView */,
 				7F4B961F298D1687006AAF48 /* ACarousel */,
-				7F39FA872950912F0041BF8B /* ScreenSize.swift */,
-				7F39FA892950915B0041BF8B /* ScrollViewModifier.swift */,
-				7F39FA90295093FF0041BF8B /* Size.swift */,
-				7F0F163F2960061F00FB4C30 /* OverlayView.swift */,
-				7F4B962D298D27F1006AAF48 /* SizeReader.swift */,
-				7F2AD62A29912E37004DB28B /* EditImageModifier.swift */,
-				7F2AD62C29912F0C004DB28B /* ModalShapeCorner.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -845,21 +885,21 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
-		7FA4BF42299A3E4500D8F2F7 /* Main */ = {
+		7FA4BF42299A3E4500D8F2F7 /* MainService */ = {
 			isa = PBXGroup;
 			children = (
 				7FA4BF43299A3EE800D8F2F7 /* MainShoesService.swift */,
 				7F2F571A29BF50FC00E2FFC2 /* MainDetailService.swift */,
 			);
-			path = Main;
+			path = MainService;
 			sourceTree = "<group>";
 		};
 		7FDB1E6029A2399C00019099 /* MarketAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				7F16693F29A3CC4E00B5CED7 /* MainViewModel */,
-				7FDB1EDB29A2926900019099 /* SignUPViewModel */,
-				7FDB1EDA29A2925600019099 /* ProfileViewModel */,
+				7F16693F29A3CC4E00B5CED7 /* MainViewModelTest */,
+				7FDB1EDB29A2926900019099 /* SignUPViewModelTest */,
+				7FDB1EDA29A2925600019099 /* ProfileViewModelTest */,
 			);
 			path = MarketAppTests;
 			sourceTree = "<group>";
@@ -873,20 +913,20 @@
 			path = MarketAppUITests;
 			sourceTree = "<group>";
 		};
-		7FDB1EDA29A2925600019099 /* ProfileViewModel */ = {
+		7FDB1EDA29A2925600019099 /* ProfileViewModelTest */ = {
 			isa = PBXGroup;
 			children = (
 				7FDB1E6129A2399C00019099 /* ProfileViewModelTests.swift */,
 			);
-			path = ProfileViewModel;
+			path = ProfileViewModelTest;
 			sourceTree = "<group>";
 		};
-		7FDB1EDB29A2926900019099 /* SignUPViewModel */ = {
+		7FDB1EDB29A2926900019099 /* SignUPViewModelTest */ = {
 			isa = PBXGroup;
 			children = (
 				7FDB1ED629A275B300019099 /* LoginViewModelTest.swift */,
 			);
-			path = SignUPViewModel;
+			path = SignUPViewModelTest;
 			sourceTree = "<group>";
 		};
 		7FF1AD6D29BB92D7001B18DB /* Tab */ = {
@@ -1692,7 +1732,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/Resources/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 90;
+				CURRENT_PROJECT_VERSION = 91;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1736,7 +1776,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/Resources/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 90;
+				CURRENT_PROJECT_VERSION = 91;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
