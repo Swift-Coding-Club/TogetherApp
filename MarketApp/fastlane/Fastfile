@@ -55,13 +55,14 @@ platform :ios do
   end
 
  desc "Unit test"
-  lane:unit_Test do 
+  lane:unit_Test do
+clear_derived_data 
  run_tests(
     # workspace: "MarketApp.xcworkspace",
      # scheme: "MarketApp",
      devices: ["iPhone 14"],
-     reinstall_app: true,
-     result_bundle: true,
+    # reinstall_app: false,
+    result_bundle: true,
      # app_identifier: "com.shoping.MarketApps",
      clean: true)
        slack(

@@ -1117,7 +1117,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7F3425A429DD579C001748A9 /* PBXTargetDependency */,
+				7F342E2229F763A300955182 /* PBXTargetDependency */,
 			);
 			name = MarketApp;
 			packageProductDependencies = (
@@ -1442,9 +1442,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7F3425A429DD579C001748A9 /* PBXTargetDependency */ = {
+		7F342E2229F763A300955182 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 7F3425A329DD579C001748A9 /* SwiftLint */;
+			productRef = 7F342E2129F763A300955182 /* SwiftLint */;
 		};
 		7FDB1E6429A2399C00019099 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1692,7 +1692,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/Resources/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 90;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1736,7 +1736,7 @@
 				CODE_SIGN_ENTITLEMENTS = MarketApp/Resources/MarketApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 90;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"MarketApp/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = N94CS4N6VR;
@@ -1872,7 +1872,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7F3425A329DD579C001748A9 /* SwiftLint */ = {
+		7F342E2129F763A300955182 /* SwiftLint */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7F3425A129DD54AB001748A9 /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */;
 			productName = "plugin:SwiftLint";
