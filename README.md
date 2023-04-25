@@ -190,22 +190,22 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 │       │   │    📂── Profile
 │       │   │    📂── Search
 │       │   │    📂── Tab
-│       │   │    📂── Favorite
-│       │   📂── Util
-│       │   │    📂── AppCheck
-│       │   │    📂── Authoriation
-│       │   │    📂── Color
-│       │   │    📂── Extensions
-│       │   │    📂── Font
-│       │   │    │    📂── CustomFont
-│       │   │    └─   📂── FontAsset
-│       │   │    📂── ImageMange
-│       │   │    📂── SignUPCheck
-│       │   │    📂── View
-│       │   │    │    📂── ModalView
-│       │   │    │    📂── ScrollView
-│       │   │    │    📂── CustomFont
-│       │   │    └─   📂── ScreenSize
+│       │   └─   📂── Favorite
+│       📂── Util
+│       │    📂── AppCheck
+│       │    📂── Authoriation
+│       │    📂── Color
+│       │    📂── Extensions
+│       │    📂── Font
+│       │    │    📂── CustomFont
+│       │    └─   📂── FontAsset
+│       │    📂── ImageMange
+│       │    📂── SignUPCheck
+│       │    📂── View
+│       │    │    📂── ModalView
+│       │    │    📂── ScrollView
+│       │    │    📂── CustomFont
+│       │    └─   📂── ScreenSize
 │       📂── ViewModel
 │       │    📂── MainShoesViewModel
 │       │    📂── ProfileViewModel
