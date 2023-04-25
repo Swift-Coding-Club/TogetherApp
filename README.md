@@ -1,6 +1,6 @@
 # Affinity 
 🗓 프로젝트 소개 : 신발 커뮤니티 앱 </br>
-🗓 기간 : 2023.10.15 ~   </br>
+🗓 기간 : 2022.10.15 ~  2023.3.21  </br>
 🗓 팀원: [로이](https://github.com/Roy-wonji), [민](https://github.com/italsehf), [영](https://github.com/Dtzer0), [소낙](https://github.com/choo121600), [리넴](https://github.com/Duckduck1596), 루비 </br>
 
 <br>
@@ -22,18 +22,21 @@
 
 <br>
 
-## App UI
-- [피그마](https://www.figma.com/file/2vhHPVAEBXwgygOfJ5mYqv/AFFINITY-UI-DESIGN?node-id=465%3A5315&t=jLss8pZEyv8kTPw5-1)
+## 팀원 소개
+
+## 👨🏻‍💻👩🏻‍💻👩🏻‍🎨 Team 
+
+|Developer|Product Manger|Developer|Developer|Developer|Designer|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|<img src="https://user-images.githubusercontent.com/75601594/234147001-86411f85-4f56-4b8d-baad-eba7218278a2.PNG" width="130">|<img src="./Haro/imageFiles/min.png">|<img src="./Haro/imageFiles/rey.png">|<img src="./Haro/imageFiles/smile.png">|<img src="./Haro/imageFiles/zero.png">|<img src="https://user-images.githubusercontent.com/75601594/234147178-39330bb0-343d-4d1a-bc34-956c2491eb6a.png" width="130">|
+|[Roy](https://github.com/Roy-wonji)|[Min](https://github.com/italsehf)|[Sonak](https://github.com/choo121600)|[Young](https://github.com/Dtzer0)|[Linem](https://github.com/Duckduck1596)|Ruby|
 
 <br>
 
-## 팀원 소개
 
-IOS 메인 : [로이](https://github.com/Roy-wonji), <br>
-IOS 개발 및 PM : [민](https://github.com/italsehf),<br>
-IOS 개발 및 서버 : [소낙](https://github.com/choo121600)<br>
-IOS 개발 및 디자인 : [영](https://github.com/Dtzer0) ,  [리넴](https://github.com/Duckduck1596), <br>
-디자이너 : 루비
+
+## App UI
+- [피그마](https://www.figma.com/file/2vhHPVAEBXwgygOfJ5mYqv/AFFINITY-UI-DESIGN?node-id=465%3A5315&t=jLss8pZEyv8kTPw5-1)
 
 <br>
 
@@ -41,6 +44,17 @@ IOS 개발 및 디자인 : [영](https://github.com/Dtzer0) ,  [리넴](https://
 - `Alamofire` , `Kingfisher` , `SwiftLint`,  `Firebase` ,  `Moya`
 
 <br>
+
+## 🛠 Developement Environment
+
+|Environment|Version|
+|:-:|:-:|
+|Swift|5.7|
+|Xcode|14.0|
+|iOS Deployment Target|16.0|
+
+<br>
+
 
 ## 사용한 api
 
