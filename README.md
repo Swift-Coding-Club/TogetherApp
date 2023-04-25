@@ -28,12 +28,10 @@
 
 |Developer|Product Manger|Developer|Developer|Developer|Designer|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|<img src="https://user-images.githubusercontent.com/75601594/234147001-86411f85-4f56-4b8d-baad-eba7218278a2.PNG" width="130">|<img src="https://user-images.githubusercontent.com/75601594/234175100-b6058283-c72e-428e-a4a3-3d57bd8f6f7a.png" width="130">|<img src="https://user-images.githubusercontent.com/75601594/234175182-0986c72b-d45e-4e6b-b596-460ecf85cbe1.png" width="130">|<img src="https://user-images.githubusercontent.com/75601594/234174853-3eca2f08-c759-4158-8ee1-5b3c210cdd06.jpeg" width="130">|<img src="https://user-images.githubusercontent.com/75601594/234182651-771a224a-f26c-4a56-80c2-97030bc38719.png" >|<img src="https://user-images.githubusercontent.com/75601594/234147178-39330bb0-343d-4d1a-bc34-956c2491eb6a.png" width="130">|
+|<img src="https://user-images.githubusercontent.com/75601594/234147001-86411f85-4f56-4b8d-baad-eba7218278a2.PNG" width="120">|<img src="https://user-images.githubusercontent.com/75601594/234175100-b6058283-c72e-428e-a4a3-3d57bd8f6f7a.png" width="120">|<img src="https://user-images.githubusercontent.com/75601594/234175182-0986c72b-d45e-4e6b-b596-460ecf85cbe1.png" width="120">|<img src="https://user-images.githubusercontent.com/75601594/234174853-3eca2f08-c759-4158-8ee1-5b3c210cdd06.jpeg" width="120">|<img src="https://i.imgur.com/X8yRfcy.png" width="120">|<img src="https://user-images.githubusercontent.com/75601594/234147178-39330bb0-343d-4d1a-bc34-956c2491eb6a.png" width="120">|
 |[Roy](https://github.com/Roy-wonji)|[Min](https://github.com/italsehf)|[Sonak](https://github.com/choo121600)|[Young](https://github.com/Dtzer0)|[Linem](https://github.com/Duckduck1596)|Ruby|
 
 <br>
-
-
 
 
 ## App UI
