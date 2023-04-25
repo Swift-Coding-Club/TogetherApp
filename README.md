@@ -28,10 +28,11 @@
 
 |Developer|Product Manger|Developer|Developer|Developer|Designer|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|<img src="https://user-images.githubusercontent.com/75601594/234147001-86411f85-4f56-4b8d-baad-eba7218278a2.PNG" width="130">|<img src="./Haro/imageFiles/min.png">|<img src="./Haro/imageFiles/rey.png">|<img src="./Haro/imageFiles/smile.png">|<img src="./Haro/imageFiles/zero.png">|<img src="https://user-images.githubusercontent.com/75601594/234147178-39330bb0-343d-4d1a-bc34-956c2491eb6a.png" width="130">|
+|<img src="https://user-images.githubusercontent.com/75601594/234147001-86411f85-4f56-4b8d-baad-eba7218278a2.PNG" width="130">|<img src="https://user-images.githubusercontent.com/75601594/234175100-b6058283-c72e-428e-a4a3-3d57bd8f6f7a.png" width="130">|<img src="https://user-images.githubusercontent.com/75601594/234175182-0986c72b-d45e-4e6b-b596-460ecf85cbe1.png" width="130">|<img src="https://user-images.githubusercontent.com/75601594/234174853-3eca2f08-c759-4158-8ee1-5b3c210cdd06.jpeg" width="130">|<img src="https://user-images.githubusercontent.com/75601594/234182651-771a224a-f26c-4a56-80c2-97030bc38719.png" >|<img src="https://user-images.githubusercontent.com/75601594/234147178-39330bb0-343d-4d1a-bc34-956c2491eb6a.png" width="130">|
 |[Roy](https://github.com/Roy-wonji)|[Min](https://github.com/italsehf)|[Sonak](https://github.com/choo121600)|[Young](https://github.com/Dtzer0)|[Linem](https://github.com/Duckduck1596)|Ruby|
 
 <br>
+
 
 
 
@@ -57,6 +58,16 @@
 
 
 ## 사용한 api
+### 📝 신발 관련 MOCK API
+```swift
+let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes")
+```
+<br>
+
+### 📝 신발 상세 MOCK API
+```swift
+let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
+```
 
 <br>
 
@@ -88,6 +99,82 @@
 <br>
 
 ## 폴더링
+
+```
+📦── MarketApp
+│   ├── Info.plist
+│   📦── MarketAppTests
+│   📦── MarketAppUITests
+│   📦── Resources
+│   │   📂── Firebase
+│   │   📂── Assets.xcassets
+│   │   📂── ColorAssets.xcassets
+│   │   📂── IconImage
+│   │   📂── Loading.json
+│   │   📂── MarketApp.entitlements
+│   │   📂── Preview Content
+│   │   📂── mockData.json
+│   📦── Sources
+│       📂── Application
+│       📂── Model
+│       📂── Network
+│       📂── UI
+│       📂── View
+│       │   📂── Component
+│       │   │   📂── Alert
+│       │   │   📂── Lanch
+│       │   │   📂── List
+│       │   │   📂── Lottie
+│       │   │   📂── Page
+│       │   │   📂── Search
+│       │   │   📂── Share
+│       │   │   📂── TextField
+│       │   │   📂── WebView
+│       │   📂── Authorization
+│       │   │   📂── FindEmail
+│       │   │   📂── FindPassword
+│       │   │   📂── Login
+│       │   │   📂── LoginItem.swift
+│       │   │   📂── LoginView.swift
+│       │   │   📂── SignUP
+│       │   📂── Home
+│       │   📂── Notic
+│       │   📂── ProductDetail
+│       │   📂── ProductList
+│       │   📂── Profile
+│       │   📂── Search
+│       │   📂── Tab
+│       │   📂── Favorite
+│       📂── Util
+│       │   📂── AppCheck
+│       │   📂── Authoriation
+│       │   📂── Color
+│       │   📂── Extensions
+│       │   📂── Font
+│       │   │    📂── CustomFont
+│       │   │    📂── FontAsset
+│       │   📂── ImageMange
+│       │   📂── SignUPCheck
+│       │   📂── View
+│       │   │    📂── ModalView
+│       │   │    📂── ScrollView
+│       │   │    📂── CustomFont
+│       │   │    📂── ScreenSize
+│       📂── ViewModel
+│       │   📂── MainShoesViewModel
+│       │   📂── ProfileViewModel
+│       └   📂── SignUpViewModel
+📦── fastlane
+│    📂── metadata
+│    │    📂── ko
+│    │    📂── review_information
+│    📂── output
+│    📂── screenshots
+│    │    📂── ko
+└──  📂── test_output
+```
+
+
 
 <br>
 
