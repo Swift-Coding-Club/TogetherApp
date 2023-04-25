@@ -76,7 +76,6 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 
 ## 사용한 자동화 
 - `Fastlane` , `Slack`
-- 
 <br
 
 ## 디자인 패턴
