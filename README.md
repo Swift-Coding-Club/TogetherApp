@@ -206,10 +206,10 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 │       │   │    │    📂── ScrollView
 │       │   │    │    📂── CustomFont
 │       │   │    └─   📂── ScreenSize
-│       │   📂── ViewModel
-│       │   │    📂── MainShoesViewModel
-│       │   │    📂── ProfileViewModel
-│       └   └─   📂── SignUpViewModel
+│       📂── ViewModel
+│       │    📂── MainShoesViewModel
+│       │    📂── ProfileViewModel
+│       └─   📂── SignUpViewModel
 📦── fastlane
 │    📂── metadata
 │    │    📂── ko
