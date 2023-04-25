@@ -180,8 +180,6 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 │       │   │    │    📂── FindEmail
 │       │   │    │    📂── FindPassword
 │       │   │    │    📂── Login
-│       │   │    │    📂── LoginItem.swift
-│       │   │    │    📂── LoginView.swift
 │       │   │    └─   📂── SignUP
 │       │   │    📂── Home
 │       │   │    📂── Notic
@@ -204,7 +202,8 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 │       │    📂── View
 │       │    │    📂── ModalView
 │       │    │    📂── ScrollView
-│       │    │    📂── CustomFont
+│       │    │    📂── ACarousel
+│       │    │    📂── EditImage
 │       │    └─   📂── ScreenSize
 │       📂── ViewModel
 │       │    📂── MainShoesViewModel
