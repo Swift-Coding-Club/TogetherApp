@@ -18,6 +18,7 @@ import FirebaseDynamicLinks
 class AppDelegate: UIViewController, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
     var remoteConfig: RemoteConfig!
     
+    //MARK: - 앱이 시작 되었을때
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
