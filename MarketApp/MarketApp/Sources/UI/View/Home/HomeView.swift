@@ -14,9 +14,13 @@ struct HomeView: View {
     @State private var pageIndex = 0
     @State var bannerSize: CGSize = .zero
     @State private var selectPage : Int = .zero
+    
     @State private var showABCView: Bool = false
     @State private var showNikeView:  Bool = false
     @State private var showAddidasView: Bool = false
+    @State private var loadingABCView: Bool = false
+    @State private var loadingNikeView: Bool = false
+    @State private var loadingAddidasView: Bool = false
     
     @State private var selectBrandType: BrandType = .all
     @State private var filterBrand: [ShoesDetailData] = []
@@ -43,15 +47,15 @@ struct HomeView: View {
         }
         .navigationTitle("")
         .navigationDestination(isPresented: $showABCView) {
-            WebViews(url: BannerImages.abcMarket.bannerURL)
+            WebViews(url: BannerImages.abcMarket.bannerURL, loading: $loadingABCView)
         }
         
         .navigationDestination(isPresented: $showNikeView) {
-            WebViews(url: BannerImages.nikeMarket.bannerURL)
+            WebViews(url: BannerImages.nikeMarket.bannerURL, loading: $loadingNikeView)
         }
         
         .navigationDestination(isPresented: $showAddidasView) {
-            WebViews(url: BannerImages.addidasMarket.bannerURL)
+            WebViews(url: BannerImages.addidasMarket.bannerURL, loading: $loadingAddidasView)
         }
         
         .onAppear {

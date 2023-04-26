@@ -27,6 +27,10 @@ struct ProfileView: View {
     @State private var showTermsPolicesView: Bool = false
     @State private var showConnatASView: Bool = false
     @State private var showMakeAppDeveloperView: Bool = false
+    @State private var loadingTermsPolicesView: Bool = false
+    @State private var loadingConnatASView: Bool = false
+    @State private var loadingMakeAppDeveloperView: Bool = false
+    
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
     
@@ -61,17 +65,17 @@ struct ProfileView: View {
         
         //MARK: - 약관 정책  보여주는 화면
         .navigationDestination(isPresented: $showTermsPolicesView, destination: {
-            WebViews(url: AffinityAPI.TermsPolicesUrl)
+            WebViews(url: AffinityAPI.TermsPolicesUrl, loading: $loadingTermsPolicesView)
         })
         
         //MARK: - 문의하기 화면
         .navigationDestination(isPresented: $showConnatASView, destination: {
-            WebViews(url: AffinityAPI.ConnactASUrl)
+            WebViews(url: AffinityAPI.ConnactASUrl, loading: $loadingConnatASView)
         })
         
         //MARK: - 만든 개발자 뷰
         .navigationDestination(isPresented: $showMakeAppDeveloperView, destination: {
-            WebViews(url: AffinityAPI.makeAppDeveloperUrl)
+            WebViews(url: AffinityAPI.makeAppDeveloperUrl, loading: $loadingMakeAppDeveloperView)
         })
         
         //MARK: - 팝업 관련

@@ -29,7 +29,7 @@ struct ProductView: View {
     var body: some View {
         
         VStack {
-            if viewModel.shoesName != nil {
+            if viewModel.shoesName?.isEmpty != nil  {
                 ScrollView(.vertical, showsIndicators: true) {
                     
                     productTopImageView()
@@ -68,6 +68,7 @@ struct ProductView: View {
             }
         }
     }
+
     
     //MARK: - 상단 mock 이미지
     @ViewBuilder

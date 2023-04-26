@@ -18,8 +18,21 @@ struct DetailImageView: View {
     
     var body: some View {
         VStack {
-            selectTapAnimate()
-            selectDetailTapView()
+            if viewModel.shoesDetailData?.isEmpty != nil {
+                
+                selectTapAnimate()
+                
+                selectDetailTapView()
+                
+            } else {
+                
+                Spacer()
+                    .frame(height: UIScreen.screenHeight / 4 )
+                LottieLoadingView()
+                    .onAppear {
+                        viewModel.mainDetailShoesRequest()
+                    }
+            }
         }
     }
     
@@ -83,10 +96,10 @@ struct DetailImageView: View {
                     }
             }
         } else {
-            LottieLoadingView()
-                .onAppear {
-                    viewModel.mainDetailShoesRequest()
-                }
+//            LottieLoadingView()
+//                .onAppear {
+//                    viewModel.mainDetailShoesRequest()
+//                }
         }
     }
 

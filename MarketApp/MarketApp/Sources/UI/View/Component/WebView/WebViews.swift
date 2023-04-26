@@ -10,15 +10,30 @@ import SwiftUI
 struct WebViews: View {
     var url: String
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @Binding var loading: Bool
+    
+    
     var body: some View {
-        VStack{
-            WebView(urlToLoad: url)
-
+        VStack {
+            if loading {
+                LottieLoadingView()
+            } else {
+                WebView(urlToLoad: url)
+            }
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 customBackButton()
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                loading = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Replace 2 with desired delay
+                    loading = false
+                }
             }
         }
     }
@@ -38,6 +53,8 @@ struct WebViews: View {
 
 struct WebViews_Previews: PreviewProvider {
     static var previews: some View {
-        WebViews(url: "https://velog.io/@suhwj/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4-%EC%B2%98%EB%A6%AC-%EB%B0%A9%EC%B9%A8")
+        NavigationStack {
+            WebViews(url: "https://velog.io/@suhwj/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4-%EC%B2%98%EB%A6%AC-%EB%B0%A9%EC%B9%A8", loading: .constant(false))
+        }
     }
 }
