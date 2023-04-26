@@ -1,7 +1,7 @@
 # Affinity 
 🗓 프로젝트 소개 : 신발 커뮤니티 앱 </br>
 🗓 기간 : 2022.10.15 ~  2023.3.21  </br>
-🗓 팀원: [로이](https://github.com/Roy-wonji), [민](https://github.com/italsehf), [영](https://github.com/Dtzer0), [소낙](https://github.com/choo121600), [리넴](https://github.com/Duckduck1596), 루비 </br>
+🗓 팀원: [로이](https://github.com/Roy-wonji), [민](https://github.com/italsehf), [영](https://github.com/Dtzer0), [소낙](https://github.com/choo121600), [리넴](https://github.com/Duckduck1596), [루비](https://github.com/minislively) </br>
 
 <br>
 
@@ -55,7 +55,7 @@
 |Developer|Product Manger|Developer|Developer|Developer|Designer|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |<img src="https://user-images.githubusercontent.com/75601594/234147001-86411f85-4f56-4b8d-baad-eba7218278a2.PNG" width="120">|<img src="https://user-images.githubusercontent.com/75601594/234175100-b6058283-c72e-428e-a4a3-3d57bd8f6f7a.png" width="120">|<img src="https://user-images.githubusercontent.com/75601594/234175182-0986c72b-d45e-4e6b-b596-460ecf85cbe1.png" width="120">|<img src="https://user-images.githubusercontent.com/75601594/234174853-3eca2f08-c759-4158-8ee1-5b3c210cdd06.jpeg" width="120" height="120">|<img src="https://i.imgur.com/X8yRfcy.png" width="120">|<img src="https://user-images.githubusercontent.com/75601594/234147178-39330bb0-343d-4d1a-bc34-956c2491eb6a.png" width="120">|
-|[Roy](https://github.com/Roy-wonji)|[Min](https://github.com/italsehf)|[Sonak](https://github.com/choo121600)|[Young](https://github.com/Dtzer0)|[Linem](https://github.com/Duckduck1596)|Ruby|
+|[Roy](https://github.com/Roy-wonji)|[Min](https://github.com/italsehf)|[Sonak](https://github.com/choo121600)|[Young](https://github.com/Dtzer0)|[Linem](https://github.com/Duckduck1596)|[Ruby](https://github.com/minislively)|
 
 <br>
 
@@ -65,10 +65,6 @@
 
 <br>
 
-## 사용한 라이브러리
-- `Kingfisher` , `SwiftLint`,  `Firebase` ,  `Moya` , `PopupView`, `lottie`
-
-<br>
 
 ## 🛠 Developement Environment
 
@@ -77,6 +73,28 @@
 |Swift|<img src="https://img.shields.io/badge/swift-5.7-orange">|
 |Xcode|<img src="https://img.shields.io/badge/Xcode-14.0-blue">||
 |iOS Deployment Target|<img src="https://img.shields.io/badge/IOS-16.0-blue">|
+
+<br>
+
+
+## 사용한 협업툴 
+- `Notion` , `Figma`
+
+<br>
+
+## 사용한 라이브러리
+- `Kingfisher` , `SwiftLint`,  `Firebase` ,  `Moya` , `PopupView`, `lottie`
+
+<br>
+
+
+## 사용한 자동화 
+- `Fastlane` , `Slack`
+<br>
+
+
+## 디자인 패턴
+- MVVM 패턴 
 
 <br>
 
@@ -92,21 +110,6 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes")
 ```swift
 let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 ```
-
-<br>
-
-## 사용한 협업툴 
-- `Notion` , `Figma`
-
-<br>
-
-## 사용한 자동화 
-- `Fastlane` , `Slack`
-<br>
-
-
-## 디자인 패턴
-- MVVM 패턴 
 
 <br>
 
@@ -194,7 +197,7 @@ let url = URL(string : "https://640de3d61a18a5db83827295.mockapi.io/shoes/id")
 │   │   │   │    │    📂── Login
 │   │   │   │    └─   📂── SignUP
 │   │   │   │    📂── Home
-│   │   │   │    📂── Notic
+│   │   │   │    📂── Notice
 │   │   │   │    📂── ProductDetail
 │   │   │   │    📂── ProductList
 │   │   │   │    📂── Profile
