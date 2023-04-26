@@ -23,10 +23,11 @@
 <br>
 
 ## 업데이트 패치노트
-- [1.0.4](https://github.com/Swift-Coding-Club/TogetherApp/releases/tag/1.0.4)
+- [1.0.5](https://github.com/Swift-Coding-Club/TogetherApp/releases/tag/1.0.5)
     - 프로필 화면 수정
     - 배너 이미지 변경
     - 로딩 화면 변경
+    - 로딩 화면 수정
     - 로그인 이슈수정
     - 앱 삭제 했을 경우 로그아웃 수정
     - 버그 수정
