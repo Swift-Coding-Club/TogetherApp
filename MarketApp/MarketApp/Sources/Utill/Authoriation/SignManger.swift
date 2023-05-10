@@ -8,6 +8,8 @@
 import SwiftUI
 import GoogleSignIn
 import CryptoKit
+import Firebase
+
 
 struct LoginManger {
     static let shared = LoginManger()
@@ -21,4 +23,13 @@ struct LoginManger {
         }
         return root
     }
+    
+    func appDeleteSignout() {
+        do  {
+            try Auth.auth().signOut()
+        } catch let error {
+            print("error signing out: \(error.localizedDescription)")
+        }
+    }
+    
 }

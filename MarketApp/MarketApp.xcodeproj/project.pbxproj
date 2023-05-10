@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		057B6A4BDE72F88E822F34D0 /* Pods_MarketApp_MarketAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5708D9E43ABA24D369603F44 /* Pods_MarketApp_MarketAppUITests.framework */; };
 		0D0B745604915877639C073E /* Pods_MarketApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A507C7A643A5809384D0CF5F /* Pods_MarketApp.framework */; };
+		7F007BB32A0B3883007A66D8 /* NotificationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F007BB22A0B3883007A66D8 /* NotificationManger.swift */; };
+		7F007BBB2A0BAC83007A66D8 /* RemoteConfigManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F007BBA2A0BAC83007A66D8 /* RemoteConfigManger.swift */; };
 		7F0565D5298686AE0066BE4A /* ShoesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565D4298686AE0066BE4A /* ShoesModel.swift */; };
 		7F0565DA298698A20066BE4A /* MainShoesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565D9298698A20066BE4A /* MainShoesViewModel.swift */; };
 		7F0565DD298A92A70066BE4A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0565DC298A92A60066BE4A /* SearchBar.swift */; };
@@ -192,6 +194,8 @@
 		5708D9E43ABA24D369603F44 /* Pods_MarketApp_MarketAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketApp_MarketAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF6F916C6C3E2F058DC2667 /* Pods-MarketAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketAppTests.release.xcconfig"; path = "Target Support Files/Pods-MarketAppTests/Pods-MarketAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		78AB0C99A0B06EDFEE1C4A1C /* Pods_MarketAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F007BB22A0B3883007A66D8 /* NotificationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManger.swift; sourceTree = "<group>"; };
+		7F007BBA2A0BAC83007A66D8 /* RemoteConfigManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManger.swift; sourceTree = "<group>"; };
 		7F0565D4298686AE0066BE4A /* ShoesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesModel.swift; sourceTree = "<group>"; };
 		7F0565D9298698A20066BE4A /* MainShoesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShoesViewModel.swift; sourceTree = "<group>"; };
 		7F0565DC298A92A60066BE4A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -240,7 +244,7 @@
 		7F39FA90295093FF0041BF8B /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		7F39FA93295331B00041BF8B /* LanuchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanuchView.swift; sourceTree = "<group>"; };
 		7F39FA962953340D0041BF8B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		7F39FAA62953370E0041BF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7F39FAA62953370E0041BF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F39FAA7295338430041BF8B /* NanumSquareNeo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanumSquareNeo.swift; sourceTree = "<group>"; };
 		7F39FAAE295341A50041BF8B /* NanumSquareNeo-bRg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-bRg.ttf"; sourceTree = "<group>"; };
 		7F39FAAF295341A50041BF8B /* NanumSquareNeo-aLt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareNeo-aLt.ttf"; sourceTree = "<group>"; };
@@ -389,6 +393,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F007BB12A0B385F007A66D8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7F007BB22A0B3883007A66D8 /* NotificationManger.swift */,
+				7F007BBA2A0BAC83007A66D8 /* RemoteConfigManger.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		7F0565D32985851C0066BE4A /* ViewStack */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +751,7 @@
 		7F39FA7A294F4E120041BF8B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7F007BB12A0B385F007A66D8 /* Service */,
 				7FA4BF42299A3E4500D8F2F7 /* MainService */,
 				7F39FA80295090080041BF8B /* MarketAPI */,
 				7F39FA7D29508F840041BF8B /* APIError */,
@@ -963,6 +977,7 @@
 		C9A7B73B294353110051E644 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7F39FAA62953370E0041BF8B /* Info.plist */,
 				7F2403E429EFB9B700ED09D2 /* Preview Content */,
 				7F2403DF29EFB95100ED09D2 /* Firebase */,
 				7FA4B8A829D99DB100FA1569 /* Loading.json */,
@@ -1054,7 +1069,6 @@
 		EC892A9D2908189600D02F99 /* MarketApp */ = {
 			isa = PBXGroup;
 			children = (
-				7F39FAA62953370E0041BF8B /* Info.plist */,
 				C9A7B73B294353110051E644 /* Resources */,
 				7F2403D229EFB08200ED09D2 /* Sources */,
 				7FDB1E6029A2399C00019099 /* MarketAppTests */,
@@ -1394,6 +1408,7 @@
 			files = (
 				7F0F165F296C4D1500FB4C30 /* FindEmailView.swift in Sources */,
 				EC892ABF2908214900D02F99 /* ProductView.swift in Sources */,
+				7F007BB32A0B3883007A66D8 /* NotificationManger.swift in Sources */,
 				7F39FAA8295338430041BF8B /* NanumSquareNeo.swift in Sources */,
 				7F0F16432960081500FB4C30 /* ColorAsset.swift in Sources */,
 				7F2AD62729911C98004DB28B /* ImageUploader.swift in Sources */,
@@ -1448,6 +1463,7 @@
 				7F0F1664296EF2A000FB4C30 /* PreviewProvider.swift in Sources */,
 				7F0565D5298686AE0066BE4A /* ShoesModel.swift in Sources */,
 				EC892AB52908206F00D02F99 /* NaviagationSearchView.swift in Sources */,
+				7F007BBB2A0BAC83007A66D8 /* RemoteConfigManger.swift in Sources */,
 				EC892AA12908189600D02F99 /* MainTabView.swift in Sources */,
 				7F2F571D29BF534B00E2FFC2 /* ShoesDetailModel.swift in Sources */,
 				7F39FA8D2950922D0041BF8B /* ConfirmAlertView.swift in Sources */,
@@ -1738,7 +1754,7 @@
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarketApp/Info.plist;
+				INFOPLIST_FILE = MarketApp/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Affinity;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Affinity앱 프로필 사진 변경에 대한 앨법 접근 허용";
@@ -1782,7 +1798,7 @@
 				DEVELOPMENT_TEAM = N94CS4N6VR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarketApp/Info.plist;
+				INFOPLIST_FILE = MarketApp/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Affinity;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Affinity앱 프로필 사진 변경에 대한 앨법 접근 허용";
