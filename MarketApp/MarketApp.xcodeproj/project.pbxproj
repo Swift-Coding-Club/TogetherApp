@@ -1769,7 +1769,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEVELOPE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1813,7 +1813,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoping.MarketApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
