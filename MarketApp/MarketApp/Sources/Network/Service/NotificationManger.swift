@@ -8,6 +8,7 @@
 import Firebase
 import UserNotifications
 import FirebaseMessaging
+import UIKit
 
 final class NotificationManger: NSObject, UNUserNotificationCenterDelegate, MessagingDelegate {
     static let shared = NotificationManger()
